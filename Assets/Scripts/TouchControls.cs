@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class TouchControls : MonoBehaviour {
 
+   // public GameObject drums;
+
+    //private InstrumentBase instr;
+
     Vector3 touchPosWorld;
+
 
     // Use this for initialization
     void Start () {
@@ -24,7 +29,9 @@ public class TouchControls : MonoBehaviour {
             if (hitInfo.collider != null)
             {
                 GameObject touchedObject = hitInfo.transform.gameObject;
-                Debug.Log("touched" + touchedObject.transform.name);
+                if (touchedObject.tag == "In")
+                {
+                }
             }
 
         }

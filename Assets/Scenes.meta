@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 54b195c2467ff4f4d9a27a371b92115b
 folderAsset: yes
 timeCreated: 1522314930
+=======
+guid: 32f5a01cbbe5d54489b7288781df1d3d
+folderAsset: yes
+timeCreated: 1522308146
+>>>>>>> Henkka
 licenseType: Pro
 DefaultImporter:
   userData: 

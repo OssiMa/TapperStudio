@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AB026D50-50B9-1723-BFCA-1885C0F1209E}</ProjectGuid>
+    <ProjectGuid>{B3E28DCB-D179-AB7F-8C24-85FAF586E9B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -93,7 +93,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Drums.cs" />
     <Compile Include="Assets\Scripts\InstrumentBase.cs" />
+    <Compile Include="Assets\Scripts\PlayerSettings.cs" />
+    <Compile Include="Assets\Scripts\Save.cs" />
+    <Compile Include="Assets\Scripts\SongProgress.cs" />
     <Compile Include="Assets\Scripts\TouchControls.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

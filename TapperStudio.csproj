@@ -95,12 +95,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Drums.cs" />
     <Compile Include="Assets\Scripts\InstrumentBase.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\SongProgress.cs" />
-=======
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
->>>>>>> Henkka
+    <Compile Include="Assets\Scripts\SongProgress.cs" />
     <Compile Include="Assets\Scripts\TouchControls.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InstrumentBase : MonoBehaviour {
 
+    public SongProgress progression;
+
     public Slider xpBar;
     public Text currLvl;
     public Text nxtLvl;
@@ -43,8 +45,7 @@ public class InstrumentBase : MonoBehaviour {
     public void Tap()
     {
         exp += 1;
-        print(exp);
-        print(expToNext);
+        progression.GainXP();
     }
 
     private void OnMouseOver()

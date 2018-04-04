@@ -6,9 +6,10 @@ using UnityEngine;
 public class Save {
 
 
-    public int DrumLevel = 1;
-    public int SongsCompleted = 0;
-    public int SongProgress = 0;
+    public float DrumLevel = 1;
+    public float DrumXp = 0;
+    public float SongsCompleted = 0;
+    public float SongProgress = 0;
 
 
 

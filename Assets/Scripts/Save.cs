@@ -10,7 +10,8 @@ public class Save {
     public float DrumXp = 0;
     public float SongsCompleted = 0;
     public float SongProgress = 0;
-
+    public float NextDrumLevel = 0;
+    public float StartXp = 0;
 
 
 }

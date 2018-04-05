@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SongProgress : MonoBehaviour {
 
+    public InstrumentBase bass;
+
     public Slider Progress;
     public Text SongText;
 
@@ -33,7 +35,9 @@ public class SongProgress : MonoBehaviour {
         }
         if (songCount > songCountMax)
         {
+            bass.exp += 505;
             songCount = 1;
+            Debug.Log("maxcount reached");
         }
 	}
 
@@ -41,4 +45,6 @@ public class SongProgress : MonoBehaviour {
     {
         songXP += 1;
     }
+
+
 }

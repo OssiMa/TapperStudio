@@ -10,7 +10,6 @@ public class Drums : MonoBehaviour {
 
     float RotationTimer= 5;
 
-    Color defaultcolor = new Color32(208, 210, 102, 255);
     public string searchTag;
     public List<GameObject> actors = new List<GameObject>();
 
@@ -44,7 +43,7 @@ public class Drums : MonoBehaviour {
     {
         for(int i = 0; i < 5; i++)
         {
-            transform.GetChild(i).GetComponent<Image>().color = defaultcolor;
+            transform.GetChild(i).GetComponent<Image>().color = Color.white;
             transform.GetChild(i).tag = "Drum plate";
         }
     }

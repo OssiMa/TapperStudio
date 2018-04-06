@@ -79,7 +79,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Killer");
         AlbumFirstNamesOf.Add("Harbringer");
         AlbumFirstNamesOf.Add("Consumer");
-        AlbumFirstNamesOf.Add("The intoxication");
+        AlbumFirstNamesOf.Add("The Intoxication");
         AlbumFirstNamesOf.Add("Rules");
 
         AlbumLastNamesOf.Add("Love");

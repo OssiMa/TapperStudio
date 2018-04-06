@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Guitar proto.unity
-=======
 - path: Assets/Scenes/Album test.unity
->>>>>>> Henkka
   isLoaded: 1
   isActive: 1

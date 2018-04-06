@@ -12,6 +12,7 @@ public class InstrumentBase : MonoBehaviour {
     public Slider xpBar;
     public Text currLvl;
     public Text nxtLvl;
+    public Text comboText;
 
     public float exp = 0;
     float startXp;
@@ -19,22 +20,26 @@ public class InstrumentBase : MonoBehaviour {
     float level = 1;
     float nextLevel = 2;
 
+    float combo = 1;
+    float comboStep;
+    float comboStepMax = 20;
+    float comboUpkeep = 5;
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
-
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        comboText.text = "Combo: " + combo;
         xpBar.value = exp;
         nxtLvl.text = "" + nextLevel;
         currLvl.text = "" + level;
@@ -50,13 +55,41 @@ public class InstrumentBase : MonoBehaviour {
 
         }
 
+
         SaveGame();
 	}
 
     public void Tap()
     {
-        exp += 1;
+        exp += 1*combo;
         progression.GainXP();
+        if (comboUpkeep > 0)
+        {
+            comboUpkeep -= 2;
+        }
+        else if (comboUpkeep <= 0 && combo >1)
+        {
+            combo -= 1;
+            comboStep = 0;
+            comboUpkeep = 4;
+        }
+    }
+
+    public void ComboTap()
+    {
+        if (combo < 4)
+        {
+            comboStep += 1;
+            if (comboStep >= comboStepMax)
+            {
+                combo += 1;
+                comboStep = 0;
+            }
+        }
+        if (comboUpkeep <11)
+        {
+            comboUpkeep += 3;
+        }
     }
 
     private void OnMouseOver()

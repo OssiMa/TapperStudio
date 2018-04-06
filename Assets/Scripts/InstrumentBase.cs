@@ -25,10 +25,16 @@ public class InstrumentBase : MonoBehaviour {
     float comboStepMax = 20;
     float comboUpkeep = 5;
 
+<<<<<<< HEAD
 
     // Use this for initialization
     void Start () {
         LoadGame();
+=======
+	// Use this for initialization
+	void Start () {
+        //LoadGame();
+>>>>>>> Henkka
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;

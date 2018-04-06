@@ -7,7 +7,9 @@ using System.IO;
 
 public class InstrumentBase : MonoBehaviour {
 
+
     public SongProgress progression;
+
 
     public Slider xpBar;
     public Text currLvl;
@@ -29,7 +31,7 @@ public class InstrumentBase : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        LoadGame();
+        //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;
@@ -125,6 +127,12 @@ public class InstrumentBase : MonoBehaviour {
         save.NextDrumLevel = expToNext;
         save.StartXp = startXp;
 
+        save.SongProgress = progression.songXP;
+        save.SongsCompleted = progression.songCount;
+        save.CurrentAlbum = progression.currentAlbum;
+        save.AlbumsCreated = progression.AlbumsCreated;
+        save.combo = combo;
+
         return save;
     }
 
@@ -148,6 +156,12 @@ public class InstrumentBase : MonoBehaviour {
             exp = save.DrumXp;
             expToNext = save.NextDrumLevel;
             startXp = save.StartXp;
+            combo = save.combo;
+
+            progression.songXP = save.SongProgress;
+            progression.songCount = save.SongsCompleted;
+            progression.currentAlbum = save.CurrentAlbum;
+            progression.AlbumsCreated = save.AlbumsCreated;
 
             Debug.Log("Game Loaded");
 

@@ -95,7 +95,11 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 92
+=======
+  controlID: 134
+>>>>>>> Henkka
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -326,8 +330,8 @@ MonoBehaviour:
     y: 0
     width: 838
     height: 573
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -407,9 +411,15 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: ba250000
     m_LastClickedID: 9658
     m_ExpandedIDs: 000000007425000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 38250000
+    m_LastClickedID: 9528
+    m_ExpandedIDs: 00000000f024000000ca9a3bffffff7f
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -437,7 +447,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000074250000
+=======
+    m_ExpandedIDs: 00000000f0240000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,7 +478,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300008c250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -555,7 +569,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: fcf7ffff2cf8ffffb2fbffff0000000066270000ce270000
+=======
+    m_ExpandedIDs: c0fbffff00000000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

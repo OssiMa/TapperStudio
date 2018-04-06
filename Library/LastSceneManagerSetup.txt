@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Saving test.unity
+- path: Assets/Scenes/Album test.unity
   isLoaded: 1
   isActive: 1

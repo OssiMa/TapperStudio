@@ -7,11 +7,14 @@ using System.IO;
 
 public class InstrumentBase : MonoBehaviour {
 
+
     public SongProgress progression;
+
 
     public Slider xpBar;
     public Text currLvl;
     public Text nxtLvl;
+    public Text comboText;
 
     public float exp = 0;
     float startXp;
@@ -19,22 +22,27 @@ public class InstrumentBase : MonoBehaviour {
     float level = 1;
     float nextLevel = 2;
 
+    float combo = 1;
+    float comboStep;
+    float comboStepMax = 20;
+    float comboUpkeep = 5;
+
 
 	// Use this for initialization
-	void Start () {
-        LoadGame();
+	void Start ()
+    {
+        //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
-
-
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        comboText.text = "Combo: " + combo;
         xpBar.value = exp;
         nxtLvl.text = "" + nextLevel;
         currLvl.text = "" + level;
@@ -50,13 +58,41 @@ public class InstrumentBase : MonoBehaviour {
 
         }
 
+
         SaveGame();
 	}
 
     public void Tap()
     {
-        exp += 1;
+        exp += 1*combo;
         progression.GainXP();
+        if (comboUpkeep > 0)
+        {
+            comboUpkeep -= 2;
+        }
+        else if (comboUpkeep <= 0 && combo >1)
+        {
+            combo -= 1;
+            comboStep = 0;
+            comboUpkeep = 4;
+        }
+    }
+
+    public void ComboTap()
+    {
+        if (combo < 4)
+        {
+            comboStep += 1;
+            if (comboStep >= comboStepMax)
+            {
+                combo += 1;
+                comboStep = 0;
+            }
+        }
+        if (comboUpkeep <11)
+        {
+            comboUpkeep += 3;
+        }
     }
 
     private void OnMouseOver()
@@ -91,6 +127,12 @@ public class InstrumentBase : MonoBehaviour {
         save.NextDrumLevel = expToNext;
         save.StartXp = startXp;
 
+        save.SongProgress = progression.songXP;
+        save.SongsCompleted = progression.songCount;
+        save.CurrentAlbum = progression.currentAlbum;
+        save.AlbumsCreated = progression.AlbumsCreated;
+        save.combo = combo;
+
         return save;
     }
 
@@ -114,6 +156,12 @@ public class InstrumentBase : MonoBehaviour {
             exp = save.DrumXp;
             expToNext = save.NextDrumLevel;
             startXp = save.StartXp;
+            combo = save.combo;
+
+            progression.songXP = save.SongProgress;
+            progression.songCount = save.SongsCompleted;
+            progression.currentAlbum = save.CurrentAlbum;
+            progression.AlbumsCreated = save.AlbumsCreated;
 
             Debug.Log("Game Loaded");
 

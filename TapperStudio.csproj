@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Drums.cs" />
+    <Compile Include="Assets\Scripts\Guitar.cs" />
     <Compile Include="Assets\Scripts\InstrumentBase.cs" />
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />

@@ -6,16 +6,18 @@ using UnityEngine;
 public class Save {
 
 
-    public float DrumLevel = 1;
-    public float DrumXp = 0;
-    public float SongsCompleted = 0;
-    public float SongProgress = 0;
-    public float NextDrumLevel = 0;
-    public float StartXp = 0;
-    public float AlbumsCreated = 0;
+    public float drumLevel = 1;
+    public float drumXp = 0;
+    public float songsCompleted = 0;
+    public float songProgress = 0;
+    public float nextDrumLevel = 0;
+    public float startXp = 0;
+    public float albumsCreated = 0;
     public float combo = 1;
-    public string CurrentAlbum;
-    
+    public float currency;
+    public string currentAlbum;
+    public string currentSong;
+    public List<string> usedAlbums;
 
 
 }

@@ -19,7 +19,7 @@ public class InstrumentBase : MonoBehaviour {
     public float exp = 0;
     float startXp;
     float expToNext = 15;
-    float level = 1;
+    public float level = 1;
     float nextLevel = 2;
 
     float combo = 1;
@@ -122,16 +122,20 @@ public class InstrumentBase : MonoBehaviour {
     {
         Save save = new Save();
 
-        save.DrumLevel = level;
-        save.DrumXp = exp;
-        save.NextDrumLevel = expToNext;
-        save.StartXp = startXp;
+        save.drumLevel = level;
+        save.drumXp = exp;
+        save.nextDrumLevel = expToNext;
+        save.startXp = startXp;
 
-        save.SongProgress = progression.songXP;
-        save.SongsCompleted = progression.songCount;
-        save.CurrentAlbum = progression.currentAlbum;
-        save.AlbumsCreated = progression.AlbumsCreated;
+        save.songProgress = progression.songXP;
+        save.songsCompleted = progression.songCount;
+        save.currentAlbum = progression.currentAlbum;
+        save.currentSong = progression.currentSong;
+        save.albumsCreated = progression.AlbumsCreated;
+        save.usedAlbums = progression.UsedNames;
         save.combo = combo;
+
+        save.currency = progression.currency;
 
         return save;
     }
@@ -152,16 +156,19 @@ public class InstrumentBase : MonoBehaviour {
 
 
             // 4
-            level = save.DrumLevel;
-            exp = save.DrumXp;
-            expToNext = save.NextDrumLevel;
-            startXp = save.StartXp;
+            level = save.drumLevel;
+            exp = save.drumXp;
+            expToNext = save.nextDrumLevel;
+            startXp = save.startXp;
             combo = save.combo;
 
-            progression.songXP = save.SongProgress;
-            progression.songCount = save.SongsCompleted;
-            progression.currentAlbum = save.CurrentAlbum;
-            progression.AlbumsCreated = save.AlbumsCreated;
+            progression.songXP = save.songProgress;
+            progression.songCount = save.songsCompleted;
+            progression.currentAlbum = save.currentAlbum;
+            progression.currentSong = save.currentSong;
+            progression.AlbumsCreated = save.albumsCreated;
+            progression.UsedNames = save.usedAlbums;
+            progression.currency = save.currency;
 
             Debug.Log("Game Loaded");
 

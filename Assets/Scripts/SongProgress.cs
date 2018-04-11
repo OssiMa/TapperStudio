@@ -14,12 +14,17 @@ public class SongProgress : MonoBehaviour {
     public Slider Progress;
     public Text SongText;
     public Text AlbumName;
+    public Text SongName;
+    public Text currencyText;
 
 
-    public List<string> AlbumFirstNamesOf;          //A list that contains all the possible name starts for of structure album names. For example: "_Bliss_ of Dreams"
-    public List<string> AlbumLastNamesOf;           //A list that contains all the possible name ends for of structure album names. For example: "Bliss of _Dreams_"
+    public List<string> AlbumFirstNamesOf;          //A list that contains all To possible name starts To of structure album names. To example: "_Bliss_ of Dreams"
+    public List<string> AlbumLastNamesOf;           //A list that contains all To possible name ends To of structure album names. To example: "Bliss of _Dreams_"
     public List<string> AlbumFirstNamesDual;
     public List<string> AlbumLastNamesDual;
+    public List<string> AlbumFirstNamesTo;
+    public List<string> AlbumLastNamesTo;
+    public List<string> AlbumWholeNames;
     public List<string> UsedNames;
 
     public string currentAlbum;
@@ -27,10 +32,22 @@ public class SongProgress : MonoBehaviour {
     public string currentAlbumLastOf;
     public string currentAlbumFirstDual;
     public string currentAlbumLastDual;
+    public string currentAlbumFirstTo;
+    public string currentAlbumLastTo;
+    public string albumWholeName;    
+
+    public string currentSong;
+    public string currentSongFirstOf;
+    public string currentSongLastOf;
+    public string currentSongFirstDual;
+    public string currentSongLastDual;
+    public string currentSongFirstTo;
+    public string currentSongLastTo;
 
     public float songXP;
     public float songXPMax = 20;
     public float songCount = 1;
+    public float currency = 0;
     float songCountMax = 3;
     public float AlbumsCreated;
 
@@ -38,7 +55,7 @@ public class SongProgress : MonoBehaviour {
 
 
 
-    // Use this for initialization
+    // Use this To initialization
     void Start () {
         PossibleAlbums();
         Progress.maxValue = songXPMax;
@@ -50,25 +67,47 @@ public class SongProgress : MonoBehaviour {
         Progress.value = songXP;
         SongText.text = songCount + "/" + songCountMax;
         AlbumName.text = currentAlbum;
+        SongName.text = currentSong;
+        currencyText.text = currency + "£";
+        songXP += 0.01f * drumBase.level;
+
         if (songXP >= songXPMax)
         {
             songCount += 1;
             songXP = 0;
+            UsedNames.Add(currentSong);
+
+            if (UsedNames.Count > 50)
+            {
+                UsedNames.RemoveAt(1);
+            }
+            currency += 10;
+            NewSong();
         }
         if (songCount > songCountMax)
         {
             drumBase.exp += 505;
             songCount = 1;
             AlbumsCreated += 1;
+            UsedNames.Add(currentAlbum);
+
+            if(UsedNames.Count > 20)
+            {
+                UsedNames.RemoveAt(1);
+            }
+            currency += 40;
             NewAlbum();
+
         }
 	}
 
+    //Grants XP to songs
     public void GainXP()
     {
         songXP += 1;
     }
 
+    //Adds possible names To albums with different namestructures
     public void PossibleAlbums()
     {
         AlbumFirstNamesOf.Add("Chaos");
@@ -81,27 +120,37 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Cycle");
         AlbumFirstNamesOf.Add("Bliss");
         AlbumFirstNamesOf.Add("Muse");
-        AlbumFirstNamesOf.Add("Sadness");
+        AlbumFirstNamesOf.Add("Sorrow");
         AlbumFirstNamesOf.Add("Killer");
-        AlbumFirstNamesOf.Add("Harbringer");
         AlbumFirstNamesOf.Add("Consumer");
-        AlbumFirstNamesOf.Add("The Intoxication");
         AlbumFirstNamesOf.Add("Rules");
+        AlbumFirstNamesOf.Add("Beauty");
+        AlbumFirstNamesOf.Add("Signs");
+        AlbumFirstNamesOf.Add("Call");
+        AlbumFirstNamesOf.Add("Fall");
+        AlbumFirstNamesOf.Add("God");
+        AlbumFirstNamesOf.Add("Toll");
+        AlbumFirstNamesOf.Add("Story");
+        AlbumFirstNamesOf.Add("Entropy");
+
 
         AlbumLastNamesOf.Add("Love");
-        AlbumLastNamesOf.Add("the Mighty");
+        AlbumLastNamesOf.Add("The Mighty");
         AlbumLastNamesOf.Add("Life");
         AlbumLastNamesOf.Add("Death");
-        AlbumLastNamesOf.Add("the Brave");
+        AlbumLastNamesOf.Add("The Brave");
         AlbumLastNamesOf.Add("Summer");
         AlbumLastNamesOf.Add("Nature");
         AlbumLastNamesOf.Add("Music");
         AlbumLastNamesOf.Add("Dreams");
         AlbumLastNamesOf.Add("Souls");
-        AlbumLastNamesOf.Add("Humans");
-        AlbumLastNamesOf.Add("Puppies");
-        AlbumLastNamesOf.Add("Kittens");
-        AlbumLastNamesOf.Add("Bunnies");
+        AlbumLastNamesOf.Add("Men");
+        AlbumLastNamesOf.Add("Gods");
+        AlbumLastNamesOf.Add("The Storm");
+        AlbumLastNamesOf.Add("War");
+        AlbumLastNamesOf.Add("Tradition");
+        AlbumLastNamesOf.Add("Time");
+
 
         AlbumFirstNamesDual.Add("Winter ");
         AlbumFirstNamesDual.Add("Summer ");
@@ -120,6 +169,10 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Lonely ");
         AlbumFirstNamesDual.Add("Final ");
         AlbumFirstNamesDual.Add("Devil's ");
+        AlbumFirstNamesDual.Add("Artificial ");
+        AlbumFirstNamesDual.Add("First ");
+        AlbumFirstNamesDual.Add("Burning ");
+
 
         AlbumLastNamesDual.Add("Days");
         AlbumLastNamesDual.Add("Evolution");
@@ -139,16 +192,71 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Mercy");
         AlbumLastNamesDual.Add("Tears");
         AlbumLastNamesDual.Add("Alchemist");
+        AlbumLastNamesDual.Add("Love");
+        AlbumLastNamesDual.Add("Pain");
+        AlbumLastNamesDual.Add("Angel");
+        AlbumLastNamesDual.Add("Blues");
+        AlbumLastNamesDual.Add("Perseverance");
 
+
+        AlbumFirstNamesTo.Add("Ode");
+        AlbumFirstNamesTo.Add("A Toast");
+        AlbumFirstNamesTo.Add("Road");
+        AlbumFirstNamesTo.Add("Path");
+        AlbumFirstNamesTo.Add("Back");
+        AlbumFirstNamesTo.Add("Right");
+        AlbumFirstNamesTo.Add("Ashes");
+
+
+        AlbumLastNamesTo.Add("Joy");
+        AlbumLastNamesTo.Add("Love");
+        AlbumLastNamesTo.Add("Light");
+        AlbumLastNamesTo.Add("You");
+        AlbumLastNamesTo.Add("Rome");
+        AlbumLastNamesTo.Add("Ashes");
+
+
+        AlbumWholeNames.Add("Afterlife");
+        AlbumWholeNames.Add("Reborn");
+        AlbumWholeNames.Add("Immortals");
+        AlbumWholeNames.Add("Calamity");
+        AlbumWholeNames.Add("Hummingbird");
+        AlbumWholeNames.Add("Thunderclouds");
+        AlbumWholeNames.Add("The Lies");
+        AlbumWholeNames.Add("Instinct");
+        AlbumWholeNames.Add("Burialground");
+        AlbumWholeNames.Add("Positive");
+        AlbumWholeNames.Add("Fly");
+        AlbumWholeNames.Add("FYI");
+        AlbumWholeNames.Add("Storyteller");
+        AlbumWholeNames.Add("Altruistic");
+        AlbumWholeNames.Add("Eager");
+        AlbumWholeNames.Add("Spaghetti");
+        AlbumWholeNames.Add("Fanatic");
+        AlbumWholeNames.Add("Letting go");
+        AlbumWholeNames.Add("Cyberbeats");
+
+
+        currentAlbum = "SpaghettiSolution";
+        UsedNames.Add(currentAlbum);
+        currentSong = "OdeToSpaghetti";
+        UsedNames.Add(currentSong);
 
         NewAlbum();
+        NewSong();
+
 
     }
+
+    //Randomizes To namestructure and name of a new album
     public void NewAlbum()
     {
-        System.Random nameStructure = new System.Random();
-        int whichStructure = nameStructure.Next(1,3);
 
+
+        while (UsedNames.Contains(currentAlbum))
+        {
+            System.Random nameStructure = new System.Random();
+            int whichStructure = nameStructure.Next(1, 5);
 
             if (whichStructure == 1)
             {
@@ -176,14 +284,96 @@ public class SongProgress : MonoBehaviour {
                 AlbumName.text = currentAlbumFirstDual + currentAlbumLastDual;
             }
 
-        
+            if (whichStructure == 3)
+            {
+                System.Random namePicker = new System.Random();
+                int name = namePicker.Next(AlbumWholeNames.Count);
+                albumWholeName = AlbumWholeNames[name];
 
-        currentAlbum = AlbumName.text.ToString();
+                AlbumName.text = albumWholeName;
+            }
 
+            if (whichStructure == 4)
+            {
+                System.Random firstNamePicker = new System.Random();
+                int fTo = firstNamePicker.Next(AlbumFirstNamesTo.Count);
+                currentAlbumFirstTo = AlbumFirstNamesTo[fTo];
+
+                System.Random lastNamePicker = new System.Random();
+                int lTo = lastNamePicker.Next(AlbumLastNamesTo.Count);
+                currentAlbumLastTo = AlbumLastNamesTo[lTo];
+
+                AlbumName.text = currentAlbumFirstTo + " To " + currentAlbumLastTo;
+            }
+
+            currentAlbum = AlbumName.text.ToString();
+        }
 
 
     }
- 
+
+    //Randomizes To namestructure and name of a new song
+    public void NewSong()
+    {
+
+
+        while (UsedNames.Contains(currentSong))
+        {
+            System.Random nameStructure = new System.Random();
+            int whichStructure = nameStructure.Next(1, 5);
+
+            if (whichStructure == 3)
+            {
+                System.Random firstNamePickerOf = new System.Random();
+                int fOf = firstNamePickerOf.Next(AlbumFirstNamesOf.Count);
+                currentSongFirstOf = AlbumFirstNamesOf[fOf];
+
+                System.Random lastNamePickerOf = new System.Random();
+                int lOf = lastNamePickerOf.Next(AlbumLastNamesOf.Count);
+                currentSongLastOf = AlbumLastNamesOf[lOf];
+
+                SongName.text = currentSongFirstOf + " of " + currentSongLastOf;
+            }
+
+            if (whichStructure == 4)
+            {
+                System.Random firstNamePicker = new System.Random();
+                int fDual = firstNamePicker.Next(AlbumFirstNamesDual.Count);
+                currentSongFirstDual = AlbumFirstNamesDual[fDual];
+
+                System.Random lastNamePicker = new System.Random();
+                int lDual = lastNamePicker.Next(AlbumLastNamesDual.Count);
+                currentSongLastDual = AlbumLastNamesDual[lDual];
+
+                SongName.text = currentSongFirstDual + currentSongLastDual;
+            }
+
+            if (whichStructure == 2)
+            {
+                System.Random namePicker = new System.Random();
+                int name = namePicker.Next(AlbumWholeNames.Count);
+                albumWholeName = AlbumWholeNames[name];
+                SongName.text = albumWholeName;
+
+            }
+            if (whichStructure == 1)
+            {
+                System.Random firstNamePicker = new System.Random();
+                int fTo = firstNamePicker.Next(AlbumFirstNamesTo.Count);
+                currentSongFirstTo = AlbumFirstNamesTo[fTo];
+
+                System.Random lastNamePicker = new System.Random();
+                int lTo = lastNamePicker.Next(AlbumLastNamesTo.Count);
+                currentSongLastTo = AlbumLastNamesTo[lTo];
+
+                SongName.text = currentSongFirstTo + " To " + currentSongLastTo;
+            }
+
+            currentSong = SongName.text.ToString();
+        }
+
+    }
+
 
 
 }

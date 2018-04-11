@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Guitar : MonoBehaviour {
 
     bool pointsOnScreen;
-    float timer = 0.2f;
+    int activeSlider;
+
     GameObject[] points;
+    GameObject[] sliders;
 
 
 	// Use this for initialization
 	void Start () {
-        points = GameObject.FindGameObjectsWithTag("Guitar button");
+        points = GameObject.FindGameObjectsWithTag("Guitar button").OrderBy(points => points.name).ToArray();
+        sliders = GameObject.FindGameObjectsWithTag("Guitar slider").OrderBy(sliders => sliders.name).ToArray();
         Hide();
 	}
 	
@@ -21,38 +25,104 @@ public class Guitar : MonoBehaviour {
         CheckForPoints();
         if(pointsOnScreen == false)
         {
-            Reveal();
+            activeSlider = 5;
+            StartCoroutine(BigReveal());
         }
 	}
 
     void Hide()
     {
-        for(int i = 0; i < points.Length; i++)
+        foreach(GameObject point in points)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            point.SetActive(false);
+        }
+
+        foreach(GameObject slid in sliders)
+        {
+            slid.SetActive(false);
+        }
+
+    }
+
+    IEnumerator BigReveal()
+    {
+        SliderReveal();
+        for (int i = 0; i < 4; i++)
+        {
+            Reveal();
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
     void Reveal()
     {
-        pointsOnScreen = true;
-        for(int i = 0; i < 4; i++)
+        int temp= Random.Range(0, points.Length);
+
+            if (activeSlider == 0)
+            {
+                while (points[temp].activeInHierarchy || temp <= 3)
+                {
+                    temp = Random.Range(4, points.Length);
+                }
+            }
+            else if (activeSlider == 1)
+            {
+                while (points[temp].activeInHierarchy || temp >= 4 && temp <= 7)
+                {
+                    temp = Random.Range(0, points.Length);
+                } 
+            }
+            else if (activeSlider == 2)
+            {
+                while (points[temp].activeInHierarchy || temp >= 8 && temp <= 11)
+                {
+                    temp = Random.Range(0, points.Length);
+                } 
+            }
+            else if (activeSlider == 3)
+            {
+                while (points[temp].activeInHierarchy || temp >=12)
+                {
+                    temp = Random.Range(0, points.Length - 4);
+                }
+            }
+
+          while (points[temp].activeInHierarchy)
+          {
+               temp = Random.Range(0, points.Length);
+          }
+        points[temp].SetActive(true);
+    }
+
+    void SliderReveal()
+    {
+        int rand = Random.Range(0, 2);
+        if (rand == 0)
         {
-            
-            int temp = Random.Range(0, points.Length);
-            points[temp].SetActive(true);
-            timer = 0.2f;
+            int i = Random.Range(0, sliders.Length);
+            sliders[i].SetActive(true);
+            activeSlider = i;
         }
     }
+
 
     void CheckForPoints()
     {
         for(int i = 0; i < points.Length; i++)
         {
-            if(points[i].active == true)
+            if(points[i].activeInHierarchy)
             {
                 pointsOnScreen = true;
-                break;
+                return;
+            }
+        }
+       
+        for (int i = 0; i < sliders.Length; i++)
+        {
+            if (sliders[i].activeInHierarchy)
+            {
+                pointsOnScreen = true;
+                return;
             }
             pointsOnScreen = false;
         }

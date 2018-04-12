@@ -31,7 +31,7 @@ public class InstrumentBase : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        LoadGame();
+        //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;

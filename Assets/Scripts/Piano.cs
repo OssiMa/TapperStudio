@@ -16,6 +16,11 @@ public class Piano : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetKeyDown(KeyCode.Space) && active == true)
+        {
+            Destroy(note);
+
+        }
 		
 	}
 
@@ -24,6 +29,7 @@ public class Piano : MonoBehaviour {
         active = true;
         if (col.gameObject.tag == "Note")
         {
+
             note = col.gameObject;
 
         }
@@ -32,6 +38,7 @@ public class Piano : MonoBehaviour {
     void OnTriggerExit2D(Collider2D col)
     {
         active = false;
+        Destroy(note);
     }
 
 }

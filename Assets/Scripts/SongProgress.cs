@@ -10,6 +10,15 @@ using UnityEngine.UI;
 public class SongProgress : MonoBehaviour {
 
     public InstrumentBase drumBase;
+    public InstrumentBase guitarBase;
+    public InstrumentBase pianoBase;
+
+    GameObject activeInstrument;
+    GameObject[] instruments;
+
+    public List<GameObject> inactives;
+
+    InstrumentBase activeBase;
 
     public Slider Progress;
     public Text SongText;
@@ -28,24 +37,24 @@ public class SongProgress : MonoBehaviour {
     public List<string> UsedNames;
 
     public string currentAlbum;
-    public string currentAlbumFirstOf;
-    public string currentAlbumLastOf;
-    public string currentAlbumFirstDual;
-    public string currentAlbumLastDual;
-    public string currentAlbumFirstTo;
-    public string currentAlbumLastTo;
-    public string albumWholeName;    
+    string currentAlbumFirstOf;
+    string currentAlbumLastOf;
+    string currentAlbumFirstDual;
+    string currentAlbumLastDual;
+    string currentAlbumFirstTo;
+    string currentAlbumLastTo;
+    string albumWholeName;    
 
     public string currentSong;
-    public string currentSongFirstOf;
-    public string currentSongLastOf;
-    public string currentSongFirstDual;
-    public string currentSongLastDual;
-    public string currentSongFirstTo;
-    public string currentSongLastTo;
+    string currentSongFirstOf;
+    string currentSongLastOf;
+    string currentSongFirstDual;
+    string currentSongLastDual;
+    string currentSongFirstTo;
+    string currentSongLastTo;
 
     public float songXP;
-    public float songXPMax = 20;
+    float songXPMax = 20;
     public float songCount = 1;
     public float currency = 0;
     float songCountMax = 3;
@@ -59,7 +68,13 @@ public class SongProgress : MonoBehaviour {
     void Start () {
         PossibleAlbums();
         Progress.maxValue = songXPMax;
-
+        instruments = GameObject.FindGameObjectsWithTag("Instrument");
+        foreach(GameObject ins in instruments)
+        {
+            ins.SetActive(false);
+        }
+        instruments[0].SetActive(true);
+        CheckActive();
 	}
 	
 	// Update is called once per frame
@@ -69,7 +84,7 @@ public class SongProgress : MonoBehaviour {
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
         currencyText.text = currency + "£";
-        songXP += 0.01f * drumBase.level;
+        PassiveGene();
 
         if (songXP >= songXPMax)
         {
@@ -86,7 +101,7 @@ public class SongProgress : MonoBehaviour {
         }
         if (songCount > songCountMax)
         {
-            drumBase.exp += 505;
+            activeBase.exp += 505;
             songCount = 1;
             AlbumsCreated += 1;
             UsedNames.Add(currentAlbum);
@@ -107,7 +122,30 @@ public class SongProgress : MonoBehaviour {
         songXP += 1;
     }
 
-    //Adds possible names To albums with different namestructures
+    void PassiveGene()
+    {
+
+
+        songXP += 0.005f;
+    }
+
+    public void CheckActive()
+    {
+        inactives.Clear();
+        foreach (GameObject ins in instruments)
+        {
+            if (ins.activeInHierarchy)
+            {
+                activeBase = ins.GetComponent<InstrumentBase>();
+            }
+            else
+            {
+                inactives.Add(ins);
+            }
+        }
+    }
+
+    //Adds possible names to albums with different namestructures
     public void PossibleAlbums()
     {
         AlbumFirstNamesOf.Add("Chaos");
@@ -132,6 +170,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Toll");
         AlbumFirstNamesOf.Add("Story");
         AlbumFirstNamesOf.Add("Entropy");
+        AlbumFirstNamesOf.Add("Hunter");
 
 
         AlbumLastNamesOf.Add("Love");
@@ -146,7 +185,7 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("Souls");
         AlbumLastNamesOf.Add("Men");
         AlbumLastNamesOf.Add("Gods");
-        AlbumLastNamesOf.Add("The Storm");
+        AlbumLastNamesOf.Add("the Storm");
         AlbumLastNamesOf.Add("War");
         AlbumLastNamesOf.Add("Tradition");
         AlbumLastNamesOf.Add("Time");
@@ -248,7 +287,7 @@ public class SongProgress : MonoBehaviour {
 
     }
 
-    //Randomizes To namestructure and name of a new album
+    //Randomizes the namestructure and name of a new album
     public void NewAlbum()
     {
 
@@ -303,7 +342,7 @@ public class SongProgress : MonoBehaviour {
                 int lTo = lastNamePicker.Next(AlbumLastNamesTo.Count);
                 currentAlbumLastTo = AlbumLastNamesTo[lTo];
 
-                AlbumName.text = currentAlbumFirstTo + " To " + currentAlbumLastTo;
+                AlbumName.text = currentAlbumFirstTo + " to " + currentAlbumLastTo;
             }
 
             currentAlbum = AlbumName.text.ToString();
@@ -312,7 +351,7 @@ public class SongProgress : MonoBehaviour {
 
     }
 
-    //Randomizes To namestructure and name of a new song
+    //Randomizes the namestructure and name of a new song
     public void NewSong()
     {
 

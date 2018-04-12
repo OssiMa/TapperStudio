@@ -1,4 +1,8 @@
 sceneSetups:
-- path: Assets/Scenes/Album test.unity
+<<<<<<< HEAD
+- path: Assets/Scenes/Piano proto.unity
+=======
+- path: Assets/Scenes/Multiple instrument test.unity
+>>>>>>> BranchO
   isLoaded: 1
   isActive: 1

@@ -23,13 +23,14 @@ public class Guitar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         CheckForPoints();
-        if(pointsOnScreen == false)
+        if(pointsOnScreen == false)                                                 //If no clickables left, spawn more
         {
             activeSlider = 5;
             StartCoroutine(BigReveal());
         }
 	}
 
+    //Hides all the clickable objects
     void Hide()
     {
         foreach(GameObject point in points)
@@ -44,6 +45,7 @@ public class Guitar : MonoBehaviour {
 
     }
 
+    //Starts the generation of new clickables
     IEnumerator BigReveal()
     {
         SliderReveal();
@@ -54,6 +56,7 @@ public class Guitar : MonoBehaviour {
         }
     }
 
+    //Randomizes the balls and reveals them
     void Reveal()
     {
         int temp= Random.Range(0, points.Length);
@@ -94,6 +97,7 @@ public class Guitar : MonoBehaviour {
         points[temp].SetActive(true);
     }
 
+    //Decides if slider is revealed and reveals it if was chosen to
     void SliderReveal()
     {
         int rand = Random.Range(0, 2);
@@ -105,7 +109,7 @@ public class Guitar : MonoBehaviour {
         }
     }
 
-
+    //Checks if there are any clickables left
     void CheckForPoints()
     {
         for(int i = 0; i < points.Length; i++)

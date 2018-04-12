@@ -16,7 +16,7 @@ public class InstrumentBase : MonoBehaviour {
     public Text nxtLvl;
     public Text comboText;
 
-    public float exp = 0;
+    public float exp = 0;       //instrument experience, don't confuse with song progress
     float startXp;
     float expToNext = 15;
     public float level = 1;
@@ -64,8 +64,6 @@ public class InstrumentBase : MonoBehaviour {
 
     public void Tap()
     {
-        exp += 1*combo;
-        progression.GainXP();
         if (comboUpkeep > 0)
         {
             comboUpkeep -= 2;
@@ -80,6 +78,8 @@ public class InstrumentBase : MonoBehaviour {
 
     public void ComboTap()
     {
+        exp += 1 * combo;
+        progression.GainXP();
         if (combo < 4)
         {
             comboStep += 1;
@@ -92,6 +92,19 @@ public class InstrumentBase : MonoBehaviour {
         if (comboUpkeep <11)
         {
             comboUpkeep += 3;
+        }
+    }
+
+    public void BigExpReward()
+    {
+        exp += 2 * combo;
+        progression.GainXP();
+        progression.GainXP();
+        progression.GainXP();
+        if(combo < 4)
+        {
+            combo += 1;
+            comboStep = 0;
         }
     }
 

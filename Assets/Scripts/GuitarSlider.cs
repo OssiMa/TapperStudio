@@ -10,8 +10,12 @@ public class GuitarSlider : MonoBehaviour {
 
     RectTransform Srect;
 
+    InstrumentBase guitar;
+
+    
     // Use this for initialization
     void Start () {
+        guitar = transform.parent.gameObject.GetComponent<InstrumentBase>();
         s = GetComponent<Slider>();
         r = Random.Range(0, 2);
         if (r == 0)
@@ -23,6 +27,8 @@ public class GuitarSlider : MonoBehaviour {
             s.direction = Slider.Direction.LeftToRight;
         }
         Resize();
+        
+        
 	}
 	
 	// Update is called once per frame
@@ -59,6 +65,7 @@ public class GuitarSlider : MonoBehaviour {
         if (s.value == 1)
         {
             s.value = 0;
+            guitar.BigExpReward();
             this.gameObject.SetActive(false);
         }
     }

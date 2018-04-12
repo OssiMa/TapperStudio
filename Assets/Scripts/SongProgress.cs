@@ -10,6 +10,12 @@ using UnityEngine.UI;
 public class SongProgress : MonoBehaviour {
 
     public InstrumentBase drumBase;
+    public InstrumentBase guitarBase;
+    public InstrumentBase pianoBase;
+
+    GameObject activeInstrument;
+
+    InstrumentBase activeBase;
 
     public Slider Progress;
     public Text SongText;
@@ -59,7 +65,7 @@ public class SongProgress : MonoBehaviour {
     void Start () {
         PossibleAlbums();
         Progress.maxValue = songXPMax;
-
+        CheckActive();
 	}
 	
 	// Update is called once per frame
@@ -69,7 +75,7 @@ public class SongProgress : MonoBehaviour {
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
         currencyText.text = currency + "£";
-        songXP += 0.01f * drumBase.level;
+        songXP += 0.01f * activeBase.level;
 
         if (songXP >= songXPMax)
         {
@@ -86,7 +92,7 @@ public class SongProgress : MonoBehaviour {
         }
         if (songCount > songCountMax)
         {
-            drumBase.exp += 505;
+            activeBase.exp += 505;
             songCount = 1;
             AlbumsCreated += 1;
             UsedNames.Add(currentAlbum);
@@ -107,7 +113,21 @@ public class SongProgress : MonoBehaviour {
         songXP += 1;
     }
 
-    //Adds possible names To albums with different namestructures
+    public void CheckActive()
+    {
+        activeInstrument = GameObject.FindWithTag("Instrument");
+        print(activeInstrument.name);
+        if(activeInstrument == null)
+        {
+            print("oops");
+        }
+        else
+        {
+            activeBase = activeInstrument.GetComponent<InstrumentBase>();
+        }
+    }
+
+    //Adds possible names to albums with different namestructures
     public void PossibleAlbums()
     {
         AlbumFirstNamesOf.Add("Chaos");
@@ -249,7 +269,7 @@ public class SongProgress : MonoBehaviour {
 
     }
 
-    //Randomizes To namestructure and name of a new album
+    //Randomizes the namestructure and name of a new album
     public void NewAlbum()
     {
 
@@ -313,7 +333,7 @@ public class SongProgress : MonoBehaviour {
 
     }
 
-    //Randomizes To namestructure and name of a new song
+    //Randomizes the namestructure and name of a new song
     public void NewSong()
     {
 

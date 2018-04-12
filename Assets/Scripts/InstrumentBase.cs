@@ -22,16 +22,16 @@ public class InstrumentBase : MonoBehaviour {
     public float level = 1;
     float nextLevel = 2;
 
-    float combo = 1;
-    float comboStep;
-    float comboStepMax = 20;
-    float comboUpkeep = 5;
+    public float combo = 1;
+    public float comboStep;
+    public float comboStepMax = 20;
+    public float comboUpkeep = 5;
 
 
 	// Use this for initialization
 	void Start ()
     {
-        //LoadGame();
+        LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;

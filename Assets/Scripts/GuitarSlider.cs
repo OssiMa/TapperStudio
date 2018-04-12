@@ -8,8 +8,10 @@ public class GuitarSlider : MonoBehaviour {
     Slider s;
     int r;
 
-	// Use this for initialization
-	void Start () {
+    RectTransform Srect;
+
+    // Use this for initialization
+    void Start () {
         s = GetComponent<Slider>();
         r = Random.Range(0, 2);
         if (r == 0)
@@ -20,12 +22,30 @@ public class GuitarSlider : MonoBehaviour {
         {
             s.direction = Slider.Direction.LeftToRight;
         }
+        Resize();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    void Resize()
+    {
+        r = Random.Range(2, 5);
+        Srect = s.GetComponent<RectTransform>();
+        Srect.sizeDelta = new Vector2(60 * r, Srect.sizeDelta.y);
+        if (r == 3)
+        {
+            r = Random.Range(2,4);
+            Srect.transform.position = new Vector2(60*r , Srect.transform.position.y);
+        }
+        else if (r == 2)
+        {
+            r = Random.Range(1, 4);
+            Srect.transform.position = new Vector2(73*r, Srect.transform.position.y);
+        }
+    }
 
     public void SliderCheck()
     {

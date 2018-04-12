@@ -132,6 +132,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Toll");
         AlbumFirstNamesOf.Add("Story");
         AlbumFirstNamesOf.Add("Entropy");
+        AlbumFirstNamesOf.Add("Hunter");
 
 
         AlbumLastNamesOf.Add("Love");
@@ -146,7 +147,7 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("Souls");
         AlbumLastNamesOf.Add("Men");
         AlbumLastNamesOf.Add("Gods");
-        AlbumLastNamesOf.Add("The Storm");
+        AlbumLastNamesOf.Add("the Storm");
         AlbumLastNamesOf.Add("War");
         AlbumLastNamesOf.Add("Tradition");
         AlbumLastNamesOf.Add("Time");
@@ -303,7 +304,7 @@ public class SongProgress : MonoBehaviour {
                 int lTo = lastNamePicker.Next(AlbumLastNamesTo.Count);
                 currentAlbumLastTo = AlbumLastNamesTo[lTo];
 
-                AlbumName.text = currentAlbumFirstTo + " To " + currentAlbumLastTo;
+                AlbumName.text = currentAlbumFirstTo + " to " + currentAlbumLastTo;
             }
 
             currentAlbum = AlbumName.text.ToString();

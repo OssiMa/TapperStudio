@@ -14,6 +14,9 @@ public class SongProgress : MonoBehaviour {
     public InstrumentBase pianoBase;
 
     GameObject activeInstrument;
+    GameObject[] instruments;
+
+    public List<GameObject> inactives;
 
     InstrumentBase activeBase;
 
@@ -34,24 +37,24 @@ public class SongProgress : MonoBehaviour {
     public List<string> UsedNames;
 
     public string currentAlbum;
-    public string currentAlbumFirstOf;
-    public string currentAlbumLastOf;
-    public string currentAlbumFirstDual;
-    public string currentAlbumLastDual;
-    public string currentAlbumFirstTo;
-    public string currentAlbumLastTo;
-    public string albumWholeName;    
+    string currentAlbumFirstOf;
+    string currentAlbumLastOf;
+    string currentAlbumFirstDual;
+    string currentAlbumLastDual;
+    string currentAlbumFirstTo;
+    string currentAlbumLastTo;
+    string albumWholeName;    
 
     public string currentSong;
-    public string currentSongFirstOf;
-    public string currentSongLastOf;
-    public string currentSongFirstDual;
-    public string currentSongLastDual;
-    public string currentSongFirstTo;
-    public string currentSongLastTo;
+    string currentSongFirstOf;
+    string currentSongLastOf;
+    string currentSongFirstDual;
+    string currentSongLastDual;
+    string currentSongFirstTo;
+    string currentSongLastTo;
 
     public float songXP;
-    public float songXPMax = 20;
+    float songXPMax = 20;
     public float songCount = 1;
     public float currency = 0;
     float songCountMax = 3;
@@ -65,6 +68,12 @@ public class SongProgress : MonoBehaviour {
     void Start () {
         PossibleAlbums();
         Progress.maxValue = songXPMax;
+        instruments = GameObject.FindGameObjectsWithTag("Instrument");
+        foreach(GameObject ins in instruments)
+        {
+            ins.SetActive(false);
+        }
+        instruments[0].SetActive(true);
         CheckActive();
 	}
 	
@@ -75,7 +84,7 @@ public class SongProgress : MonoBehaviour {
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
         currencyText.text = currency + "£";
-        songXP += 0.01f * activeBase.level;
+        PassiveGene();
 
         if (songXP >= songXPMax)
         {
@@ -113,17 +122,26 @@ public class SongProgress : MonoBehaviour {
         songXP += 1;
     }
 
+    void PassiveGene()
+    {
+
+
+        songXP += 0.005f;
+    }
+
     public void CheckActive()
     {
-        activeInstrument = GameObject.FindWithTag("Instrument");
-        print(activeInstrument.name);
-        if(activeInstrument == null)
+        inactives.Clear();
+        foreach (GameObject ins in instruments)
         {
-            print("oops");
-        }
-        else
-        {
-            activeBase = activeInstrument.GetComponent<InstrumentBase>();
+            if (ins.activeInHierarchy)
+            {
+                activeBase = ins.GetComponent<InstrumentBase>();
+            }
+            else
+            {
+                inactives.Add(ins);
+            }
         }
     }
 

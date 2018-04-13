@@ -50,6 +50,10 @@ public class GuitarSlider : MonoBehaviour {
             r = Random.Range(1, 4);
             Srect.transform.position = new Vector2(20+65*r, Srect.transform.position.y);
         }
+        else
+        {
+            Srect.transform.position = new Vector2(150, Srect.transform.position.y);
+        }
     }
 
     public void SliderCheck()

@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PianoActivator.cs" />
+    <Compile Include="Assets\Scripts\ButtonMenuScript.cs" />
     <Compile Include="Assets\Scripts\Drums.cs" />
     <Compile Include="Assets\Scripts\Guitar.cs" />
     <Compile Include="Assets\Scripts\GuitarSlider.cs" />
@@ -104,6 +105,8 @@
     <Compile Include="Assets\Scripts\Save.cs" />
     <Compile Include="Assets\Scripts\SongProgress.cs" />
     <Compile Include="Assets\Scripts\TouchControls.cs" />
+    <Compile Include="Assets\Scripts\buttonInstrumentScript.cs" />
+    <Compile Include="Assets\Scripts\menuExtendScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

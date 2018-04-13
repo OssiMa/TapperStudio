@@ -4,41 +4,49 @@ using UnityEngine;
 
 public class Piano : MonoBehaviour {
 
-    public InstrumentBase instrumentBase;
+    //public InstrumentBase instrumentBase;
 
     bool active = false;
+    public GameObject activator;
     GameObject note;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if(Input.GetKeyDown(KeyCode.Space) && active == true)
-        {
-            Destroy(note);
+	void Update ()
+    {
 
-        }
-		
 	}
 
-    void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        active = true;
-        if (col.gameObject.tag == "Note")
-        {
+        
+        
+            active = true;
+            if (col.gameObject.tag == "Note")
+            {
 
-            note = col.gameObject;
+                note = col.gameObject;
 
-        }
+            }
+        
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
         active = false;
-        Destroy(note);
+        //Destroy(note);
     }
-
+    public void Destroy()
+    {
+        if (active == true)
+        {
+            Destroy(note);
+            active = false;
+        }
+    }
 }

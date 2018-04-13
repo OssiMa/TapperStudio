@@ -16,6 +16,17 @@ public class GuitarSlider : MonoBehaviour {
     // Use this for initialization
     void Start () {
         guitar = transform.parent.gameObject.GetComponent<InstrumentBase>();
+        
+        Resize();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public void Resize()
+    {
         s = GetComponent<Slider>();
         r = Random.Range(0, 2);
         if (r == 0)
@@ -26,21 +37,9 @@ public class GuitarSlider : MonoBehaviour {
         {
             s.direction = Slider.Direction.LeftToRight;
         }
-        Resize();
-        
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void Resize()
-    {
         r = Random.Range(2, 5);
         Srect = s.GetComponent<RectTransform>();
-        Srect.sizeDelta = new Vector2(60 * r, Srect.sizeDelta.y);
+        Srect.sizeDelta = new Vector2(50 * r, Srect.sizeDelta.y);
         if (r == 3)
         {
             r = Random.Range(2,4);
@@ -49,7 +48,11 @@ public class GuitarSlider : MonoBehaviour {
         else if (r == 2)
         {
             r = Random.Range(1, 4);
-            Srect.transform.position = new Vector2(73*r, Srect.transform.position.y);
+            Srect.transform.position = new Vector2(20+65*r, Srect.transform.position.y);
+        }
+        else
+        {
+            Srect.transform.position = new Vector2(150, Srect.transform.position.y);
         }
     }
 

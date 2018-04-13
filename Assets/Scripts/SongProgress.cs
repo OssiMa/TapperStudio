@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 
 
@@ -12,13 +13,12 @@ public class SongProgress : MonoBehaviour {
     public InstrumentBase drumBase;
     public InstrumentBase guitarBase;
     public InstrumentBase pianoBase;
+    InstrumentBase activeBase;
 
     GameObject activeInstrument;
     GameObject[] instruments;
 
     public List<GameObject> inactives;
-
-    InstrumentBase activeBase;
 
     public Slider Progress;
     public Text SongText;
@@ -60,6 +60,8 @@ public class SongProgress : MonoBehaviour {
     float songCountMax = 3;
     public float AlbumsCreated;
 
+    float comboCooler = 100;
+
 
 
 
@@ -68,7 +70,7 @@ public class SongProgress : MonoBehaviour {
     void Start () {
         PossibleAlbums();
         Progress.maxValue = songXPMax;
-        instruments = GameObject.FindGameObjectsWithTag("Instrument");
+        instruments = GameObject.FindGameObjectsWithTag("Instrument").OrderBy(instruments => instruments.name).ToArray();
         foreach(GameObject ins in instruments)
         {
             ins.SetActive(false);
@@ -119,14 +121,31 @@ public class SongProgress : MonoBehaviour {
     //Grants XP to songs
     public void GainXP()
     {
-        songXP += 1;
+        songXP += 0.1f;
     }
 
     void PassiveGene()
     {
-
-
-        songXP += 0.005f;
+        float geneLvl = 0;
+        float geneCombo = 0;
+        foreach (GameObject ins in inactives)
+        {
+            geneLvl += ins.GetComponent<InstrumentBase>().level;
+            geneCombo += ins.GetComponent<InstrumentBase>().combo;
+        }
+        songXP += 0.01f + geneLvl * geneCombo * 0.005f * 0.1f;              //WIP, feel free to play with and test for optimal generation
+        comboCooler -= 0.1f;
+        if (comboCooler <= 0)
+        {
+            foreach (GameObject ins in inactives)
+            {
+                if (ins.GetComponent<InstrumentBase>().combo > 1)
+                {
+                    ins.GetComponent<InstrumentBase>().combo -= 1;
+                }
+            }
+            comboCooler = 100;
+        }
     }
 
     public void CheckActive()

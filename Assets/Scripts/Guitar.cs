@@ -106,6 +106,7 @@ public class Guitar : MonoBehaviour {
             int i = Random.Range(0, sliders.Length);
             sliders[i].SetActive(true);
             activeSlider = i;
+            sliders[i].GetComponent<GuitarSlider>().Resize();
         }
     }
 

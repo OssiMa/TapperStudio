@@ -37,8 +37,8 @@ public class Drums : MonoBehaviour {
         int temp;
         for (int i = 0; i < plateCount.Length-2; i++)
         {
-            temp = Random.Range(0, plateCount.Length);
-            Transform t = transform.GetChild(temp);
+            temp = Random.Range(0, plateCount.Length);                      //THIS
+            Transform t = plateCount[temp].transform;
             t.tag = "Active Plate";
             t.GetComponent<Image>().color = Color.green;
             t.GetComponent<Button>().onClick.AddListener(GetComponent<InstrumentBase>().ComboTap);

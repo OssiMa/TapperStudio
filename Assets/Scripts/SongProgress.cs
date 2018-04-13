@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 
 
@@ -69,7 +70,7 @@ public class SongProgress : MonoBehaviour {
     void Start () {
         PossibleAlbums();
         Progress.maxValue = songXPMax;
-        instruments = GameObject.FindGameObjectsWithTag("Instrument");
+        instruments = GameObject.FindGameObjectsWithTag("Instrument").OrderBy(instruments => instruments.name).ToArray();
         foreach(GameObject ins in instruments)
         {
             ins.SetActive(false);

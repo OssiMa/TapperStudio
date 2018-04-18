@@ -12,6 +12,7 @@ public class InstrumentBase : MonoBehaviour {
 
 
     public Slider xpBar;
+    public Slider fadeSlider;
     public Text currLvl;
     public Text nxtLvl;
     public Text comboText;
@@ -22,10 +23,11 @@ public class InstrumentBase : MonoBehaviour {
     public float level = 1;
     float nextLevel = 2;
 
-    public float combo = 1;
-    public float comboStep;
-    public float comboStepMax = 20;
-    public float comboUpkeep = 5;
+    public float combo = 1;                 //current combo
+    public float comboStep;                 //when at combostemax, combo increases
+    public float comboStepMax = 20;         //combo up when reached
+    public float comboUpkeep = 5;           //mistakes player can make before losing combo
+    public float comboFade = 1000;          //how long the instrument needs to be inactive to lose combo
 
 
 	// Use this for initialization
@@ -34,6 +36,7 @@ public class InstrumentBase : MonoBehaviour {
         //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
+        fadeSlider.maxValue = comboFade;
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
@@ -42,25 +45,28 @@ public class InstrumentBase : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        fadeSlider.value = comboFade;
         comboText.text = "Combo: " + combo;
         xpBar.value = exp;
         nxtLvl.text = "" + nextLevel;
         currLvl.text = "" + level;
+        LvlUp();
+        SaveGame();
+	}
 
+    void LvlUp()
+    {
         if (exp >= expToNext)
         {
             level += 1;
             nextLevel += 1;
             startXp = expToNext;
-            expToNext = expToNext*2.5f;
+            expToNext = expToNext * 2.5f;
             xpBar.minValue = startXp;
             xpBar.maxValue = expToNext;
 
         }
-
-
-        SaveGame();
-	}
+    }
 
     public void Tap()
     {
@@ -93,6 +99,24 @@ public class InstrumentBase : MonoBehaviour {
         {
             comboUpkeep += 3;
         }
+        ComboFadeUp();
+    }
+
+    public void ComboFading()
+    {
+        if (combo > 1)
+        {
+            combo -= 1;
+            comboFade = 500;
+        }
+    }
+
+    void ComboFadeUp()
+    {
+        if (comboFade < 950)
+        {
+            comboFade += 50;
+        }
     }
 
     public void BigExpReward()
@@ -106,6 +130,7 @@ public class InstrumentBase : MonoBehaviour {
             combo += 1;
             comboStep = 0;
         }
+        ComboFadeUp();
     }
 
     private void OnMouseOver()

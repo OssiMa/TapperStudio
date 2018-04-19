@@ -19,6 +19,8 @@ public class Piano : MonoBehaviour {
     System.Random shortOrLong = new System.Random();
     System.Random noteSize = new System.Random();
 
+
+
     // Use this for initialization
     void Start()
     {
@@ -33,7 +35,7 @@ public class Piano : MonoBehaviour {
         {
             spawnNote();
         }
-        
+
     }
 
 
@@ -93,7 +95,7 @@ public class Piano : MonoBehaviour {
 
         if (notePosition == 1)
         {
-            longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 2.5f);
+            longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 4f);
         }
         if (notePosition == 2)
         {

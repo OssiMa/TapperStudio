@@ -116,8 +116,13 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 948
+<<<<<<< HEAD
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
+=======
+  m_MinSize: {x: 887, y: 342}
+  m_MaxSize: {x: 16012, y: 8042}
+>>>>>>> Henkka
   vertical: 0
   controlID: 9
 --- !u!114 &6
@@ -188,6 +193,7 @@ MonoBehaviour:
     y: 0
     width: 1021
     height: 375
+<<<<<<< HEAD
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 16}
@@ -196,6 +202,17 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
+=======
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &7
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -279,8 +296,13 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 948
+<<<<<<< HEAD
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
+=======
+  m_MinSize: {x: 610, y: 342}
+  m_MaxSize: {x: 12010, y: 8042}
+>>>>>>> Henkka
   vertical: 1
   controlID: 10
 --- !u!114 &13
@@ -397,19 +419,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Resources
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Resources
+=======
+    - Assets/Graphics
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Graphics
+>>>>>>> Henkka
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ossiman1\Desktop\TapperStudio
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 9c000100
     m_LastClickedID: 65692
     m_ExpandedIDs: 000000008e26000070270000722700009c00010000ca9a3bffffff7f
+=======
+    m_SelectedIDs: f2250000
+    m_LastClickedID: 9714
+    m_ExpandedIDs: 000000000a250000f225000000ca9a3bffffff7f
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: GuitarIcon
@@ -425,7 +461,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 4
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 8}
+=======
+      m_ClientGUIView: {fileID: 6}
+>>>>>>> Henkka
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -437,7 +477,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000008e26000070270000
+=======
+    m_ExpandedIDs: 000000000a250000f2250000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,7 +508,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -555,7 +599,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: ec92f7ffd4f4ffff3efbffff00000000cc290000da290000122a0000122b0000382b0000
+=======
+    m_ExpandedIDs: c0fbffff000000000227000070270000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,9 +658,15 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 146.44661, y: 700.81244, z: 0}
     speed: 2
     m_Value: {x: 146.44661, y: 700.81244, z: 0}
+=======
+    m_Target: {x: -0.30573818, y: 0.14370061, z: 0}
+    speed: 2
+    m_Value: {x: -0.30573818, y: 0.14370061, z: 0}
+>>>>>>> Henkka
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -639,9 +693,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 500.39026
     speed: 2
     m_Value: 500.39026
+=======
+    m_Target: 8.121964
+    speed: 2
+    m_Value: 8.121964
+>>>>>>> Henkka
   m_Ortho:
     m_Target: 1
     speed: 2

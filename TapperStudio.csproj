@@ -116,7 +116,7 @@
     <Compile Include="Assets\Scripts\menuExtendScript.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Scripts\InvisibleMask.shader" />
+    <None Include="Assets\Scripts\playAreaRenderer.shader" />
     <None Include="Assets\UI\NewSurfaceShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

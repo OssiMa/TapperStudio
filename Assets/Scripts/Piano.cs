@@ -13,106 +13,164 @@ public class Piano : MonoBehaviour {
     public GameObject activator4;
     public GameObject activator5;
 
+    public bool spawnPoint1 = true;
+    public bool spawnPoint2 = true;
+    public bool spawnPoint3 = true;
+    public bool spawnPoint4 = true;
+    public bool spawnPoint5 = true;
 
-    System.Random r = new System.Random();
+    float maxTime = 0.5f;
+    float minTime = 0.2f;
+
+    private float time;
+    private float spawnTime;
+
     System.Random newNote = new System.Random();
     System.Random shortOrLong = new System.Random();
-    System.Random noteSize = new System.Random();
-
-
 
     // Use this for initialization
     void Start()
     {
-
+        SetRandomTime();
+        time = minTime;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
-        int noteSpawn = r.Next(1, 40);
-        if(noteSpawn == 1)
+        //Counts up
+        time += Time.deltaTime;
+
+        //Check if its the right time to spawn the object
+        if (time >= spawnTime)
         {
             spawnNote();
+            SetRandomTime();
         }
-
     }
 
+    void SetRandomTime()
+    {
+        spawnTime = Random.Range(minTime, maxTime);
+    }
 
     void spawnNote()
     {
-        int whichNote = shortOrLong.Next(1,3);
+        time = 0;
+        int whichNote = shortOrLong.Next(1,5);
         if (whichNote == 1)
         {
             spawnLongNote();
         }
         else
         {
-            
-            Instantiate(note);
-        }
-        int notePosition = newNote.Next(1,6);
-        if (notePosition == 1)
-        {
-            note.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 2.5f);
-        }
-        if (notePosition == 2)
-        {
-            note.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 2.5f);
-        }
-        if (notePosition == 3)
-        {
-            note.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 2.5f);
-        }
-        if (notePosition == 4)
-        {
-            note.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 2.5f);
-        }
-        if (notePosition == 5)
-        {
-            note.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 2.5f);
+
+
+            int notePosition = newNote.Next(1, 6);
+
+            //while (spawnPoint1 == false && notePosition == 1)
+            //{
+            //    notePosition = newNote.Next(1, 6);
+            //}
+            //while (spawnPoint2 == false && notePosition == 2)
+            //{
+            //    notePosition = newNote.Next(1, 6);
+            //}
+            //while (spawnPoint3 == false && notePosition == 3)
+            //{
+            //    notePosition = newNote.Next(1, 6);
+            //}
+            //while (spawnPoint4 == false && notePosition == 4)
+            //{
+            //    notePosition = newNote.Next(1, 6);
+            //}
+            //while (spawnPoint5 == false && notePosition == 5)
+            //{
+            //    notePosition = newNote.Next(1, 6);
+            //}
+
+
+            if (notePosition == 1 && spawnPoint1 == true)
+            {
+                Instantiate(note);
+                note.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 2.5f);
+            }
+            if (notePosition == 2 && spawnPoint2 == true)
+            {
+                Instantiate(note);
+                note.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 2.5f);
+            }
+            if (notePosition == 3 && spawnPoint3 == true)
+            {
+                Instantiate(note);
+                note.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 2.5f);
+            }
+            if (notePosition == 4 && spawnPoint4 == true)
+            {
+                Instantiate(note);
+                note.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 2.5f);
+            }
+            if (notePosition == 5 && spawnPoint5 == true)
+            {
+                Instantiate(note);
+                note.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 2.5f);
+            }
+            if (spawnPoint1 == false && spawnPoint2 == false && spawnPoint3 == false && spawnPoint4 == false && spawnPoint5 == false)
+            {
+                Debug.Log("mitä vitun saatanaa");
+            }
+            else
+            {
+                Debug.Log("maukasta spagettia");
+            }
         }
     }
 
     void spawnLongNote()
     {
          int notePosition = newNote.Next(1,6);
-        Instantiate(longNote);
+        longNote.transform.localScale = new Vector2(0.2f, Random.Range(2, 5));
 
-        int whichSize = noteSize.Next(1, 4);
-        if (whichSize == 1)
+        if (notePosition == 1 && spawnPoint1 == true)
         {
-            longNote.transform.localScale = new Vector2(0.2f, 2f);
+            Instantiate(longNote);
+            longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 7f);
+            spawnPoint1 = false;
         }
-        if (whichSize == 2)
+        if (notePosition == 2 && spawnPoint2 == true)
         {
-            longNote.transform.localScale = new Vector2(0.2f, 3f);
+            Instantiate(longNote);
+            longNote.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 7f);
+            spawnPoint2 = false;
         }
-        if (whichSize == 3)
+        if (notePosition == 3 && spawnPoint3 == true)
         {
-            longNote.transform.localScale = new Vector2(0.2f, 5f);
+            Instantiate(longNote);
+            longNote.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 7f);
+            spawnPoint3 = false;
         }
-
-        if (notePosition == 1)
+        if (notePosition == 4 && spawnPoint4 == true)
         {
-            longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 4f);
+            Instantiate(longNote);
+            longNote.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 7f);
+            spawnPoint4 = false;
         }
-        if (notePosition == 2)
+        if (notePosition == 5 && spawnPoint5 == true)
         {
-            longNote.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 2.5f);
+            Instantiate(longNote);
+            longNote.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 7f);
+            spawnPoint5 = false;
         }
-        if (notePosition == 3)
+        if (spawnPoint1 == false && spawnPoint2 == false && spawnPoint3 == false && spawnPoint4 == false && spawnPoint5 == false)
         {
-            longNote.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 2.5f);
+            Debug.Log("mitä vitun saatanaa");
         }
-        if (notePosition == 4)
+        else
         {
-            longNote.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 2.5f);
-        }
-        if (notePosition == 5)
-        {
-            longNote.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 2.5f);
+            Debug.Log("maukasta spagettia");
         }
 
     }
+
+
 }

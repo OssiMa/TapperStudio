@@ -94,19 +94,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PianoActivator.cs" />
+    <Compile Include="Assets\Scripts\AlbumChangeAnimationScript.cs" />
     <Compile Include="Assets\Scripts\ButtonMenuScript.cs" />
     <Compile Include="Assets\Scripts\Drums.cs" />
     <Compile Include="Assets\Scripts\Guitar.cs" />
     <Compile Include="Assets\Scripts\GuitarSlider.cs" />
     <Compile Include="Assets\Scripts\InstrumentBase.cs" />
+    <Compile Include="Assets\Scripts\InvisibleScript.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\Piano.cs" />
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\Save.cs" />
+    <Compile Include="Assets\Scripts\SetRenderQueue.cs" />
     <Compile Include="Assets\Scripts\SongProgress.cs" />
     <Compile Include="Assets\Scripts\TouchControls.cs" />
     <Compile Include="Assets\Scripts\buttonInstrumentScript.cs" />
     <Compile Include="Assets\Scripts\menuExtendScript.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\UI\GradientShader.shader" />
+    <None Include="Assets\UI\InvisibleMaskShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

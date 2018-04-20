@@ -27,11 +27,17 @@ public class NewItemGenerator : MonoBehaviour {
 
     Item item;
 
-    string[] instruments = new string[] {"Drums", "Guitar", "Piano" };
+    Sprite[] drums;
+    Sprite[] guitar;
+    Sprite[] piano;
+
     int rarityVal = 0;                      // rarityval = item rarity?
 
     void Start()
     {
+        drums = Resources.LoadAll<Sprite>("DrumIcon");
+        guitar = Resources.LoadAll<Sprite>("GuitarIcon");
+        piano = Resources.LoadAll<Sprite>("PianoIcon");
     }
 
 
@@ -39,8 +45,9 @@ public class NewItemGenerator : MonoBehaviour {
     {
         item = new Item();
         item.slot = Random.Range(1,4);
-        item.instrument = instruments[Random.Range(0, instruments.Length - 1)];
+        item.instrument = Random.Range(1, 4);
         ItemInstrumentSlot();
+        IconChooser();
         Inventory.instance.AddItem(item);
     }
 
@@ -60,7 +67,23 @@ public class NewItemGenerator : MonoBehaviour {
         }
 
     }
-	
-    
 
+    void IconChooser()
+    {
+        if (item.instrument == 1)
+        {
+            item.icon = drums[item.slot-1];
+        }
+        else if (item.instrument == 2)
+        {
+            item.icon = guitar[item.slot-1];
+        }
+        if (item.instrument == 3)
+        {
+            item.icon = piano[item.slot-1];
+        }
+
+
+
+    }
 }

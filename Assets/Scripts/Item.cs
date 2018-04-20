@@ -5,7 +5,7 @@ public class Item : ScriptableObject{
     public Sprite icon = null;
     public string rarity = "";
     public string itemName = "";
-    public string instrument = "";
+    public int instrument = 0;
     public int slot = 0;
     public float generationBoost = 0;
     public float maxCombo = 0;

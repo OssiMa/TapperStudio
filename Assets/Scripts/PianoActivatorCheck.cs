@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PianoActivatorCheck : MonoBehaviour
 {
+
     public Piano piano;
 
     public InstrumentBase instrumentBase;
+    public SongProgress progression;
     bool active = false;
+    bool sliderActive = false;
+    bool sliderOn = false;
 
     GameObject note;
     GameObject longNote;
@@ -20,32 +24,42 @@ public class PianoActivatorCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(sliderOn == true)
+        {
+            instrumentBase.exp += 0.01f * instrumentBase.combo;
+            progression.songXP += 0.01f * instrumentBase.combo;
+        }
     }
     public void OnTriggerEnter2D(Collider2D col)
     {
 
-        active = true;
+
 
         if (col.gameObject.tag == "Note")
         {
 
             note = col.gameObject;
-
+            active = true;
         }
         if (col.gameObject.tag == "LongNote")
         {
 
             longNote = col.gameObject;
+            sliderActive = true;
         }
 
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        active = false;
+        if(col.gameObject == note)
+        {
+            active = false;
+        }
+
         if(col.gameObject == longNote)
         {
+            sliderActive = false;
             if (col.gameObject.transform.position.x == piano.activator1.transform.position.x && piano.spawnPoint1 == false)
             {
                 piano.spawnPoint1 = true;    
@@ -66,6 +80,7 @@ public class PianoActivatorCheck : MonoBehaviour
             {
                 piano.spawnPoint5 = true;
             }
+            sliderOn = false;
         }
         Destroy(col.gameObject);
 
@@ -79,5 +94,17 @@ public class PianoActivatorCheck : MonoBehaviour
             active = false;
         }
     }
+    public void sliderPressed()
+    {
+        
+        if(sliderActive == true)
+        {
+            sliderOn = true;
+        }
+    }
 
+    public void sliderNotPressed()
+    {
+        sliderOn = false;
+    }
 }

@@ -68,26 +68,26 @@ public class Piano : MonoBehaviour {
 
             int notePosition = newNote.Next(1, 6);
 
-            //while (spawnPoint1 == false && notePosition == 1)
-            //{
-            //    notePosition = newNote.Next(1, 6);
-            //}
-            //while (spawnPoint2 == false && notePosition == 2)
-            //{
-            //    notePosition = newNote.Next(1, 6);
-            //}
-            //while (spawnPoint3 == false && notePosition == 3)
-            //{
-            //    notePosition = newNote.Next(1, 6);
-            //}
-            //while (spawnPoint4 == false && notePosition == 4)
-            //{
-            //    notePosition = newNote.Next(1, 6);
-            //}
-            //while (spawnPoint5 == false && notePosition == 5)
-            //{
-            //    notePosition = newNote.Next(1, 6);
-            //}
+            while (spawnPoint1 == false && notePosition == 1)
+            {
+                notePosition = newNote.Next(1, 6);
+            }
+            while (spawnPoint2 == false && notePosition == 2)
+            {
+                notePosition = newNote.Next(1, 6);
+            }
+            while (spawnPoint3 == false && notePosition == 3)
+            {
+                notePosition = newNote.Next(1, 6);
+            }
+            while (spawnPoint4 == false && notePosition == 4)
+            {
+                notePosition = newNote.Next(1, 6);
+            }
+            while (spawnPoint5 == false && notePosition == 5)
+            {
+                notePosition = newNote.Next(1, 6);
+            }
 
 
             if (notePosition == 1 && spawnPoint1 == true)
@@ -121,7 +121,7 @@ public class Piano : MonoBehaviour {
             }
             else
             {
-                Debug.Log("maukasta spagettia");
+                 
             }
         }
     }
@@ -167,7 +167,7 @@ public class Piano : MonoBehaviour {
         }
         else
         {
-            Debug.Log("maukasta spagettia");
+            
         }
 
     }

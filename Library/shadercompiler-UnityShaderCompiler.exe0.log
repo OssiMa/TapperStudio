@@ -1,5 +1,6 @@
-Base path: C:/Program Files/Unity5.6/Editor/Data
+Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Cmd: preprocess
@@ -36,3 +37,5 @@ Cmd: compileSnippet
 
 Quitting shader compiler process
 >>>>>>> UI
+=======
+>>>>>>> Henkka

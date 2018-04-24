@@ -152,8 +152,6 @@ public class InstrumentBase : MonoBehaviour {
         bf.Serialize(file, save);
         file.Close();
 
-
-        Debug.Log("Game Saved");
     }
 
     private Save CreateSaveGameObject()

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Game+UI test.unity
+- path: Assets/Scenes/Piano proto.unity
   isLoaded: 1
   isActive: 1

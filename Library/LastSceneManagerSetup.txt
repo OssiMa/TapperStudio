@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/purchase_testing.unity
+=======
+- path: Assets/Scenes/Piano proto.unity
+>>>>>>> mergehere
   isLoaded: 1
   isActive: 1

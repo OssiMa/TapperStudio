@@ -14,17 +14,21 @@ public class PopUp : ScriptableObject {
     public string description;
     public List<string> stats = new List<string>();
 
-    public string stats1;
+    /*public string stats1;
     public string stats2;
     public string stats3;
-    public string stats4;
+    public string stats4;*/
 
     public int buttonAmount;
 
-    public Button button1;
-    public Button button2;
+    //public Button button1;
+    //public Button button2;
 
-    public float size;
+    public GameObject button1;
+    public GameObject button2;
+
+    public float sizeX;
+    public float sizeY;
 
     public Sprite pic;
     public Sprite bg;

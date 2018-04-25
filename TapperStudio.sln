@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-<<<<<<< HEAD
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio", "TapperStudio.csproj", "{AB026D50-50B9-1723-BFCA-1885C0F1209E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Editor.Plugins", "TapperStudio.Editor.Plugins.csproj", "{BC65DF70-E676-2901-338F-0EEDB96CC386}"
-=======
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio", "tapperstudio.csproj", "{02037F06-9035-354B-BECD-EDCC8CBFA973}"
->>>>>>> mergehere
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,7 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-<<<<<<< HEAD
 		{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,12 +25,6 @@ Global
 		{BC65DF70-E676-2901-338F-0EEDB96CC386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC65DF70-E676-2901-338F-0EEDB96CC386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC65DF70-E676-2901-338F-0EEDB96CC386}.Release|Any CPU.Build.0 = Release|Any CPU
-=======
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> mergehere
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

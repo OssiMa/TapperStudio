@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/NEW UI+game merge.unity
+=======
+- path: Assets/Scenes/Scene.unity
+>>>>>>> UI
   isLoaded: 1
   isActive: 1

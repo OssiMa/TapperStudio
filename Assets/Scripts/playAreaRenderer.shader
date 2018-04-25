@@ -42,11 +42,11 @@
      
      void surf (Input IN, inout SurfaceOutput o) {
 
-		 if(this(IN.worldPos.y -2.58 > 0))
+		 if(bool(IN.worldPos.y -2.58 > 0))
 		 {
 		 	 discard;
 		 }
-		 		 if(this(IN.worldPos.y +0.1  < 0))
+		 		 if(bool(IN.worldPos.y   < 0))
 		 {
 		 	 discard;
 		 }

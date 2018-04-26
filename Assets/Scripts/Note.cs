@@ -10,20 +10,24 @@ public class Note : MonoBehaviour {
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Use this for initialization
     void Start ()
     {
         rb.velocity = new Vector2(0, -speed);
+    }
+    private void OnEnable()
+    {
+        rb.velocity = new Vector2(0, -speed);
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
 
 
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-
-	}
 
 }

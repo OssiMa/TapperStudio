@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/purchase_testing.unity
+=======
+- path: Assets/Scenes/Piano tweaking.unity
+>>>>>>> mergehere
   isLoaded: 1
   isActive: 1

@@ -60,6 +60,7 @@ public class InventoryUI : MonoBehaviour {
         if (page > maxPages)
         {
             page = maxPages;
+            print("nope");
         }
         if (page == 1)
         {

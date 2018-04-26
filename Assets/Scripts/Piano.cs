@@ -12,6 +12,7 @@ public class Piano : MonoBehaviour {
     public GameObject activator3;
     public GameObject activator4;
     public GameObject activator5;
+    public GameObject empty;
 
     public bool spawnPoint1 = true;
     public bool spawnPoint2 = true;
@@ -92,27 +93,27 @@ public class Piano : MonoBehaviour {
 
             if (notePosition == 1 && spawnPoint1 == true)
             {
-                Instantiate(note);
+                Instantiate(note).transform.parent = empty.transform;
                 note.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 2.5f);
             }
             if (notePosition == 2 && spawnPoint2 == true)
             {
-                Instantiate(note);
+                Instantiate(note).transform.parent = empty.transform;
                 note.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 2.5f);
             }
             if (notePosition == 3 && spawnPoint3 == true)
             {
-                Instantiate(note);
+                Instantiate(note).transform.parent = empty.transform;
                 note.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 2.5f);
             }
             if (notePosition == 4 && spawnPoint4 == true)
             {
-                Instantiate(note);
+                Instantiate(note).transform.parent = empty.transform;
                 note.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 2.5f);
             }
             if (notePosition == 5 && spawnPoint5 == true)
             {
-                Instantiate(note);
+                Instantiate(note).transform.parent = empty.transform;
                 note.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 2.5f);
             }
             if (spawnPoint1 == false && spawnPoint2 == false && spawnPoint3 == false && spawnPoint4 == false && spawnPoint5 == false)
@@ -133,31 +134,31 @@ public class Piano : MonoBehaviour {
 
         if (notePosition == 1 && spawnPoint1 == true)
         {
-            Instantiate(longNote);
+            Instantiate(longNote).transform.parent = empty.transform;
             longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 7f);
             spawnPoint1 = false;
         }
         if (notePosition == 2 && spawnPoint2 == true)
         {
-            Instantiate(longNote);
+            Instantiate(longNote).transform.parent = empty.transform;
             longNote.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 7f);
             spawnPoint2 = false;
         }
         if (notePosition == 3 && spawnPoint3 == true)
         {
-            Instantiate(longNote);
+            Instantiate(longNote).transform.parent = empty.transform;
             longNote.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 7f);
             spawnPoint3 = false;
         }
         if (notePosition == 4 && spawnPoint4 == true)
         {
-            Instantiate(longNote);
+            Instantiate(longNote).transform.parent = empty.transform;
             longNote.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 7f);
             spawnPoint4 = false;
         }
         if (notePosition == 5 && spawnPoint5 == true)
         {
-            Instantiate(longNote);
+            Instantiate(longNote).transform.parent = empty.transform;
             longNote.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 7f);
             spawnPoint5 = false;
         }

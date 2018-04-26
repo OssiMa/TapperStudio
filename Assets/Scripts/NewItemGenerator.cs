@@ -31,7 +31,7 @@ public class NewItemGenerator : MonoBehaviour {
     Sprite[] guitar;
     Sprite[] piano;
 
-    int rarityVal = 0;                      // rarityval = item rarity?
+    int rarityVal = 0;            
 
     void Start()
     {
@@ -41,9 +41,10 @@ public class NewItemGenerator : MonoBehaviour {
     }
 
 
-    public void NewItem()
+    public void NewItem(int Rarity)
     {
         item = new Item();
+        rarityVal = Rarity;
         item.slot = Random.Range(1,4);
         item.instrument = Random.Range(1, 4);
         ItemInstrumentSlot();
@@ -55,15 +56,15 @@ public class NewItemGenerator : MonoBehaviour {
     {
         if (item.slot == 1)
         {
-            item.maxCombo = Random.Range(1,2+rarityVal);
+            item.maxCombo = rarityVal;                                      // <<<Real values here
         }
         else if(item.slot == 2)
         {
-            item.generationBoost = Random.Range(1,3);                            //Real values here
+            item.generationBoost = rarityVal;                            // <<<Real values here
         }
         else if (item.slot == 3)
         {
-            item.xpBoost = Random.Range(1,3);
+            item.xpBoost = rarityVal;                                       // <<<Real values here
         }
 
     }

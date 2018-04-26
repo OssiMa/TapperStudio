@@ -7,13 +7,17 @@ public class InventoryUI : MonoBehaviour {
 
     Inventory inventory;
 
+    InventorySlot chosenSlot;
     InventorySlot[] slots;
 
+    Item combineWith;
     List<Item> itemsToShow;
 
     public Button pgUp;
     public Button pgDown;
     public Text currPage;
+
+    bool craftInProgress = false;
 
     public int instrumentToLook = 1;
     public int slotToLook =1;
@@ -115,9 +119,43 @@ public class InventoryUI : MonoBehaviour {
         page += 1;
         inventory.onItemChangedCallback.Invoke();
     }
+
     public void PageDown()
     {
         page -= 1;
         inventory.onItemChangedCallback.Invoke();
     }
+
+    public void SelectCraftable(InventorySlot chosen)
+    {
+        if (craftInProgress == true)
+        {
+            combineWith = chosen.GetItem();
+            print("you chose item to combine with");
+        }
+        else
+        {
+            chosenSlot = chosen;
+            print("you selected an item");
+        }
+    }
+
+    public void BeginCrafting()
+    {
+        craftInProgress = true;
+        print("starting crafting sequence");
+    }
+
+    public void Crafting()
+    {
+        print("craft in progress");
+        Inventory.instance.RemoveItem(chosenSlot.GetItem());
+        Inventory.instance.RemoveItem(combineWith);
+        NewItemGenerator.instance.NewItem(1);
+        craftInProgress = false;
+        inventory.onItemChangedCallback.Invoke();
+        print("craft succesful");
+    }
+
+
 }

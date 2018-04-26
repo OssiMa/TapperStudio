@@ -7,23 +7,33 @@ public class PopUpDisplay : MonoBehaviour {
 
     public PopUp popUp;
 
+    GameObject popUpFrame;
+
     bool statsVisible;
     bool picVisible;
-    //Getting this should be automated as well - only the Scriptable should be manual
-                                                        //These can be created as children, too
 
     int buttonAmount;
 
     GameObject button1;
     GameObject button2;
 
+    float buttonPos1X;
+    float buttonPos1Y;
+    float buttonPos2X;
+    float buttonPos2Y;
+
+    Image emptyPicImage;
+    Image bg;
+
     float sizeX;
     float sizeY;
 
-    Image pic;
-    //Sprite pic;
+    Text textItself;
 
-    void Start()
+    List<Transform> emptyStatses;
+    List<Text> statTexts;
+
+    /*void Start()
     {
         statsVisible = popUp.statsVisible;
         picVisible = popUp.picVisible;
@@ -44,39 +54,42 @@ public class PopUpDisplay : MonoBehaviour {
 
         SetPopupSize();
 
+        SetButtons();
+
+        SetPopupSize();
+    }*/
+
+    public void ActivatePopup()
+    {
+        //Reveal a popup object in PopupEssentials
+        popUpFrame = GameObject.Find("Empty PopUp Background");
+
+        SetBg();
+
+        statsVisible = popUp.statsVisible;
+        SetText();
+
+        picVisible = popUp.picVisible;
+        if (picVisible == true)
+        {
+            SetPicture();
+        }
+
+        SetPopupSize();
+
+        buttonAmount = popUp.buttonAmount;
         SetButtons();
 
         SetPopupSize();
     }
 
-    void ActivatePopup()
+    void SetBg()
     {
-        //Set the pop up object active
-        //or create it, or whatever
+        bg = popUpFrame.GetComponent<Image>();
 
-        SetBg();
+        bg.sprite = popUp.bg;
 
-        //Put everything from Start() to here once finished
-        statsVisible = popUp.statsVisible;
-        picVisible = popUp.picVisible;
-
-        SetText();
-
-        if (picVisible == true)
-        {
-            SetPicture();
-        }
-
-        buttonAmount = popUp.buttonAmount;  //How many buttons there are (1 or 2)
-
-        button1 = popUp.button1;      //The first button
-        button2 = popUp.button2;        //The second button
-
-        SetPopupSize();
-
-        SetButtons();
-
-        SetPopupSize();
+        bg.enabled = true;
     }
 
     void SetText()
@@ -85,7 +98,7 @@ public class PopUpDisplay : MonoBehaviour {
 
         descriptionText = GameObject.Find("Popup Description");
 
-        Text textItself = descriptionText.GetComponent<Text>();
+        textItself = descriptionText.GetComponent<Text>();
 
         textItself.enabled = true;
         textItself.text = popUp.description;     //What it says on the PopUp. ("You got x gold!", etc.)
@@ -95,24 +108,21 @@ public class PopUpDisplay : MonoBehaviour {
         {
             GameObject emptyStats = GameObject.Find("Empty Stats");
 
-            List<Transform> emptyStatses = new List<Transform>();
+            emptyStatses = new List<Transform>();
 
-            List<Text> statTexts = new List<Text>();
+            statTexts = new List<Text>();
 
             for (int i = 0; i < 4; i++)
             {  
                 emptyStatses.Add(emptyStats.transform.GetChild(i));
                 statTexts.Add(emptyStatses[i].GetComponent<Text>());
-                //statTexts[i] = emptyStatses[i].GetComponent<Text>();
                 statTexts[i].text = popUp.stats[i];
             }
 
-
-            /*for (int i = 0; i < 3; i++)
+            foreach (Text statText in statTexts)
             {
-                statTexts[i] = emptyStatses[i].GetComponent<Text>();
-                statTexts[i].text = popUp.stats[i];
-            }*/
+                statText.enabled = true;
+            }
 
             statTexts[0].alignment = TextAnchor.LowerRight;
             statTexts[1].alignment = TextAnchor.LowerRight;
@@ -124,28 +134,45 @@ public class PopUpDisplay : MonoBehaviour {
     void SetButtons()
     {
         if (buttonAmount == 1)
-        {
-            GameObject button = Instantiate(button1, new Vector3(0, 0, 0), Quaternion.identity);
-            button.transform.SetParent(GameObject.Find("Menu").transform);
+        { 
+            button1 = GameObject.Find(popUp.buttonOne);
 
-            RectTransform buttonPos = button.GetComponent<RectTransform>();
-            buttonPos.anchoredPosition = new Vector2(0, -101);
+            button1.GetComponent<Image>().enabled = true;
+            button1.GetComponent<Button>().enabled = true;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = true;
+
+            buttonPos1X = popUp.buttonPos1X;
+            buttonPos1Y = popUp.buttonPos1Y;
+
+            RectTransform buttonPos = button1.GetComponent<RectTransform>();
+            buttonPos.anchoredPosition = new Vector2(buttonPos1X, buttonPos1Y);
         }
         else if (buttonAmount == 2)
         {
-            //Button one
-            GameObject buttonOne = Instantiate(button1, new Vector3(0, 0, 0), Quaternion.identity);
-            buttonOne.transform.SetParent(GameObject.Find("Menu").transform);
+            button1 = GameObject.Find(popUp.buttonOne);
+            button2 = GameObject.Find(popUp.buttonTwo);
 
-            RectTransform buttonPos1 = buttonOne.GetComponent<RectTransform>();
-            buttonPos1.anchoredPosition = new Vector2(87, -101);
+            button1.GetComponent<Image>().enabled = true;
+            button2.GetComponent<Image>().enabled = true;
 
-            //Button two
-            GameObject buttonTwo = Instantiate(button2, new Vector3(0, 0, 0), Quaternion.identity);
-            buttonTwo.transform.SetParent(GameObject.Find("Menu").transform);
+            button1.GetComponent<Button>().enabled = true;
+            button2.GetComponent<Button>().enabled = true;
 
-            RectTransform buttonPos2 = buttonTwo.GetComponent<RectTransform>();
-            buttonPos2.anchoredPosition = new Vector2(104, -101);
+            buttonPos1X = popUp.buttonPos1X;
+            buttonPos1Y = popUp.buttonPos1Y;
+
+            buttonPos2X = popUp.buttonPos2X;
+            buttonPos2Y = popUp.buttonPos2Y;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = true;
+            button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
+
+            RectTransform buttonPos1 = button1.GetComponent<RectTransform>();
+            buttonPos1.anchoredPosition = new Vector2(buttonPos1X, buttonPos1Y);
+
+            RectTransform buttonPos2 = button2.GetComponent<RectTransform>();
+            buttonPos2.anchoredPosition = new Vector2(buttonPos2X, buttonPos2Y);
         }
     }
 
@@ -153,29 +180,68 @@ public class PopUpDisplay : MonoBehaviour {
     {
         GameObject emptyPic = GameObject.Find("Empty PopUp Image");
 
-        Image emptyPicImage = emptyPic.GetComponent<Image>();
+        emptyPicImage = emptyPic.GetComponent<Image>();
 
         emptyPicImage.sprite = popUp.pic;
         emptyPicImage.enabled = true;
-    }
-
-    void SetBg()
-    {
-        Image img;
-        img = GetComponent<Image>();
-
-        img.sprite = popUp.bg;
     }
 
     void SetPopupSize()
     {
         sizeX = popUp.sizeX;      //Size of the popup
         sizeY = popUp.sizeY;
-        transform.localScale = new Vector3(sizeX, sizeY, 0);  //Not sure this will work since it happens on the canvas
+        popUpFrame.transform.localScale = new Vector3(sizeX, sizeY, 0);  //Not sure this will work since it happens on the canvas
     }
 
-    void ClosePopUp()
+    public void ClosePopUp()
     {
-        
+        //Hide the the main text (description)
+        textItself.enabled = false;
+
+        //Empty stats & stat texts
+        if (statsVisible == true)
+        {
+            emptyStatses.Clear();
+
+            foreach (Text statText in statTexts)
+            {
+                statText.enabled = false;
+            }
+
+            statTexts.Clear();
+        }
+
+        //Destroy one button
+        if (buttonAmount == 1)
+        {
+            button1.GetComponent<Image>().enabled = false;
+            button1.GetComponent<Button>().enabled = false;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = false;
+        }
+        //Destroy two buttons
+        else if (buttonAmount == 2)
+        {
+            button1.GetComponent<Image>().enabled = false;
+            button1.GetComponent<Button>().enabled = false;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = false;
+
+            button2.GetComponent<Image>().enabled = true;
+            button2.GetComponent<Button>().enabled = true;
+
+            button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
+        }
+
+        //Hide image
+        if (picVisible == true)
+        {
+            emptyPicImage.enabled = false;
+        }
+
+        //Hide the popup frame
+        bg.enabled = false;
+
+        //The popup should now be closed
     }
 }

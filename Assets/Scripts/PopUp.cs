@@ -14,32 +14,22 @@ public class PopUp : ScriptableObject {
     public string description;
     public List<string> stats = new List<string>();
 
-    /*public string stats1;
-    public string stats2;
-    public string stats3;
-    public string stats4;*/
-
     public int buttonAmount;
 
-    //public Button button1;
-    //public Button button2;
+    //public GameObject button1;
+    //public GameObject button2;
 
-    public GameObject button1;
-    public GameObject button2;
+    public string buttonOne;
+    public string buttonTwo;
+
+    public float buttonPos1X = -309;
+    public float buttonPos1Y = -1034;
+    public float buttonPos2X = 301;
+    public float buttonPos2Y = -1034;
 
     public float sizeX;
     public float sizeY;
 
     public Sprite pic;
     public Sprite bg;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

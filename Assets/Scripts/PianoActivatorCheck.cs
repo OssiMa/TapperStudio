@@ -60,26 +60,6 @@ public class PianoActivatorCheck : MonoBehaviour
         if(col.gameObject == longNote)
         {
             sliderActive = false;
-            if (col.gameObject.transform.position.x == piano.activator1.transform.position.x && piano.spawnPoint1 == false)
-            {
-                piano.spawnPoint1 = true;    
-            }
-            if (col.gameObject.transform.position.x == piano.activator2.transform.position.x && piano.spawnPoint2 == false)
-            {
-                piano.spawnPoint2 = true;
-            }
-            if (col.gameObject.transform.position.x == piano.activator3.transform.position.x && piano.spawnPoint3 == false)
-            {
-                piano.spawnPoint3 = true;
-            }
-            if (col.gameObject.transform.position.x == piano.activator4.transform.position.x && piano.spawnPoint4 == false)
-            {
-                piano.spawnPoint4 = true;
-            }
-            if (col.gameObject.transform.position.x == piano.activator5.transform.position.x && piano.spawnPoint5 == false)
-            {
-                piano.spawnPoint5 = true;
-            }
             sliderOn = false;
         }
         Destroy(col.gameObject);

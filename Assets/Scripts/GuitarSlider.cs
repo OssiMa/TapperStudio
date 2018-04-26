@@ -10,7 +10,7 @@ public class GuitarSlider : MonoBehaviour {
     int x;
 
     RectTransform Srect;
-    RectTransform Original;
+    Vector2 Original = new Vector2();
 
     InstrumentBase guitar;
 
@@ -19,8 +19,8 @@ public class GuitarSlider : MonoBehaviour {
     void Start () {
         guitar = transform.parent.gameObject.GetComponent<InstrumentBase>();
         s = GetComponent<Slider>();
-        Original = s.GetComponent<RectTransform>();
-        print(Original.transform.position.x);
+        Srect = s.GetComponent<RectTransform>();
+        Original = s.transform.localPosition;
         Resize();
 	}
 	
@@ -31,36 +31,34 @@ public class GuitarSlider : MonoBehaviour {
 
     public void Resize()
     {
-        Srect = Original;
+        
+        s.transform.localPosition = Original;
         r = Random.Range(0, 2);
         if (r == 0)
         {
             s.direction = Slider.Direction.RightToLeft;
-            x = -8;
+            x = -1;
         }
         else
         {
             s.direction = Slider.Direction.LeftToRight;
-            x = +8;
+            x = 1;
         }
-        r = Random.Range(2, 5);
-        Srect.sizeDelta = new Vector2(50 * r, Srect.sizeDelta.y);
-        if (r == 3)
+        r = Random.Range(1, 4);
+        Srect.sizeDelta = new Vector2(72 * r + 15, Srect.sizeDelta.y);
+        if (r == 2)
         {
             r = Random.Range(2,4);
-            Srect.transform.localPosition = new Vector2(Srect.transform.localPosition.x - x*r, Original.transform.localPosition.y);
-            print(Srect.transform.position.x + "r3");
+            s.transform.localPosition = new Vector2(s.transform.localPosition.x - x*34, s.transform.localPosition.y);
         }
-        else if (r == 2)
+        else if (r == 1)
         {
             r = Random.Range(1, 4);
-            Srect.transform.localPosition = new Vector2(Srect.transform.localPosition.x - r*x, Original.transform.localPosition.y);
-            print(Srect.transform.position.x + "r2");
+            s.transform.localPosition = new Vector2(s.transform.localPosition.x - x*72, s.transform.localPosition.y);
         }
         else
         {
-            Srect.transform.position = new Vector2(Original.transform.position.x, Original.transform.position.y);
-            print(Srect.transform.position.x + "normi");
+            s.transform.localPosition = new Vector2(s.transform.localPosition.x, s.transform.localPosition.y);
         }
     }
 

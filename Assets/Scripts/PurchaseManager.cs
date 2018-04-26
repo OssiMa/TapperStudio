@@ -25,7 +25,7 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
     // Google Play Store-specific product identifier subscription product.
     private static string kProductNameGooglePlaySubscription = "com.unity3d.subscription.original";
 
-    SongProgress sp;
+    CurrencyManager cm;
 
     void Awake()
     {
@@ -34,26 +34,21 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
 
     void Start()
     {
-        sp = GetComponent<SongProgress>();
+        cm = GetComponent<CurrencyManager>();
 
-        // If we haven't set up the Unity Purchasing reference
         if (m_StoreController == null)
         {
-            // Begin to configure our connection to Purchasing
             InitializePurchasing();
         }
     }
 
     public void InitializePurchasing()
     {
-        // If we have already connected to Purchasing ...
         if (IsInitialized())
         {
-            // ... we are done here.
             return;
         }
 
-        // Create a builder, first passing in a suite of Unity provided stores.
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
         //Our products, with their consumable types
@@ -67,16 +62,13 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
 
         /*builder.AddProduct(kProductIDSubscription, ProductType.Subscription, new IDs(){
             { kProductNameGooglePlaySubscription, GooglePlay.Name },
-        });
+        });*/
 
-        // Kick off the remainder of the set-up with an asynchrounous call, passing the configuration 
-        // and this class' instance. Expect a response either in OnInitialized or OnInitializeFailed.*/
         UnityPurchasing.Initialize(this, builder);
     }
 
     private bool IsInitialized()
     {
-        // Only say we are initialized if both the Purchasing references are set.
         return m_StoreController != null && m_StoreExtensionProvider != null;
     }
 
@@ -105,43 +97,31 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
 
     void BuyProductID(string productId)
     {
-        // If Purchasing has been initialized ...
         if (IsInitialized())
         {
-            // ... look up the Product reference with the general product identifier and the Purchasing 
-            // system's products collection.
             Product product = m_StoreController.products.WithID(productId);
 
-            // If the look up found a product for this device's store and that product is ready to be sold ... 
             if (product != null && product.availableToPurchase)
             {
                 Debug.Log(string.Format("Purchasing product asychronously: '{0}'", product.definition.id));
-                // ... buy the product. Expect a response either through ProcessPurchase or OnPurchaseFailed 
-                // asynchronously.
                 m_StoreController.InitiatePurchase(product);
             }
             else
             {
-                // ... report the product look-up failure situation  
                 Debug.Log("BuyProductID: FAIL. Not purchasing product, either is not found or is not available for purchase");
             }
         }
         else
         {
-            // ... report the fact Purchasing has not succeeded initializing yet. Consider waiting longer or 
-            // retrying initiailization.
             Debug.Log("BuyProductID FAIL. Not initialized.");
         }
     }
 
     public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
-        // Purchasing has succeeded initializing. Collect our Purchasing references.
         Debug.Log("OnInitialized: PASS");
 
-        // Overall Purchasing system, configured with products for this application.
         m_StoreController = controller;
-        // Store specific subsystem, for accessing device-specific store features.
         m_StoreExtensionProvider = extensions;
     }
 
@@ -159,20 +139,20 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
         if (System.String.Equals(args.purchasedProduct.definition.id, PURCHASE_GETCURRENCY_SMALL, System.StringComparison.Ordinal))
         {
             //The currency has been purchased. Add the currency to the existing currency.
-            sp.currency += 5;
+            cm.AddCurrency(5);
             Debug.Log("You purchased 5 diamonds or whatever we call these. We thank you but also hope you go buy some more because this is only enough for like one beer, if that.");
         }
         else if (System.String.Equals(args.purchasedProduct.definition.id, PURCHASE_GETCURRENCY_MEDIUM, System.StringComparison.Ordinal))
         {
             //The currency has been purchased. Add the currency to the existing currency.
-            sp.currency += 10;
+            cm.AddCurrency(10);
             Debug.Log("You purchased 10 diamonds or whatever we call these. This is better, but come on, we're greedy bastards. Give us money!!");
         }
         // Or ... a subscription product has been purchased by this user.
         else if (System.String.Equals(args.purchasedProduct.definition.id, PURCHASE_GETCURRENCY_BIG, System.StringComparison.Ordinal))
         {
             //The currency has been purchased. Add the currency to the existing currency.
-            sp.currency += 50;
+            cm.AddCurrency(50);
             Debug.Log("You purchased 50 diamonds or whatever we call these. Okay, now we're talking! Here I come, Jamaica!");
         }
         else if (System.String.Equals(args.purchasedProduct.definition.id, PURCHASE_GETNOADS, System.StringComparison.Ordinal))

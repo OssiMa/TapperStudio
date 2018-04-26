@@ -5,11 +5,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour {
 
-    //Should we have a reference to the SongProgress GameObject?
-    //OR, we have a general GameManager object to keep track of that, which also does the purchase stuff??
-
-    SongProgress sp;    //If we create a GameManager object, currency and the Inventory will be accessible through there
-                        //Currency being somewhere more fitting might also be good
+    CurrencyManager cm;                    
     Inventory inv;
 
     bool purchaseConfirmed;
@@ -31,6 +27,7 @@ public class Shop : MonoBehaviour {
     {
         //sp = GetComponent<SongProgress>();
         inv = GetComponent<Inventory>();
+        cm = GetComponent<CurrencyManager>();
 
         clicked = false;
 
@@ -51,13 +48,7 @@ public class Shop : MonoBehaviour {
         {
             //Make the popup go away
         }
-
-        //Pelaajan currencylle minimi (eli 0)
-        //currencyText.text = currency + "£";
     }
-
-    //GENERAL NOTE: There should be some sort of pop-up when you've purchased a thing
-    //ALSO, a confirmation message before the pruchase. (Let's make the purchasing work before doing anything else, though)
 
     void PurchaseCurrencySmall()
     {

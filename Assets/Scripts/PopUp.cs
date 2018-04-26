@@ -3,10 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Purposes
+{
+    removeCurrency, addCurrency
+}
+
+public enum AddCurrencyAmount
+{
+    small, medium, big
+}
+
+public enum BoughtItem
+{
+    commonItem, rareItem, allRarityItem
+}
+
 [CreateAssetMenu(fileName = "Popup", menuName = "PopUps/New PopUp")]
 public class PopUp : ScriptableObject {
 
     public string popUpName;
+
+    public Purposes purpose;
+    public AddCurrencyAmount addCurrencyAmount;
+    public BoughtItem boughtItem;
+
+    public int removeCurrencyAmount;
 
     public bool statsVisible;
     public bool picVisible;
@@ -15,9 +36,6 @@ public class PopUp : ScriptableObject {
     public List<string> stats = new List<string>();
 
     public int buttonAmount;
-
-    //public GameObject button1;
-    //public GameObject button2;
 
     public string buttonOne;
     public string buttonTwo;

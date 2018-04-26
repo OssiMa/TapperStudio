@@ -7,6 +7,17 @@ public class PopUpDisplay : MonoBehaviour {
 
     public PopUp popUp;
 
+    Purposes purpose;
+    AddCurrencyAmount addCurrencyAmount;
+    BoughtItem boughtItem;
+
+    GameObject gm;
+    CurrencyManager currencyManager;
+    NewItemGenerator nig;
+
+    [HideInInspector]
+    public int removeCurrencyAmount;
+
     GameObject popUpFrame;
 
     bool statsVisible;
@@ -32,6 +43,8 @@ public class PopUpDisplay : MonoBehaviour {
 
     List<Transform> emptyStatses;
     List<Text> statTexts;
+
+    int rarityValue;
 
     /*void Start()
     {
@@ -61,7 +74,16 @@ public class PopUpDisplay : MonoBehaviour {
 
     public void ActivatePopup()
     {
-        //Reveal a popup object in PopupEssentials
+        gm = GameObject.Find("GameManager");
+
+        purpose = popUp.purpose;
+
+        removeCurrencyAmount = popUp.removeCurrencyAmount;
+        addCurrencyAmount = popUp.addCurrencyAmount;
+
+        currencyManager = gm.GetComponent<CurrencyManager>();
+        nig = gm.GetComponent<NewItemGenerator>();
+
         popUpFrame = GameObject.Find("Empty PopUp Background");
 
         SetBg();
@@ -81,6 +103,53 @@ public class PopUpDisplay : MonoBehaviour {
         SetButtons();
 
         SetPopupSize();
+    }
+
+    public void Purpose()
+    {
+        //currencyManager.currency -= currencyAmount;
+        if (purpose == Purposes.removeCurrency)
+        {
+            if (boughtItem == BoughtItem.rareItem)
+            {
+                rarityValue = Random.Range(0, 4);
+                nig.NewItem();      //Add rarity value
+            }
+            else if (boughtItem == BoughtItem.commonItem)
+            {
+                //Rarity from a random range of 4-10
+                rarityValue = Random.Range(4, 10);
+                nig.NewItem();      //Add rarity value
+            }
+            else if (boughtItem == BoughtItem.allRarityItem)
+            {
+                //Rarity from a random range of 1-10
+                rarityValue = Random.Range(1, 10);
+                nig.NewItem();      //Add rarity value
+            }
+            currencyManager.currency -= removeCurrencyAmount;
+        }
+        else if (purpose == Purposes.addCurrency)
+        {
+            if (addCurrencyAmount == AddCurrencyAmount.small)
+            {
+                PurchaseManager.purchaseManager.BuyCurrencySmall();
+            }
+            else if (addCurrencyAmount == AddCurrencyAmount.medium)
+            {
+                PurchaseManager.purchaseManager.BuyCurrencyMedium();
+            }
+            else if (addCurrencyAmount == AddCurrencyAmount.big)
+            {
+                PurchaseManager.purchaseManager.BuyCurrencyBig();
+            }
+        }
+        ClosePopUp();
+    }
+
+    public void Print()
+    {
+        print("metodi");
     }
 
     void SetBg()
@@ -195,6 +264,8 @@ public class PopUpDisplay : MonoBehaviour {
 
     public void ClosePopUp()
     {
+        //There could be something that indicates what closing the popup will do
+
         //Hide the the main text (description)
         textItself.enabled = false;
 
@@ -227,10 +298,10 @@ public class PopUpDisplay : MonoBehaviour {
 
             button1.transform.GetChild(0).GetComponent<Text>().enabled = false;
 
-            button2.GetComponent<Image>().enabled = true;
-            button2.GetComponent<Button>().enabled = true;
+            button2.GetComponent<Image>().enabled = false;
+            button2.GetComponent<Button>().enabled = false;
 
-            button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
+            button2.transform.GetChild(0).GetComponent<Text>().enabled = false;
         }
 
         //Hide image

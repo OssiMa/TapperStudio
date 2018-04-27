@@ -21,6 +21,7 @@ public class Piano : MonoBehaviour {
     public bool spawnPoint3 = true;
     public bool spawnPoint4 = true;
     public bool spawnPoint5 = true;
+    bool longSpawned = false;
 
     float maxTime = 0.5f;
     float minTime = 0.2f;
@@ -62,9 +63,10 @@ public class Piano : MonoBehaviour {
     {
         time = 0;
         int whichNote = shortOrLong.Next(1,5);
-        if (whichNote == 1)
+        if (whichNote == 1 && longSpawned == false)
         {
             spawnLongNote();
+            longSpawned = true;
         }
         else
         {
@@ -206,44 +208,75 @@ public class Piano : MonoBehaviour {
         //}
 
 
-        int caseSwitch = Random.Range(1,5);
+        int caseSwitch = Random.Range(1,6);
 
         switch (caseSwitch)
         {
             case 1:
-                    Instantiate(longNote).transform.parent = empty.transform;
-                    longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y +7);
-                    spawnPoint1 = false;
+                    
+                    longNote.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y +6);
+                Instantiate(longNote).transform.parent = empty.transform;
+                spawnPoint1 = false;
                 break;
 
             case 2:
-                    Instantiate(longNote).transform.parent = empty.transform;
-                    longNote.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 7);
-                    spawnPoint2 = false;
+                    
+                    longNote.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 6);
+                Instantiate(longNote).transform.parent = empty.transform;
+                spawnPoint2 = false;
                 break;
 
             case 3:
-                    Instantiate(longNote).transform.parent = empty.transform;
-                    longNote.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 7);
-                    spawnPoint3 = false;
+                    
+                    longNote.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 6);
+                Instantiate(longNote).transform.parent = empty.transform;
+                spawnPoint3 = false;
                 break;
 
             case 4:
-                    Instantiate(longNote).transform.parent = empty.transform;
-                    longNote.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 7);
-                    spawnPoint4 = false;
+                    
+                    longNote.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 6);
+                Instantiate(longNote).transform.parent = empty.transform;
+                spawnPoint4 = false;
                 break;
 
             case 5:
-                    Instantiate(longNote).transform.parent = empty.transform;
-                    longNote.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 7);
-                    spawnPoint5 = false;
+                    
+                    longNote.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 6);
+                Instantiate(longNote).transform.parent = empty.transform;
+                spawnPoint5 = false;
                 break;
 
             default:
                 print("suatana");
                 break;
         }
+
+    }
+
+    public void ActivateLane(GameObject note)
+    {
+        if (Mathf.Abs(note.transform.position.x - activator1.transform.position.x) < 0.01)
+        {
+            spawnPoint1 = true;
+        }
+        else if (Mathf.Abs(note.transform.position.x - activator2.transform.position.x) < 0.01)
+        {
+            spawnPoint2 = true;
+        }
+        else if (Mathf.Abs(note.transform.position.x - activator3.transform.position.x) < 0.01)
+        {
+            spawnPoint3 = true;
+        }
+        else if (Mathf.Abs(note.transform.position.x - activator4.transform.position.x) < 0.01)
+        {
+            spawnPoint4 = true;
+        }
+        else if (Mathf.Abs(note.transform.position.x - activator5.transform.position.x) < 0.01)
+        {
+            spawnPoint5 = true;
+        }
+        longSpawned = false;
 
     }
 

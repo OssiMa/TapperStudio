@@ -43,8 +43,8 @@ public class PianoActivatorCheck : MonoBehaviour
         }
         if (col.gameObject.tag == "LongNote")
         {
-
             longNote = col.gameObject;
+            piano.ActivateLane(longNote);
             sliderActive = true;
         }
 

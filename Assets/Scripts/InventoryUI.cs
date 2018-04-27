@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour {
     InventorySlot chosenSlot;
     InventorySlot[] slots;
 
+    Item chosenItem;
     Item combineWith;
     List<Item> itemsToShow;
 
@@ -94,6 +95,10 @@ public class InventoryUI : MonoBehaviour {
             if (i < itemsToShow.Count-xPage)
             {
                 slots[i].AddItem(itemsToShow[i+xPage]);
+                if (craftInProgress == true && itemsToShow[i+xPage].rarity != chosenItem.rarity )
+                {
+                    slots[i].CraftingFilter();
+                }
             }
             else
             {
@@ -126,7 +131,7 @@ public class InventoryUI : MonoBehaviour {
         inventory.onItemChangedCallback.Invoke();
     }
 
-    public void SelectCraftable(InventorySlot chosen)
+    public void SelectCraftable(InventorySlot chosen)   //used when clicking on items in inventory
     {
         if (craftInProgress == true)
         {
@@ -136,25 +141,62 @@ public class InventoryUI : MonoBehaviour {
         else
         {
             chosenSlot = chosen;
+            chosenItem = chosen.GetItem();
             print("you selected an item");
         }
     }
 
-    public void BeginCrafting()
+    public void BeginCrafting() //from item inspect, enables crafting mode, inventory selection for item to combine with
     {
-        craftInProgress = true;
-        print("starting crafting sequence");
+        if (chosenItem != null)
+        {
+            craftInProgress = true;
+            print("starting crafting sequence");
+            inventory.onItemChangedCallback.Invoke();
+            chosenSlot.CraftingFilter();
+        }
+        else
+        {
+            print("no item selected");
+        }
+
     }
 
-    public void Crafting()
+    public void Crafting()  //Proceeds with the crafting, removing the used items and adding a new one, crafting mode off
     {
-        print("craft in progress");
-        Inventory.instance.RemoveItem(chosenSlot.GetItem());
-        Inventory.instance.RemoveItem(combineWith);
-        NewItemGenerator.instance.NewItem(1);
-        craftInProgress = false;
-        inventory.onItemChangedCallback.Invoke();
-        print("craft succesful");
+        if (combineWith != null)
+        {
+            print("craft in progress");
+            Inventory.instance.RemoveItem(chosenSlot.GetItem());
+            Inventory.instance.RemoveItem(combineWith);
+            NewItemGenerator.instance.NewCraftedItem(combineWith.rarity + 1, combineWith.slot, combineWith.instrument);
+            craftInProgress = false;
+            inventory.onItemChangedCallback.Invoke();
+            combineWith = null;
+            chosenItem = null;
+            print("craft succesful");
+        }
+        else
+        {
+            print("second item not selected");
+        }
+        
+    }
+    public void CancelCrafting()
+    {
+        if (craftInProgress == true)
+        {
+            print("cancelling crafting");
+            combineWith = null;
+            chosenItem = null;
+            craftInProgress = false;
+            inventory.onItemChangedCallback.Invoke();
+        }
+        else
+        {
+            print("crafting is not in progress");
+        }
+
     }
 
 

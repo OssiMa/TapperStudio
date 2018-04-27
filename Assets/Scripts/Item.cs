@@ -3,7 +3,7 @@
 public class Item : ScriptableObject{
 
     public Sprite icon = null;
-    public string rarity = "";
+    public int rarity = 0;
     public string itemName = "";
     public int instrument = 0;
     public int slot = 0;

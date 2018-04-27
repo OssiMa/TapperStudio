@@ -102,7 +102,7 @@ public class SongProgress : MonoBehaviour {
         }
         if (songCount > songCountMax)
         {
-            activeBase.exp += 505;                  //XP given to the instrument, needs scaling value
+            activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value
             songCount = 1;
             AlbumsCreated += 1;
             UsedNames.Add(currentAlbum);

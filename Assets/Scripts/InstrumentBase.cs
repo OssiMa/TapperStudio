@@ -19,9 +19,10 @@ public class InstrumentBase : MonoBehaviour {
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
     float startXp;
-    float expToNext = 15;
+    float expToNext = 25;
     public float level = 1;
     float nextLevel = 2;
+    float vintageLevel = 0;
 
     public float combo = 1;                 //current combo
     public float comboStep;                 //when at combostemax, combo increases
@@ -56,16 +57,29 @@ public class InstrumentBase : MonoBehaviour {
 
     void LvlUp()
     {
-        if (exp >= expToNext)
+        if (exp >= expToNext && level < 19)
         {
             level += 1;
             nextLevel += 1;
             startXp = expToNext;
-            expToNext = expToNext * 2.5f;
+            expToNext = expToNext * 1.1f;
             xpBar.minValue = startXp;
             xpBar.maxValue = expToNext;
 
         }
+        else if (level == 19 && exp >= expToNext)
+        {
+            print("vintagee");
+        }
+    }
+
+    void VintageLvlUp()
+    {
+        vintageLevel += 1;
+        exp = 0;
+        expToNext = 25;
+        level = 1;
+        nextLevel = 2;
     }
 
     public void Tap()
@@ -84,7 +98,7 @@ public class InstrumentBase : MonoBehaviour {
 
     public void ComboTap()
     {
-        exp += 1 * combo;
+        exp += 0.5f * combo;
         progression.GainXP();
         if (combo < 4)
         {

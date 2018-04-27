@@ -106,7 +106,7 @@ public class SongProgress : MonoBehaviour {
             songCount = 1;
             AlbumsCreated += 1;
             UsedNames.Add(currentAlbum);
-            NewItemGenerator.instance.NewItem();
+            NewItemGenerator.instance.NewItem(1);
 
             if(UsedNames.Count > 20)
             {

@@ -113,19 +113,19 @@ public class PopUpDisplay : MonoBehaviour {
             if (boughtItem == BoughtItem.rareItem)
             {
                 rarityValue = Random.Range(0, 4);
-                nig.NewItem();      //Add rarity value
+                nig.NewItem(rarityValue);   
             }
             else if (boughtItem == BoughtItem.commonItem)
             {
                 //Rarity from a random range of 4-10
                 rarityValue = Random.Range(4, 10);
-                nig.NewItem();      //Add rarity value
+                nig.NewItem(rarityValue);    
             }
             else if (boughtItem == BoughtItem.allRarityItem)
             {
                 //Rarity from a random range of 1-10
                 rarityValue = Random.Range(1, 10);
-                nig.NewItem();      //Add rarity value
+                nig.NewItem(rarityValue); 
             }
             currencyManager.currency -= removeCurrencyAmount;
         }

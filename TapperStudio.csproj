@@ -158,9 +158,13 @@
     <Compile Include="Assets\Scripts\SetRenderQueue.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
     <Compile Include="Assets\Scripts\Skin.cs" />
+    <Compile Include="Assets\Scripts\SkinGenerator.cs" />
     <Compile Include="Assets\Scripts\SkinInventory.cs" />
+    <Compile Include="Assets\Scripts\SkinSlot.cs" />
+    <Compile Include="Assets\Scripts\SkinVintageLock.cs" />
     <Compile Include="Assets\Scripts\SongProgress.cs" />
     <Compile Include="Assets\Scripts\TouchControls.cs" />
+    <Compile Include="Assets\Scripts\UISkinInventory.cs" />
     <Compile Include="Assets\Scripts\buttonInstrumentScript.cs" />
     <Compile Include="Assets\Scripts\menuExtendScript.cs" />
   </ItemGroup>

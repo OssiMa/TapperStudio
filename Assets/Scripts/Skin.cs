@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skin : MonoBehaviour {
+public class Skin : ScriptableObject {
 
-    Color color;
+    [HideInInspector]
+    public Sprite instrumentIcon;
 
-    int instrument;
-    int slot;
+    public Color color;
 
+    public int instrument;
+    public int skinSlot;
 
-    // Use this for initialization
-    void Start()
-    { 
-	    	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int vintageLock;
+
+    public bool trinket = false;
+
+    [HideInInspector]
+    public bool unlocked = false;
+
 }

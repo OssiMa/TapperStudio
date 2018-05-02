@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class InventoryUI : MonoBehaviour {
 
@@ -10,9 +11,12 @@ public class InventoryUI : MonoBehaviour {
     InventorySlot chosenSlot;
     InventorySlot[] slots;
 
+    EquipSlot[] equipSlots;
+
     Item chosenItem;
     Item combineWith;
     List<Item> itemsToShow;
+    List<Item> equippedItems;
 
     public Button pgUp;
     public Button pgDown;
@@ -30,10 +34,19 @@ public class InventoryUI : MonoBehaviour {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += WhatToShow;
         inventory.onItemChangedCallback += PageUpdate;
+        inventory.onItemChangedCallback += ShowEquipped;
         inventory.onItemChangedCallback += UpdateUI;
 
+        equipSlots = GetComponentsInChildren<EquipSlot>().OrderBy(slots => slots.name).ToArray();
         slots = GetComponentsInChildren<InventorySlot>();
         itemsToShow = new List<Item>();
+        equippedItems = new List<Item>();
+
+        for (int i = 0; i < 9; i++)
+        {
+            equippedItems.Add(null);
+        }
+
         inventory.onItemChangedCallback.Invoke();
     }
 	
@@ -47,6 +60,14 @@ public class InventoryUI : MonoBehaviour {
             {
                 itemsToShow.Add(inventory.items[i]);
             }
+        }
+    }
+
+    void ShowEquipped()
+    {
+        for (int i = 0; i < equipSlots.Length; i++)
+        {
+            equipSlots[i].EquipItem(equippedItems[(instrumentToLook - 1) * 3 + i]);        
         }
     }
 
@@ -105,6 +126,11 @@ public class InventoryUI : MonoBehaviour {
                 slots[i].ClearSlot();
             }
         }
+    }
+
+    void EquipBoosts()
+    {
+
     }
 
     public void SetInstrument(int x)
@@ -170,6 +196,10 @@ public class InventoryUI : MonoBehaviour {
             Inventory.instance.RemoveItem(chosenSlot.GetItem());
             Inventory.instance.RemoveItem(combineWith);
             NewItemGenerator.instance.NewCraftedItem(combineWith.rarity + 1, combineWith.slot, combineWith.instrument);
+            if (equippedItems.Contains(chosenSlot.GetItem())||equippedItems.Contains(chosenSlot.GetItem()))
+            {
+                equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
+            }
             craftInProgress = false;
             inventory.onItemChangedCallback.Invoke();
             combineWith = null;
@@ -182,6 +212,7 @@ public class InventoryUI : MonoBehaviour {
         }
         
     }
+
     public void CancelCrafting()
     {
         if (craftInProgress == true)
@@ -197,6 +228,13 @@ public class InventoryUI : MonoBehaviour {
             print("crafting is not in progress");
         }
 
+    }
+
+    public void Equip()
+    {
+        equippedItems[(instrumentToLook-1)*3 + slotToLook - 1] = chosenItem;
+        inventory.onItemChangedCallback.Invoke();
+        // in statwise
     }
 
 

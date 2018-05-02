@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/VisualRefinementScene.unity
-=======
 - path: Assets/Scenes/NEW UI+game merge.unity
->>>>>>> BranchO
-=======
-- path: Assets/Scenes/purchase_testing.unity
->>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

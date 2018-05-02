@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-5.6.2f1:2.8.2.0
-=======
-5.6.2f1:3.3.0.0
->>>>>>> juusobranch
+5.6.2f1:3.3.0.2
 Android
 C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEngine.dll
 C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Name: drum_skin 3
   m_EditorClassIdentifier: 
   instrumentIcon: {fileID: 21300000, guid: 38d57715255ce9246a860f0bc2c7d127, type: 3}
-  color: {r: 0.11724138, g: 1, b: 0, a: 0}
+  color:
+    serializedVersion: 2
+    rgba: 15532287
   instrument: 1
   vintageLock: 2
   trinket: 0

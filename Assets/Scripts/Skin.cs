@@ -8,7 +8,7 @@ public class Skin : ScriptableObject {
     [HideInInspector]
     public Sprite instrumentIcon;
 
-    public Color color;
+    public Color32 color;
 
     public int instrument;
     //public int skinSlot;

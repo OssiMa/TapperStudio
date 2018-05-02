@@ -13,51 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    x: -1542
-    y: 263
-    width: 962
-    height: 546
-=======
-    x: -814
-    y: 201
-    width: 771
-    height: 822
->>>>>>> UI
-  m_ShowMode: 0
-  m_Title: 
-  m_RootView: {fileID: 5}
-  m_MinSize: {x: 304, y: 222}
-  m_MaxSize: {x: 8004, y: 4022}
---- !u!114 &2
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PixelRect:
-    serializedVersion: 2
-    x: 0
-    y: 42
-    width: 1920
-    height: 998
-  m_ShowMode: 4
-  m_Title: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_RootView: {fileID: 9}
-=======
->>>>>>> mergehere
     x: -1600
     y: 222
     width: 1600
@@ -66,92 +21,8 @@ MonoBehaviour:
   m_Title: 
   m_RootView: {fileID: 6}
   m_MinSize: {x: 950, y: 300}
-<<<<<<< HEAD
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
-=======
-=======
-  m_RootView: {fileID: 8}
-  m_MinSize: {x: 950, y: 542}
->>>>>>> UI
-  m_MaxSize: {x: 10000, y: 10000}
---- !u!114 &3
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-<<<<<<< HEAD
-    x: 851
-    y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 318
-    height: 573
-  m_MinSize: {x: 204, y: 221}
-=======
-    width: 425
-    height: 320
-  m_MinSize: {x: 104, y: 121}
->>>>>>> juusobranch
-  m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 20}
-=======
-    width: 962
-    height: 546
-  m_MinSize: {x: 100, y: 122}
-  m_MaxSize: {x: 4000, y: 4022}
-  m_ActualView: {fileID: 17}
->>>>>>> UI
-=======
-    x: 0
-    y: 0
-    width: 320
-    height: 822
-  m_MinSize: {x: 102, y: 122}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 15}
->>>>>>> UI
-  m_Panes:
-  - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &4
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-<<<<<<< HEAD
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 320
-    y: 0
-    width: 451
-    height: 822
-  m_MinSize: {x: 202, y: 222}
-  m_MaxSize: {x: 4002, y: 4022}
-  m_ActualView: {fileID: 19}
-  m_Panes:
-  - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 0
---- !u!114 &5
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -163,121 +34,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-<<<<<<< HEAD
   - {fileID: 9}
   - {fileID: 3}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 8}
-=======
->>>>>>> UI
-  - {fileID: 3}
-  - {fileID: 4}
   m_Position:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 771
-    height: 822
-  m_MinSize: {x: 304, y: 222}
-  m_MaxSize: {x: 8004, y: 4022}
-  vertical: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  controlID: 129
-=======
-  controlID: 139
->>>>>>> BranchO
---- !u!114 &5
-=======
-  controlID: 41
---- !u!114 &8
-=======
-  controlID: 3454
---- !u!114 &6
->>>>>>> UI
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children: []
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 612
-    width: 445
-    height: 336
-  m_MinSize: {x: 234, y: 271}
-  m_MaxSize: {x: 10004, y: 10021}
-  m_ActualView: {fileID: 18}
-  m_Panes:
-  - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &9
->>>>>>> UI
-=======
-  - {fileID: 7}
-  - {fileID: 2}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 488
-    width: 1276
-    height: 320
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
-  vertical: 0
-  controlID: 81
---- !u!114 &4
->>>>>>> juusobranch
-=======
---- !u!114 &7
->>>>>>> UI
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> UI
-  - {fileID: 12}
-  - {fileID: 6}
-=======
-  - {fileID: 11}
-  - {fileID: 5}
->>>>>>> juusobranch
->>>>>>> mergehere
-  m_Position:
-    serializedVersion: 2
-<<<<<<< HEAD
     x: 0
     y: 30
     width: 1600
     height: 808
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 681, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
   vertical: 0
-  controlID: 66
+  controlID: 114
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,9 +60,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1265
+    x: 1276
     y: 0
-    width: 335
+    width: 324
     height: 808
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -303,37 +71,7 @@ MonoBehaviour:
   - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
-<<<<<<< HEAD
 --- !u!114 &4
-=======
-<<<<<<< HEAD
---- !u!114 &7
-=======
-  - {fileID: 14}
-  - {fileID: 8}
-  m_Position:
-    serializedVersion: 2
-=======
->>>>>>> UI
-    x: 908
-    y: 0
-    width: 445
-    height: 948
-  m_MinSize: {x: 234, y: 492}
-  m_MaxSize: {x: 10004, y: 14042}
-  vertical: 1
-<<<<<<< HEAD
-  controlID: 116
---- !u!114 &10
->>>>>>> UI
-=======
---- !u!114 &6
->>>>>>> juusobranch
-=======
-  controlID: 269
---- !u!114 &8
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -341,68 +79,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-<<<<<<< HEAD
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
-=======
-  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Children:
-  - {fileID: 9}
-  - {fileID: 10}
-  - {fileID: 11}
->>>>>>> mergehere
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 320
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 379
-    height: 573
+    width: 316
+    height: 488
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 18}
-=======
-    width: 458
->>>>>>> mergehere
-    height: 488
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
-<<<<<<< HEAD
 --- !u!114 &5
-=======
-<<<<<<< HEAD
---- !u!114 &8
-=======
-=======
->>>>>>> UI
-    width: 1920
-    height: 998
-  m_MinSize: {x: 950, y: 300}
-  m_MaxSize: {x: 10000, y: 10000}
-<<<<<<< HEAD
---- !u!114 &11
->>>>>>> UI
-=======
---- !u!114 &7
->>>>>>> juusobranch
-=======
---- !u!114 &9
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -410,64 +104,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-<<<<<<< HEAD
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-=======
-  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> mergehere
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-<<<<<<< HEAD
     y: 488
-    width: 1265
-=======
-    y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1159
-    height: 375
-=======
-    width: 851
->>>>>>> mergehere
+    width: 1276
     height: 320
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
-  m_Selected: 0
-<<<<<<< HEAD
-  m_LastSelected: 1
---- !u!114 &6
-=======
+  m_Selected: 1
   m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &9
-=======
-=======
->>>>>>> UI
-    width: 1920
-    height: 30
-  m_MinSize: {x: 0, y: 0}
-  m_MaxSize: {x: 0, y: 0}
-<<<<<<< HEAD
-  m_LastLoadedLayoutName: 
---- !u!114 &12
->>>>>>> UI
-=======
---- !u!114 &8
->>>>>>> juusobranch
-=======
-  m_LastLoadedLayoutName: 2 by 3
---- !u!114 &10
->>>>>>> UI
->>>>>>> mergehere
+--- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -479,40 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
-<<<<<<< HEAD
   - {fileID: 7}
   - {fileID: 2}
   - {fileID: 8}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - {fileID: 10}
-  - {fileID: 5}
-  - {fileID: 11}
-=======
-  - {fileID: 16}
-  - {fileID: 9}
-  - {fileID: 15}
->>>>>>> UI
-=======
-  - {fileID: 14}
-  - {fileID: 7}
-  - {fileID: 13}
->>>>>>> UI
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 30
-    width: 1920
-<<<<<<< HEAD
-<<<<<<< HEAD
-    height: 998
-=======
-  - {fileID: 9}
-  - {fileID: 4}
-  - {fileID: 10}
->>>>>>> mergehere
   m_Position:
     serializedVersion: 2
     x: 0
@@ -542,30 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
-<<<<<<< HEAD
 --- !u!114 &8
-=======
-<<<<<<< HEAD
---- !u!114 &11
-=======
-=======
->>>>>>> UI
-    height: 948
-  m_MinSize: {x: 713, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
-  vertical: 0
-<<<<<<< HEAD
-  controlID: 9
---- !u!114 &13
->>>>>>> UI
-=======
---- !u!114 &10
->>>>>>> juusobranch
-=======
-  controlID: 247
---- !u!114 &11
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -585,23 +186,7 @@ MonoBehaviour:
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-<<<<<<< HEAD
 --- !u!114 &9
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &12
-=======
---- !u!114 &14
->>>>>>> UI
-=======
---- !u!114 &11
->>>>>>> juusobranch
-=======
---- !u!114 &12
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -612,83 +197,20 @@ MonoBehaviour:
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_Children:
   - {fileID: 10}
   - {fileID: 5}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_Children:
-<<<<<<< HEAD
-  - {fileID: 13}
-  - {fileID: 4}
-=======
-  m_Children: []
->>>>>>> UI
-=======
-  - {fileID: 12}
-  - {fileID: 3}
->>>>>>> juusobranch
-=======
-  m_Children: []
->>>>>>> UI
->>>>>>> mergehere
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 1265
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1531
-    height: 948
-  m_MinSize: {x: 610, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
-  vertical: 1
-  controlID: 138
---- !u!114 &13
-=======
-    width: 443
-    height: 482
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 18}
-=======
-    width: 445
-    height: 612
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
->>>>>>> UI
-  m_Panes:
-  - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &15
->>>>>>> UI
-=======
     width: 1276
->>>>>>> mergehere
     height: 808
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 404, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-<<<<<<< HEAD
-  controlID: 67
+  controlID: 10
 --- !u!114 &10
-=======
-  controlID: 22
---- !u!114 &12
->>>>>>> juusobranch
-=======
---- !u!114 &13
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -699,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   m_Children:
   - {fileID: 4}
   - {fileID: 11}
@@ -707,73 +228,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1265
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_Children:
-<<<<<<< HEAD
-  - {fileID: 7}
-  - {fileID: 14}
-  - {fileID: 2}
-=======
-  m_Children: []
->>>>>>> UI
-=======
-  - {fileID: 6}
-  - {fileID: 13}
->>>>>>> juusobranch
-=======
-  m_Children: []
->>>>>>> UI
-  m_Position:
-    serializedVersion: 2
-    x: 1353
-    y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 1531
-    height: 573
-  m_MinSize: {x: 610, y: 221}
-  m_MaxSize: {x: 12010, y: 4021}
-  vertical: 0
-  controlID: 69
---- !u!114 &14
-=======
-    width: 569
-=======
-    width: 567
->>>>>>> UI
-    height: 948
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 17}
-  m_Panes:
-  - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &16
->>>>>>> UI
-=======
     width: 1276
->>>>>>> mergehere
     height: 488
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-<<<<<<< HEAD
   controlID: 11
 --- !u!114 &11
-=======
-  controlID: 23
---- !u!114 &13
->>>>>>> juusobranch
-=======
---- !u!114 &14
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -787,25 +248,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 320
-=======
-<<<<<<< HEAD
-    x: 0
+    x: 316
     y: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-    width: 834
-    height: 573
-=======
-    x: 458
->>>>>>> mergehere
-    y: 0
-    width: 945
+    width: 960
     height: 488
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
-<<<<<<< HEAD
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -814,39 +262,6 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &12
-=======
-  m_ActualView: {fileID: 18}
-  m_Panes:
-  - {fileID: 18}
-  - {fileID: 14}
-  - {fileID: 19}
-  m_Selected: 0
-<<<<<<< HEAD
-  m_LastSelected: 0
---- !u!114 &15
-=======
-=======
->>>>>>> UI
-    width: 908
-    height: 948
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 20}
-  m_Panes:
-  - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 0
-<<<<<<< HEAD
---- !u!114 &17
->>>>>>> UI
-=======
-  m_LastSelected: 2
---- !u!114 &14
->>>>>>> juusobranch
-=======
---- !u!114 &15
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -854,148 +269,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
-<<<<<<< HEAD
   m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
-=======
-  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> mergehere
   m_Name: 
   m_EditorClassIdentifier: 
   m_AutoRepaintOnSceneChange: 0
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
-<<<<<<< HEAD
     m_Text: Asset Store
     m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000,
-=======
-    m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000,
->>>>>>> mergehere
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> mergehere
     x: 468
     y: 181
     width: 973
     height: 501
-<<<<<<< HEAD
 --- !u!114 &13
-=======
-=======
-    x: -814
-    y: 223
-    width: 318
-    height: 800
->>>>>>> UI
---- !u!114 &16
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_DepthBufferBits: 0
-  m_Pos:
-    serializedVersion: 2
-    x: 910
-    y: 91
-    width: 441
-    height: 591
-  m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 76d9fcff56dafcff4cdbfcffb4f7ffff000000000c3000001a3000005a320000c4320000783400004035000076350000649500007a95000082990000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-  m_ExpandedScenes:
-  - VisualRefinementScene
-  m_CurrenRootInstanceID: 0
-  m_Locked: 0
-  m_CurrentSortingName: TransformSorting
---- !u!114 &17
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AutoRepaintOnSceneChange: 0
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
-      type: 0}
-    m_Tooltip: 
-  m_DepthBufferBits: 0
-  m_Pos:
-    serializedVersion: 2
-    x: 1355
-    y: 91
-    width: 565
-    height: 927
-  m_ScrollPosition: {x: 0, y: 0}
-  m_InspectorMode: 0
-  m_PreviewResizer:
-    m_CachedPref: -160
-    m_ControlHash: -371814159
-    m_PrefName: Preview_InspectorPreview
-  m_PreviewWindow: {fileID: 0}
-<<<<<<< HEAD
---- !u!114 &20
->>>>>>> UI
-=======
-    x: -1140
-    y: 271
-    width: 814
-    height: 467
---- !u!114 &15
->>>>>>> juusobranch
-=======
---- !u!114 &18
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1017,37 +309,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 0
-    y: 664
-    width: 1157
-    height: 354
-=======
-    x: 910
-    y: 573
-    width: 439
-    height: 445
->>>>>>> UI
-=======
->>>>>>> mergehere
     x: -1600
     y: 759
-    width: 1263
+    width: 1274
     height: 299
-<<<<<<< HEAD
-=======
->>>>>>> juusobranch
-=======
-    x: 910
-    y: 703
-    width: 441
-    height: 315
->>>>>>> UI
->>>>>>> mergehere
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -1059,67 +324,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-<<<<<<< HEAD
-    - Assets/Scripts
-=======
-    - Assets/Scenes
-<<<<<<< HEAD
->>>>>>> mergehere
+    - Assets/ScriptableObjects/Skins/Drum
   m_ViewMode: 1
-  m_StartGridSize: 72
+  m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/ScriptableObjects/Skins/Drum
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\JuusoMyl1\Desktop\TapperStudio
   m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
     scrollPos: {x: 0, y: 234}
-    m_SelectedIDs: 8c380000
-    m_LastClickedID: 14476
-    m_ExpandedIDs: 00000000d8370000223800003e3800000c390000123900003639000076390000c23900006c1c010000ca9a3bffffff7f
-=======
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-    m_SelectedIDs: 30260000
-    m_LastClickedID: 9776
-    m_ExpandedIDs: 00000000922500000a260000282700002e270000842700001028000000ca9a3bffffff7f
-=======
-    - Assets/Graphics/Sprites
-=======
->>>>>>> UI
-  m_ViewMode: 0
-  m_StartGridSize: 64
-  m_LastFolders:
-  - Assets
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\eliasmas\Desktop\TapperStudio
-  m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
-    m_SelectedIDs: 1c250000
-    m_LastClickedID: 9500
-    m_ExpandedIDs: 00000000460100001c250000402500004a250000ca25000016260000282600006e26000072260000742600002e27000082270000be270000
->>>>>>> UI
-=======
-    m_SelectedIDs: ac260000
-    m_LastClickedID: 9900
-    m_ExpandedIDs: 000000000e26000086260000a4270000aa270000022800008e28000000ca9a3bffffff7f
->>>>>>> BranchO
-=======
-    scrollPos: {x: 0, y: 74}
-    m_SelectedIDs: 56260000
-    m_LastClickedID: 9814
-    m_ExpandedIDs: 000000008e250000d4250000262700002c270000822700000e28000000ca9a3bffffff7f
->>>>>>> juusobranch
-=======
-    m_SelectedIDs: d42a0000
-    m_LastClickedID: 10964
-    m_ExpandedIDs: 00000000d42a00004a2b00005a2c0000602c00008e2c0000042d000000ca9a3bffffff7f
->>>>>>> UI
->>>>>>> mergehere
+    m_SelectedIDs: 80280000
+    m_LastClickedID: 10368
+    m_ExpandedIDs: 000000004e28000082280000a4280000d42800000a2a0000102a0000642a00000c2b0000682b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1147,27 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000d8370000223800000c390000123900003639000076390000
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000922500000a260000282700002e2700008427000010280000
-=======
-    m_ExpandedIDs: 00000000460100001c250000402500004a250000ca25000016260000282600006e26000072260000742600002e27000082270000be270000
->>>>>>> UI
-=======
-    m_ExpandedIDs: 000000000e26000086260000a4270000aa270000022800008e280000
->>>>>>> BranchO
-=======
-    m_ExpandedIDs: 000000008e25000006260000262700002c270000822700000e280000
->>>>>>> juusobranch
-=======
-    m_ExpandedIDs: 00000000d42a00004a2b0000602c00008e2c000000ca9a3bffffff7f
->>>>>>> UI
->>>>>>> mergehere
+    m_ExpandedIDs: 000000004e28000082280000a4280000d42800000a2a0000102a0000642a00000c2b0000682b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1194,8 +391,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c623000000000000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1211,7 +408,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1219,24 +416,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-<<<<<<< HEAD
-    m_ScrollPosition: {x: 0, y: 62}
-    m_GridSize: 72
-  m_DirectoriesAreaWidth: 173
---- !u!114 &14
-=======
-    m_ScrollPosition: {x: 0, y: 182}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
-<<<<<<< HEAD
-  m_DirectoriesAreaWidth: 115
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &17
-=======
-  m_DirectoriesAreaWidth: 273
---- !u!114 &16
->>>>>>> juusobranch
->>>>>>> mergehere
+  m_DirectoriesAreaWidth: 202
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1258,9 +441,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: -333
+    x: -322
     y: 271
-    width: 333
+    width: 322
     height: 787
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -1269,21 +452,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-<<<<<<< HEAD
 --- !u!114 &15
-=======
-<<<<<<< HEAD
---- !u!114 &18
-=======
---- !u!114 &21
->>>>>>> UI
-=======
---- !u!114 &17
->>>>>>> juusobranch
-=======
---- !u!114 &19
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1305,26 +474,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    x: 0
-    y: 91
-    width: 377
-    height: 552
-=======
->>>>>>> mergehere
     x: -1600
     y: 271
-    width: 318
+    width: 314
     height: 467
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: c4defcffa8e7fcff500efeff66b1feffb8bcfeff64e7feffe4f8fefff618ffff1ae7ffff1af4ffff00000000383c00004e3c0000863c00005a3e0000d26b0000306d0000646d0000fa720000687400004c750000dc7800000c790000147a0000429b0000829c00005c9f0000a49f00005ca0000034a10000a4a100000e170100c01701002e18010044180100041a0100641a0100021b0100281b01003e1b0100
+    m_ExpandedIDs: 44f5ffff84f5ffffc8f5ffff72f6ffffc2f7fffff0f9ffff22fbffff00000000de2c0000f42c0000662d0000562e0000342f00004c2f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1340,89 +498,14 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
   - skin_testing
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
-<<<<<<< HEAD
 --- !u!114 &16
-=======
-<<<<<<< HEAD
---- !u!114 &19
-=======
-    x: -506
-    y: 221
-    width: 452
-    height: 821
-=======
-    x: -492
-    y: 223
-    width: 449
-    height: 800
->>>>>>> UI
-  m_MaximizeOnPlay: 0
-  m_Gizmos: 0
-  m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000010000000000000000000000000000000000000000000000000000000
-  m_TargetDisplay: 0
-  m_ZoomArea:
-    m_HRangeLocked: 0
-    m_VRangeLocked: 0
-    m_HBaseRangeMin: -220.21875
-    m_HBaseRangeMax: 220.21875
-    m_VBaseRangeMin: -391.5
-    m_VBaseRangeMax: 391.5
-    m_HAllowExceedBaseRangeMin: 1
-    m_HAllowExceedBaseRangeMax: 1
-    m_VAllowExceedBaseRangeMin: 1
-    m_VAllowExceedBaseRangeMax: 1
-    m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
-    m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
-    m_EnableSliderZoom: 0
-    m_UniformScale: 1
-    m_UpDirection: 1
-    m_DrawArea:
-      serializedVersion: 2
-      x: 0
-      y: 17
-      width: 449
-      height: 783
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 224.5, y: 391.5}
-    m_MarginLeft: 0
-    m_MarginRight: 0
-    m_MarginTop: 0
-    m_MarginBottom: 0
-    m_LastShownAreaInsideMargins:
-      serializedVersion: 2
-      x: -224.5
-      y: -391.5
-      width: 449
-      height: 783
-    m_MinimalGUI: 1
-  m_defaultScale: 1
-  m_TargetTexture: {fileID: 0}
-  m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 449, y: 800}
-  m_ClearInEditMode: 1
-  m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000100000100
-<<<<<<< HEAD
---- !u!114 &22
->>>>>>> UI
-=======
---- !u!114 &18
->>>>>>> juusobranch
-=======
---- !u!114 &20
->>>>>>> UI
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1444,65 +527,19 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: -1278
-=======
-<<<<<<< HEAD
-    x: 0
-    y: 91
-    width: 906
-    height: 927
-  m_SceneLighting: 1
-<<<<<<< HEAD
-  lastFramingTime: 17971.714740193212
->>>>>>> UI
-=======
-    x: -1140
->>>>>>> mergehere
+    x: -1282
     y: 271
-    width: 941
+    width: 956
     height: 467
   m_SceneLighting: 1
-<<<<<<< HEAD
-  lastFramingTime: 18615.420633003494
-=======
-  lastFramingTime: 13426.68736971172
->>>>>>> juusobranch
-=======
-  lastFramingTime: 0
->>>>>>> UI
->>>>>>> mergehere
+  lastFramingTime: 2952.866822941199
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: -1.5169694, y: -0.21811628, z: 98.69667}
+    m_Target: {x: 0.049990892, y: 0.033329666, z: 98.68}
     speed: 2
-    m_Value: {x: -1.5169694, y: -0.21811628, z: 98.69667}
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: {x: 1.9178808, y: 0.28951678, z: 0}
-    speed: 2
-    m_Value: {x: 1.9178808, y: 0.28951678, z: 0}
-=======
-    m_Target: {x: -0.26777464, y: 1.3608944, z: 98.67969}
-    speed: 2
-    m_Value: {x: -0.26777464, y: 1.3608944, z: 98.67969}
->>>>>>> UI
-=======
-    m_Target: {x: 145.98192, y: 168.07198, z: 0}
-    speed: 2
-    m_Value: {x: 145.98192, y: 168.07198, z: 0}
->>>>>>> juusobranch
-=======
-    m_Target: {x: -0.9947513, y: 3.792069, z: 0}
-    speed: 2
-    m_Value: {x: -0.9947513, y: 3.792069, z: 0}
->>>>>>> UI
->>>>>>> mergehere
+    m_Value: {x: 0.049990892, y: 0.033329666, z: 98.68}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -1529,33 +566,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-<<<<<<< HEAD
-    m_Target: 9.749685
+    m_Target: 10.312447
     speed: 2
-    m_Value: 9.749685
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    m_Target: 10.342981
-    speed: 2
-    m_Value: 10.342981
-=======
-    m_Target: 16.818611
-    speed: 2
-    m_Value: 16.818611
->>>>>>> UI
-=======
-    m_Target: 504.77618
-    speed: 2
-    m_Value: 504.77618
->>>>>>> juusobranch
-=======
-    m_Target: 12.98872
-    speed: 2
-    m_Value: 12.98872
->>>>>>> UI
->>>>>>> mergehere
+    m_Value: 10.312447
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1566,17 +579,7 @@ MonoBehaviour:
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
-<<<<<<< HEAD
 --- !u!114 &17
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
---- !u!114 &20
-=======
---- !u!114 &19
->>>>>>> juusobranch
->>>>>>> mergehere
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -1598,9 +601,9 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: -1278
+    x: -1282
     y: 271
-    width: 941
+    width: 956
     height: 467
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -1610,8 +613,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -470.5
-    m_HBaseRangeMax: 470.5
+    m_HBaseRangeMin: -126.5625
+    m_HBaseRangeMax: 126.5625
     m_VBaseRangeMin: -225
     m_VBaseRangeMax: 225
     m_HAllowExceedBaseRangeMin: 1
@@ -1620,9 +623,9 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -1630,25 +633,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 941
+      width: 956
       height: 450
-    m_Scale: {x: 1.1582904, y: 1.1582904}
-    m_Translation: {x: 470.5, y: 211.22873}
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 478, y: 225}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -406.20212
-      y: -182.3625
-      width: 812.40424
-      height: 388.5036
+      x: -478
+      y: -225
+      width: 956
+      height: 450
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 941, y: 467}
+  m_LastWindowPixelSize: {x: 956, y: 467}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -1676,11 +679,5 @@ MonoBehaviour:
     serializedVersion: 2
     x: -1600
     y: 759
-    width: 1263
+    width: 1274
     height: 299
-<<<<<<< HEAD
-=======
->>>>>>> juusobranch
-=======
->>>>>>> UI
->>>>>>> mergehere

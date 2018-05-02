@@ -9,9 +9,10 @@ public class SkinSlot : MonoBehaviour {
 
     Button button;
     ColorBlock cb;
-    Color buttonColor;
+    Color32 buttonColor;
 
-    Skin skin;
+    [HideInInspector]
+    public Skin skin;
 
     public void AddSkin(Skin newSkin)
     {

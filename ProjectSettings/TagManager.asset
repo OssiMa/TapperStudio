@@ -21,6 +21,7 @@ TagManager:
   - guitar_image (4)
   - Activator
   - LongNote
+  - EquipSlot
   layers:
   - Default
   - TransparentFX

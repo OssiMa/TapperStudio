@@ -137,6 +137,7 @@
     <Compile Include="Assets\Scripts\ButtonMenuScript.cs" />
     <Compile Include="Assets\Scripts\CurrencyManager.cs" />
     <Compile Include="Assets\Scripts\Drums.cs" />
+    <Compile Include="Assets\Scripts\EquipSlot.cs" />
     <Compile Include="Assets\Scripts\Guitar.cs" />
     <Compile Include="Assets\Scripts\GuitarSlider.cs" />
     <Compile Include="Assets\Scripts\InstrumentBase.cs" />

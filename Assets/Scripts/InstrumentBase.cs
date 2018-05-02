@@ -7,6 +7,7 @@ using System.IO;
 
 public class InstrumentBase : MonoBehaviour {
 
+    InventoryUI invUI;
 
     public SongProgress progression;
 
@@ -24,6 +25,7 @@ public class InstrumentBase : MonoBehaviour {
     float nextLevel = 2;
     [HideInInspector]
     public int vintageLevel = 0;
+    public int instrumentNbr;
 
     public float combo = 1;                 //current combo
     public float comboStep;                 //when at combostemax, combo increases
@@ -31,10 +33,15 @@ public class InstrumentBase : MonoBehaviour {
     public float comboUpkeep = 5;           //mistakes player can make before losing combo
     public float comboFade = 1000;          //how long the instrument needs to be inactive to lose combo
 
+    float geneBoost;
+    float comboBoost;
+    float xpBoost;
+
 
 	// Use this for initialization
 	void Start ()
     {
+        invUI = InventoryUI.instance;
         //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
@@ -42,6 +49,7 @@ public class InstrumentBase : MonoBehaviour {
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
+        BoostUpdate();
 	}
 	
 	// Update is called once per frame
@@ -54,6 +62,7 @@ public class InstrumentBase : MonoBehaviour {
         currLvl.text = "" + level;
         LvlUp();
         SaveGame();
+        BoostUpdate();
 	}
 
     void LvlUp()
@@ -154,6 +163,42 @@ public class InstrumentBase : MonoBehaviour {
         {
             Tap();
         }
+    }
+    
+    public float GetBoosts(int i)
+    {
+        if (invUI.EquipBoosts(instrumentNbr, i) != null)
+        {
+            Item booster = invUI.EquipBoosts(instrumentNbr, i);
+            if (i == 1)
+            {
+                return booster.generationBoost;
+            }
+            else if (i == 2)
+            {
+                return booster.maxCombo;
+            }
+            else if (i == 3)
+            {
+                return booster.xpBoost;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        else
+        {
+            return 0;
+        }
+        
+    }
+
+    public void BoostUpdate()
+    {
+        geneBoost = GetBoosts(1);
+        comboBoost = GetBoosts(2);
+        xpBoost = GetBoosts(3);
     }
 
     public void SaveGame()

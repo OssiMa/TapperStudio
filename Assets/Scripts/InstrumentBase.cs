@@ -22,7 +22,8 @@ public class InstrumentBase : MonoBehaviour {
     float expToNext = 25;
     public float level = 1;
     float nextLevel = 2;
-    float vintageLevel = 0;
+    [HideInInspector]
+    public int vintageLevel = 0;
 
     public float combo = 1;                 //current combo
     public float comboStep;                 //when at combostemax, combo increases

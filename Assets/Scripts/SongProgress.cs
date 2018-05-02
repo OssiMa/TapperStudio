@@ -16,7 +16,8 @@ public class SongProgress : MonoBehaviour {
     InstrumentBase activeBase;
 
     GameObject activeInstrument;
-    GameObject[] instruments;
+    [HideInInspector]
+    public GameObject[] instruments;
 
     public List<GameObject> inactives;
 

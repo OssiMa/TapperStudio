@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/NEW UI+game merge.unity
+=======
+- path: Assets/Scenes/skin_testing.unity
+>>>>>>> mergehere
   isLoaded: 1
   isActive: 1

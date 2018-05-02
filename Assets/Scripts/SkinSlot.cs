@@ -15,25 +15,33 @@ public class SkinSlot : MonoBehaviour {
 
     public void AddSkin(Skin newSkin)
     {
+        icon = GetComponent<Image>();
+
         skin = newSkin;
 
         button = GetComponent<Button>();
-        cb = button.colors;
+
+        //cb = button.colors;
         cb.normalColor = skin.color;
-        button.colors = cb;
+        //button.colors = cb;
 
         icon.sprite = skin.instrumentIcon;
         icon.enabled = true;
         button.interactable = true;
     }
 
-    public void ClearSlot()     //Dunno if this will be even needed
+    public void ClearSlot()
     {
-        button = GetComponent<Button>();
-        skin = null;
+        icon = GetComponent<Image>();
 
-        icon.sprite = null;
-        icon.enabled = false;
+        button = GetComponent<Button>();
+
+        //cb = button.colors;
+        //cb.normalColor = skin.color;
+        //button.colors = cb;
+
+        //icon.sprite = Resources.Load<Sprite>("tab_menubackground");
+        //print(icon.sprite);
         button.interactable = false;
     }
 

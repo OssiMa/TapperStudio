@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776c02a2bcb15f1468d100a0e7ee6559, type: 3}
+  m_Name: pop_5cur
+  m_EditorClassIdentifier: 
+  popUpName: 
+  purpose: 1
+  addCurrencyAmount: 0
+  boughtItem: 0
+  removeCurrencyAmount: 0
+  statsVisible: 0
+  picVisible: 0
+  description: Will you really give your money to me?!
+  stats:
+  - 'Power: 2'
+  - 'Defence: 3'
+  - 'Sound: 1'
+  - 'Smell: 11'
+  buttonAmount: 2
+  buttonOne: Yes
+  buttonTwo: No
+  buttonPos1X: -309
+  buttonPos1Y: -1034
+  buttonPos2X: 301
+  buttonPos2Y: -1034
+  sizeX: 20
+  sizeY: 15
+  pic: {fileID: 21300000, guid: 16bd91d46068d164d93fb2abec065000, type: 3}
+  bg: {fileID: 21300000, guid: dab1301e0a9181d4699e1208fdb4cea2, type: 3}

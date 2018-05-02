@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Skin", menuName = "Skin/New Skin")]
 public class Skin : ScriptableObject {
 
     [HideInInspector]
@@ -10,7 +11,7 @@ public class Skin : ScriptableObject {
     public Color color;
 
     public int instrument;
-    public int skinSlot;
+    //public int skinSlot;
 
     public int vintageLock;
 

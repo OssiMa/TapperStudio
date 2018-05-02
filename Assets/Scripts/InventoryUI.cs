@@ -6,6 +6,23 @@ using System.Linq;
 
 public class InventoryUI : MonoBehaviour {
 
+    #region Singleton
+
+    public static InventoryUI instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Paska koodaaja nyt on 2 inventory UItä");
+            return;
+        }
+
+        instance = this;
+    }
+
+    #endregion
+
     Inventory inventory;
 
     InventorySlot chosenSlot;
@@ -128,9 +145,10 @@ public class InventoryUI : MonoBehaviour {
         }
     }
 
-    void EquipBoosts()
+    public Item EquipBoosts(int ins, int slot)
     {
-
+        Item x = equippedItems[(ins - 1) * 3 + slot - 1];
+        return x;
     }
 
     public void SetInstrument(int x)

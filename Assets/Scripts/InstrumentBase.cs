@@ -7,60 +7,90 @@ using System.IO;
 
 public class InstrumentBase : MonoBehaviour {
 
+    InventoryUI invUI;
 
     public SongProgress progression;
 
 
     public Slider xpBar;
+    public Slider fadeSlider;
     public Text currLvl;
     public Text nxtLvl;
     public Text comboText;
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
     float startXp;
-    float expToNext = 15;
+    float expToNext = 25;
     public float level = 1;
     float nextLevel = 2;
+    [HideInInspector]
+    public int vintageLevel = 0;
+    public int instrumentNbr;
 
-    public float combo = 1;
-    public float comboStep;
-    public float comboStepMax = 20;
-    public float comboUpkeep = 5;
+    public float combo = 1;                 //current combo
+    public float comboStep;                 //when at combostemax, combo increases
+    public float comboStepMax = 20;         //combo up when reached
+    public float comboUpkeep = 5;           //mistakes player can make before losing combo
+    public float comboFade = 1000;          //how long the instrument needs to be inactive to lose combo
+
+    float geneBoost;
+    float comboBoost;
+    float xpBoost;
 
 
 	// Use this for initialization
 	void Start ()
     {
+        invUI = InventoryUI.instance;
         //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
+        fadeSlider.maxValue = comboFade;
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
+        BoostUpdate();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        fadeSlider.value = comboFade;
         comboText.text = "Combo: " + combo;
         xpBar.value = exp;
         nxtLvl.text = "" + nextLevel;
         currLvl.text = "" + level;
+        LvlUp();
+        SaveGame();
+        BoostUpdate();
+	}
 
-        if (exp >= expToNext)
+    void LvlUp()
+    {
+        if (exp >= expToNext && level < 19)
         {
             level += 1;
             nextLevel += 1;
             startXp = expToNext;
-            expToNext = expToNext*2.5f;
+            expToNext = expToNext * 1.1f;
             xpBar.minValue = startXp;
             xpBar.maxValue = expToNext;
 
         }
+        else if (level == 19 && exp >= expToNext)
+        {
+            print("vintagee");
+        }
+    }
 
-
-        SaveGame();
-	}
+    void VintageLvlUp()
+    {
+        vintageLevel += 1;
+        exp = 0;
+        expToNext = 25;
+        level = 1;
+        nextLevel = 2;
+    }
 
     public void Tap()
     {
@@ -78,7 +108,7 @@ public class InstrumentBase : MonoBehaviour {
 
     public void ComboTap()
     {
-        exp += 1 * combo;
+        exp += 0.5f * combo;
         progression.GainXP();
         if (combo < 4)
         {
@@ -93,6 +123,24 @@ public class InstrumentBase : MonoBehaviour {
         {
             comboUpkeep += 3;
         }
+        ComboFadeUp();
+    }
+
+    public void ComboFading()
+    {
+        if (combo > 1)
+        {
+            combo -= 1;
+            comboFade = 500;
+        }
+    }
+
+    void ComboFadeUp()
+    {
+        if (comboFade < 950)
+        {
+            comboFade += 50;
+        }
     }
 
     public void BigExpReward()
@@ -106,6 +154,7 @@ public class InstrumentBase : MonoBehaviour {
             combo += 1;
             comboStep = 0;
         }
+        ComboFadeUp();
     }
 
     private void OnMouseOver()
@@ -114,6 +163,42 @@ public class InstrumentBase : MonoBehaviour {
         {
             Tap();
         }
+    }
+    
+    public float GetBoosts(int i)
+    {
+        if (invUI.EquipBoosts(instrumentNbr, i) != null)
+        {
+            Item booster = invUI.EquipBoosts(instrumentNbr, i);
+            if (i == 1)
+            {
+                return booster.generationBoost;
+            }
+            else if (i == 2)
+            {
+                return booster.maxCombo;
+            }
+            else if (i == 3)
+            {
+                return booster.xpBoost;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        else
+        {
+            return 0;
+        }
+        
+    }
+
+    public void BoostUpdate()
+    {
+        geneBoost = GetBoosts(1);
+        comboBoost = GetBoosts(2);
+        xpBoost = GetBoosts(3);
     }
 
     public void SaveGame()
@@ -127,8 +212,6 @@ public class InstrumentBase : MonoBehaviour {
         bf.Serialize(file, save);
         file.Close();
 
-
-        Debug.Log("Game Saved");
     }
 
     private Save CreateSaveGameObject()

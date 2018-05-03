@@ -129,10 +129,12 @@ public class SongProgress : MonoBehaviour {
     {
         float geneLvl = 0;
         float geneCombo = 0;
+        float geneBoost = 0;
         foreach (GameObject ins in inactives)
         {
             geneLvl += ins.GetComponent<InstrumentBase>().level;
             geneCombo += ins.GetComponent<InstrumentBase>().combo;
+            geneBoost += ins.GetComponent<InstrumentBase>().xpBoost;
             if (ins.GetComponent<InstrumentBase>().comboFade > 0 && ins.GetComponent<InstrumentBase>().combo > 1)
             {
                 ins.GetComponent<InstrumentBase>().comboFade -= 1;
@@ -144,7 +146,7 @@ public class SongProgress : MonoBehaviour {
                 ins.GetComponent<InstrumentBase>().fadeSlider.value = 500;
             }
         }
-        songXP += 0.01f + geneLvl * geneCombo * 0.0005f;              //WIP, feel free to play with and test for optimal values
+        songXP += 0.01f + (geneLvl * geneCombo + geneBoost) * 0.0005f;              //WIP, feel free to play with and test for optimal values
     }
 
     public void CheckActive()

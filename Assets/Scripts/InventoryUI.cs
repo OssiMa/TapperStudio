@@ -78,6 +78,8 @@ public class InventoryUI : MonoBehaviour {
                 itemsToShow.Add(inventory.items[i]);
             }
         }
+        itemsToShow = itemsToShow.OrderByDescending(items => items.rarity).ToList();
+
     }
 
     void ShowEquipped()
@@ -136,6 +138,10 @@ public class InventoryUI : MonoBehaviour {
                 if (craftInProgress == true && itemsToShow[i+xPage].rarity != chosenItem.rarity )
                 {
                     slots[i].CraftingFilter();
+                }
+                if (equippedItems.Contains(itemsToShow[i+xPage]))
+                {
+                    slots[i].Equipped();
                 }
             }
             else
@@ -211,17 +217,19 @@ public class InventoryUI : MonoBehaviour {
         if (combineWith != null)
         {
             print("craft in progress");
-            Inventory.instance.RemoveItem(chosenSlot.GetItem());
+            Inventory.instance.RemoveItem(chosenItem);
             Inventory.instance.RemoveItem(combineWith);
             NewItemGenerator.instance.NewCraftedItem(combineWith.rarity + 1, combineWith.slot, combineWith.instrument);
-            if (equippedItems.Contains(chosenSlot.GetItem())||equippedItems.Contains(chosenSlot.GetItem()))
+            if (equippedItems.Contains(chosenItem)||equippedItems.Contains(combineWith))
             {
+                print("removing");
                 equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
             }
             craftInProgress = false;
             inventory.onItemChangedCallback.Invoke();
             combineWith = null;
             chosenItem = null;
+            chosenSlot = null;
             print("craft succesful");
         }
         else
@@ -252,7 +260,6 @@ public class InventoryUI : MonoBehaviour {
     {
         equippedItems[(instrumentToLook-1)*3 + slotToLook - 1] = chosenItem;
         inventory.onItemChangedCallback.Invoke();
-        // in statwise
     }
 
 

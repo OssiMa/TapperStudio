@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114627828102718676}
   m_Layer: 5
   m_Name: plate (3)
-  m_TagString: Drum plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 114157442292054268}
   m_Layer: 5
   m_Name: plate (1)
-  m_TagString: Drum plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 114898736442745662}
   m_Layer: 5
   m_Name: plate
-  m_TagString: Drum plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 114715525347877532}
   m_Layer: 5
   m_Name: plate (2)
-  m_TagString: Drum plate
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,11 +1093,14 @@ MonoBehaviour:
   comboText: {fileID: 114260065356599462}
   exp: 0
   level: 1
+  vintageLevel: 0
+  instrumentNbr: 1
   combo: 1
   comboStep: 0
   comboStepMax: 20
   comboUpkeep: 5
   comboFade: 1000
+  xpBoost: 0
 --- !u!114 &114627828102718676
 MonoBehaviour:
   m_ObjectHideFlags: 1

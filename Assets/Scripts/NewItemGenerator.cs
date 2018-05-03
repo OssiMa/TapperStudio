@@ -66,11 +66,11 @@ public class NewItemGenerator : MonoBehaviour {
     {
         if (item.slot == 1)
         {
-            item.maxCombo = item.rarity;                                      // <<<Real values here
+            item.generationBoost = item.rarity;                                  // <<<Real values here
         }
         else if(item.slot == 2)
-        {
-            item.generationBoost = item.rarity;                            // <<<Real values here
+        {           
+            item.maxCombo = item.rarity;                                        // <<<Real values here
         }
         else if (item.slot == 3)
         {

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776c02a2bcb15f1468d100a0e7ee6559, type: 3}
+  m_Name: pop_itemmixed
+  m_EditorClassIdentifier: 
+  popUpName: 
+  purpose: 2
+  statsVisible: 0
+  picVisible: 0
+  description: Will you purchase an item of random rarity?
+  stats: []
+  buttonAmount: 2
+  buttonOne: Yes
+  buttonTwo: No
+  buttonPos1X: -115
+  buttonPos1Y: -1034
+  buttonPos2X: 115
+  buttonPos2Y: -1034
+  sizeX: 7
+  sizeY: 12
+  pic: {fileID: 0}
+  bg: {fileID: 21300000, guid: 39ec7ad0085447c4bab78b9ac9e15bb4, type: 3}

@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 114233642435257454}
   - component: {fileID: 114030491865793142}
   - component: {fileID: 114350805662113884}
-  - component: {fileID: 114689545049091434}
   - component: {fileID: 114359531917233920}
+  - component: {fileID: 114485797418997078}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -58,7 +58,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
+  premiumCurrency: 20
   currencyText: {fileID: 0}
+  premiumCurrencyText: {fileID: 0}
   amountOfCurrency: 0
 --- !u!114 &114233642435257454
 MonoBehaviour:
@@ -83,7 +85,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b232a46481c94784fb022761ce1ee897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currency: 0
+  purchasedItemRarityRare: 0
+  purchasedItemRarityMixed: 0
+  purchasedItemRarityCommon: 0
+  commonItemCost: 0
+  mixedItemCost: 0
+  rareItemCost: 0
+  skinCost: 0
+  premiumSkinCost: 0
+  adBonus: 0
 --- !u!114 &114350805662113884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,8 +117,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skins:
-  - {fileID: 0}
---- !u!114 &114689545049091434
+  - {fileID: 11400000, guid: 0bbebe9ee37d0ff42be03c8a1948efcc, type: 2}
+  - {fileID: 11400000, guid: ffcd7591f9209ab44b2008cb2f3877fd, type: 2}
+  - {fileID: 11400000, guid: df9f27fcc1baed94391c5c8c9d2e714b, type: 2}
+  - {fileID: 11400000, guid: f8c1b44b906953b46be2fbc5edca966d, type: 2}
+  - {fileID: 11400000, guid: 858e369ca55e03943b0640bb724ddba5, type: 2}
+  - {fileID: 11400000, guid: ea535657fc05e96468429e42b60129bb, type: 2}
+  - {fileID: 11400000, guid: 7507e32b52cfdc0499f47dc23f6cf645, type: 2}
+  - {fileID: 11400000, guid: ae51652f3a792324eaf7049c3ba76eb0, type: 2}
+  - {fileID: 11400000, guid: 493bc2432f9d290479fd0ff3a83f219f, type: 2}
+  - {fileID: 11400000, guid: 44d0d53ab455bc849af924b4d05689a6, type: 2}
+  - {fileID: 11400000, guid: 05f6f1e81e66ece439918bad3c51061b, type: 2}
+  - {fileID: 11400000, guid: fc761cfe12430974da81603b8a59890e, type: 2}
+  - {fileID: 11400000, guid: 0b6fe1b1bf036574298dd237627cd202, type: 2}
+  - {fileID: 11400000, guid: 8fe534e439f130f4f87f21da2e268d66, type: 2}
+  - {fileID: 11400000, guid: 5ad9a13efe87e6f43b310a374843e67d, type: 2}
+  - {fileID: 11400000, guid: 0f97d9403ae6b42469cad62c21feaf74, type: 2}
+  - {fileID: 11400000, guid: 3138c329e3f2a5744b3ab7279939b3d1, type: 2}
+  - {fileID: 11400000, guid: db6010d6248b25c448d6e2a688236b29, type: 2}
+  - {fileID: 11400000, guid: 2ce0d449f6f34d649bc568c3b1b4a772, type: 2}
+  - {fileID: 11400000, guid: ba143e5f51dffc2489d02ac06755c58b, type: 2}
+  - {fileID: 11400000, guid: 5b45a313f762c404ba23143efbfe4708, type: 2}
+  - {fileID: 11400000, guid: 973852752fc909d45a7c301cfb103435, type: 2}
+  - {fileID: 11400000, guid: 85c836a02db349c419230c89c351b634, type: 2}
+  - {fileID: 11400000, guid: aebe089ebfea5ea4cbcafcaa56438ba6, type: 2}
+  - {fileID: 11400000, guid: 59937dca6521142449c75d56b6dfa878, type: 2}
+  - {fileID: 11400000, guid: 604fa4a455f58ae4bbd9ec8a321af375, type: 2}
+  - {fileID: 11400000, guid: e66dcf2a6f4dd8243bf7c383527aae8a, type: 2}
+--- !u!114 &114485797418997078
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -116,7 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442746161125628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64accfe041681ea4e8fca465e25b2910, type: 3}
+  m_Script: {fileID: 11500000, guid: fc6d899560359c04cb2cb66e05a9770c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114747934948673394

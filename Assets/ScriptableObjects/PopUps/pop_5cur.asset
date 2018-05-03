@@ -12,26 +12,19 @@ MonoBehaviour:
   m_Name: pop_5cur
   m_EditorClassIdentifier: 
   popUpName: 
-  purpose: 1
-  addCurrencyAmount: 0
-  boughtItem: 0
-  removeCurrencyAmount: 0
+  purpose: 6
   statsVisible: 0
   picVisible: 0
-  description: Will you really give your money to me?!
-  stats:
-  - 'Power: 2'
-  - 'Defence: 3'
-  - 'Sound: 1'
-  - 'Smell: 11'
+  description: Will you purchase 5 currency?
+  stats: []
   buttonAmount: 2
   buttonOne: Yes
   buttonTwo: No
-  buttonPos1X: -309
+  buttonPos1X: -115
   buttonPos1Y: -1034
-  buttonPos2X: 301
+  buttonPos2X: 115
   buttonPos2Y: -1034
-  sizeX: 20
-  sizeY: 15
+  sizeX: 7
+  sizeY: 12
   pic: {fileID: 21300000, guid: 16bd91d46068d164d93fb2abec065000, type: 3}
   bg: {fileID: 21300000, guid: dab1301e0a9181d4699e1208fdb4cea2, type: 3}

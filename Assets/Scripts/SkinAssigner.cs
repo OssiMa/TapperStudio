@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class SkinAssigner : MonoBehaviour {
 
-    //Check what's in the Skin Inventory, and then change the respective sprites
-
     int instrument;
 
     ColorBlock cb;
@@ -59,31 +57,31 @@ public class SkinAssigner : MonoBehaviour {
         
         if (instrument == 1)
         {
-            Image image = drumDecoObjReal.GetComponent<Image>();                //Pitää tehdä TAIIIIIIIIKATEMPPUJA 
-            Color newColor = drumDecoObjReal.GetComponent<Image>().color;
-            newColor = slot.skin.color;
-            image.color = newColor;
-            /*foreach (Transform deco in drumDecoObj)
-            {
-                deco.GetComponent<Image>().color = slot.skin.color;
-                print("nailed it");
-            }*/
+            Color32 newColor = slot.skin.color;
+            newColor.a = 255;
+            drumDecoObjReal.GetComponent<Image>().color = newColor;
         }
         else if (instrument == 2)
         {
+            Color32 newColor = slot.skin.color;
+            newColor.a = 255;
             guitarBGObj.GetComponent<Image>().color = slot.skin.color;
-            print("nailed it here, as well");
         }
         else if (instrument == 3)
         {
+            Color32 newColor = slot.skin.color;
+            newColor.a = 255;
             pianoBGObj.GetComponent<Image>().color = slot.skin.color;
-            print("nailing anywhere, anyday");
         }
         
         if (slot.skin.trinket == true)
         {
-            //Add stuffs
+            AssignTrinket();
         }
-        //change (/add?) trinkets
+    }
+
+    void AssignTrinket()
+    {
+        //Add stuffs
     }
 }

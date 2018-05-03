@@ -4,18 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum Purposes
-{
-    removeCurrency, addCurrency
-}
-
-public enum AddCurrencyAmount
-{
-    small, medium, big
-}
-
-public enum BoughtItem
-{
-    commonItem, rareItem, allRarityItem
+{ 
+    commonItem, rareItem, allRarityItem, skin, skinPremium, watchAd, addCurrencySmall, addCurrencyMedium, addCurrencyBig
 }
 
 [CreateAssetMenu(fileName = "Popup", menuName = "PopUps/New PopUp")]
@@ -24,10 +14,10 @@ public class PopUp : ScriptableObject {
     public string popUpName;
 
     public Purposes purpose;
-    public AddCurrencyAmount addCurrencyAmount;
-    public BoughtItem boughtItem;
+    //public AddCurrencyAmount addCurrencyAmount;
+    //public BoughtItem boughtItem;
 
-    public int removeCurrencyAmount;
+    //public int removeCurrencyAmount;
 
     public bool statsVisible;
     public bool picVisible;

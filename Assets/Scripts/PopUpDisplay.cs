@@ -8,12 +8,13 @@ public class PopUpDisplay : MonoBehaviour {
     public PopUp popUp;
 
     Purposes purpose;
-    AddCurrencyAmount addCurrencyAmount;
-    BoughtItem boughtItem;
+    //AddCurrencyAmount addCurrencyAmount;
+    //BoughtItem boughtItem;
 
     GameObject gm;
     CurrencyManager currencyManager;
     NewItemGenerator nig;
+    Shop shop;
 
     [HideInInspector]
     public int removeCurrencyAmount;
@@ -75,11 +76,13 @@ public class PopUpDisplay : MonoBehaviour {
     public void ActivatePopup()
     {
         gm = GameObject.Find("GameManager");
+        shop = gm.GetComponent<Shop>();
 
         purpose = popUp.purpose;
 
-        removeCurrencyAmount = popUp.removeCurrencyAmount;
-        addCurrencyAmount = popUp.addCurrencyAmount;
+        //removeCurrencyAmount = popUp.removeCurrencyAmount;
+
+        //addCurrencyAmount = popUp.addCurrencyAmount;
 
         currencyManager = gm.GetComponent<CurrencyManager>();
         nig = gm.GetComponent<NewItemGenerator>();
@@ -105,7 +108,7 @@ public class PopUpDisplay : MonoBehaviour {
         SetPopupSize();
     }
 
-    public void Purpose()
+    /*public void Purpose()
     {
         //currencyManager.currency -= currencyAmount;
         if (purpose == Purposes.removeCurrency)
@@ -119,7 +122,7 @@ public class PopUpDisplay : MonoBehaviour {
             {
                 //Rarity from a random range of 4-10
                 rarityValue = Random.Range(4, 10);
-                nig.NewItem(rarityValue);    
+                nig.NewItem(rarityValue);
             }
             else if (boughtItem == BoughtItem.allRarityItem)
             {
@@ -143,6 +146,50 @@ public class PopUpDisplay : MonoBehaviour {
             {
                 PurchaseManager.purchaseManager.BuyCurrencyBig();
             }
+        }
+        ClosePopUp();
+    }*/
+
+    public void Purpose()
+    {
+        gm = GameObject.Find("GameManager");
+        shop = gm.GetComponent<Shop>();
+
+        if (purpose == Purposes.rareItem)
+        {
+            shop.PurchaseRareItem();
+        }
+        else if (purpose == Purposes.commonItem)
+        {
+            shop.PurchaseCommonItem();
+        }
+        else if (purpose == Purposes.allRarityItem)
+        {
+            shop.PurchaseMixedItem();
+        }
+        else if (purpose == Purposes.skin)
+        {
+            shop.PurchaseSkin();
+        }
+        else if (purpose == Purposes.skinPremium)
+        {
+            shop.PurchaseSkinPremium();
+        }
+        else if (purpose == Purposes.addCurrencySmall)
+        {
+            shop.PurchaseCurrencySmall();
+        }
+        else if (purpose == Purposes.addCurrencyMedium)
+        {
+            shop.PurchaseCurrencyMedium();
+        }
+        else if (purpose == Purposes.addCurrencyBig)
+        {
+            shop.PurchaseCurrencyBig();
+        }
+        else if (purpose == Purposes.watchAd)
+        {
+            shop.WatchAd();
         }
         ClosePopUp();
     }
@@ -170,7 +217,7 @@ public class PopUpDisplay : MonoBehaviour {
         textItself = descriptionText.GetComponent<Text>();
 
         textItself.enabled = true;
-        textItself.text = popUp.description;     //What it says on the PopUp. ("You got x gold!", etc.)
+        textItself.text = popUp.description;
         textItself.alignment = TextAnchor.MiddleCenter;
 
         if (statsVisible == true)
@@ -267,6 +314,9 @@ public class PopUpDisplay : MonoBehaviour {
         //There could be something that indicates what closing the popup will do
 
         //Hide the the main text (description)
+        GameObject descriptionText;
+        descriptionText = GameObject.Find("Popup Description");
+        textItself = descriptionText.GetComponent<Text>();
         textItself.enabled = false;
 
         //Empty stats & stat texts
@@ -311,6 +361,9 @@ public class PopUpDisplay : MonoBehaviour {
         }
 
         //Hide the popup frame
+        popUpFrame = GameObject.Find("Empty PopUp Background");
+        bg = popUpFrame.GetComponent<Image>();
+        bg.sprite = popUp.bg;
         bg.enabled = false;
 
         //The popup should now be closed

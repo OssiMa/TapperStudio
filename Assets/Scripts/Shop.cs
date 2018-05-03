@@ -2,104 +2,78 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class Shop : MonoBehaviour {
-
-    CurrencyManager cm;                    
-    Inventory inv;
-
-    bool purchaseConfirmed;
-    bool clicked;
-
-    List<Item> rareItems = new List<Item>();
-    List<Item> uncommonItems = new List<Item>();
-    List<Item> commonItems = new List<Item>();
+                  
+    SkinInventory skinInv;
+    NewItemGenerator nig;
+    CurrencyManager cm;
 
     Item item;
 
-    string itemRarity;
+    public int purchasedItemRarityRare;
+    public int purchasedItemRarityMixed;
+    public int purchasedItemRarityCommon;
 
-    public float currency = 0;
-    //public Text currencyText;
+    public int commonItemCost;
+    public int mixedItemCost;
+    public int rareItemCost;
+    public int skinCost;
+    public int premiumSkinCost;
+    public int adBonus;
 
-    // Use this for initialization
-    void Start ()
+    public void PurchaseCurrencySmall()
     {
-        //sp = GetComponent<SongProgress>();
-        inv = GetComponent<Inventory>();
-        cm = GetComponent<CurrencyManager>();
-
-        clicked = false;
-
-        //items = Get list of items
-        //get the items with a for loop? Basically get items until you have a full list
-        //...can there be a for loop in the start method?
-
-        for (int i = 1; i <= 10; i++)
-        {
-            //Get an item with a tag or something
-        }
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (clicked == true)//&& popup still exists
-        {
-            //Make the popup go away
-        }
+        PurchaseManager.purchaseManager.BuyCurrencySmall();
     }
 
-    void PurchaseCurrencySmall()
+    public void PurchaseCurrencyMedium()
     {
-        //When a thing is pressed, a purchase happens
-        //Note: The purchase won't actually happen here in the final game, instead this method will activate the popup which has the options
-        //'yes'/'no' for the purchase. Pressign 'yes' will complete the purchase.
+        PurchaseManager.purchaseManager.BuyCurrencyMedium();
+    }
 
-        PopUp();
+    public void PurchaseCurrencyBig()
+    {
+        PurchaseManager.purchaseManager.BuyCurrencyBig();
+    }
 
-        if (clicked == true)
+    public void WatchAd()
+    {
+        if (Advertisement.IsReady())
         {
-            if (purchaseConfirmed == true)
-            {
-                PurchaseManager.purchaseManager.BuyCurrencySmall();
-                clicked = false;
-                ConfirmPopUp();
-            }
+            Advertisement.Show(new ShowOptions() { resultCallback = WatchAdResult});    //"" = name of the video
         }
     }
 
-    void PurchaseCurrencyMedium()
+    void WatchAdResult(ShowResult result)
     {
-        PopUp();
-
-        if (clicked == true)
+        if (result == ShowResult.Finished)
         {
-            if (purchaseConfirmed == true)
-            {
-                PurchaseManager.purchaseManager.BuyCurrencyMedium();
-                clicked = false;
-                ConfirmPopUp();
-            }
+            cm.AddCurrency(adBonus);
         }
+        else if (result == ShowResult.Failed)
+        {
+            print("Uhh the ad FAILED 0_0");
+        }
+        else
+        {
+            print("Something rather horrifying has happened related to the ads");
+        }
+
+        /*switch (result)
+        {
+            case ShowResult.Finished:
+                cm.AddCurrency(adBonus);
+                break;
+
+            case ShowResult.Failed:
+                print("Uhh the ad FAILED 0_0");
+                break;
+        }*/
     }
 
-    void PurchaseCurrencyBig()
-    {
-        PopUp();
-
-        if (clicked == true)
-        {
-            if (purchaseConfirmed == true)
-            {
-                PurchaseManager.purchaseManager.BuyCurrencyBig();
-                clicked = false;
-                ConfirmPopUp();
-            }
-        }
-    }
-
-    void PurchaseNoAdds()
+    /*void PurchaseNoAdds()
     {
         PopUp();
 
@@ -112,144 +86,56 @@ public class Shop : MonoBehaviour {
                 ConfirmPopUp();
             }
         }
+    }*/
+
+    public void PurchaseSkin()
+    {
+        skinInv = GetComponent<SkinInventory>();
+        cm = GetComponent<CurrencyManager>();
+
+        skinInv.UnlockSkinNormal();       //not tested
+        cm.LoseCurrency(skinCost);
     }
 
-    void PurchaseSkin()
+    public void PurchaseSkinPremium()
     {
-        if (clicked == true)
-        {
-            PopUp();
+        cm = GetComponent<CurrencyManager>();
+        skinInv = GetComponent<SkinInventory>();
 
-            if (purchaseConfirmed == true)
-            {
-                //Still unclear on how we'll do this, make this happen once everything else is done
-
-                currency -= 5000;
-                clicked = false;
-                ConfirmPopUp();
-            }
-        }
+        skinInv.UnlockSkinPremium();       //not tested
+        cm.LoseCurrency(premiumSkinCost);
     }
 
-    void PurchaseRareItem()
+    public void PurchaseRareItem()
     {
-        //Randomize an item (from a list?) and add it to the player's Inventory (Inventory.AddItem(item)). 
-        //I guess items are going to be given their identity through ScriptableObjects, so basically we would pick a random ScriptableObject for an item object?
-        PopUp();
+        cm = GetComponent<CurrencyManager>();
+        nig = GetComponent<NewItemGenerator>();
 
-        if (clicked == true)
-        {
-            if (purchaseConfirmed == true)
-            {
-                itemRarity = "Rare";
+        purchasedItemRarityRare = 3;
 
-                RandomizeItem();
-
-                //item = the item from the randomization
-
-                //inv.AddItem(item);
-
-                currency -= 5000;
-                clicked = false;
-                ConfirmPopUp();
-            }
-        }
+        nig.NewItem(purchasedItemRarityRare);
+        cm.LoseCurrency(rareItemCost);
     }
 
-    void PurchaseUncommonItem()
+    public void PurchaseMixedItem()
     {
-        //Randomize an item (from a list?) and add it to the player's Inventory (Inventory.AddItem(item)). 
-        //I guess items are going to be given their identity through ScriptableObjects, so basically we would pick a random ScriptableObject for an item object?
-        PopUp();
+        cm = GetComponent<CurrencyManager>();
+        nig = GetComponent<NewItemGenerator>();
 
-        if (clicked == true)
-        {
-            if (purchaseConfirmed == true)
-            {
-                itemRarity = "Uncommon";
+        purchasedItemRarityMixed = Random.Range(1,3);
 
-                RandomizeItem();
-
-                //item = the item from the randomization
-
-                //inv.AddItem(item);
-
-                currency -= 5000;
-                clicked = false;
-                ConfirmPopUp();
-            }
-        }
+        nig.NewItem(purchasedItemRarityMixed);
+        cm.LoseCurrency(mixedItemCost);
     }
 
-    void PurchaseCommonItem()
+    public void PurchaseCommonItem()
     {
-        //Randomize an item (from a list?) and add it to the player's Inventory (Inventory.AddItem(item)). 
-        //I guess items are going to be given their identity through ScriptableObjects, so basically we would pick a random ScriptableObject for an item object?
-        PopUp();
+        cm = GetComponent<CurrencyManager>();
+        nig = GetComponent<NewItemGenerator>();
 
-        if (clicked == true)
-        {
-            if (purchaseConfirmed == true)
-            {
-                itemRarity = "Common";
+        purchasedItemRarityCommon = 1;
 
-                RandomizeItem();
-
-                //inv.AddItem(item);
-
-                currency -= 5000;
-                clicked = false;
-                ConfirmPopUp();
-            }
-        }
-    }
-
-    void RandomizeItem()
-    {
-        if (itemRarity == "Rare")
-        {
-            //Take an item from the 'rareItems' list by random
-            //item = the item from the randomization
-        }
-        else if (itemRarity == "Uncommon")
-        {
-            //Take an item from the 'uncommonItems' list by random
-            //item = the item from the randomization
-        }
-        else if (itemRarity == "Common")
-        {
-            //Take an item from the 'commonItems' list by random
-            //item = the item from the randomization
-        }
-    }
-
-    void PopUp()
-    {
-        //Create popup for the current purchase with yes/no options
-    }
-
-    void ConfirmPopUp()
-    {
-        //"You got ___!"
-        //"Ok" to make it go away
-    }
-
-    void Yes()
-    {
-        purchaseConfirmed = true;
-        clicked = true;
-        //Could the popup be destroyed over here?
-    }
-
-    void No()
-    {
-        purchaseConfirmed = false;
-        clicked = true;
-        //Could the popup be destroyed over here?
-    }
-
-    void Ok()
-    {
-        //Destroys the ConfirmPopUp
+        nig.NewItem(purchasedItemRarityCommon);
+        cm.LoseCurrency(commonItemCost);
     }
 }

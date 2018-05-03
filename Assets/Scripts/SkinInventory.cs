@@ -12,7 +12,7 @@ public class SkinInventory : MonoBehaviour {
     Sprite guitarIcon;
     Sprite pianoIcon;
 
-    SkinInventory skinInventory;
+    //SkinInventory skinInventory;
     InstrumentBase instrumentBaseDrums;
     InstrumentBase instrumentBaseGuitar;
     InstrumentBase instrumentBasePiano;
@@ -34,7 +34,7 @@ public class SkinInventory : MonoBehaviour {
         guitarIcon = GameObject.Find("guitar_buttonImage").GetComponent<Image>().sprite;
         pianoIcon = GameObject.Find("keyboard_buttonImage").GetComponent<Image>().sprite;
 
-        skinInventory = GetComponent<SkinInventory>();
+        //skinInventory = GetComponent<SkinInventory>();
 
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
@@ -163,5 +163,149 @@ public class SkinInventory : MonoBehaviour {
             oneSkin = AssetDatabase.FindAssets("Skin" + i);
             skins.Add(oneSkin);
         }*/
+    }
+
+    public void UnlockSkinNormal()
+    {
+        int randomInstrument = Random.Range(1, 3);
+
+        if (randomInstrument == 1)
+        {
+            List<Skin> skinsOfInstrument = new List<Skin>();
+
+            foreach (Skin skin in skins)
+            {
+                if (skin.instrument == 1)
+                {
+                    skinsOfInstrument.Add(skin);
+                }
+            }
+
+            for (int i = 0; i < skinsOfInstrument.Count; i++)
+            {
+                if (skinsOfInstrument[i].vintageLock > (instrumentBaseDrums.vintageLevel + 1))
+                {
+                    skinsOfInstrument[i].unlocked = true;
+                    print("If this message is shown multiple times, something ain't working quite right");
+                    break;
+                }
+            }
+        }
+        else if (randomInstrument == 2)
+        {
+            List<Skin> skinsOfInstrument = new List<Skin>();
+
+            foreach (Skin skin in skins)
+            {
+                if (skin.instrument == 2)
+                {
+                    skinsOfInstrument.Add(skin);
+                }
+            }
+
+            for (int i = 0; i < skinsOfInstrument.Count; i++)
+            {
+                if (skinsOfInstrument[i].vintageLock < (instrumentBaseDrums.vintageLevel + 1))
+                {
+                    skinsOfInstrument[i].unlocked = true;
+                    print("If this message is shown multiple times, something ain't working quite right");
+                    break;
+                }
+            }
+        }
+        else if (randomInstrument == 3)
+        {
+            List<Skin> skinsOfInstrument = new List<Skin>();
+
+            foreach (Skin skin in skins)
+            {
+                if (skin.instrument == 3)
+                {
+                    skinsOfInstrument.Add(skin);
+                }
+            }
+
+            for (int i = 0; i < skinsOfInstrument.Count; i++)
+            {
+                if (skinsOfInstrument[i].vintageLock < (instrumentBaseDrums.vintageLevel + 1))
+                {
+                    skinsOfInstrument[i].unlocked = true;
+                    print("If this message is shown multiple times, something ain't working quite right");
+                    break;
+                }
+            }
+        }
+    }
+
+    public void UnlockSkinPremium()
+    {
+        int randomInstrument = Random.Range(1, 3);
+
+        if (randomInstrument == 1)
+        {
+            List<Skin> skinsOfInstrument = new List<Skin>();
+
+            foreach (Skin skin in skins)
+            {
+                if (skin.instrument == 1)
+                {
+                    skinsOfInstrument.Add(skin);
+                }
+            }
+
+            for (int i = 0; i < skinsOfInstrument.Count; i++)
+            {
+                if (skinsOfInstrument[i].vintageLock >= (instrumentBaseDrums.vintageLevel))
+                {
+                    skinsOfInstrument[i].unlocked = true;
+                    print("If this message is shown multiple times, something ain't working quite right");
+                    break;
+                }
+            }
+        }
+        else if (randomInstrument == 2)
+        {
+            List<Skin> skinsOfInstrument = new List<Skin>();
+
+            foreach (Skin skin in skins)
+            {
+                if (skin.instrument == 2)
+                {
+                    skinsOfInstrument.Add(skin);
+                }
+            }
+
+            for (int i = 0; i < skinsOfInstrument.Count; i++)
+            {
+                if (skinsOfInstrument[i].vintageLock >= (instrumentBaseDrums.vintageLevel))
+                {
+                    skinsOfInstrument[i].unlocked = true;
+                    print("If this message is shown multiple times, something ain't working quite right");
+                    break;
+                }
+            }
+        }
+        else if (randomInstrument == 3)
+        {
+            List<Skin> skinsOfInstrument = new List<Skin>();
+
+            foreach (Skin skin in skins)
+            {
+                if (skin.instrument == 3)
+                {
+                    skinsOfInstrument.Add(skin);
+                }
+            }
+
+            for (int i = 0; i < skinsOfInstrument.Count; i++)
+            {
+                if (skinsOfInstrument[i].vintageLock >= (instrumentBaseDrums.vintageLevel))
+                {
+                    skinsOfInstrument[i].unlocked = true;
+                    print("If this message is shown multiple times, something ain't working quite right");
+                    break;
+                }
+            }
+        }
     }
 }

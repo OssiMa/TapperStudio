@@ -19,6 +19,7 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
     public static string PURCHASE_GETCURRENCY_SMALL = "consumable";       //Replace the "consumable" with whatever we name the product in the Google Play Dev Console
     public static string PURCHASE_GETCURRENCY_MEDIUM = "consumable2";     //Replace the "consumable" with whatever we name the product in the Google Play Dev Console
     public static string PURCHASE_GETCURRENCY_BIG = "consumable3";        //Replace the "consumable" with whatever we name the product in the Google Play Dev Console
+    //public static string PURCHASE_SKIN = "consumable4";
     public static string PURCHASE_GETNOADS = "nonconsumable";     //Replace the "non-consumable" with whatever we name the product in the Google Play Dev Console
     public static string kProductIDSubscription = "subscription";
 
@@ -94,6 +95,11 @@ public class PurchaseManager : MonoBehaviour, IStoreListener {
     {
         BuyProductID(PURCHASE_GETNOADS);
     }
+
+    /*public void BuySkin()
+    {
+        BuyProductID(PURCHASE_SKIN);
+    }*/
 
     void BuyProductID(string productId)
     {

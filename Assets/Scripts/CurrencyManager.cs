@@ -7,8 +7,11 @@ public class CurrencyManager : MonoBehaviour {
 
     [HideInInspector]
     public int currency = 20;
+    [HideInInspector]
+    public int premiumCurrency = 20;
 
     public Text currencyText;
+    public Text premiumCurrencyText;
 
     [HideInInspector]
     public int amountOfCurrency;
@@ -28,6 +31,13 @@ public class CurrencyManager : MonoBehaviour {
         {
             currency = 0;
         }
+
+        premiumCurrencyText.text = premiumCurrency + "£";
+
+        if (premiumCurrency < 0)
+        {
+            premiumCurrency = 0;
+        }
     }
 
     public void AddCurrency(int amountofCurrency)
@@ -37,8 +47,16 @@ public class CurrencyManager : MonoBehaviour {
 
     public void LoseCurrency(int amountofCurrency)
     {
-        print("amount lost" + amountOfCurrency);
         currency -= amountOfCurrency;
-        print("currency" + currency);
+    }
+
+    public void AddPremiumCurrency(int amountofCurrency)
+    {
+        premiumCurrency += amountOfCurrency;
+    }
+
+    public void LosePremiumCurrency(int amountofCurrency)
+    {
+        premiumCurrency -= amountOfCurrency;
     }
 }

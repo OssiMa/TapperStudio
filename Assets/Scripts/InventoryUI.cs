@@ -19,6 +19,13 @@ public class InventoryUI : MonoBehaviour {
         }
 
         instance = this;
+
+        equippedItems = new List<Item>();
+
+        for (int i = 0; i < 9; i++)
+        {
+            equippedItems.Add(null);
+        }
     }
 
     #endregion
@@ -57,12 +64,7 @@ public class InventoryUI : MonoBehaviour {
         equipSlots = GetComponentsInChildren<EquipSlot>().OrderBy(slots => slots.name).ToArray();
         slots = GetComponentsInChildren<InventorySlot>();
         itemsToShow = new List<Item>();
-        equippedItems = new List<Item>();
-
-        for (int i = 0; i < 9; i++)
-        {
-            equippedItems.Add(null);
-        }
+        
 
         inventory.onItemChangedCallback.Invoke();
     }

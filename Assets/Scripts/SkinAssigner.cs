@@ -39,12 +39,13 @@ public class SkinAssigner : MonoBehaviour {
         pianoBGObj = GameObject.Find("imageKeyboard");
         pianoEdgeObj = GameObject.Find("");
 
-        drumDecoObjReal = GameObject.Find("plate2_sprites").transform.GetChild(1);
+        drumDecoObjReal = GameObject.Find("2_decoration").transform.GetChild(1);
+        print(drumDecoObjReal);
 
-        for (int i = 0; i < 3; i++)
+        /*for (int i = 0; i < 3; i++)
         {
             drumDecoObj.Add(GameObject.Find("plate2_sprites").transform.GetChild(i));
-        }
+        }*/
         guitarBGObj = GameObject.Find("imageGuitar");
 
         //Specials

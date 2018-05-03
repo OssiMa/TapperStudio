@@ -71,6 +71,10 @@ public class SkinInventory : MonoBehaviour {
 
     void VintageCheck()
     {
+        instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
+        instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
+        instrumentBasePiano = GameObject.Find("Piano").GetComponent<InstrumentBase>();
+
         foreach (Skin skin in skins)
         {
             if (skin.instrument == 1)

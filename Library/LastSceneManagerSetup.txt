@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/skin_testing.unity
-=======
-- path: Assets/Scenes/AchievementTest.unity
->>>>>>> Henkka
-=======
 - path: Assets/Scenes/VisualRefinementScene.unity
->>>>>>> UI
   isLoaded: 1
   isActive: 1

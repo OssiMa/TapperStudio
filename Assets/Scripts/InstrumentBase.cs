@@ -35,7 +35,7 @@ public class InstrumentBase : MonoBehaviour {
 
     float geneBoost;
     float comboBoost;
-    float xpBoost;
+    public float xpBoost;
 
 
 	// Use this for initialization
@@ -108,9 +108,9 @@ public class InstrumentBase : MonoBehaviour {
 
     public void ComboTap()
     {
-        exp += 0.5f * combo;
+        exp += 0.5f * combo + xpBoost;
         progression.GainXP();
-        if (combo < 4)
+        if (combo < 4 + comboBoost)
         {
             comboStep += 1;
             if (comboStep >= comboStepMax)
@@ -137,7 +137,7 @@ public class InstrumentBase : MonoBehaviour {
 
     void ComboFadeUp()
     {
-        if (comboFade < 950)
+        if (comboFade < 1000)
         {
             comboFade += 50;
         }
@@ -145,11 +145,11 @@ public class InstrumentBase : MonoBehaviour {
 
     public void BigExpReward()
     {
-        exp += 2 * combo;
+        exp += 2 * combo + xpBoost * 4;
         progression.GainXP();
         progression.GainXP();
         progression.GainXP();
-        if(combo < 4)
+        if(combo < 4 + comboBoost)
         {
             combo += 1;
             comboStep = 0;

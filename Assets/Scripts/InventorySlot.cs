@@ -4,7 +4,9 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour {
 
     public Image icon;
+    public Image background;
     public Text rarity;
+    public Text equipped;
 
     Button button; 
 
@@ -20,6 +22,8 @@ public class InventorySlot : MonoBehaviour {
         icon.enabled = true;
         button.interactable = true;
         rarity.text = "" + item.rarity;
+        RarityColor();
+        equipped.enabled = false;
     }
 
     public void ClearSlot()
@@ -31,6 +35,8 @@ public class InventorySlot : MonoBehaviour {
         icon.enabled = false;
         button.interactable = false;
         rarity.text = "";
+        background.color = new Color32(255,255,255,255);
+        equipped.enabled = false;
     }
 
     public void CraftingFilter()
@@ -43,4 +49,35 @@ public class InventorySlot : MonoBehaviour {
     {
         return item;
     }
+
+    public void RarityColor()
+    {
+        if (item.rarity == 1)
+        {
+            background.color = new Color32(255,255,255,255);
+        }
+        else if (item.rarity == 2)
+        {
+            background.color = new Color32(156,255,143,255);
+        }
+        else if (item.rarity == 3)
+        {
+            background.color = new Color32(143,181,255,255);
+        }
+        else if (item.rarity == 4)
+        {
+            background.color = new Color32(233,133,255,255);
+        }
+        else
+        {
+            background.color = new Color32(255,196,68,255);
+        }
+
+    }
+
+    public void Equipped()
+    {
+        equipped.enabled = true;
+    }
+
 }

@@ -6,7 +6,7 @@ using System.Linq;
 
 public class Guitar : MonoBehaviour {
 
-    bool pointsOnScreen;
+    bool pointsOnScreen = false;
     int activeSlider;
 
     GameObject[] points;
@@ -22,11 +22,11 @@ public class Guitar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        CheckForPoints();
         if(pointsOnScreen == false)                                                 //If no clickables left, spawn more
         {
             activeSlider = 5;
             StartCoroutine(BigReveal());
+            pointsOnScreen = true;
         }
 	}
 
@@ -48,12 +48,14 @@ public class Guitar : MonoBehaviour {
     //Starts the generation of new clickables
     IEnumerator BigReveal()
     {
+        yield return new WaitForSeconds(0.2f);
         SliderReveal();
         for (int i = 0; i < 4; i++)
         {
-            Reveal();
             yield return new WaitForSeconds(0.2f);
+            Reveal();
         }
+        
     }
 
     //Randomizes the balls and reveals them
@@ -111,7 +113,7 @@ public class Guitar : MonoBehaviour {
     }
 
     //Checks if there are any clickables left
-    void CheckForPoints()
+    public void CheckForPoints()
     {
         for(int i = 0; i < points.Length; i++)
         {

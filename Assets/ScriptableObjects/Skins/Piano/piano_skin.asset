@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845287f810dc3a749a478e193344d569, type: 3}
   m_Name: piano_skin
   m_EditorClassIdentifier: 
-  instrumentIcon: {fileID: 21300000, guid: ed82e5a8d2fb4c14f922b70d7bc621b4, type: 3}
+  instrumentIcon: {fileID: 21300000, guid: f1c4f4433a09cf64fb36905cbd465f58, type: 3}
   color:
     serializedVersion: 2
-    rgba: 0
+    rgba: 255
   instrument: 3
   vintageLock: 0
-  trinket: 0
+  trinketType: 1
   unlocked: 1

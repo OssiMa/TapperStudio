@@ -55,10 +55,12 @@ public class SongProgress : MonoBehaviour {
     string currentSongLastTo;
 
     public float songXP;
-    float songXPMax = 20;
+    [HideInInspector]
+    public float songXPMax = 20;
     public float songCount = 1;
     public float currency = 0;
-    float songCountMax = 3;
+    [HideInInspector]
+    public float songCountMax = 3;
     public float AlbumsCreated;
 
 

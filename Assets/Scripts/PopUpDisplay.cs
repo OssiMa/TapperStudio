@@ -7,7 +7,7 @@ public class PopUpDisplay : MonoBehaviour {
 
     public PopUp popUp;
 
-    Purposes purpose;
+    Purposes? purpose = null;
     //AddCurrencyAmount addCurrencyAmount;
     //BoughtItem boughtItem;
 
@@ -192,10 +192,12 @@ public class PopUpDisplay : MonoBehaviour {
         {
             shop.PurchaseCurrencyBig();
         }
-        else if (purpose == Purposes.watchAd)
+        else if (purpose == Purposes.watchAd)          //if purpose is something else, don't watch ad
         {
             shop.WatchAd();
         }
+        print(purpose);
+        purpose = null;
         ClosePopUp();
     }
 

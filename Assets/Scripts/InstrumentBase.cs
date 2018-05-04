@@ -33,6 +33,10 @@ public class InstrumentBase : MonoBehaviour {
     public float comboUpkeep = 5;           //mistakes player can make before losing combo
     public float comboFade = 1000;          //how long the instrument needs to be inactive to lose combo
 
+    float ogMaxCombo;
+    [HideInInspector]
+    public float maxCombo;
+
     float geneBoost;
     float comboBoost;
     public float xpBoost;
@@ -50,7 +54,8 @@ public class InstrumentBase : MonoBehaviour {
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
         BoostUpdate();
-	}
+        ogMaxCombo = 4;
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -63,7 +68,8 @@ public class InstrumentBase : MonoBehaviour {
         LvlUp();
         SaveGame();
         BoostUpdate();
-	}
+        maxCombo = ogMaxCombo + comboBoost;
+    }
 
     void LvlUp()
     {
@@ -110,7 +116,7 @@ public class InstrumentBase : MonoBehaviour {
     {
         exp += 0.5f * combo + xpBoost;
         progression.GainXP();
-        if (combo < 4 + comboBoost)
+        if (combo < 4 + maxCombo)     //4 + comboBoost
         {
             comboStep += 1;
             if (comboStep >= comboStepMax)
@@ -149,7 +155,7 @@ public class InstrumentBase : MonoBehaviour {
         progression.GainXP();
         progression.GainXP();
         progression.GainXP();
-        if(combo < 4 + comboBoost)
+        if(combo < maxCombo)        // 4 + comboBoost
         {
             combo += 1;
             comboStep = 0;

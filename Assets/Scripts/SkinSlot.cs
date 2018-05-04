@@ -24,9 +24,24 @@ public class SkinSlot : MonoBehaviour {
 
         cb = button.colors;
         Color32 newColor = skin.color;
-        newColor.a = 255;
+
+        if (skin.baseInstrument == false)
+        {
+            newColor.a = 255;
+            newColor.g += 75;
+            newColor.b += 75;
+        }
+        else
+        {
+            newColor.a = 255;
+            newColor.g = 255;
+            newColor.b = 255;
+        }
         cb.normalColor = newColor;
+        cb.highlightedColor = newColor;
+        cb.pressedColor = new Color(0, 0, 0, 255);
         button.colors = cb;
+
 
         icon.sprite = skin.instrumentIcon;
         icon.enabled = true;

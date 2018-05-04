@@ -19,7 +19,7 @@ public class PopUpDisplay : MonoBehaviour {
     [HideInInspector]
     public int removeCurrencyAmount;
 
-    GameObject popUpFrame;
+    //GameObject popUpFrame;
 
     bool statsVisible;
     bool picVisible;
@@ -39,6 +39,11 @@ public class PopUpDisplay : MonoBehaviour {
 
     float sizeX;
     float sizeY;
+    float posX;
+    float posY;
+
+    GameObject InvSlot;
+    GameObject NewInvSlot;
 
     Text textItself;
 
@@ -87,7 +92,7 @@ public class PopUpDisplay : MonoBehaviour {
         currencyManager = gm.GetComponent<CurrencyManager>();
         nig = gm.GetComponent<NewItemGenerator>();
 
-        popUpFrame = GameObject.Find("Empty PopUp Background");
+        popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
 
         SetBg();
 
@@ -201,7 +206,7 @@ public class PopUpDisplay : MonoBehaviour {
 
     void SetBg()
     {
-        bg = popUpFrame.GetComponent<Image>();
+        bg = popUp.popUpFrame.GetComponent<Image>();
 
         bg.sprite = popUp.bg;
 
@@ -240,10 +245,10 @@ public class PopUpDisplay : MonoBehaviour {
                 statText.enabled = true;
             }
 
-            statTexts[0].alignment = TextAnchor.LowerRight;
-            statTexts[1].alignment = TextAnchor.LowerRight;
-            statTexts[2].alignment = TextAnchor.LowerRight;
-            statTexts[3].alignment = TextAnchor.LowerRight;
+            statTexts[0].alignment = TextAnchor.MiddleLeft;
+            statTexts[1].alignment = TextAnchor.MiddleLeft;
+            statTexts[2].alignment = TextAnchor.MiddleLeft;
+            statTexts[3].alignment = TextAnchor.MiddleLeft;
         }
     }
 
@@ -306,7 +311,60 @@ public class PopUpDisplay : MonoBehaviour {
     {
         sizeX = popUp.sizeX;      //Size of the popup
         sizeY = popUp.sizeY;
-        popUpFrame.transform.localScale = new Vector3(sizeX, sizeY, 0);  //Not sure this will work since it happens on the canvas
+        posX = popUp.posX;
+        posY = popUp.posY;
+        popUp.popUpFrame.transform.localScale = new Vector3(sizeX, sizeY, 0);  //Not sure this will work since it happens on the canvas
+        popUp.popUpFrame.transform.localPosition = new Vector2(posX, posY);
+    }
+
+    public void SetSelectedInvSlot(GameObject invslot)
+    {
+        popUp.selectedInvSlot = invslot;
+        InventorySlot slotscript = invslot.GetComponent<InventorySlot>();
+        popUp.selectedItem = slotscript.GetItem();
+    }
+
+    public void SetInventoryPopUp()
+    {
+        InvSlot = GameObject.Find("Empty InventorySlot");
+        popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
+
+        if (InvSlot.transform.childCount >0)
+        {
+            Destroy(NewInvSlot);
+        }
+
+        NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
+        RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(52,52);
+
+        SetBg();
+
+        statsVisible = popUp.statsVisible;
+        SetText();
+        SetItemStats();
+
+        picVisible = popUp.picVisible;
+        if (picVisible == true)
+        {
+            SetPicture();
+        }
+
+
+        SetPopupSize();
+
+        buttonAmount = popUp.buttonAmount;
+        SetButtons();
+
+        SetPopupSize();
+    }
+
+    void SetItemStats()
+    {
+        statTexts[0].text = popUp.selectedItem.itemName;
+        statTexts[1].text = "Rarity: " + popUp.selectedItem.rarity;
+        statTexts[2].text = "Effect: " + popUp.selectedItem.boosts;
+        statTexts[3].text = "Item Level: " + popUp.selectedItem.level;
     }
 
     public void ClosePopUp()
@@ -360,9 +418,21 @@ public class PopUpDisplay : MonoBehaviour {
             emptyPicImage.enabled = false;
         }
 
+        //Deselect inventoy slot
+        if (popUp.selectedInvSlot != null)
+        {
+            popUp.selectedInvSlot = null;
+        }
+
+        //Destroy inventory popup slot
+        if (InvSlot.transform.childCount > 0)
+        {
+            Destroy(NewInvSlot);
+        }
+
         //Hide the popup frame
-        popUpFrame = GameObject.Find("Empty PopUp Background");
-        bg = popUpFrame.GetComponent<Image>();
+        popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
+        bg = popUp.popUpFrame.GetComponent<Image>();
         bg.sprite = popUp.bg;
         bg.enabled = false;
 

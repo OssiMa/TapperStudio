@@ -46,7 +46,7 @@
 		 {
 		 	 discard;
 		 }
-		 		 if(bool(IN.worldPos.y   < 0))
+		 		 if(bool(IN.worldPos.y  -0.1 < 0))
 		 {
 		 	 discard;
 		 }

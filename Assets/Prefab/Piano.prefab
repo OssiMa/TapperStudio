@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 1601651665780860, guid: 1e17f98e0624fa249a3c55965b669851, type: 2}
-  longNote: {fileID: 1221150382688518, guid: ff0794756b780994596cdde9e7e9317c, type: 2}
+  longNote: {fileID: 1502185727115006, guid: 6fd3e4b31cf2c404eb952557aca3aa1e, type: 2}
   activator1: {fileID: 1134923187710012}
   activator2: {fileID: 1363120738710926}
   activator3: {fileID: 1688597145371654}
@@ -1712,6 +1712,7 @@ MonoBehaviour:
   comboStepMax: 20
   comboUpkeep: 5
   comboFade: 1000
+  xpBoost: 0
 --- !u!114 &114443838493403704
 MonoBehaviour:
   m_ObjectHideFlags: 1

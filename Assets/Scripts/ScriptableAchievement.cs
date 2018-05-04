@@ -6,14 +6,9 @@ using UnityEngine;
 public class ScriptableAchievement : ScriptableObject
 {
 
-    [HideInInspector]
+    public string AchievementText;
     public Sprite AchievementIcon;
-
-    public Color32 color;
-
-    public bool trinket = false;
-
-    [HideInInspector]
     public bool unlocked = false;
+
 
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
 public class Shop : MonoBehaviour {
@@ -40,6 +39,7 @@ public class Shop : MonoBehaviour {
 
     public void WatchAd()
     {
+        print("Here we are again...");
         if (Advertisement.IsReady())
         {
             Advertisement.Show(new ShowOptions() { resultCallback = WatchAdResult});    //"" = name of the video
@@ -49,6 +49,10 @@ public class Shop : MonoBehaviour {
     void WatchAdResult(ShowResult result)
     {
         if (result == ShowResult.Finished)
+        {
+            cm.AddCurrency(adBonus);
+        }
+        else if (result == ShowResult.Skipped)
         {
             cm.AddCurrency(adBonus);
         }

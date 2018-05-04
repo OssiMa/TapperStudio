@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845287f810dc3a749a478e193344d569, type: 3}
+  m_Name: drum_base
+  m_EditorClassIdentifier: 
+  instrumentIcon: {fileID: 21300000, guid: 3217d99e2a02ccb43b15a27ce851eee9, type: 3}
+  color:
+    serializedVersion: 2
+    rgba: 16777215
+  instrument: 1
+  vintageLock: 0
+  trinketType: 0
+  unlocked: 1
+  baseInstrument: 1

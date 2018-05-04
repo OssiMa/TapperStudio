@@ -15,9 +15,12 @@ public class Skin : ScriptableObject {
 
     public int vintageLock;
 
-    public bool trinket = false;
+    //public bool trinket = false;
+    public int trinketType;
 
     [HideInInspector]
     public bool unlocked = false;
+
+    public bool baseInstrument;
 
 }

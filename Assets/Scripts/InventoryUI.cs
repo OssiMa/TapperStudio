@@ -183,7 +183,7 @@ public class InventoryUI : MonoBehaviour {
         inventory.onItemChangedCallback.Invoke();
     }
 
-    public void SelectCraftable(InventorySlot chosen)   //used when clicking on items in inventory
+    public void SelectCraftable(InventorySlot chosen)   //used when clicking on items in inventory (Bad name, I know)
     {
         if (craftInProgress == true)
         {

@@ -12,9 +12,17 @@ public class Guitar : MonoBehaviour {
     GameObject[] points;
     GameObject[] sliders;
 
+    private void OnEnable()
+    {
+        if (points != null)
+        {
+            CheckForPoints();
+        }
 
-	// Use this for initialization
-	void Start () {
+    }
+
+    // Use this for initialization
+    void Start () {
         points = GameObject.FindGameObjectsWithTag("Guitar button").OrderBy(points => points.name).ToArray();
         sliders = GameObject.FindGameObjectsWithTag("Guitar slider").OrderBy(sliders => sliders.name).ToArray();
         Hide();

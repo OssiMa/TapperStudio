@@ -33,11 +33,14 @@ public class PopUp : ScriptableObject {
 
     public string buttonOne;
     public string buttonTwo;
+    public string buttonThree;
 
     public float buttonPos1X = -309;
     public float buttonPos1Y = -1034;
     public float buttonPos2X = 301;
     public float buttonPos2Y = -1034;
+    public float buttonPos3X = 293;
+    public float buttonPos3Y = -1034;
 
     public float sizeX;
     public float sizeY;

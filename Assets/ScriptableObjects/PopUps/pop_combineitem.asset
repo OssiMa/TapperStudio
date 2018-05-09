@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 776c02a2bcb15f1468d100a0e7ee6559, type: 3}
-  m_Name: pop_itemstats
+  m_Name: pop_combineitem
   m_EditorClassIdentifier: 
   popUpName: 
   purpose: 0
@@ -24,19 +24,19 @@ MonoBehaviour:
   - 
   - 
   - 
-  buttonAmount: 3
-  buttonOne: Equip
-  buttonTwo: No
-  buttonThree: Crafting
+  buttonAmount: 2
+  buttonOne: Finish Crafting
+  buttonTwo: Cancel Crafting
+  buttonThree: 
   buttonPos1X: -80
   buttonPos1Y: -1230
   buttonPos2X: 80
   buttonPos2Y: -1230
-  buttonPos3X: 0
-  buttonPos3Y: -1230
-  sizeX: 7
-  sizeY: 3
+  buttonPos3X: 293
+  buttonPos3Y: -1034
+  sizeX: 0
+  sizeY: 0
   posX: 0
-  posY: -1190
-  pic: {fileID: 21300000, guid: 195b422a391cc02499fc813cde0dcd60, type: 3}
-  bg: {fileID: 21300000, guid: 16cf0cabb0acbf740b7d1ba9d8f4f858, type: 3}
+  posY: 0
+  pic: {fileID: 0}
+  bg: {fileID: 0}

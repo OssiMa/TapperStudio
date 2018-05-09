@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 776c02a2bcb15f1468d100a0e7ee6559, type: 3}
-  m_Name: pop_itemstats
+  m_Name: pop_crafting
   m_EditorClassIdentifier: 
   popUpName: 
   purpose: 0
@@ -25,14 +25,14 @@ MonoBehaviour:
   - 
   - 
   buttonAmount: 3
-  buttonOne: Equip
-  buttonTwo: No
-  buttonThree: Crafting
+  buttonOne: Upgrade
+  buttonTwo: Combine
+  buttonThree: Sell
   buttonPos1X: -80
   buttonPos1Y: -1230
-  buttonPos2X: 80
+  buttonPos2X: 0
   buttonPos2Y: -1230
-  buttonPos3X: 0
+  buttonPos3X: 80
   buttonPos3Y: -1230
   sizeX: 7
   sizeY: 3

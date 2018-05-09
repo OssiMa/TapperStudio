@@ -30,13 +30,20 @@ public class NewItemGenerator : MonoBehaviour {
     Sprite[] drums;
     Sprite[] guitar;
     Sprite[] piano;
-           
+
+    String[] drumNames;
+    String[] guitarNames;
+    String[] pianoNames;
 
     void Start()
     {
         drums = Resources.LoadAll<Sprite>("DrumIcon");
         guitar = Resources.LoadAll<Sprite>("GuitarIcon");
         piano = Resources.LoadAll<Sprite>("PianoIcon");
+        drumNames = new string[] { "Pedal", "Metronome", "Sticks"};
+        guitarNames = new string[] {"Guitar1", "Guitar2", "Guitar3" };
+        pianoNames = new string[] { "Stool", "Notestand", "Frame"};
+
     }
 
 
@@ -87,14 +94,17 @@ public class NewItemGenerator : MonoBehaviour {
         if (item.instrument == 1)
         {
             item.icon = drums[item.slot-1];
+            item.itemName = drumNames[item.slot-1];
         }
         else if (item.instrument == 2)
         {
             item.icon = guitar[item.slot-1];
+            item.itemName = guitarNames[item.slot - 1];
         }
         if (item.instrument == 3)
         {
             item.icon = piano[item.slot-1];
+            item.itemName = pianoNames[item.slot - 1];
         }
 
 

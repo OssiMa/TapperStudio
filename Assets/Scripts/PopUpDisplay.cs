@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PopUpDisplay : MonoBehaviour {
 
     public PopUp popUp;
+    public PopUp craftWindow;
 
     Purposes? purpose = null;
     //AddCurrencyAmount addCurrencyAmount;
@@ -24,15 +25,20 @@ public class PopUpDisplay : MonoBehaviour {
     bool statsVisible;
     bool picVisible;
 
+    bool craftMode = false;
+
     int buttonAmount;
 
     GameObject button1;
     GameObject button2;
+    GameObject button3;
 
     float buttonPos1X;
     float buttonPos1Y;
     float buttonPos2X;
     float buttonPos2Y;
+    float buttonPos3X;
+    float buttonPos3Y;
 
     Image emptyPicImage;
     Image bg;
@@ -43,7 +49,9 @@ public class PopUpDisplay : MonoBehaviour {
     float posY;
 
     GameObject InvSlot;
+    GameObject InvSlot2;
     GameObject NewInvSlot;
+    GameObject NewInvSlot2;
 
     Text textItself;
 
@@ -297,6 +305,42 @@ public class PopUpDisplay : MonoBehaviour {
             RectTransform buttonPos2 = button2.GetComponent<RectTransform>();
             buttonPos2.anchoredPosition = new Vector2(buttonPos2X, buttonPos2Y);
         }
+        else if (buttonAmount == 3)
+        {
+            button1 = GameObject.Find(popUp.buttonOne);
+            button2 = GameObject.Find(popUp.buttonTwo);
+            button3 = GameObject.Find(popUp.buttonThree);
+
+            button1.GetComponent<Image>().enabled = true;
+            button2.GetComponent<Image>().enabled = true;
+            button3.GetComponent<Image>().enabled = true;
+
+            button1.GetComponent<Button>().enabled = true;
+            button2.GetComponent<Button>().enabled = true;
+            button3.GetComponent<Button>().enabled = true;
+
+            buttonPos1X = popUp.buttonPos1X;
+            buttonPos1Y = popUp.buttonPos1Y;
+
+            buttonPos2X = popUp.buttonPos2X;
+            buttonPos2Y = popUp.buttonPos2Y;
+
+            buttonPos3X = popUp.buttonPos3X;
+            buttonPos3Y = popUp.buttonPos3Y;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = true;
+            button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
+            button3.transform.GetChild(0).GetComponent<Text>().enabled = true;
+
+            RectTransform buttonPos1 = button1.GetComponent<RectTransform>();
+            buttonPos1.anchoredPosition = new Vector2(buttonPos1X, buttonPos1Y);
+
+            RectTransform buttonPos2 = button2.GetComponent<RectTransform>();
+            buttonPos2.anchoredPosition = new Vector2(buttonPos2X, buttonPos2Y);
+
+            RectTransform buttonPos3 = button3.GetComponent<RectTransform>();
+            buttonPos3.anchoredPosition = new Vector2(buttonPos3X, buttonPos3Y);
+        }
     }
 
     void SetPicture()
@@ -328,37 +372,65 @@ public class PopUpDisplay : MonoBehaviour {
 
     public void SetInventoryPopUp()
     {
-        InvSlot = GameObject.Find("Empty InventorySlot");
-        popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
-
-        if (InvSlot.transform.childCount >0)
+        if (craftMode == false)
         {
-            Destroy(NewInvSlot);
+            InvSlot = GameObject.Find("Empty InventorySlot");
+            InvSlot2 = GameObject.Find("Empty InventorySlot2");
+            popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
+
+            if (InvSlot.transform.childCount > 0)
+            {
+                Destroy(NewInvSlot);
+            }
+            if (InvSlot2.transform.childCount > 0)
+            {
+                Destroy(NewInvSlot2);
+            }
+
+            NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
+            RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(52, 52);
+            Button btn = NewInvSlot.GetComponent<Button>();
+            btn.interactable = false;
+
+            SetBg();
+
+            statsVisible = popUp.statsVisible;
+            SetText();
+
+            if (statsVisible == true)
+            {
+                SetItemStats();
+            }
+
+            picVisible = popUp.picVisible;
+            if (picVisible == true)
+            {
+                SetPicture();
+            }
+
+            SetPopupSize();
+
+            buttonAmount = popUp.buttonAmount;
+            SetButtons();
+
+            SetPopupSize();
         }
-
-        NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
-        RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(52,52);
-
-        SetBg();
-
-        statsVisible = popUp.statsVisible;
-        SetText();
-        SetItemStats();
-
-        picVisible = popUp.picVisible;
-        if (picVisible == true)
+        else
         {
-            SetPicture();
+            InvSlot2 = GameObject.Find("Empty InventorySlot2");
+            if (InvSlot2.transform.childCount > 0)
+            {
+                Destroy(NewInvSlot2);
+            }
+            NewInvSlot2 = Instantiate(popUp.selectedInvSlot, InvSlot2.transform);
+
+            RectTransform rt2 = NewInvSlot2.GetComponent<RectTransform>();
+            rt2.sizeDelta = new Vector2(52, 52);
+            Button btn = NewInvSlot2.GetComponent<Button>();
+            btn.interactable = false;
         }
-
-
-        SetPopupSize();
-
-        buttonAmount = popUp.buttonAmount;
-        SetButtons();
-
-        SetPopupSize();
+        
     }
 
     void SetItemStats()
@@ -367,6 +439,77 @@ public class PopUpDisplay : MonoBehaviour {
         statTexts[1].text = "Rarity: " + popUp.selectedItem.rarity;
         statTexts[2].text = "Effect: " + popUp.selectedItem.boosts;
         statTexts[3].text = "Item Level: " + popUp.selectedItem.level;
+    }
+
+    void CraftingPopUp()
+    {
+        InvSlot = GameObject.Find("Empty InventorySlot");
+        craftWindow.popUpFrame = GameObject.Find("Empty PopUp Background");
+
+        if (InvSlot.transform.childCount > 0)
+        {
+            Destroy(NewInvSlot);
+        }
+
+        NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
+        RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(52, 52);
+        Button btn = NewInvSlot.GetComponent<Button>();
+        btn.interactable = false;
+
+        SetBg();
+
+        statsVisible = craftWindow.statsVisible;
+        SetText();
+
+        picVisible = craftWindow.picVisible;
+        if (picVisible == true)
+        {
+            SetPicture();
+        }
+
+        SetCraftingButton();
+
+        SetPopupSize();
+    }
+
+    void SetCraftingButton()
+    {
+        button1 = GameObject.Find(craftWindow.buttonOne);
+        button2 = GameObject.Find(craftWindow.buttonTwo);
+
+        button1.GetComponent<Image>().enabled = true;
+        button2.GetComponent<Image>().enabled = true;
+
+        button1.GetComponent<Button>().enabled = true;
+        button2.GetComponent<Button>().enabled = true;
+
+        buttonPos1X = craftWindow.buttonPos1X;
+        buttonPos1Y = craftWindow.buttonPos1Y;
+
+        buttonPos2X = craftWindow.buttonPos2X;
+        buttonPos2Y = craftWindow.buttonPos2Y;
+
+        button1.transform.GetChild(0).GetComponent<Text>().enabled = true;
+        button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
+
+        RectTransform buttonPos1 = button1.GetComponent<RectTransform>();
+        buttonPos1.anchoredPosition = new Vector2(buttonPos1X, buttonPos1Y);
+
+        RectTransform buttonPos2 = button2.GetComponent<RectTransform>();
+        buttonPos2.anchoredPosition = new Vector2(buttonPos2X, buttonPos2Y);
+    }
+
+    public void Crafting()
+    {
+        craftMode = true;
+        CraftingPopUp();
+    }
+
+    public void CraftingOver()
+    {
+        craftMode = false;
+        ClosePopUp();
     }
 
     public void ClosePopUp()
@@ -413,6 +556,23 @@ public class PopUpDisplay : MonoBehaviour {
 
             button2.transform.GetChild(0).GetComponent<Text>().enabled = false;
         }
+        else if (buttonAmount == 3)
+        {
+            button1.GetComponent<Image>().enabled = false;
+            button1.GetComponent<Button>().enabled = false;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = false;
+
+            button2.GetComponent<Image>().enabled = false;
+            button2.GetComponent<Button>().enabled = false;
+
+            button2.transform.GetChild(0).GetComponent<Text>().enabled = false;
+
+            button3.GetComponent<Image>().enabled = false;
+            button3.GetComponent<Button>().enabled = false;
+
+            button3.transform.GetChild(0).GetComponent<Text>().enabled = false;
+        }
 
         //Hide image
         if (picVisible == true)
@@ -420,16 +580,15 @@ public class PopUpDisplay : MonoBehaviour {
             emptyPicImage.enabled = false;
         }
 
-        //Deselect inventoy slot
-        if (popUp.selectedInvSlot != null)
-        {
-            popUp.selectedInvSlot = null;
-        }
 
         //Destroy inventory popup slot
         if (InvSlot.transform.childCount > 0)
         {
             Destroy(NewInvSlot);
+        }
+        if (InvSlot2.transform.childCount > 0)
+        {
+            Destroy(NewInvSlot2);
         }
 
         //Hide the popup frame

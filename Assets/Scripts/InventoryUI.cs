@@ -260,8 +260,12 @@ public class InventoryUI : MonoBehaviour {
 
     public void Equip()
     {
-        equippedItems[(instrumentToLook-1)*3 + slotToLook - 1] = chosenItem;
-        inventory.onItemChangedCallback.Invoke();
+        if(slotToLook == chosenItem.slot && instrumentToLook == chosenItem.instrument)
+        {
+            equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = chosenItem;
+            inventory.onItemChangedCallback.Invoke();
+        }
+
     }
 
 

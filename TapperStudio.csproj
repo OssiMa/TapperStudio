@@ -135,6 +135,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AchievementInventory.cs" />
     <Compile Include="Assets\Scripts\AchievementSlot.cs" />
     <Compile Include="Assets\Scripts\Achievements.cs" />
     <Compile Include="Assets\Scripts\AlbumChangeAnimationScript.cs" />

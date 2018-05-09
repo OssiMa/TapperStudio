@@ -26,6 +26,11 @@ public class Inventory : MonoBehaviour {
 
     public List<Item> items = new List<Item>();
 
+    public delegate void OnAchievementChange();
+    public OnAchievementChange onAchievementChangedCallback;
+
+    public List<ScriptableAchievement> Achievements = new List<ScriptableAchievement>();
+
     public void AddItem(Item item)
     {
         items.Add(item);
@@ -43,6 +48,26 @@ public class Inventory : MonoBehaviour {
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
+        }
+    }
+
+    public void AddAchievement(ScriptableAchievement achievement)
+    {
+        Achievements.Add(achievement);
+
+        if (onAchievementChangedCallback != null)
+        {
+            onAchievementChangedCallback.Invoke();
+        }
+    }
+
+    public void RemoveAchievement(ScriptableAchievement achievement)
+    {
+        Achievements.Remove(achievement);
+
+        if (onAchievementChangedCallback != null)
+        {
+            onAchievementChangedCallback.Invoke();
         }
     }
 

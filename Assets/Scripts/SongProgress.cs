@@ -63,7 +63,7 @@ public class SongProgress : MonoBehaviour {
     public float songCountMax = 3;
     public float AlbumsCreated;
 
-
+    MusicPlayer mp;
 
 
 
@@ -79,6 +79,8 @@ public class SongProgress : MonoBehaviour {
         }
         instruments[0].SetActive(true);
         CheckActive();
+
+        mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
 	}
 	
 	// Update is called once per frame
@@ -92,6 +94,7 @@ public class SongProgress : MonoBehaviour {
 
         if (songXP >= songXPMax)
         {
+            mp.songEnd = true;
             songCount += 1;
             songXP = 0;
             UsedNames.Add(currentSong);

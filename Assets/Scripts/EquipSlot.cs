@@ -8,6 +8,7 @@ public class EquipSlot : MonoBehaviour {
     public Text rarity;
 
     Item item;
+    ScriptableAchievement achievement;
 
 
     public void EquipItem(Item newItem)
@@ -20,6 +21,19 @@ public class EquipSlot : MonoBehaviour {
             icon.enabled = true;
             rarity.text = "" + item.rarity;
             RarityColor();
+        }
+        else CleanSlot();
+
+    }
+
+    public void EquipAchievement(ScriptableAchievement newAchievement)
+    {
+        achievement = newAchievement;
+
+        if (item != null)
+        {
+            icon.sprite = achievement.AchievementIcon;
+            icon.enabled = true;
         }
         else CleanSlot();
 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -1600
     y: 222
     width: 1600
@@ -23,6 +24,43 @@ MonoBehaviour:
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
+=======
+    x: 0
+    y: 42
+    width: 1920
+    height: 998
+  m_ShowMode: 4
+  m_Title: 
+  m_RootView: {fileID: 7}
+  m_MinSize: {x: 950, y: 542}
+  m_MaxSize: {x: 10000, y: 10000}
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1031
+    y: 0
+    width: 500
+    height: 573
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &3
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -34,12 +72,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 9}
   - {fileID: 3}
+=======
+  - {fileID: 10}
+  - {fileID: 4}
+>>>>>>> Henkka
   m_Position:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1600
     height: 808
   m_MinSize: {x: 683, y: 342}
@@ -47,6 +91,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 92
 --- !u!114 &3
+=======
+    width: 1920
+    height: 948
+  m_MinSize: {x: 885, y: 492}
+  m_MaxSize: {x: 16010, y: 14042}
+  vertical: 0
+  controlID: 44
+--- !u!114 &4
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -60,7 +113,11 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1276
+=======
+    x: 1531
+>>>>>>> Henkka
     y: 0
     width: 324
     height: 808
@@ -71,7 +128,11 @@ MonoBehaviour:
   - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
+<<<<<<< HEAD
 --- !u!114 &4
+=======
+--- !u!114 &5
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -87,16 +148,27 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 316
     height: 488
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+    width: 379
+    height: 573
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Henkka
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
   m_Selected: 0
   m_LastSelected: 0
+<<<<<<< HEAD
 --- !u!114 &5
+=======
+--- !u!114 &6
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -111,6 +183,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 488
     width: 1276
     height: 320
@@ -124,6 +197,20 @@ MonoBehaviour:
   m_Selected: 1
   m_LastSelected: 0
 --- !u!114 &6
+=======
+    y: 573
+    width: 1531
+    height: 375
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &7
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -135,18 +222,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 7}
   - {fileID: 2}
   - {fileID: 8}
+=======
+  - {fileID: 8}
+  - {fileID: 3}
+  - {fileID: 9}
+>>>>>>> Henkka
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1600
     height: 858
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
+=======
+    width: 1920
+    height: 998
+  m_MinSize: {x: 950, y: 542}
+  m_MaxSize: {x: 10000, y: 10000}
+--- !u!114 &8
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -162,12 +263,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1600
+=======
+    width: 1920
+>>>>>>> Henkka
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
+<<<<<<< HEAD
 --- !u!114 &8
+=======
+--- !u!114 &9
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -182,12 +291,16 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 838
-    width: 1600
+    y: 978
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
+<<<<<<< HEAD
 --- !u!114 &9
+=======
+--- !u!114 &10
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -199,12 +312,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 10}
   - {fileID: 5}
+=======
+  - {fileID: 11}
+  - {fileID: 6}
+>>>>>>> Henkka
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1276
     height: 808
   m_MinSize: {x: 406, y: 342}
@@ -212,6 +331,15 @@ MonoBehaviour:
   vertical: 1
   controlID: 93
 --- !u!114 &10
+=======
+    width: 1531
+    height: 948
+  m_MinSize: {x: 608, y: 492}
+  m_MaxSize: {x: 12008, y: 14042}
+  vertical: 1
+  controlID: 45
+--- !u!114 &11
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -223,12 +351,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 4}
   - {fileID: 11}
+=======
+  - {fileID: 5}
+  - {fileID: 12}
+  - {fileID: 2}
+>>>>>>> Henkka
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1276
     height: 488
   m_MinSize: {x: 406, y: 221}
@@ -236,6 +371,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 11
 --- !u!114 &11
+=======
+    width: 1531
+    height: 573
+  m_MinSize: {x: 608, y: 221}
+  m_MaxSize: {x: 12008, y: 4021}
+  vertical: 0
+  controlID: 46
+--- !u!114 &12
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -251,6 +395,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 316
     y: 0
+<<<<<<< HEAD
     width: 960
     height: 488
   m_MinSize: {x: 204, y: 221}
@@ -380,6 +525,18 @@ MonoBehaviour:
   m_ShowReferencedBuses: 1
   m_ShowBusConnections: 0
   m_ShowBusConnectionsOfSelection: 0
+=======
+    width: 652
+    height: 573
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> Henkka
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -428,10 +585,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -1600
     y: 759
     width: 1274
     height: 299
+=======
+    x: 0
+    y: 664
+    width: 1529
+    height: 354
+>>>>>>> Henkka
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -443,6 +607,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Music/var1
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -456,6 +621,21 @@ MonoBehaviour:
     m_SelectedIDs: 32300000
     m_LastClickedID: 12338
     m_ExpandedIDs: 00000000c22d0000cc2d0000f62d0000222e0000242e00006a2e0000802e0000c42e0000d22f000026300000be300000c03000001431000000ca9a3bffffff7f
+=======
+    - Assets/ScriptableObjects/Achievements/Song and album achievements
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/ScriptableObjects/Achievements/Song and album achievements
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\henrysiu\Desktop\Tapperstudio
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 147}
+    m_SelectedIDs: 089a0000
+    m_LastClickedID: 39432
+    m_ExpandedIDs: 00000000fc2a00000a2b0000322b00005e2b0000602b0000a82b0000be2b0000022c0000122d00006e2d0000062e00005a2e000000ca9a3bffffff7f
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -471,7 +651,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
+=======
+      m_ClientGUIView: {fileID: 6}
+>>>>>>> Henkka
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -483,7 +667,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000c22d0000cc2d0000f62d0000222e0000242e00006a2e0000802e0000c42e0000d22f000026300000be30000014310000
+=======
+    m_ExpandedIDs: 00000000fc2a00000a2b0000322b00005e2b0000602b0000a82b0000be2b0000022c0000122d00006e2d0000062e00005a2e0000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -508,10 +696,17 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 742e0000
     m_LastClickedInstanceID: 11892
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000066e1fcff
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -527,7 +722,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 5}
+=======
+      m_ClientGUIView: {fileID: 6}
+>>>>>>> Henkka
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -537,7 +736,11 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 145
+=======
+  m_DirectoriesAreaWidth: 115
+>>>>>>> Henkka
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -560,10 +763,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -322
     y: 271
     width: 322
     height: 787
+=======
+    x: 1533
+    y: 91
+    width: 387
+    height: 927
+>>>>>>> Henkka
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
@@ -593,6 +803,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -1600
     y: 271
     width: 314
@@ -602,6 +813,17 @@ MonoBehaviour:
     m_SelectedIDs: 1c330000
     m_LastClickedID: 13084
     m_ExpandedIDs: 04f5ffff4ef8ffff00000000a63200001c3300009a330000a8330000b43300005434000070340000a6340000103500005836000002370000
+=======
+    x: 0
+    y: 91
+    width: 377
+    height: 552
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 281}
+    m_SelectedIDs: dcc7fcff
+    m_LastClickedID: 0
+    m_ExpandedIDs: 4a7dfbff9c9ffbfff8efffff1af0ffff3cf0ffffa2f0ffff52f1ffffc2f8ffff0000000092300000ac3000000e310000703100002e3200004c330000a63300003635000080350000aa3500002a3600004e360000f436000002600100b67e01003c8001009e80010000810100dc82010036830100c684010010850100ba850100de85010084860100
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -617,10 +839,17 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
   m_ExpandedScenes:
   - music_scene
+=======
+      m_ClientGUIView: {fileID: 5}
+    m_SearchString: 
+  m_ExpandedScenes:
+  - AchievementTest
+>>>>>>> Henkka
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -646,19 +875,34 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -1282
     y: 271
     width: 956
     height: 467
   m_SceneLighting: 1
   lastFramingTime: 369.8830766523893
+=======
+    x: 381
+    y: 91
+    width: 648
+    height: 552
+  m_SceneLighting: 1
+  lastFramingTime: 20740.14921346502
+>>>>>>> Henkka
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -0.0055235364, y: -0.3393553, z: 98.67969}
     speed: 2
     m_Value: {x: -0.0055235364, y: -0.3393553, z: 98.67969}
+=======
+    m_Target: {x: 161.08018, y: 705.93304, z: 0.875}
+    speed: 2
+    m_Value: {x: 161.08018, y: 705.93304, z: 0.875}
+>>>>>>> Henkka
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -685,9 +929,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 11.64153
     speed: 2
     m_Value: 11.64153
+=======
+    m_Target: 22
+    speed: 2
+    m_Value: 22
+>>>>>>> Henkka
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -720,10 +970,17 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -1282
     y: 271
     width: 956
     height: 467
+=======
+    x: 1033
+    y: 91
+    width: 496
+    height: 552
+>>>>>>> Henkka
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -752,25 +1009,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 956
       height: 450
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 478, y: 225}
+=======
+      width: 496
+      height: 535
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 248, y: 267.5}
+>>>>>>> Henkka
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -478
       y: -225
       width: 956
       height: 450
+=======
+      x: -248
+      y: -267.5
+      width: 496
+      height: 535
+>>>>>>> Henkka
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 956, y: 467}
+=======
+  m_LastWindowPixelSize: {x: 496, y: 552}
+>>>>>>> Henkka
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -796,7 +1071,14 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: -1600
     y: 759
     width: 1274
     height: 299
+=======
+    x: 0
+    y: 664
+    width: 1529
+    height: 354
+>>>>>>> Henkka

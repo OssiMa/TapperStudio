@@ -17,17 +17,14 @@ public class AchievementSlot : MonoBehaviour
 
     private void Start()
     {
-       
+        AddAchievement(achievement);
     }
 
     public void AddAchievement(ScriptableAchievement newAchievement)
     {
-        icon = GetComponent<Image>();
-
-        achievement = newAchievement;
-
         button = GetComponent<Button>();
 
+        achievement = newAchievement;
         //cb = button.colors;
         //Color32 newColor = skin.color;
         //newColor.a = 255;
@@ -38,20 +35,16 @@ public class AchievementSlot : MonoBehaviour
         icon.enabled = true;
         Text.text = achievement.AchievementText;
         button.interactable = false;
+
     }
 
     public void ClearSlot()
     {
-        icon = GetComponent<Image>();
-
         button = GetComponent<Button>();
+        achievement = null;
 
-        //cb = button.colors;
-        //cb.normalColor = skin.color;
-        //button.colors = cb;
-
-        //icon.sprite = Resources.Load<Sprite>("tab_menubackground");
-        //print(icon.sprite);
+        icon.sprite = null;
+        icon.enabled = false;
         button.interactable = false;
     }
 
@@ -66,6 +59,11 @@ public class AchievementSlot : MonoBehaviour
     public ScriptableAchievement GetAchievement()
     {
         return achievement;
+    }
+
+    public void Equipped()
+    {
+        Text.enabled = true;
     }
 
 }

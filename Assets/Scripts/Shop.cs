@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 public class Shop : MonoBehaviour {
                   
@@ -37,7 +37,7 @@ public class Shop : MonoBehaviour {
         PurchaseManager.purchaseManager.BuyCurrencyBig();
     }
 
-    public void WatchAd()
+    /*public void WatchAd()
     {
         print("Here we are again...");
         if (Advertisement.IsReady())
@@ -65,7 +65,7 @@ public class Shop : MonoBehaviour {
             print("Something rather horrifying has happened related to the ads");
         }
 
-        /*switch (result)
+        switch (result)
         {
             case ShowResult.Finished:
                 cm.AddCurrency(adBonus);
@@ -74,8 +74,8 @@ public class Shop : MonoBehaviour {
             case ShowResult.Failed:
                 print("Uhh the ad FAILED 0_0");
                 break;
-        }*/
-    }
+        }
+    }*/
 
     /*void PurchaseNoAdds()
     {

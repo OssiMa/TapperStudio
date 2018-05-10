@@ -202,7 +202,7 @@ public class PopUpDisplay : MonoBehaviour {
         }
         else if (purpose == Purposes.watchAd)          //if purpose is something else, don't watch ad
         {
-            shop.WatchAd();
+            //shop.WatchAd();
         }
         print(purpose);
         purpose = null;

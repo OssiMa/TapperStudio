@@ -32,7 +32,7 @@ public class CurrencyManager : MonoBehaviour {
             currency = 0;
         }
 
-        premiumCurrencyText.text = premiumCurrency + "£";
+        //premiumCurrencyText.text = premiumCurrency + "£";
 
         if (premiumCurrency < 0)
         {

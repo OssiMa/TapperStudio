@@ -34,6 +34,7 @@ public class NewItemGenerator : MonoBehaviour {
     String[] drumNames;
     String[] guitarNames;
     String[] pianoNames;
+    string[] rarityNames;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class NewItemGenerator : MonoBehaviour {
         drumNames = new string[] { "Pedal", "Metronome", "Sticks"};
         guitarNames = new string[] {"Guitar1", "Guitar2", "Guitar3" };
         pianoNames = new string[] { "Stool", "Notestand", "Frame"};
+        rarityNames = new string[] { "Common", "Uncommon", "Rare", "Epic", "Legendary" };
 
     }
 
@@ -55,6 +57,7 @@ public class NewItemGenerator : MonoBehaviour {
         item.instrument = Random.Range(1, 4);
         ItemInstrumentSlot();
         IconChooser();
+        RarityName();
         Inventory.instance.AddItem(item);
     }
 
@@ -66,6 +69,7 @@ public class NewItemGenerator : MonoBehaviour {
         item.instrument = instrument;
         ItemInstrumentSlot();
         IconChooser();
+        RarityName();
         Inventory.instance.AddItem(item);
     }
 
@@ -73,18 +77,18 @@ public class NewItemGenerator : MonoBehaviour {
     {
         if (item.slot == 1)
         {
-            item.generationBoost = item.rarity;                                  // <<<Real values here
             item.boosts = "Passive generation";
+            item.boostPower = item.rarity;                  //<- Balanced values here 
         }
         else if(item.slot == 2)
         {           
-            item.maxCombo = item.rarity;                                        // <<<Real values here
             item.boosts = "Maximum combo +";
+            item.boostPower = item.rarity;                  //<- Balanced values here 
         }
         else if (item.slot == 3)
         {
-            item.xpBoost = item.rarity;                                       // <<<Real values here
             item.boosts = "Bonus experience";
+            item.boostPower = item.rarity;                  //<- Balanced values here 
         }
 
     }
@@ -107,7 +111,17 @@ public class NewItemGenerator : MonoBehaviour {
             item.itemName = pianoNames[item.slot - 1];
         }
 
+    }
 
-
+    void RarityName()
+    {
+        if(item.rarity < 6)
+        {
+            item.rarityName = rarityNames[item.rarity - 1];
+        }
+        else
+        {
+            item.rarityName = "Legendary +" + (item.rarity-5);
+        }
     }
 }

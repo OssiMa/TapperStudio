@@ -176,22 +176,8 @@ public class InstrumentBase : MonoBehaviour {
         if (invUI.EquipBoosts(instrumentNbr, i) != null)
         {
             Item booster = invUI.EquipBoosts(instrumentNbr, i);
-            if (i == 1)
-            {
-                return booster.generationBoost;
-            }
-            else if (i == 2)
-            {
-                return booster.maxCombo;
-            }
-            else if (i == 3)
-            {
-                return booster.xpBoost;
-            }
-            else
-            {
-                return 0;
-            }
+            float boostValue = booster.boostPower + (booster.level / 4);
+            return booster.boostPower;
         }
         else
         {

@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 8928243}
   - component: {fileID: 8928242}
   - component: {fileID: 8928241}
-  - component: {fileID: 8928244}
   m_Layer: 5
   m_Name: Panel_Settings&Achievements
   m_TagString: Untagged
@@ -362,23 +361,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8928239}
---- !u!114 &8928244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 8928239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ede4a88dd4dac2c49906dec66eb493b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pgUp: {fileID: 60993458}
-  pgDown: {fileID: 1319290962}
-  currPage: {fileID: 323582222}
-  slotToLook: 1
-  page: 1
-  maxPages: 1
 --- !u!1 &10691325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,8 +1132,63 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1086312478}
+      - m_Target: {fileID: 1917914457}
         m_MethodName: PageUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1960202972}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 487932614}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1718525467}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 375271129}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 352241041}
+        m_MethodName: PageUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4533,6 +4570,9 @@ MonoBehaviour:
   button: {fileID: 352241040}
   Text: {fileID: 708303992}
   achievement: {fileID: 0}
+  achievement2: {fileID: 0}
+  achievement3: {fileID: 0}
+  UIAchievementInventory: {fileID: 0}
 --- !u!114 &352241042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4897,6 +4937,9 @@ MonoBehaviour:
   button: {fileID: 375271128}
   Text: {fileID: 696903673}
   achievement: {fileID: 0}
+  achievement2: {fileID: 0}
+  achievement3: {fileID: 0}
+  UIAchievementInventory: {fileID: 0}
 --- !u!114 &375271130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6018,6 +6061,9 @@ MonoBehaviour:
   button: {fileID: 487932613}
   Text: {fileID: 125036902}
   achievement: {fileID: 0}
+  achievement2: {fileID: 0}
+  achievement3: {fileID: 0}
+  UIAchievementInventory: {fileID: 0}
 --- !u!114 &487932615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9137,7 +9183,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  Achievements: []
+  Achievements:
+  - {fileID: 11400000, guid: 9595c9fe5c671fc47aca101bcf4971cd, type: 2}
+  - {fileID: 11400000, guid: d51a477808a340740873ad974bc8696c, type: 2}
+  - {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
+  - {fileID: 11400000, guid: 9d7a9e784e6412248a8d667d03e26078, type: 2}
+  - {fileID: 11400000, guid: f7f8938fcab4e454993cf66e36b45cce, type: 2}
+  - {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
+  - {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42, type: 2}
 --- !u!4 &800686922
 Transform:
   m_ObjectHideFlags: 0
@@ -14240,8 +14293,63 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1086312478}
+      - m_Target: {fileID: 1917914457}
         m_MethodName: PageDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1960202972}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 487932614}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1718525467}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 375271129}
+        m_MethodName: PageUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 352241041}
+        m_MethodName: PageUpdate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18165,6 +18273,9 @@ MonoBehaviour:
   button: {fileID: 1718525466}
   Text: {fileID: 133347887}
   achievement: {fileID: 0}
+  achievement2: {fileID: 0}
+  achievement3: {fileID: 0}
+  UIAchievementInventory: {fileID: 0}
 --- !u!114 &1718525468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20014,6 +20125,7 @@ GameObject:
   - component: {fileID: 1917914455}
   - component: {fileID: 1917914454}
   - component: {fileID: 1917914453}
+  - component: {fileID: 1917914457}
   m_Layer: 5
   m_Name: AchievementSlots
   m_TagString: Untagged
@@ -20117,6 +20229,23 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917914451}
+--- !u!114 &1917914457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1917914451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede4a88dd4dac2c49906dec66eb493b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pgUp: {fileID: 60993458}
+  pgDown: {fileID: 1319290962}
+  currPage: {fileID: 323582222}
+  slotToLook: 1
+  page: 1
+  maxPages: 1
 --- !u!1001 &1931977418
 Prefab:
   m_ObjectHideFlags: 0
@@ -20534,7 +20663,10 @@ MonoBehaviour:
   icon: {fileID: 1130496814}
   button: {fileID: 1960202971}
   Text: {fileID: 10691327}
-  achievement: {fileID: 0}
+  achievement: {fileID: 11400000, guid: 9595c9fe5c671fc47aca101bcf4971cd, type: 2}
+  achievement2: {fileID: 11400000, guid: d51a477808a340740873ad974bc8696c, type: 2}
+  achievement3: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
+  UIAchievementInventory: {fileID: 1917914457}
 --- !u!114 &1960202973
 MonoBehaviour:
   m_ObjectHideFlags: 0

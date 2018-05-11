@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class AchievementInventory : MonoBehaviour {
+public class UIAchievementInventory : MonoBehaviour {
     Inventory inventory;
 
     AchievementSlot chosenSlot;
@@ -22,7 +22,7 @@ public class AchievementInventory : MonoBehaviour {
 
     public int slotToLook = 1;
     public int page = 1;
-    public int maxPages = 1;
+    public int maxPages = 3;
 
 
     // Use this for initialization
@@ -53,6 +53,7 @@ public class AchievementInventory : MonoBehaviour {
         }
         AchievementsToShow = AchievementsToShow.OrderByDescending(Achievements => Achievements.order).ToList();
 
+
     }
 
     void ShowEquipped()
@@ -65,16 +66,7 @@ public class AchievementInventory : MonoBehaviour {
 
     void PageUpdate()
     {
-        maxPages = 1;
-        if (AchievementsToShow.Count > slots.Length)
-        {
-            int i = AchievementsToShow.Count;
-            while (i > slots.Length)
-            {
-                i -= slots.Length;
-                maxPages += 1;
-            }
-        }
+        maxPages = 3;
         if (page > maxPages)
         {
             page = maxPages;
@@ -116,8 +108,20 @@ public class AchievementInventory : MonoBehaviour {
             }
             else
             {
-                slots[i].ClearSlot();
+              //  slots[i].ClearSlot();
             }
         }
+    }
+
+    public void PageUp()
+    {
+        page += 1;
+        inventory.onAchievementChangedCallback.Invoke();
+    }
+
+    public void PageDown()
+    {
+        page -= 1;
+        inventory.onAchievementChangedCallback.Invoke();
     }
 }

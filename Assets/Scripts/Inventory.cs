@@ -54,9 +54,11 @@ public class Inventory : MonoBehaviour {
     public void AddAchievement(ScriptableAchievement achievement)
     {
         Achievements.Add(achievement);
+        Debug.Log("aaaaaaaaaaaa");
 
         if (onAchievementChangedCallback != null)
         {
+            Debug.Log("perkele");
             onAchievementChangedCallback.Invoke();
         }
     }
@@ -64,7 +66,6 @@ public class Inventory : MonoBehaviour {
     public void RemoveAchievement(ScriptableAchievement achievement)
     {
         Achievements.Remove(achievement);
-
         if (onAchievementChangedCallback != null)
         {
             onAchievementChangedCallback.Invoke();

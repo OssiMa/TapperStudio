@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AchievementSlot : MonoBehaviour
 {
+    Inventory inventory;
 
     public Image icon;
 
@@ -12,19 +13,67 @@ public class AchievementSlot : MonoBehaviour
     public Text Text;
     ColorBlock cb;
     Color32 buttonColor;
-    [HideInInspector]
+    //[HideInInspector]
     public ScriptableAchievement achievement;
+    public ScriptableAchievement achievement2;
+    public ScriptableAchievement achievement3;
+
+    public UIAchievementInventory UIAchievementInventory;
 
     private void Start()
     {
-        AddAchievement(achievement);
+        print(UIAchievementInventory.page);
+        if (UIAchievementInventory.page == 1)
+        {
+            AddAchievement(achievement);
+        }
+        else if (UIAchievementInventory.page == 2)
+        {
+            AddAchievement(achievement2);
+        }
+        else if (UIAchievementInventory.page == 3)
+        {
+            AddAchievement(achievement3);
+        }
+
+    }
+
+    public void PageUpdate()
+    {
+        print(UIAchievementInventory.page);
+        ClearSlot();
+
+        //if (UIAchievementInventory.page == 1)
+        //{
+        //    AddAchievement(achievement);
+        //}
+        //else if (UIAchievementInventory.page == 2)
+        //{
+        //    AddAchievement(achievement2);
+        //}
+        //else if (UIAchievementInventory.page == 3)
+        //{
+        //    AddAchievement(achievement3);
+        //}
     }
 
     public void AddAchievement(ScriptableAchievement newAchievement)
     {
         button = GetComponent<Button>();
+        if (UIAchievementInventory.page == 1)
+        {
+            newAchievement = achievement;
+        }
+        else if (UIAchievementInventory.page == 2)
+        {
+            newAchievement = achievement2;
+        }
+        else if (UIAchievementInventory.page == 3)
+        {
+            newAchievement = achievement3;
+        }
 
-        achievement = newAchievement;
+
         //cb = button.colors;
         //Color32 newColor = skin.color;
         //newColor.a = 255;
@@ -34,17 +83,19 @@ public class AchievementSlot : MonoBehaviour
         icon.sprite = achievement.AchievementIcon;
         icon.enabled = true;
         Text.text = achievement.AchievementText;
+        Text.enabled = true;
         button.interactable = false;
 
     }
 
     public void ClearSlot()
     {
+
         button = GetComponent<Button>();
-        achievement = null;
 
         icon.sprite = null;
         icon.enabled = false;
+        Text.text = null;
         button.interactable = false;
     }
 
@@ -59,6 +110,7 @@ public class AchievementSlot : MonoBehaviour
     public ScriptableAchievement GetAchievement()
     {
         return achievement;
+
     }
 
     public void Equipped()

@@ -8,14 +8,6 @@ public class Achievements : MonoBehaviour {
     public List<string> DoneAchievements;
 
 
-    public ScriptableAchievement DrumLevel3;
-    public ScriptableAchievement GuitarLevel3;
-    public ScriptableAchievement PianoLevel3;
-    public ScriptableAchievement AllLevel3;
-    public ScriptableAchievement DrumCombo;
-    public ScriptableAchievement CompleteASong;
-    public ScriptableAchievement CompleteAnAlbum;
-
     ScriptableAchievement achievement;
 
     // Use this for initialization
@@ -28,10 +20,10 @@ public class Achievements : MonoBehaviour {
 
     public void NewAchievement(int order)
     {
-        achievement = new ScriptableAchievement();
-        achievement.order = order;
-        achievement.slot = Random.Range(1, 4);
-        Inventory.instance.AddAchievement(achievement);
+        //achievement = new ScriptableAchievement();
+        //achievement.order = order;
+        //achievement.slot = Random.Range(1, 4);
+        //Inventory.instance.AddAchievement(achievement);
     }
 
-    }
+}

@@ -141,6 +141,10 @@ public class InventoryUI : MonoBehaviour {
                 {
                     slots[i].CraftingFilter();
                 }
+                else if(craftInProgress == true && chosenItem == itemsToShow[i+xPage])
+                {
+                    slots[i].CraftingFilter();
+                }
                 if (equippedItems.Contains(itemsToShow[i+xPage]))
                 {
                     slots[i].Equipped();
@@ -239,6 +243,44 @@ public class InventoryUI : MonoBehaviour {
             print("second item not selected");
         }
         
+    }
+
+    public void UpgradeItem()
+    {
+        if (chosenItem != null && chosenItem.level < 3)
+        {
+            print("Upgrading Beep Boop");
+            chosenItem.level += 1;
+            inventory.onItemChangedCallback.Invoke();
+            chosenItem = null;
+            chosenSlot = null;
+
+        }
+        else
+        {
+            print("no item selected or already at max");
+        }
+    }
+
+    public void SellItem()
+    {
+        if (chosenItem != null)
+        {
+            print("Me wheel n deel item");
+            Inventory.instance.RemoveItem(chosenItem);
+            if (equippedItems.Contains(chosenItem))
+            {
+                print("removing");
+                equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
+            }
+            inventory.onItemChangedCallback.Invoke();
+            chosenItem = null;
+            chosenSlot = null;
+        }
+        else
+        {
+            print("no item selected");
+        }
     }
 
     public void CancelCrafting()

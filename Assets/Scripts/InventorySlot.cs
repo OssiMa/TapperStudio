@@ -7,6 +7,7 @@ public class InventorySlot : MonoBehaviour {
     public Image background;
     public Text rarity;
     public Text equipped;
+    public GameObject iconStuff;
 
     Button button; 
 
@@ -24,6 +25,7 @@ public class InventorySlot : MonoBehaviour {
         rarity.text = "" + item.rarity;
         RarityColor();
         equipped.enabled = false;
+        iconStuff.SetActive(true);
     }
 
     public void ClearSlot()
@@ -37,6 +39,7 @@ public class InventorySlot : MonoBehaviour {
         rarity.text = "";
         background.color = new Color32(255,255,255,255);
         equipped.enabled = false;
+        iconStuff.SetActive(false);
     }
 
     public void CraftingFilter()

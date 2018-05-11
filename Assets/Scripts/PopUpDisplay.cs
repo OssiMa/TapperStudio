@@ -372,11 +372,13 @@ public class PopUpDisplay : MonoBehaviour {
 
     public void SetInventoryPopUp()
     {
+        
         if (craftMode == false)
         {
             InvSlot = GameObject.Find("Empty InventorySlot");
             InvSlot2 = GameObject.Find("Empty InventorySlot2");
             popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
+            ClosePopUp();
 
             if (InvSlot.transform.childCount > 0)
             {
@@ -416,7 +418,7 @@ public class PopUpDisplay : MonoBehaviour {
 
             SetPopupSize();
         }
-        else
+        else if(craftMode == true)
         {
             InvSlot2 = GameObject.Find("Empty InventorySlot2");
             if (InvSlot2.transform.childCount > 0)
@@ -429,6 +431,8 @@ public class PopUpDisplay : MonoBehaviour {
             rt2.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot2.GetComponent<Button>();
             btn.interactable = false;
+
+            button1.GetComponent<Button>().interactable = true;
         }
         
     }
@@ -436,9 +440,9 @@ public class PopUpDisplay : MonoBehaviour {
     void SetItemStats()
     {
         statTexts[0].text = popUp.selectedItem.itemName;
-        statTexts[1].text = "Rarity: " + popUp.selectedItem.rarity;
+        statTexts[1].text = "Rarity: " + popUp.selectedItem.rarityName;
         statTexts[2].text = "Effect: " + popUp.selectedItem.boosts;
-        statTexts[3].text = "Item Level: " + popUp.selectedItem.level;
+        statTexts[3].text = "Item Level: " + (popUp.selectedItem.level +1);
     }
 
     void CraftingPopUp()
@@ -484,6 +488,8 @@ public class PopUpDisplay : MonoBehaviour {
         button1.GetComponent<Button>().enabled = true;
         button2.GetComponent<Button>().enabled = true;
 
+        button1.GetComponent<Button>().interactable = false;
+
         buttonPos1X = craftWindow.buttonPos1X;
         buttonPos1Y = craftWindow.buttonPos1Y;
 
@@ -512,29 +518,58 @@ public class PopUpDisplay : MonoBehaviour {
         ClosePopUp();
     }
 
-    public void ClosePopUp()
+    public void ItemUpgrade()
     {
-        //There could be something that indicates what closing the popup will do
-
-        //Hide the the main text (description)
-        GameObject descriptionText;
-        descriptionText = GameObject.Find("Popup Description");
-        textItself = descriptionText.GetComponent<Text>();
-        textItself.enabled = false;
-
-        //Empty stats & stat texts
-        if (statsVisible == true)
+        if (popUp.selectedItem.level <3)
         {
-            emptyStatses.Clear();
+            ActivatePopup();
+        }
+        else
+        {
+            popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
 
-            foreach (Text statText in statTexts)
+            SetBg();
+
+            statsVisible = popUp.statsVisible;
+
+            GameObject descriptionText;
+
+            descriptionText = GameObject.Find("Popup Description");
+
+            textItself = descriptionText.GetComponent<Text>();
+
+            textItself.enabled = true;
+            textItself.text = "Max level reached";
+            textItself.alignment = TextAnchor.MiddleCenter;
+
+            picVisible = popUp.picVisible;
+            if (picVisible == true)
             {
-                statText.enabled = false;
+                SetPicture();
             }
 
-            statTexts.Clear();
-        }
+            SetPopupSize();
 
+
+            button1 = GameObject.Find(popUp.buttonTwo);
+
+            button1.GetComponent<Image>().enabled = true;
+            button1.GetComponent<Button>().enabled = true;
+
+            button1.transform.GetChild(0).GetComponent<Text>().enabled = true;
+
+            buttonPos1X = popUp.buttonPos1X;
+            buttonPos1Y = popUp.buttonPos1Y;
+
+            RectTransform buttonPos = button1.GetComponent<RectTransform>();
+            buttonPos.anchoredPosition = new Vector2(buttonPos1X, buttonPos1Y);
+
+            SetPopupSize();
+        }
+    }
+
+    public void HideButtons()
+    {
         //Destroy one button
         if (buttonAmount == 1)
         {
@@ -573,6 +608,32 @@ public class PopUpDisplay : MonoBehaviour {
 
             button3.transform.GetChild(0).GetComponent<Text>().enabled = false;
         }
+    }
+
+    public void ClosePopUp()
+    {
+        //There could be something that indicates what closing the popup will do
+
+        //Hide the the main text (description)
+        GameObject descriptionText;
+        descriptionText = GameObject.Find("Popup Description");
+        textItself = descriptionText.GetComponent<Text>();
+        textItself.enabled = false;
+
+        //Empty stats & stat texts
+        if (statsVisible == true)
+        {
+            emptyStatses.Clear();
+
+            foreach (Text statText in statTexts)
+            {
+                statText.enabled = false;
+            }
+
+            statTexts.Clear();
+        }
+
+        HideButtons();
 
         //Hide image
         if (picVisible == true)
@@ -582,6 +643,8 @@ public class PopUpDisplay : MonoBehaviour {
 
 
         //Destroy inventory popup slot
+        InvSlot = GameObject.Find("Empty InventorySlot");
+        InvSlot2 = GameObject.Find("Empty InventorySlot2");
         if (InvSlot.transform.childCount > 0)
         {
             Destroy(NewInvSlot);

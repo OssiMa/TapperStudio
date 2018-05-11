@@ -25,18 +25,30 @@ public class MusicPlayer : MonoBehaviour {
     AudioClip clipDrums;
 
     float maxVolume;
+    float prevVolumeGuitar;
+    float prevVolumePiano;
+    float prevVolumeDrums;
+    float preFadeGuitar;
+    float preFadePiano;
+    float preFadeDrums;
 
     bool started = false;
     //[HideInInspector]
-    public bool songEnd = false;
+    public bool songEnd = false;    //Hide this from the inspector once debugging is done
     bool timing = false;
     bool albumEnd;
     bool guitarStarted;
     bool keyboardStarted;
+    bool drumsStarted;
+    bool menu;
+    bool guitarMuted = true;
+    bool keyboardMuted = true;
+    bool drumsMuted = true;
 
-    string currentSong;
+    public string currentSong;      //Change this to private once debugging is done
 
-    float time = 1;
+    private IEnumerator coroutine;
+    private IEnumerator fader;
 
     private void Awake()
     {
@@ -54,16 +66,16 @@ public class MusicPlayer : MonoBehaviour {
         ChooseAlbum();
         ChooseSong();
 
+        drums.mute = true;
         guitar.mute = true;
         keyboard.mute = true;
     }
 
-    public void StartTheMusic()     //Guitar and Piano don't start the music yet, they should at some point
+    public void StartTheMusic()     //Piano should work now too, haven't been able to test it yet though
     {
-        //A more reliable way to do this than a button event?
+        //A more reliable way to do this than a button event? (?)
         if (started == false)
         {
-            print("NAM");
             started = true;
             GameObject thisObject = gameObject;
             List<GameObject> children = new List<GameObject>();
@@ -77,6 +89,8 @@ public class MusicPlayer : MonoBehaviour {
             {
                 child.GetComponent<AudioSource>().mute = false;
             }
+
+            //drums.mute = false;
 
             maxVolume = 1;
 
@@ -139,10 +153,10 @@ public class MusicPlayer : MonoBehaviour {
         currentAlbum = album1;      //Delete this later
     }
 
-    void ChooseSong()       //For some reason everything breaks when trying to change the song
+    void ChooseSong()
     {
-        int rundom = Random.Range(1, 3);
-        print("GUIH");
+        int rundom = Random.Range(1, 4);
+
         if (rundom == 1)
         {
             if (currentSong == "song1")
@@ -240,12 +254,6 @@ public class MusicPlayer : MonoBehaviour {
                 drums = album3.GetComponent<AudioSource>();
             }
         }
-        if (started == true)
-        {
-            keyboard.Play();
-            guitar.Play();
-            drums.Play();
-        }
 
         clipGuitar = guitar.clip;
         clipPiano = keyboard.clip;
@@ -254,15 +262,18 @@ public class MusicPlayer : MonoBehaviour {
 
     void Update()
     {
-        if (songEnd == false)
-        {
+        //if (songEnd == false)
+        //{
             if (guitarStarted == true)
             {
-                guitar.mute = false;
+                if (menu == false)
+                {
+                    guitar.mute = false;
+                }
+                
                 if (instrumentBaseGuitar.combo == 1)        //This could be made more fun (?). When starting, the volume would be what is currently told below; otherwise, when combo is 1, volume would go to 0 (?)
                 {
                     guitar.volume = (instrumentBaseGuitar.combo / instrumentBaseGuitar.maxCombo) - .1f;
-                    print("why u no work");
                 }
                 else if (instrumentBaseGuitar.combo > 1)
                 {
@@ -270,18 +281,29 @@ public class MusicPlayer : MonoBehaviour {
                 }
             }
 
-            if (instrumentBaseDrums.combo == 1)
+            if (drumsStarted == true)
             {
-                drums.volume = (instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo) - .1f;
-            }
-            else if (instrumentBaseDrums.combo > 1)
-            {
-                drums.volume = instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo;
+                if (menu == false)
+                {
+                    drums.mute = false;
+                }
+                
+                if (instrumentBaseDrums.combo == 1)
+                {
+                    drums.volume = (instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo) - .1f;
+                }
+                else if (instrumentBaseDrums.combo > 1)
+                {
+                    drums.volume = instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo;
+                }
             }
 
             if (keyboardStarted == true)
             {
-                keyboard.mute = false;
+                if (menu == false)
+                {
+                    keyboard.mute = false;
+                }
                 if (instrumentBasePiano.combo == 1)
                 {
                     keyboard.volume = (instrumentBasePiano.combo / instrumentBasePiano.maxCombo) - .1f;
@@ -291,15 +313,40 @@ public class MusicPlayer : MonoBehaviour {
                     keyboard.volume = instrumentBasePiano.combo / instrumentBasePiano.maxCombo;
                 }
             }
-        }
+        //}
         else if (songEnd == true)
         {
-            guitar.Stop();
-            keyboard.Stop();
-            EndSong();
+            coroutine = SoundOut(guitar, keyboard, drums);
+            StartCoroutine(coroutine);
+            if (!guitar.isPlaying && !keyboard.isPlaying)
+            {
+                prevVolumeGuitar = guitar.volume;
+                prevVolumePiano = keyboard.volume;
+
+                drumsMuted = drums.mute;
+                guitarMuted = guitar.mute;
+                keyboardMuted = keyboard.mute;
+
+                ChooseSong();
+
+                guitar.volume = prevVolumeGuitar;
+                keyboard.volume = prevVolumePiano;
+
+                drums.mute = drumsMuted;
+                guitar.mute = guitarMuted;
+                keyboard.mute = keyboardMuted;
+
+                coroutine = SoundIn(guitar, keyboard, drums);
+                StartCoroutine(coroutine);
+
+                if (guitar.loop == true && keyboard.loop == true)
+                {
+                    songEnd = false;
+                }
+            }
         }
 
-        if (sp.songCount >= sp.songCountMax)
+        if (sp.songCount >= sp.songCountMax)    
         {
             albumEnd = true;    //Might not need this at all
             ChooseAlbum();
@@ -308,40 +355,36 @@ public class MusicPlayer : MonoBehaviour {
         //Once album is done, move to the next (WILL BE DONE ONCE WE GET AT LEAST ONE NEW ALBUM) (just fade song volume for x amount of time until 0 and start the new one)
     }
 
-    void EndSong()
+    public static IEnumerator SoundOut (AudioSource guitar, AudioSource piano, AudioSource drums)
     {
-        time -= Time.deltaTime;
+        yield return null;
 
-        if (time >= 0)
-        {
-            guitar.volume = time;
-            keyboard.volume = time;
-        }
+        drums.loop = false;
+        piano.loop = false;
+        guitar.loop = false;
+    }
 
-        if (time <= 0)
-        {
-            //timing = true;
-            if (timing == false)
-            {
-                timing = true;
-                ChooseSong();
-            }
+    public static IEnumerator SoundIn(AudioSource guitar, AudioSource piano, AudioSource drums)
+    {
+        drums.loop = true;
+        guitar.loop = true;
+        piano.loop = true;
 
-            guitar.volume += Time.deltaTime;
-            keyboard.volume += Time.deltaTime;
+        drums.Play();
+        guitar.Play();
+        piano.Play();
 
-            print(guitar.volume);
-
-            if ((guitar.volume == (instrumentBaseGuitar.combo / instrumentBaseGuitar.maxCombo) && keyboard.volume == (instrumentBasePiano.combo / instrumentBasePiano.maxCombo)) || guitar.volume == 1 && keyboard.volume == 1)
-            {
-                songEnd = false;
-            }
-        }
+        yield return null;
     }
 
     void AlbumEnd()
     {
 
+    }
+
+    public void DrumsStarted()
+    {
+        drumsStarted = true;
     }
 
     public void GuitarStarted()
@@ -352,5 +395,79 @@ public class MusicPlayer : MonoBehaviour {
     public void KeyboardStarted()
     {
         keyboardStarted = true;
+    }
+
+    public void MenuVolume()
+    {
+        if (menu == false)
+        {
+            preFadeDrums = drums.volume;
+            preFadeGuitar = guitar.volume;
+            preFadePiano = keyboard.volume;
+
+            fader = FadeOut(guitar, keyboard, drums, 4);
+            StartCoroutine(fader);
+            menu = true;
+
+            print(guitar.mute);
+        }
+        else if (menu == true)
+        {
+            fader = FadeIn(guitar, keyboard, drums, 4, preFadeGuitar, preFadePiano, preFadeDrums);
+            StartCoroutine(fader);
+            menu = false;
+        }
+    }
+
+    public static IEnumerator FadeOut(AudioSource guitar, AudioSource piano, AudioSource drums, float fadeTime)
+    {
+        float startGuitarVolume = guitar.volume;
+        float startKeyboardVolume = piano.volume;
+        float startDrumsVolume = drums.volume;
+
+        while (guitar.volume > 0 && piano.volume > 0 && drums.volume > 0)
+        {
+            drums.volume -= startDrumsVolume * Time.deltaTime / fadeTime;
+            guitar.volume -= startGuitarVolume * Time.deltaTime / fadeTime;
+            piano.volume -= startKeyboardVolume * Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        guitar.mute = true;
+        piano.mute = true;
+        drums.mute = true;
+
+        guitar.volume = startGuitarVolume;
+        piano.volume = startKeyboardVolume;
+        drums.volume = startDrumsVolume;
+    }
+
+    public static IEnumerator FadeIn(AudioSource guitar, AudioSource piano, AudioSource drums, float fadeTime, float preFadeGuitar, float preFadePiano, float preFadeDrums)
+    {
+        float startGuitarVolume = .2f;
+        float startKeyboardVolume = .2f;
+        float startDrumsVolume = .2f;
+
+        guitar.volume = 0;
+        piano.volume = 0;
+        drums.volume = 0;
+
+        guitar.mute = false;
+        piano.mute = false;
+        drums.mute = false;
+
+        while (guitar.volume > preFadeGuitar && piano.volume > preFadePiano && drums.volume > preFadeDrums)
+        {
+            drums.volume += startDrumsVolume * Time.deltaTime / fadeTime;
+            guitar.volume += startGuitarVolume * Time.deltaTime / fadeTime;
+            piano.volume += startKeyboardVolume * Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+
+        guitar.volume = preFadeGuitar;
+        piano.volume = preFadePiano;
+        drums.volume = preFadeDrums;
     }
 }

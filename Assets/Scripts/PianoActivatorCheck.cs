@@ -9,6 +9,8 @@ public class PianoActivatorCheck : MonoBehaviour
 
     public InstrumentBase instrumentBase;
     public SongProgress progression;
+    MusicPlayer mp;
+
     bool active = false;
     bool sliderActive = false;
     bool sliderOn = false;
@@ -18,7 +20,7 @@ public class PianoActivatorCheck : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
     }
 
     // Update is called once per frame
@@ -71,6 +73,8 @@ public class PianoActivatorCheck : MonoBehaviour
         {
             Destroy(note);
             instrumentBase.ComboTap();
+            mp.KeyboardStarted();
+            mp.StartTheMusic();
             active = false;
         }
     }

@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tapperstudio.Plugins", "Tapperstudio.Plugins.csproj", "{D4496EBB-E95C-725D-9339-BAE1C2CD7015}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
+>>>>>>> juusobranch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tapperstudio", "Tapperstudio.csproj", "{B3E28DCB-D179-AB7F-8C24-85FAF586E9B2}"
 EndProject

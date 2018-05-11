@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;     //This might be solved by changing the build setting to Android
 
 public class Shop : MonoBehaviour {
                   

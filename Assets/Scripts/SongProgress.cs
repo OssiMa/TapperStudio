@@ -26,7 +26,8 @@ public class SongProgress : MonoBehaviour {
     public Text AlbumName;
     public Text SongName;
     public Text currencyText;
-
+    Text winText1;
+    Text winText2;
 
     public List<string> AlbumFirstNamesOf;          //A list that contains all To possible name starts To of structure album names. To example: "_Bliss_ of Dreams"
     public List<string> AlbumLastNamesOf;           //A list that contains all To possible name ends To of structure album names. To example: "Bliss of _Dreams_"
@@ -59,18 +60,26 @@ public class SongProgress : MonoBehaviour {
     public float songXPMax = 20;
     public float songCount = 1;
     public float currency = 0;
+    float currencyInAlbum;
+    float previousCurrency;
     [HideInInspector]
     public float songCountMax = 3;
     public float AlbumsCreated;
 
     MusicPlayer mp;
+    AlbumChange albumChange;
+    CurrencyManager cm;
 
+    public bool menu;
 
+    List<Sprite> usedAlbums = new List<Sprite>();
 
 
     // Use this To initialization
     void Start () {
+        albumChange = GameObject.Find("Panel_AlbumBar").GetComponent<AlbumChange>();
         PossibleAlbums();
+        //AlbumPicGeneration();
         Progress.maxValue = songXPMax;
         instruments = GameObject.FindGameObjectsWithTag("Instrument").OrderBy(instruments => instruments.name).ToArray();
         foreach(GameObject ins in instruments)
@@ -81,6 +90,7 @@ public class SongProgress : MonoBehaviour {
         CheckActive();
 
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
+        cm = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
 	}
 	
 	// Update is called once per frame
@@ -89,7 +99,7 @@ public class SongProgress : MonoBehaviour {
         SongText.text = songCount + "/" + songCountMax;
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
-        currencyText.text = currency + "£";
+        currencyText.text = cm.currency + "£";
         PassiveGene();
 
         if (songXP >= songXPMax)
@@ -112,13 +122,17 @@ public class SongProgress : MonoBehaviour {
             songCount = 1;
             AlbumsCreated += 1;
             UsedNames.Add(currentAlbum);
+
             NewItemGenerator.instance.NewItem(1);
 
             if(UsedNames.Count > 20)
             {
                 UsedNames.RemoveAt(1);
             }
-            currency += 40;
+            cm.currency += 40;
+            currencyInAlbum = cm.currency - previousCurrency;      //OVER HERE MAKE THIS GOOD QUICK
+            EndStats();
+            albumChange.MoveBarEndsong();
             NewAlbum();
 
         }
@@ -135,23 +149,27 @@ public class SongProgress : MonoBehaviour {
         float geneLvl = 0;
         float geneCombo = 0;
         float geneBoost = 0;
-        foreach (GameObject ins in inactives)
+
+        if (menu == false)
         {
-            geneLvl += ins.GetComponent<InstrumentBase>().level;
-            geneCombo += ins.GetComponent<InstrumentBase>().combo;
-            geneBoost += ins.GetComponent<InstrumentBase>().xpBoost;
-            if (ins.GetComponent<InstrumentBase>().comboFade > 0 && ins.GetComponent<InstrumentBase>().combo > 1)
+            foreach (GameObject ins in inactives)
             {
-                ins.GetComponent<InstrumentBase>().comboFade -= 1;
-                ins.GetComponent<InstrumentBase>().fadeSlider.value -= 1;
+                geneLvl += ins.GetComponent<InstrumentBase>().level;
+                geneCombo += ins.GetComponent<InstrumentBase>().combo;
+                geneBoost += ins.GetComponent<InstrumentBase>().xpBoost;
+                if (ins.GetComponent<InstrumentBase>().comboFade > 0 && ins.GetComponent<InstrumentBase>().combo > 1)
+                {
+                    ins.GetComponent<InstrumentBase>().comboFade -= 1;
+                    ins.GetComponent<InstrumentBase>().fadeSlider.value -= 1;
+                }
+                else if (ins.GetComponent<InstrumentBase>().comboFade <= 0)
+                {
+                    ins.GetComponent<InstrumentBase>().ComboFading();
+                    ins.GetComponent<InstrumentBase>().fadeSlider.value = 500;
+                }
             }
-            else if (ins.GetComponent<InstrumentBase>().comboFade <= 0)
-            {
-                ins.GetComponent<InstrumentBase>().ComboFading();
-                ins.GetComponent<InstrumentBase>().fadeSlider.value = 500;
-            }
+            songXP += 0.01f + (geneLvl * geneCombo + geneBoost) * 0.0005f;              //WIP, feel free to play with and test for optimal values
         }
-        songXP += 0.01f + (geneLvl * geneCombo + geneBoost) * 0.0005f;              //WIP, feel free to play with and test for optimal values
     }
 
     public void CheckActive()
@@ -167,6 +185,18 @@ public class SongProgress : MonoBehaviour {
             {
                 inactives.Add(ins);
             }
+        }
+    }
+
+    public void MenuControl()
+    {
+        if (menu == false)
+        {
+            menu = true;
+        }
+        else if (menu == true)
+        {
+            menu = false;
         }
     }
 
@@ -315,7 +345,8 @@ public class SongProgress : MonoBehaviour {
     //Randomizes the namestructure and name of a new album
     public void NewAlbum()
     {
-
+        previousCurrency = currencyInAlbum;
+        currencyInAlbum = 0;
 
         while (UsedNames.Contains(currentAlbum))
         {
@@ -373,7 +404,7 @@ public class SongProgress : MonoBehaviour {
             currentAlbum = AlbumName.text.ToString();
         }
 
-
+        AlbumPicGeneration();
     }
 
     //Randomizes the namestructure and name of a new song
@@ -435,9 +466,49 @@ public class SongProgress : MonoBehaviour {
 
             currentSong = SongName.text.ToString();
         }
-
     }
 
+    void AlbumPicGeneration()
+    {
+        Image albumImage = GameObject.Find("AlbumImage").GetComponent<Image>();
 
+        System.Random pictureRandomizer = new System.Random();
+
+        int picNumber = pictureRandomizer.Next(0, 91);
+
+        string picName;
+
+        picName = Convert.ToString(picNumber);
+
+        Sprite albumPic = Resources.Load<Sprite>("AlbumGraphics/" + picName);
+
+        if (!usedAlbums.Contains(albumPic))
+        {
+            albumImage.sprite = albumPic;
+            usedAlbums.Add(albumPic);
+        }
+        else
+        {
+            if (usedAlbums.Count >= 91)
+            {
+                usedAlbums.Clear();
+            }
+            else
+            {
+                AlbumPicGeneration();
+            }
+        }
+    }
+
+    void EndStats()
+    {
+        winText1 = GameObject.Find("And now your sins").GetComponent<Text>();
+        winText2 = GameObject.Find("And now your sins (1)").GetComponent<Text>();
+
+        winText1.text = "You earned " + currencyInAlbum + " £" + "\nYou earned ";   //Item from NewItemGenerator (the item was created at the end of the album)
+
+        print(winText1);
+        print(winText1.text);
+    }
 
 }

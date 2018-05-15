@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
@@ -49,3 +50,42 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
+=======
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio.Plugins", "tapperstudio.Plugins.csproj", "{D4496EBB-E95C-725D-9339-BAE1C2CD7015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio", "tapperstudio.csproj", "{02037F06-9035-354B-BECD-EDCC8CBFA973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio.Editor.Plugins", "tapperstudio.Editor.Plugins.csproj", "{EC568DF2-A508-3B08-EB80-F2B942E887A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4496EBB-E95C-725D-9339-BAE1C2CD7015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4496EBB-E95C-725D-9339-BAE1C2CD7015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4496EBB-E95C-725D-9339-BAE1C2CD7015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4496EBB-E95C-725D-9339-BAE1C2CD7015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78BF9592-BE13-429D-97E1-9FF68B703C4D}
+	EndGlobalSection
+EndGlobal
+>>>>>>> Henkka

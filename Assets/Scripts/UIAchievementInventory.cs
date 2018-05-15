@@ -40,8 +40,8 @@ public class UIAchievementInventory : MonoBehaviour {
 
         inventory.onAchievementChangedCallback.Invoke();
     }
-	
-     void WhatToShow()
+
+    void WhatToShow()
     {
         AchievementsToShow.Clear();
         for (int i = 0; i < inventory.Achievements.Count; i++)
@@ -53,14 +53,13 @@ public class UIAchievementInventory : MonoBehaviour {
         }
         AchievementsToShow = AchievementsToShow.OrderByDescending(Achievements => Achievements.order).ToList();
 
-
     }
 
     void ShowEquipped()
     {
         for (int i = 0; i < equipSlots.Length; i++)
         {
-            equipSlots[i].EquipAchievement(equippedAchievements[i]);        
+            equipSlots[i].EquipAchievement(equippedAchievements[i]);
         }
     }
 
@@ -101,14 +100,10 @@ public class UIAchievementInventory : MonoBehaviour {
             {
                 slots[i].AddAchievement(AchievementsToShow[i+xPage]);
 
-                if (equippedAchievements.Contains(AchievementsToShow[i+xPage]))
-                {
-                    slots[i].Equipped();
-                }
             }
             else
             {
-              //  slots[i].ClearSlot();
+                slots[i].ClearSlot();
             }
         }
     }

@@ -24,6 +24,7 @@ public class PopUpDisplay : MonoBehaviour {
 
     bool statsVisible;
     bool picVisible;
+    bool infoVisible;
 
     bool craftMode = false;
 
@@ -57,6 +58,9 @@ public class PopUpDisplay : MonoBehaviour {
 
     List<Transform> emptyStatses;
     List<Text> statTexts;
+
+    List<Transform> emptyInfo;
+    List<Text> infoTexts;
 
     int rarityValue;
 
@@ -104,6 +108,7 @@ public class PopUpDisplay : MonoBehaviour {
 
         SetBg();
 
+        infoVisible = popUp.infoVisible;
         statsVisible = popUp.statsVisible;
         SetText();
 
@@ -111,6 +116,11 @@ public class PopUpDisplay : MonoBehaviour {
         if (picVisible == true)
         {
             SetPicture();
+        }
+
+        if (infoVisible == true)
+        {
+            SetInfoStats();
         }
 
         SetPopupSize();
@@ -234,6 +244,28 @@ public class PopUpDisplay : MonoBehaviour {
         textItself.enabled = true;
         textItself.text = popUp.description;
         textItself.alignment = TextAnchor.MiddleCenter;
+
+        if(infoVisible == true)
+        {
+            GameObject InfoText = GameObject.Find("Empty Info");
+
+            emptyInfo = new List<Transform>();
+
+            infoTexts = new List<Text>();
+
+            for (int i = 0; i<2; i++)
+            {
+                emptyInfo.Add(InfoText.transform.GetChild(i));
+                infoTexts.Add(emptyInfo[i].GetComponent<Text>());
+                infoTexts[i].text = popUp.info[i];
+
+                foreach (Text infotext in infoTexts)
+                {
+                    infotext.enabled = true;
+                    infotext.alignment = TextAnchor.MiddleLeft;
+                }
+            }
+        }
 
         if (statsVisible == true)
         {
@@ -416,6 +448,12 @@ public class PopUpDisplay : MonoBehaviour {
             buttonAmount = popUp.buttonAmount;
             SetButtons();
 
+            if (popUp.selectedItem.level > 2 && popUp.buttonOne == "Upgrade")
+            {
+                button1.GetComponent<Button>().interactable = false;
+                button1.GetComponentInChildren<Text>().text = "Maxed out";
+            }
+
             SetPopupSize();
         }
         else if(craftMode == true)
@@ -442,7 +480,13 @@ public class PopUpDisplay : MonoBehaviour {
         statTexts[0].text = popUp.selectedItem.itemName;
         statTexts[1].text = "Rarity: " + popUp.selectedItem.rarityName;
         statTexts[2].text = "Effect: " + popUp.selectedItem.boosts;
-        statTexts[3].text = "Item Level: " + (popUp.selectedItem.level +1);
+        statTexts[3].text = "Item Level: " + (popUp.selectedItem.level);
+    }
+
+    void SetInfoStats()
+    {
+        infoTexts[0].text = popUp.info[0] + 10;                     //REAL COST
+        infoTexts[1].text = popUp.info[1] + CurrencyManager.instance.currency;
     }
 
     void CraftingPopUp()
@@ -518,14 +562,16 @@ public class PopUpDisplay : MonoBehaviour {
         ClosePopUp();
     }
 
-    public void ItemUpgrade()
+   /* public void ItemUpgrade()
     {
         if (popUp.selectedItem.level <3)
         {
+            print("lul");
             ActivatePopup();
         }
         else
         {
+            print("jees");
             popUp.popUpFrame = GameObject.Find("Empty PopUp Background");
 
             SetBg();
@@ -566,7 +612,7 @@ public class PopUpDisplay : MonoBehaviour {
 
             SetPopupSize();
         }
-    }
+    }*/
 
     public void HideButtons()
     {
@@ -631,6 +677,16 @@ public class PopUpDisplay : MonoBehaviour {
             }
 
             statTexts.Clear();
+        }
+
+        if (infoVisible == true)
+        {
+            emptyInfo.Clear();
+
+            foreach (Text text in infoTexts)
+            {
+                text.enabled = false;
+            }
         }
 
         HideButtons();

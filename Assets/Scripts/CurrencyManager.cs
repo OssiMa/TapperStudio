@@ -5,6 +5,23 @@ using UnityEngine.UI;
 
 public class CurrencyManager : MonoBehaviour {
 
+    #region Singleton
+
+    public static CurrencyManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Paska koodaaja nyt on 2 Rahakonetta");
+            return;
+        }
+
+        instance = this;
+    }
+
+    #endregion
+
     [HideInInspector]
     public int currency = 20;
     [HideInInspector]
@@ -14,7 +31,7 @@ public class CurrencyManager : MonoBehaviour {
     public Text premiumCurrencyText;
 
     [HideInInspector]
-    public int amountOfCurrency;
+   // public int amountOfCurrency;
 
     // Use this for initialization
     void Start ()
@@ -26,7 +43,6 @@ public class CurrencyManager : MonoBehaviour {
 	void Update ()
     {
         currencyText.text = currency + "£";
-
         if (currency < 0)
         {
             currency = 0;
@@ -42,21 +58,25 @@ public class CurrencyManager : MonoBehaviour {
 
     public void AddCurrency(int amountofCurrency)
     {
-        currency += amountOfCurrency;
+        currency += amountofCurrency;
+        currencyText.text = "" + currency;
     }
 
     public void LoseCurrency(int amountofCurrency)
     {
-        currency -= amountOfCurrency;
+        currency -= amountofCurrency;
+        currencyText.text = "" + currency;
     }
 
     public void AddPremiumCurrency(int amountofCurrency)
     {
-        premiumCurrency += amountOfCurrency;
+        premiumCurrency += amountofCurrency;
+        premiumCurrencyText.text = "" + premiumCurrency;
     }
 
     public void LosePremiumCurrency(int amountofCurrency)
     {
-        premiumCurrency -= amountOfCurrency;
+        premiumCurrency -= amountofCurrency;
+        premiumCurrencyText.text = "" + premiumCurrency;
     }
 }

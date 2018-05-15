@@ -273,6 +273,7 @@ public class InventoryUI : MonoBehaviour {
                 print("removing");
                 equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
             }
+            CurrencyManager.instance.AddCurrency(100);                                              //MONEY SCALING HERE
             inventory.onItemChangedCallback.Invoke();
             chosenItem = null;
             chosenSlot = null;

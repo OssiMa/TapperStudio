@@ -15,11 +15,15 @@ MonoBehaviour:
   purpose: 0
   statsVisible: 0
   picVisible: 0
+  infoVisible: 1
   popUpFrame: {fileID: 0}
   selectedInvSlot: {fileID: 0}
   selectedItem: {fileID: 0}
   description: Upgrade the equipment?
   stats: []
+  info:
+  - 'This Upgrade costs:'
+  - 'You currently have: '
   buttonAmount: 2
   buttonOne: UpgradeYes
   buttonTwo: No

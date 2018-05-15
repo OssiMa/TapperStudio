@@ -21,6 +21,7 @@ public class PopUp : ScriptableObject {
 
     public bool statsVisible;
     public bool picVisible;
+    public bool infoVisible;
 
     public GameObject popUpFrame;
     public GameObject selectedInvSlot;
@@ -28,6 +29,7 @@ public class PopUp : ScriptableObject {
 
     public string description;
     public List<string> stats = new List<string>();
+    public List<string> info = new List<string>();
 
     public int buttonAmount;
 

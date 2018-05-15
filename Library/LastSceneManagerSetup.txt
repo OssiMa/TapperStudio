@@ -2,6 +2,7 @@ sceneSetups:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Scenes/AchievementTest.unity
 =======
 - path: Assets/Scenes/music_scene.unity
@@ -12,5 +13,8 @@ sceneSetups:
 =======
 - path: Assets/Scenes/music_scene.unity
 >>>>>>> juusobranch
+=======
+- path: Assets/Scenes/NEW UI+game merge.unity
+>>>>>>> BranchO
   isLoaded: 1
   isActive: 1

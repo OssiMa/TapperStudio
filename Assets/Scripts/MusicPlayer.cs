@@ -109,7 +109,7 @@ public class MusicPlayer : MonoBehaviour {
         keyboard.volume = 0f;
     }
 
-    public void ChooseAlbum()
+    public void ChooseAlbum()           //For some reason this is called waaaaay too many times
     {
         int rundom = Random.Range(1, 3);    //1, 4
 
@@ -317,34 +317,7 @@ public class MusicPlayer : MonoBehaviour {
         //}
         else if (songEnd == true)
         {
-            coroutine = SoundOut(guitar, keyboard, drums);
-            StartCoroutine(coroutine);
-            if (!guitar.isPlaying && !keyboard.isPlaying)
-            {
-                prevVolumeGuitar = guitar.volume;
-                prevVolumePiano = keyboard.volume;
-
-                drumsMuted = drums.mute;
-                guitarMuted = guitar.mute;
-                keyboardMuted = keyboard.mute;
-
-                ChooseSong();
-
-                guitar.volume = prevVolumeGuitar;
-                keyboard.volume = prevVolumePiano;
-
-                drums.mute = drumsMuted;
-                guitar.mute = guitarMuted;
-                keyboard.mute = keyboardMuted;
-
-                coroutine = SoundIn(guitar, keyboard, drums);
-                StartCoroutine(coroutine);
-
-                if (guitar.loop == true && keyboard.loop == true)
-                {
-                    songEnd = false;
-                }
-            }
+            SongEnd();
         }
 
         /*if (sp.songCount >= sp.songCountMax)        //Not at songCount, but when at menu = true again
@@ -353,6 +326,38 @@ public class MusicPlayer : MonoBehaviour {
         }
 
         //Once album is done, move to the next (WILL BE DONE ONCE WE GET AT LEAST ONE NEW ALBUM) (just fade song volume for x amount of time until 0 and start the new one)*/
+    }
+    
+    public void SongEnd()
+    {
+        coroutine = SoundOut(guitar, keyboard, drums);
+        StartCoroutine(coroutine);
+        if (!guitar.isPlaying && !keyboard.isPlaying)
+        {
+            prevVolumeGuitar = guitar.volume;
+            prevVolumePiano = keyboard.volume;
+
+            drumsMuted = drums.mute;
+            guitarMuted = guitar.mute;
+            keyboardMuted = keyboard.mute;
+
+            ChooseSong();       //This could become problematic, might want to create some sort of thing for this
+
+            guitar.volume = prevVolumeGuitar;
+            keyboard.volume = prevVolumePiano;
+
+            drums.mute = drumsMuted;
+            guitar.mute = guitarMuted;
+            keyboard.mute = keyboardMuted;
+
+            coroutine = SoundIn(guitar, keyboard, drums);
+            StartCoroutine(coroutine);
+
+            if (guitar.loop == true && keyboard.loop == true)
+            {
+                songEnd = false;
+            }
+        }
     }
 
     public static IEnumerator SoundOut (AudioSource guitar, AudioSource piano, AudioSource drums)

@@ -74,6 +74,7 @@ public class SongProgress : MonoBehaviour {
     NewItemGenerator nig;
 
     public bool menu;
+    bool songEnder;
 
     List<Sprite> usedAlbums = new List<Sprite>();
 
@@ -141,20 +142,21 @@ public class SongProgress : MonoBehaviour {
             currencyInAlbum = cm.currency - previousCurrency;
             EndStats();
             albumChange.MoveBarEndsong();
-            //bool thing = true;
+            songEnder = true;
         }
 
-        /*if (thing == true)            //HERE THIS FIX THIS
+        if (songEnder == true)            //HERE THIS FIX THIS
         {
             if (menu == false)      
             {
+                mp.SongEnd();
                 mp.ChooseAlbum();
-                mp.ChooseSong();
                 mp.MenuVolume();
                 NewAlbum();
+                songEnder = false;
             }
-        }*/
-	}
+        }
+    }
 
     //Grants XP to songs
     public void GainXP()
@@ -545,6 +547,6 @@ public class SongProgress : MonoBehaviour {
     public void MenuHandler()
     {
         menu = false;
-        mp.MenuVolume();
+        //mp.MenuVolume();
     }
 }

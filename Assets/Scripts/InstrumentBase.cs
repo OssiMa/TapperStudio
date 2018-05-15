@@ -56,19 +56,22 @@ public class InstrumentBase : MonoBehaviour {
         BoostUpdate();
         ogMaxCombo = 4;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        fadeSlider.value = comboFade;
-        comboText.text = "Combo: " + combo;
-        xpBar.value = exp;
-        nxtLvl.text = "" + nextLevel;
-        currLvl.text = "" + level;
-        LvlUp();
-        SaveGame();
-        BoostUpdate();
-        maxCombo = ogMaxCombo + comboBoost;
+        if (progression.menu == false)
+        { 
+            fadeSlider.value = comboFade;
+            comboText.text = "Combo: " + combo;
+            xpBar.value = exp;
+            nxtLvl.text = "" + nextLevel;
+            currLvl.text = "" + level;
+            LvlUp();
+            SaveGame();
+            BoostUpdate();
+            maxCombo = ogMaxCombo + comboBoost;
+        }
     }
 
     void LvlUp()

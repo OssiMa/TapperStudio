@@ -12,6 +12,8 @@ public class Guitar : MonoBehaviour {
     GameObject[] points;
     GameObject[] sliders;
 
+    SongProgress sp;
+
     private void OnEnable()
     {
         if (points != null)
@@ -25,12 +27,15 @@ public class Guitar : MonoBehaviour {
     void Start () {
         points = GameObject.FindGameObjectsWithTag("Guitar button").OrderBy(points => points.name).ToArray();
         sliders = GameObject.FindGameObjectsWithTag("Guitar slider").OrderBy(sliders => sliders.name).ToArray();
+        sp = GameObject.Find("SongProgression").GetComponent<SongProgress>();
         Hide();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if(pointsOnScreen == false)                                                 //If no clickables left, spawn more
+	void Update ()
+    {
+        if (pointsOnScreen == false && sp.menu == false)
+                                                                //If no clickables left, spawn more
         {
             activeSlider = 5;
             StartCoroutine(BigReveal());
@@ -69,7 +74,7 @@ public class Guitar : MonoBehaviour {
     //Randomizes the balls and reveals them
     void Reveal()
     {
-        int temp= Random.Range(0, points.Length);
+            int temp = Random.Range(0, points.Length);
 
             if (activeSlider == 0)
             {
@@ -83,28 +88,28 @@ public class Guitar : MonoBehaviour {
                 while (points[temp].activeInHierarchy || temp >= 4 && temp <= 7)
                 {
                     temp = Random.Range(0, points.Length);
-                } 
+                }
             }
             else if (activeSlider == 2)
             {
                 while (points[temp].activeInHierarchy || temp >= 8 && temp <= 11)
                 {
                     temp = Random.Range(0, points.Length);
-                } 
+                }
             }
             else if (activeSlider == 3)
             {
-                while (points[temp].activeInHierarchy || temp >=12)
+                while (points[temp].activeInHierarchy || temp >= 12)
                 {
                     temp = Random.Range(0, points.Length - 4);
                 }
             }
 
-          while (points[temp].activeInHierarchy)
-          {
-               temp = Random.Range(0, points.Length);
-          }
-        points[temp].SetActive(true);
+            while (points[temp].activeInHierarchy)
+            {
+                temp = Random.Range(0, points.Length);
+            }
+            points[temp].SetActive(true);
     }
 
     //Decides if slider is revealed and reveals it if was chosen to

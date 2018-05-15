@@ -15,20 +15,26 @@ public class Drums : MonoBehaviour {
 
     GameObject[] plateCount;
 
+    SongProgress sp;
 
 	// Use this for initialization
 	void Start () {
         plateCount = GameObject.FindGameObjectsWithTag("Drum plate");
+        sp = GameObject.Find("SongProgression").GetComponent<SongProgress>();
         NewRotation();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        rotationTimer -= Time.deltaTime;
-        if (rotationTimer <= 0)
-        {
-            DefaultTags();
-            NewRotation();
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (sp.menu == false)
+        { 
+            rotationTimer -= Time.deltaTime;
+            if (rotationTimer <= 0)
+            {
+                DefaultTags();
+                NewRotation();
+            }
         }
 	}
     void NewRotation()

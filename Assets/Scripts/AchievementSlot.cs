@@ -11,6 +11,7 @@ public class AchievementSlot : MonoBehaviour
 
     public Button button;
     public Text Text;
+    public Text Pagenumber;
     ColorBlock cb;
     Color32 buttonColor;
     //[HideInInspector]
@@ -22,7 +23,6 @@ public class AchievementSlot : MonoBehaviour
 
     private void Start()
     {
-        print(UIAchievementInventory.page);
         if (UIAchievementInventory.page == 1)
         {
             AddAchievement(achievement);
@@ -38,24 +38,24 @@ public class AchievementSlot : MonoBehaviour
 
     }
 
-    public void PageUpdate()
-    {
-        print(UIAchievementInventory.page);
-        ClearSlot();
+    //public void PageUpdate()
+    //{
+    //    print(UIAchievementInventory.page);
+    //    ClearSlot();
 
-        //if (UIAchievementInventory.page == 1)
-        //{
-        //    AddAchievement(achievement);
-        //}
-        //else if (UIAchievementInventory.page == 2)
-        //{
-        //    AddAchievement(achievement2);
-        //}
-        //else if (UIAchievementInventory.page == 3)
-        //{
-        //    AddAchievement(achievement3);
-        //}
-    }
+    //    //if (UIAchievementInventory.page == 1)
+    //    //{
+    //    //    AddAchievement(achievement);
+    //    //}
+    //    //else if (UIAchievementInventory.page == 2)
+    //    //{
+    //    //    AddAchievement(achievement2);
+    //    //}
+    //    //else if (UIAchievementInventory.page == 3)
+    //    //{
+    //    //    AddAchievement(achievement3);
+    //    //}
+    //}
 
     public void AddAchievement(ScriptableAchievement newAchievement)
     {
@@ -105,17 +105,6 @@ public class AchievementSlot : MonoBehaviour
         button.interactable = false;
         //If we want to add an extra sprite here, just add a child with the sprite to all slot objects. 
         //When a slot is locked, set the child (or the child's sprite) to true.
-    }
-
-    public ScriptableAchievement GetAchievement()
-    {
-        return achievement;
-
-    }
-
-    public void Equipped()
-    {
-        Text.enabled = true;
     }
 
 }

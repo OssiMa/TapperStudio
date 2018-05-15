@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0089197C-B261-73CB-29A8-FA6427E0AECA}</ProjectGuid>
+    <ProjectGuid>{EC568DF2-A508-3B08-EB80-F2B942E887A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-Editor-firstpass.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -195,9 +195,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Tapperstudio.Plugins.csproj">
-      <Project>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</Project>
-      <Name>Tapperstudio.Plugins</Name>
+    <ProjectReference Include="tapperstudio.Plugins.csproj">
+      <Project>{06796D63-B7C2-9766-3C49-97DDBBF6445A}</Project>
+      <Name>tapperstudio.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

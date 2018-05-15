@@ -25,7 +25,8 @@ public class NewItemGenerator : MonoBehaviour {
     #endregion
 
 
-    Item item;
+    [HideInInspector]
+    public Item item;
 
     Sprite[] drums;
     Sprite[] guitar;
@@ -56,6 +57,7 @@ public class NewItemGenerator : MonoBehaviour {
         ItemInstrumentSlot();
         IconChooser();
         Inventory.instance.AddItem(item);
+        print(item.name);
     }
 
     public void NewCraftedItem(int rarity, int itemSlot, int instrument)

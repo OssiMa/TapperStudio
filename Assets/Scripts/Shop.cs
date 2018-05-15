@@ -97,7 +97,7 @@ public class Shop : MonoBehaviour {
         skinInv = GetComponent<SkinInventory>();
         cm = GetComponent<CurrencyManager>();
 
-        skinInv.UnlockSkinNormal();       //not tested
+        skinInv.UnlockSkinNormal();
         cm.LoseCurrency(skinCost);
     }
 
@@ -106,7 +106,7 @@ public class Shop : MonoBehaviour {
         cm = GetComponent<CurrencyManager>();
         skinInv = GetComponent<SkinInventory>();
 
-        skinInv.UnlockSkinPremium();       //not tested
+        skinInv.UnlockSkinPremium();
         cm.LoseCurrency(premiumSkinCost);
     }
 

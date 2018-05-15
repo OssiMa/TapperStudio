@@ -59,7 +59,7 @@ public class MusicPlayer : MonoBehaviour {
         sp = GameObject.Find("SongProgression").GetComponent<SongProgress>();
 
         album1 = GameObject.Find("Album1");
-        //album2 = GameObject.Find("Album2");
+        album2 = GameObject.Find("Album2");
         //album3 = GameObject.Find("Album3");
         //album4 = GameObject.Find("Album4");
 
@@ -109,11 +109,14 @@ public class MusicPlayer : MonoBehaviour {
         keyboard.volume = 0f;
     }
 
-    void ChooseAlbum()
+    public void ChooseAlbum()
     {
-        int rundom = Random.Range(1, 3);
+        int rundom = Random.Range(1, 3);    //1, 4
 
-        /*if (rundom == 1)
+        print(rundom);
+        print(currentAlbum);
+
+        if (rundom == 1)
         {
             if (currentAlbum == album1)
             {
@@ -136,7 +139,7 @@ public class MusicPlayer : MonoBehaviour {
                 currentAlbum = album2;
                 albumEnd = false;
             }
-        }
+        }/*
         if (rundom == 3)
         {
             if (currentAlbum == album3)
@@ -149,11 +152,9 @@ public class MusicPlayer : MonoBehaviour {
                 albumEnd = false;
             }
         }*/
-
-        currentAlbum = album1;      //Delete this later
     }
 
-    void ChooseSong()
+    public void ChooseSong()
     {
         int rundom = Random.Range(1, 4);
 
@@ -346,13 +347,12 @@ public class MusicPlayer : MonoBehaviour {
             }
         }
 
-        if (sp.songCount >= sp.songCountMax)    
+        /*if (sp.songCount >= sp.songCountMax)        //Not at songCount, but when at menu = true again
         {
-            albumEnd = true;    //Might not need this at all
             ChooseAlbum();
         }
 
-        //Once album is done, move to the next (WILL BE DONE ONCE WE GET AT LEAST ONE NEW ALBUM) (just fade song volume for x amount of time until 0 and start the new one)
+        //Once album is done, move to the next (WILL BE DONE ONCE WE GET AT LEAST ONE NEW ALBUM) (just fade song volume for x amount of time until 0 and start the new one)*/
     }
 
     public static IEnumerator SoundOut (AudioSource guitar, AudioSource piano, AudioSource drums)

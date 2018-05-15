@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/AchievementTest.unity
-=======
 - path: Assets/Scenes/music_scene.unity
->>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

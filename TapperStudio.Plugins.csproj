@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</ProjectGuid>
+    <ProjectGuid>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-firstpass.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -55,12 +55,6 @@
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-=======
->>>>>>> juusobranch
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>

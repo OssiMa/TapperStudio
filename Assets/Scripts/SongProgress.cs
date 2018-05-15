@@ -15,6 +15,8 @@ public class SongProgress : MonoBehaviour {
     public InstrumentBase pianoBase;
     InstrumentBase activeBase;
 
+    string currentInstrument;
+
     GameObject activeInstrument;
     [HideInInspector]
     public GameObject[] instruments;
@@ -69,10 +71,13 @@ public class SongProgress : MonoBehaviour {
     MusicPlayer mp;
     AlbumChange albumChange;
     CurrencyManager cm;
+    NewItemGenerator nig;
 
     public bool menu;
 
     List<Sprite> usedAlbums = new List<Sprite>();
+
+    Item lastItem;
 
 
     // Use this To initialization
@@ -91,6 +96,7 @@ public class SongProgress : MonoBehaviour {
 
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
         cm = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
+        nig = GameObject.Find("GameManager").GetComponent<NewItemGenerator>();
 	}
 	
 	// Update is called once per frame
@@ -118,24 +124,36 @@ public class SongProgress : MonoBehaviour {
         }
         if (songCount > songCountMax)
         {
-            activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value
-            songCount = 1;
-            AlbumsCreated += 1;
-            UsedNames.Add(currentAlbum);
+            activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value   
 
-            NewItemGenerator.instance.NewItem(1);
+            songCount = 1;      //Because this gets set to 1, the loop doesn't go through again. Everything should happen only once, but should still wait for the stuff at the bottom
+            AlbumsCreated += 1; 
+            UsedNames.Add(currentAlbum);    
 
-            if(UsedNames.Count > 20)
+            NewItemGenerator.instance.NewItem(1);   
+            lastItem = nig.item;       
+
+            if (UsedNames.Count > 20)
             {
-                UsedNames.RemoveAt(1);
+                UsedNames.RemoveAt(1);   
             }
             cm.currency += 40;
-            currencyInAlbum = cm.currency - previousCurrency;      //OVER HERE MAKE THIS GOOD QUICK
+            currencyInAlbum = cm.currency - previousCurrency;
             EndStats();
             albumChange.MoveBarEndsong();
-            NewAlbum();
-
+            //bool thing = true;
         }
+
+        /*if (thing == true)            //HERE THIS FIX THIS
+        {
+            if (menu == false)      
+            {
+                mp.ChooseAlbum();
+                mp.ChooseSong();
+                mp.MenuVolume();
+                NewAlbum();
+            }
+        }*/
 	}
 
     //Grants XP to songs
@@ -179,7 +197,20 @@ public class SongProgress : MonoBehaviour {
         {
             if (ins.activeInHierarchy)
             {
-                activeBase = ins.GetComponent<InstrumentBase>();
+                activeBase = ins.GetComponent<InstrumentBase>();        //Use these to remember what the most recent amount of exp was (instExpInAlbum)
+
+                if (ins == instruments[0])
+                {
+                    currentInstrument = "Drums";
+                }
+                else if (ins == instruments[1])
+                {
+                    currentInstrument = "Guitar";
+                }
+                else if (ins == instruments[2])
+                {
+                    currentInstrument = "Piano";
+                }
             }
             else
             {
@@ -505,10 +536,15 @@ public class SongProgress : MonoBehaviour {
         winText1 = GameObject.Find("And now your sins").GetComponent<Text>();
         winText2 = GameObject.Find("And now your sins (1)").GetComponent<Text>();
 
-        winText1.text = "You earned " + currencyInAlbum + " £" + "\nYou earned ";   //Item from NewItemGenerator (the item was created at the end of the album)
-
-        print(winText1);
-        print(winText1.text);
+        winText1.text = "You earned " + currencyInAlbum + " £" + "\nYou earned " + lastItem.name;
+        winText2.text = "You also got some extra experience \nfor your " + currentInstrument + "!";
+        mp.MenuVolume();
+        menu = true;
     }
 
+    public void MenuHandler()
+    {
+        menu = false;
+        mp.MenuVolume();
+    }
 }

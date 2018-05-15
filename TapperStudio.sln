@@ -5,8 +5,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tapperstudio.Plugins", "Tapperstudio.Plugins.csproj", "{D4496EBB-E95C-725D-9339-BAE1C2CD7015}"
 =======
+=======
+>>>>>>> UI
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
 >>>>>>> juusobranch
 =======

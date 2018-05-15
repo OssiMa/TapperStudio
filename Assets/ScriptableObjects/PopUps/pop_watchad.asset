@@ -14,17 +14,17 @@ MonoBehaviour:
   popUpName: 
   purpose: 5
   statsVisible: 0
-  picVisible: 0
+  picVisible: 1
   description: Will you watch a video?
   stats: []
   buttonAmount: 2
   buttonOne: Yes
   buttonTwo: No
-  buttonPos1X: -115
-  buttonPos1Y: -1034
-  buttonPos2X: 115
-  buttonPos2Y: -1034
-  sizeX: 7
-  sizeY: 12
-  pic: {fileID: 0}
+  buttonPos1X: -60
+  buttonPos1Y: -160
+  buttonPos2X: 60
+  buttonPos2Y: -160
+  sizeX: 5
+  sizeY: 6.5
+  pic: {fileID: 21300000, guid: 16bd91d46068d164d93fb2abec065000, type: 3}
   bg: {fileID: 21300000, guid: 39ec7ad0085447c4bab78b9ac9e15bb4, type: 3}

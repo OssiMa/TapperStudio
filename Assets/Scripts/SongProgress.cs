@@ -138,12 +138,11 @@ public class SongProgress : MonoBehaviour {
                 case 100:
                     achievements.AchievementDone(25);
 
-
                     break;
 
+            default:
+            break;
 
-                default:
-                    break;
             }
         
     

@@ -7,8 +7,11 @@ public class Achievements : MonoBehaviour {
     public List<ScriptableAchievement> CurrencyAchievements;
     public List<ScriptableAchievement> GameTimeAchievements;
     public List<ScriptableAchievement> DrumAchievements;
-    public List<ScriptableAchievement> GiutarAchievements;
+    public List<ScriptableAchievement> GuitarAchievements;
     public List<ScriptableAchievement> PianoAchievements;
+    public List<ScriptableAchievement> DrumComboAchievements;
+    public List<ScriptableAchievement> GuitarComboAchievements;
+    public List<ScriptableAchievement> PianoComboAchievements;
     public List<ScriptableAchievement> SongAchievements;
     public List<ScriptableAchievement> AlbumAchievements;
 
@@ -27,17 +30,24 @@ public class Achievements : MonoBehaviour {
     int DrumNumber = 0;
     int GuitarNumber = 0;
     int PianoNumber = 0;
+    int DrumComboNumber = 0;
+    int GuitarComboNumber = 0;
+    int PianoComboNumber = 0;
 
 
     // Use this for initialization
     void Start ()
     {
-        AchievementDone(1);
-        AchievementDone(4);
-        AchievementDone(7);
-        AchievementDone(10);
-        AchievementDone(13);
-
+        //AchievementDone(1);
+        //AchievementDone(4);
+        //AchievementDone(7);
+        //AchievementDone(10);
+        //AchievementDone(13);
+        //AchievementDone(2);
+        //AchievementDone(5);
+        //AchievementDone(8);
+        //AchievementDone(11);
+        //AchievementDone(14);
 
     }
 
@@ -62,6 +72,15 @@ public class Achievements : MonoBehaviour {
 
             case 2:
                 AchievementSlot1.achievement2.unlocked = true;
+                GuitarNumber += 1;
+                if (GuitarNumber == 5)
+                {
+
+                }
+                else
+                {
+                    AchievementSlot1.achievement2 = GuitarAchievements[GuitarNumber];
+                }
 
                 break;
 
@@ -86,6 +105,15 @@ public class Achievements : MonoBehaviour {
 
             case 5:
                 AchievementSlot2.achievement2.unlocked = true;
+                PianoNumber += 1;
+                if (PianoNumber == 5)
+                {
+
+                }
+                else
+                {
+                    AchievementSlot2.achievement2 = PianoAchievements[PianoNumber];
+                }
 
                 break;
 
@@ -110,6 +138,15 @@ public class Achievements : MonoBehaviour {
 
             case 8:
                 AchievementSlot3.achievement2.unlocked = true;
+                DrumComboNumber += 1;
+                if (DrumComboNumber == 5)
+                {
+
+                }
+                else
+                {
+                    AchievementSlot3.achievement2 = DrumComboAchievements[DrumComboNumber];
+                }
 
                 break;
 
@@ -134,6 +171,15 @@ public class Achievements : MonoBehaviour {
 
             case 11:
                 AchievementSlot4.achievement2.unlocked = true;
+                GuitarComboNumber += 1;
+                if (GuitarComboNumber == 5)
+                {
+
+                }
+                else
+                {
+                    AchievementSlot4.achievement2 = GuitarComboAchievements[GuitarComboNumber];
+                }
 
                 break;
 
@@ -158,6 +204,15 @@ public class Achievements : MonoBehaviour {
 
             case 14:
                 AchievementSlot5.achievement2.unlocked = true;
+                PianoComboNumber += 1;
+                if (PianoComboNumber == 5)
+                {
+
+                }
+                else
+                {
+                    AchievementSlot5.achievement2 = PianoComboAchievements[PianoComboNumber];
+                }
 
                 break;
 

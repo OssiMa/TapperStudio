@@ -125,30 +125,31 @@ public class SongProgress : MonoBehaviour {
             switch (SongsCreated)
             {
                 case 1:
-                    achievements.AchievementDone(8);
+                    achievements.AchievementDone(1);
 
                     break;
 
                 case 10:
-                    achievements.AchievementDone(11);
+                    achievements.AchievementDone(1);
 
                     break;
-
 
                 case 100:
-                    achievements.AchievementDone(25);
+                    achievements.AchievementDone(1);
 
                     break;
 
-            default:
-            break;
+                case 1000:
+                    achievements.AchievementDone(1);
 
+                    break;
+
+                case 10000:
+                    achievements.AchievementDone(1);
+
+                    break;
             }
         
-    
-    
-
-
 
             if (UsedNames.Count > 50)
             {

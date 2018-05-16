@@ -3353,7 +3353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.10197008, y: 459.65048}
+  m_AnchoredPosition: {x: -0.10197008, y: 459.65045}
   m_SizeDelta: {x: -0.2000122, y: -459.7}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &287418657
@@ -4515,7 +4515,7 @@ MonoBehaviour:
   button: {fileID: 352241040}
   Text: {fileID: 708303992}
   achievement: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
-  achievement2: {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42, type: 2}
+  achievement2: {fileID: 11400000, guid: 9f31740e511db634c8968e0f6c8a04a0, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
 --- !u!114 &352241042
@@ -4703,7 +4703,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 230.24998
+      value: 230.25
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -4882,7 +4882,7 @@ MonoBehaviour:
   button: {fileID: 375271128}
   Text: {fileID: 696903673}
   achievement: {fileID: 11400000, guid: c7d8e132c8b4a2d45bc9db0a51f2f20e, type: 2}
-  achievement2: {fileID: 11400000, guid: 6676412d380e653418c83f6c5963393b, type: 2}
+  achievement2: {fileID: 11400000, guid: 90dbf93da80ee074ebe74b1c267ef101, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
 --- !u!114 &375271130
@@ -6006,7 +6006,7 @@ MonoBehaviour:
   button: {fileID: 487932613}
   Text: {fileID: 125036902}
   achievement: {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42, type: 2}
-  achievement2: {fileID: 11400000, guid: 9f31740e511db634c8968e0f6c8a04a0, type: 2}
+  achievement2: {fileID: 11400000, guid: f7f8938fcab4e454993cf66e36b45cce, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
 --- !u!114 &487932615
@@ -6499,7 +6499,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 230.24998
+      value: 230.25
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -9179,18 +9179,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e69353c875855549a05653afc7bc2e2, type: 2}
   - {fileID: 11400000, guid: 562ab5f3ba93bac4db1790a91515f3ca, type: 2}
   - {fileID: 11400000, guid: 7e12fbc5a7018cd46a45dd525b4d992d, type: 2}
-  GiutarAchievements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  GuitarAchievements:
+  - {fileID: 11400000, guid: 9d7a9e784e6412248a8d667d03e26078, type: 2}
+  - {fileID: 11400000, guid: 08e0c009634deb1439b50dcf18b7ecbd, type: 2}
+  - {fileID: 11400000, guid: 67387090a0a8b604e9933f96e51e2f12, type: 2}
+  - {fileID: 11400000, guid: c6a9359a6f945ce46882586a6f2fdf2c, type: 2}
+  - {fileID: 11400000, guid: 9f2e6a912193ab84cb8d26f7e4f3f55f, type: 2}
   PianoAchievements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f7f8938fcab4e454993cf66e36b45cce, type: 2}
+  - {fileID: 11400000, guid: 2e7f224d596116c4283367a7d436e854, type: 2}
+  - {fileID: 11400000, guid: ae2f25417e0a871418fa405e64734704, type: 2}
+  - {fileID: 11400000, guid: d6a796883dcfa344780ff1399332aebe, type: 2}
+  - {fileID: 11400000, guid: 71aae40042b031a45b8b0f6d99baa4f1, type: 2}
+  DrumComboAchievements:
+  - {fileID: 11400000, guid: d51a477808a340740873ad974bc8696c, type: 2}
+  - {fileID: 11400000, guid: 17b6d12f3610cc24da285ae6ea356c65, type: 2}
+  - {fileID: 11400000, guid: 22e19bd0d84020e4db4b15b77cbbd333, type: 2}
+  - {fileID: 11400000, guid: 8d039242b22d19f46aa02fec6d950c9c, type: 2}
+  - {fileID: 11400000, guid: 59e7fc2282dc9ae44b200dd1763c5ac7, type: 2}
+  GuitarComboAchievements:
+  - {fileID: 11400000, guid: 90dbf93da80ee074ebe74b1c267ef101, type: 2}
+  - {fileID: 11400000, guid: 7381e19859d1e3140bfb2204aea54ad8, type: 2}
+  - {fileID: 11400000, guid: 4b773f81783ef424cb8ecc08cd0535a3, type: 2}
+  - {fileID: 11400000, guid: 95ce521a01e6f104ca845d5be9c051ac, type: 2}
+  - {fileID: 11400000, guid: bea3e75a5ab5b62409e3b2073641f037, type: 2}
+  PianoComboAchievements:
+  - {fileID: 11400000, guid: 9f31740e511db634c8968e0f6c8a04a0, type: 2}
+  - {fileID: 11400000, guid: e70d12e16884017448a3715d52ff9d06, type: 2}
+  - {fileID: 11400000, guid: ebf182f30507356449f47d89df0512bd, type: 2}
+  - {fileID: 11400000, guid: 88c2f635cbf3ab6489274ed4dd72e3ed, type: 2}
+  - {fileID: 11400000, guid: f879f25ab92f088469ec1c35e48994a7, type: 2}
   SongAchievements:
   - {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
   - {fileID: 11400000, guid: 6676412d380e653418c83f6c5963393b, type: 2}
@@ -14893,7 +14911,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -495.44055}
+  m_AnchoredPosition: {x: 0, y: -495.4406}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1371746977
@@ -18212,7 +18230,7 @@ MonoBehaviour:
   button: {fileID: 1718525466}
   Text: {fileID: 133347887}
   achievement: {fileID: 11400000, guid: a501524c06315504589b258cc8264798, type: 2}
-  achievement2: {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
+  achievement2: {fileID: 11400000, guid: d51a477808a340740873ad974bc8696c, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
 --- !u!114 &1718525468
@@ -20614,7 +20632,7 @@ MonoBehaviour:
   button: {fileID: 1960202971}
   Text: {fileID: 10691327}
   achievement: {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
-  achievement2: {fileID: 11400000, guid: 90dbf93da80ee074ebe74b1c267ef101, type: 2}
+  achievement2: {fileID: 11400000, guid: 9d7a9e784e6412248a8d667d03e26078, type: 2}
   achievement3: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
   UIAchievementInventory: {fileID: 1917914457}
 --- !u!114 &1960202973
@@ -21586,7 +21604,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 230.24998
+      value: 230.25
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -22398,7 +22416,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 230.24998
+      value: 230.25
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}

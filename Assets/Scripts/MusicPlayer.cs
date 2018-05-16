@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
 
-    GameObject currentAlbum;
+    public GameObject currentAlbum;
     GameObject album1;
     GameObject album2;
     GameObject album3;
@@ -17,6 +17,10 @@ public class MusicPlayer : MonoBehaviour {
     AudioSource guitar;
     AudioSource keyboard;
     AudioSource drums;
+
+    AudioSource prevGuitar;
+    AudioSource prevKeyboard;
+    AudioSource prevDrums;
 
     SongProgress sp;
 
@@ -77,6 +81,7 @@ public class MusicPlayer : MonoBehaviour {
         if (started == false)
         {
             started = true;
+            print("srtaed " + started);
             GameObject thisObject = gameObject;
             List<GameObject> children = new List<GameObject>();
 
@@ -94,11 +99,19 @@ public class MusicPlayer : MonoBehaviour {
 
             maxVolume = 1;
 
-            SetMusic();
+            guitar.Play();
+            drums.Play();
+            keyboard.Play();
+
+            guitar.volume = 0f;
+            drums.volume = 0f;
+            keyboard.volume = 0f;
+
+            //SetMusic();
         }
     }
 
-    void SetMusic()   
+    /*void SetMusic()   
     {
         guitar.Play();
         drums.Play();
@@ -107,9 +120,9 @@ public class MusicPlayer : MonoBehaviour {
         guitar.volume = 0f;
         drums.volume = 0f;
         keyboard.volume = 0f;
-    }
+    }*/
 
-    public void ChooseAlbum()           //For some reason this is called waaaaay too many times
+    public void ChooseAlbum()
     {
         int rundom = Random.Range(1, 3);    //1, 4
 
@@ -256,23 +269,27 @@ public class MusicPlayer : MonoBehaviour {
             }
         }
 
-        clipGuitar = guitar.clip;
+        /*clipGuitar = guitar.clip;
         clipPiano = keyboard.clip;
-        clipDrums = drums.clip;
+        clipDrums = drums.clip;*/
     }
 
     void Update()
     {
         //if (songEnd == false)
         //{
+        print(guitar);
+        print(keyboard);
+        print(drums);
+
             if (guitarStarted == true)
             {
                 if (menu == false)
                 {
-                    guitar.mute = false;
+                    //guitar.mute = false;        
                 }
                 
-                if (instrumentBaseGuitar.combo == 1)        //This could be made more fun (?). When starting, the volume would be what is currently told below; otherwise, when combo is 1, volume would go to 0 (?)
+                if (instrumentBaseGuitar.combo == 1)        
                 {
                     guitar.volume = (instrumentBaseGuitar.combo / instrumentBaseGuitar.maxCombo) - .1f;
                 }
@@ -286,7 +303,7 @@ public class MusicPlayer : MonoBehaviour {
             {
                 if (menu == false)
                 {
-                    drums.mute = false;
+                    //drums.mute = false;
                 }
                 
                 if (instrumentBaseDrums.combo == 1)
@@ -303,35 +320,31 @@ public class MusicPlayer : MonoBehaviour {
             {
                 if (menu == false)
                 {
-                    keyboard.mute = false;
+                    //keyboard.mute = false;
                 }
                 if (instrumentBasePiano.combo == 1)
                 {
-                    keyboard.volume = (instrumentBasePiano.combo / instrumentBasePiano.maxCombo) - .1f;
+                    keyboard.volume = (instrumentBasePiano.combo / instrumentBasePiano.maxCombo);
                 }
                 else if (instrumentBasePiano.combo > 1)
                 {
-                    keyboard.volume = instrumentBasePiano.combo / instrumentBasePiano.maxCombo;
+                    keyboard.volume = (instrumentBasePiano.combo / instrumentBasePiano.maxCombo) + .1f;
                 }
             }
-        //}
-        else if (songEnd == true)
-        {
-            SongEnd();
-        }
 
-        /*if (sp.songCount >= sp.songCountMax)        //Not at songCount, but when at menu = true again
+        if (songEnd == true)
         {
-            ChooseAlbum();
+            if (sp.menu == false)
+            {
+                SongEnd();
+            }
         }
-
-        //Once album is done, move to the next (WILL BE DONE ONCE WE GET AT LEAST ONE NEW ALBUM) (just fade song volume for x amount of time until 0 and start the new one)*/
     }
     
     public void SongEnd()
     {
         coroutine = SoundOut(guitar, keyboard, drums);
-        StartCoroutine(coroutine);
+        StartCoroutine(coroutine);          
         if (!guitar.isPlaying && !keyboard.isPlaying)
         {
             prevVolumeGuitar = guitar.volume;
@@ -341,7 +354,7 @@ public class MusicPlayer : MonoBehaviour {
             guitarMuted = guitar.mute;
             keyboardMuted = keyboard.mute;
 
-            ChooseSong();       //This could become problematic, might want to create some sort of thing for this
+            ChooseSong();           
 
             guitar.volume = prevVolumeGuitar;
             keyboard.volume = prevVolumePiano;
@@ -351,13 +364,28 @@ public class MusicPlayer : MonoBehaviour {
             keyboard.mute = keyboardMuted;
 
             coroutine = SoundIn(guitar, keyboard, drums);
-            StartCoroutine(coroutine);
+            StartCoroutine(coroutine);      //Songs now loop again
 
             if (guitar.loop == true && keyboard.loop == true)
             {
                 songEnd = false;
             }
         }
+    }
+
+    public void AlbumEnd()
+    {
+        drums.loop = false;
+        guitar.loop = false;
+        keyboard.loop = false;
+
+        drums.mute = true;
+        guitar.mute = true;
+        keyboard.mute = true;
+
+        drums.Stop();
+        guitar.Stop();
+        keyboard.Stop();
     }
 
     public static IEnumerator SoundOut (AudioSource guitar, AudioSource piano, AudioSource drums)
@@ -382,11 +410,6 @@ public class MusicPlayer : MonoBehaviour {
         yield return null;
     }
 
-    void AlbumEnd()
-    {
-
-    }
-
     public void DrumsStarted()
     {
         drumsStarted = true;
@@ -395,11 +418,13 @@ public class MusicPlayer : MonoBehaviour {
     public void GuitarStarted()
     {
         guitarStarted = true;
+        guitar.mute = false;
     }
 
     public void KeyboardStarted()
     {
         keyboardStarted = true;
+        keyboard.mute = false;
     }
 
     public void MenuVolume()
@@ -474,5 +499,70 @@ public class MusicPlayer : MonoBehaviour {
         guitar.volume = preFadeGuitar;
         piano.volume = preFadePiano;
         drums.volume = preFadeDrums;
+    }
+
+    public void NewAlbumPlay()
+    {
+        print("guitar mute " + guitar.mute);
+        print(guitar);
+
+        guitar.volume = 0;
+        keyboard.volume = 0;
+        drums.volume = 0;
+
+        drums.mute = false;
+        guitar.mute = false;
+        keyboard.mute = false;
+
+        drums.loop = true;
+        guitar.loop = true;
+        keyboard.loop = true;
+
+        guitarStarted = false;
+        keyboardStarted = false;
+        drumsStarted = false;
+
+        guitar.Play();
+        drums.Play();
+        keyboard.Play();
+
+        instrumentBaseDrums.combo = 1;
+        instrumentBaseGuitar.combo = 1;
+        instrumentBasePiano.combo = 1;
+
+        OtherSongCheck();
+    }
+
+    public void OtherSongCheck()
+    {
+        //Save the old song to a variable and make it stop
+        if (currentAlbum == album1)
+        {
+            List<GameObject> children = new List<GameObject>();
+
+            for (int i = 0; i < album2.transform.childCount; i++)
+            {
+                children.Add(album2.transform.GetChild(i).gameObject);
+            }
+
+            foreach (GameObject child in children)
+            {
+                child.GetComponent<AudioSource>().mute = true;
+            }
+        }
+        else if (currentAlbum == album2)
+        {
+            List<GameObject> children = new List<GameObject>();
+
+            for (int i = 0; i < album1.transform.childCount; i++)
+            {
+                children.Add(album1.transform.GetChild(i).gameObject);
+            }
+
+            foreach (GameObject child in children)
+            {
+                child.GetComponent<AudioSource>().mute = true;
+            }
+        }
     }
 }

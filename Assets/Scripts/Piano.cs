@@ -41,7 +41,7 @@ public class Piano : MonoBehaviour {
         SetRandomTime();
         time = minTime;
 
-        sp = GameObject.Find("SongProgress").GetComponent<SongProgress>();
+        sp = GameObject.Find("SongProgression").GetComponent<SongProgress>();
     }
 
     // Update is called once per frame

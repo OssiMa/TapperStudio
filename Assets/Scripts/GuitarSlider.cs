@@ -14,11 +14,14 @@ public class GuitarSlider : MonoBehaviour {
 
     InstrumentBase guitar;
 
+    MusicPlayer mp;
+
     
     // Use this for initialization
     void Start () {
         guitar = transform.parent.gameObject.GetComponent<InstrumentBase>();
         s = GetComponent<Slider>();
+        mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
         Srect = s.GetComponent<RectTransform>();
         Original = s.transform.localPosition;
         Resize();
@@ -75,6 +78,8 @@ public class GuitarSlider : MonoBehaviour {
         {
             s.value = 0;
             guitar.BigExpReward();
+            mp.GuitarStarted();
+            mp.StartTheMusic();
             this.gameObject.SetActive(false);
         }
     }

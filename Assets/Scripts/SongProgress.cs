@@ -86,6 +86,9 @@ public class SongProgress : MonoBehaviour {
     // Use this To initialization
     void Start () {
         albumChange = GameObject.Find("Panel_AlbumBar").GetComponent<AlbumChange>();
+        guitarBase = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
+        drumBase = GameObject.Find("Drums").GetComponent<InstrumentBase>();
+        pianoBase = GameObject.Find("Piano").GetComponent<InstrumentBase>();
         PossibleAlbums();
         //AlbumPicGeneration();
         Progress.maxValue = songXPMax;
@@ -119,7 +122,7 @@ public class SongProgress : MonoBehaviour {
             UsedNames.Add(currentSong);
 
             SongsCreated += 1;
-            switch (SongsCreated)
+            /*switch (SongsCreated)
             {
                 case 1:
                     achievements.AchievementDone(8);
@@ -130,7 +133,7 @@ public class SongProgress : MonoBehaviour {
                     achievements.AchievementDone(11);
 
                     break;
-            }
+            }*/
 
 
             if (UsedNames.Count > 50)
@@ -144,8 +147,11 @@ public class SongProgress : MonoBehaviour {
         {
             activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value   
 
-            songCount = 1;      //Because this gets set to 1, the loop doesn't go through again. Everything should happen only once, but should still wait for the stuff at the bottom
-            
+            songCount = 1;
+            pianoBase.xpBoost = 0;
+            guitarBase.xpBoost = 0;
+            drumBase.xpBoost = 0;
+
             UsedNames.Add(currentAlbum);    
 
             NewItemGenerator.instance.NewItem(1);   
@@ -162,13 +168,14 @@ public class SongProgress : MonoBehaviour {
             songEnder = true;
         }
 
-        if (songEnder == true)            //HERE THIS FIX THIS
+        if (songEnder == true)
         {
             if (menu == false)      
             {
-                mp.SongEnd();
                 mp.ChooseAlbum();
-                mp.MenuVolume();
+                mp.ChooseSong();
+                mp.NewAlbumPlay();
+                //mp.MenuVolume();
                 NewAlbum();
                 songEnder = false;
             }
@@ -557,12 +564,13 @@ public class SongProgress : MonoBehaviour {
 
         winText1.text = "You earned " + currencyInAlbum + " £" + "\nYou earned " + lastItem.name;
         winText2.text = "You also got some extra experience \nfor your " + currentInstrument + "!";
-        mp.MenuVolume();
+        //mp.MenuVolume();
         menu = true;
+        mp.AlbumEnd();
 
         AlbumsCreated += 1;
 
-        switch (AlbumsCreated)
+        /*switch (AlbumsCreated)
         {
             case 1:
                 achievements.AchievementDone(14);
@@ -573,7 +581,7 @@ public class SongProgress : MonoBehaviour {
 
 
                 break;
-        }
+        }*/
 
 
     }

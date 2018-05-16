@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114350805662113884}
   - component: {fileID: 114359531917233920}
   - component: {fileID: 114485797418997078}
+  - component: {fileID: 114276349569074902}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   premiumCurrency: 20
   currencyText: {fileID: 0}
   premiumCurrencyText: {fileID: 0}
-  amountOfCurrency: 0
 --- !u!114 &114233642435257454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +74,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  Achievements: []
+--- !u!114 &114276349569074902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442746161125628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ebae18c570189a4daa9fe4cbc7d218e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllAchievements: []
+  DoneAchievements: []
+  AchievementSlot1: {fileID: 0}
+  AchievementSlot2: {fileID: 0}
+  AchievementSlot3: {fileID: 0}
+  AchievementSlot4: {fileID: 0}
+  AchievementSlot5: {fileID: 0}
 --- !u!114 &114341556897984482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b45d6a65694ba7f4a8452c1caece9288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
 --- !u!114 &114359531917233920
 MonoBehaviour:
   m_ObjectHideFlags: 1

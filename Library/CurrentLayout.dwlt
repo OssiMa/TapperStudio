@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 392}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,14 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 948
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 679, y: 342}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 46
-=======
   controlID: 9
->>>>>>> mergehere
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 948
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -210,14 +206,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 948
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 404, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
-<<<<<<< HEAD
-  controlID: 47
-=======
   controlID: 10
->>>>>>> mergehere
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -238,14 +230,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 573
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 48
-=======
   controlID: 11
->>>>>>> mergehere
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -264,13 +252,8 @@ MonoBehaviour:
     y: 0
     width: 1152
     height: 573
-<<<<<<< HEAD
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-=======
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
->>>>>>> mergehere
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -347,23 +330,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
-<<<<<<< HEAD
   m_LastProjectPath: C:\Users\JuusoMyl1\Desktop\TapperStudio
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 351}
-    m_SelectedIDs: 46270000
-    m_LastClickedID: 10054
-    m_ExpandedIDs: 00000000a2250000c8250000d6250000d825000054260000842600000a2700000c2800003429000036290000de290000fc290000ea2a0000862b00003c2c000000ca9a3bffffff7f
-=======
-  m_LastProjectPath: C:\Users\henrysiu\Desktop\Tapperstudio
-  m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 351}
-    m_SelectedIDs: 42270000
-    m_LastClickedID: 10050
-    m_ExpandedIDs: 00000000a0250000c6250000d4250000d6250000522600008226000008270000082800003029000032290000da290000f8290000e62a0000822b0000382c000000ca9a3bffffff7f
->>>>>>> mergehere
+    m_SelectedIDs: 4a270000
+    m_LastClickedID: 10058
+    m_ExpandedIDs: 00000000a6250000cc250000da250000dc25000058260000882600000e27000010280000382900003a290000e2290000002a0000ee2a00008a2b0000402c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,11 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 00000000a2250000c8250000d6250000d825000054260000842600000a2700000c2800003429000036290000de290000fc290000ea2a0000862b00003c2c0000
-=======
-    m_ExpandedIDs: 00000000a0250000c6250000d4250000d6250000522600008226000008270000082800003029000032290000da290000f8290000e62a0000822b0000382c0000
->>>>>>> mergehere
+    m_ExpandedIDs: 00000000a6250000cc250000da250000dc25000058260000882600000e27000010280000382900003a290000e2290000002a0000ee2a00008a2b0000402c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -447,7 +416,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 84.5}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 115
 --- !u!114 &14
@@ -513,11 +482,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: c2fbffff00000000
-=======
     m_ExpandedIDs: befbffff00000000
->>>>>>> mergehere
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

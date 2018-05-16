@@ -45,7 +45,11 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 46
+=======
+  controlID: 9
+>>>>>>> mergehere
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -209,7 +213,11 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 47
+=======
+  controlID: 10
+>>>>>>> mergehere
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +241,11 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 48
+=======
+  controlID: 11
+>>>>>>> mergehere
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,8 +264,13 @@ MonoBehaviour:
     y: 0
     width: 1152
     height: 573
+<<<<<<< HEAD
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
+>>>>>>> mergehere
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -330,6 +347,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
   m_LastProjectPath: C:\Users\JuusoMyl1\Desktop\TapperStudio
   m_IsLocked: 0
   m_FolderTreeState:
@@ -337,6 +355,15 @@ MonoBehaviour:
     m_SelectedIDs: 46270000
     m_LastClickedID: 10054
     m_ExpandedIDs: 00000000a2250000c8250000d6250000d825000054260000842600000a2700000c2800003429000036290000de290000fc290000ea2a0000862b00003c2c000000ca9a3bffffff7f
+=======
+  m_LastProjectPath: C:\Users\henrysiu\Desktop\Tapperstudio
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 351}
+    m_SelectedIDs: 42270000
+    m_LastClickedID: 10050
+    m_ExpandedIDs: 00000000a0250000c6250000d4250000d6250000522600008226000008270000082800003029000032290000da290000f8290000e62a0000822b0000382c000000ca9a3bffffff7f
+>>>>>>> mergehere
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +391,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000a2250000c8250000d6250000d825000054260000842600000a2700000c2800003429000036290000de290000fc290000ea2a0000862b00003c2c0000
+=======
+    m_ExpandedIDs: 00000000a0250000c6250000d4250000d6250000522600008226000008270000082800003029000032290000da290000f8290000e62a0000822b0000382c0000
+>>>>>>> mergehere
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -482,7 +513,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: c2fbffff00000000
+=======
+    m_ExpandedIDs: befbffff00000000
+>>>>>>> mergehere
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

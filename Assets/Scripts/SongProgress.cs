@@ -138,12 +138,26 @@ public class SongProgress : MonoBehaviour {
                 case 100:
                     achievements.AchievementDone(25);
 
+<<<<<<< HEAD
                     break;
 
             default:
             break;
         }
     
+=======
+
+                    break;
+
+
+                default:
+                    break;
+            }
+        
+    
+    
+
+>>>>>>> mergehere
 
 
             if (UsedNames.Count > 50)

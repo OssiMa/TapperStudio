@@ -5,11 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
-    <ProjectGuid>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</ProjectGuid>
-=======
     <ProjectGuid>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</ProjectGuid>
->>>>>>> Henkka
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-firstpass.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -54,51 +50,6 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-<<<<<<< HEAD
-      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>Library\UnityAssemblies\UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HoloLens">
-      <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VR">
-      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
-=======
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
@@ -127,39 +78,35 @@
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
->>>>>>> Henkka
     </Reference>
     <Reference Include="ChannelPurchase">
-      <HintPath>Assets\Plugins\UnityChannel\ChannelPurchase.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityChannel/ChannelPurchase.dll</HintPath>
     </Reference>
     <Reference Include="UnityStore">
-      <HintPath>Assets\Plugins\UnityChannel\UnityStore.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityChannel/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Editor.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
     </Reference>
     <Reference Include="Purchasing.Common">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Purchasing.Common.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
     </Reference>
     <Reference Include="Stores">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Stores.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
     </Reference>
     <Reference Include="Apple">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Apple\Apple.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
     </Reference>
     <Reference Include="FacebookStore">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Facebook\FacebookStore.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
     </Reference>
     <Reference Include="Security">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Security\live\Security.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
     </Reference>
     <Reference Include="Tizen">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Tizen\Tizen.dll</HintPath>
+      <HintPath>Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
     </Reference>
     <Reference Include="winrt">
-<<<<<<< HEAD
-      <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
-=======
       <HintPath>Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
@@ -176,7 +123,6 @@
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
->>>>>>> Henkka
     </Reference>
   </ItemGroup>
   <ItemGroup>

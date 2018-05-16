@@ -12,7 +12,7 @@ public class Save {
     public float songProgress = 0;
     public float nextDrumLevel = 0;
     public float startXp = 0;
-    public float albumsCreated = 0;
+    public int albumsCreated = 0;
     public float combo = 1;
     public float currency;
     public string currentAlbum;

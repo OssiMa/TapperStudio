@@ -30,13 +30,12 @@ public class EquipSlot : MonoBehaviour {
     {
         achievement = newAchievement;
 
-        if (item != null)
-        {
-            icon.sprite = achievement.AchievementIcon;
-            icon.enabled = true;
-        }
-        else CleanSlot();
+        icon.sprite = achievement.AchievementIcon;
+        icon.enabled = true;
+        rarity.text = achievement.AchievementText;
+        rarity.enabled = true;
 
+       
     }
 
     public void CleanSlot()

@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/music_scene.unity
+=======
+- path: Assets/Scenes/AchievementTest.unity
+>>>>>>> mergehere
   isLoaded: 1
   isActive: 1

@@ -13,6 +13,7 @@ public class SongProgress : MonoBehaviour {
     public InstrumentBase drumBase;
     public InstrumentBase guitarBase;
     public InstrumentBase pianoBase;
+    public Achievements achievements;
     InstrumentBase activeBase;
 
     string currentInstrument;
@@ -66,7 +67,8 @@ public class SongProgress : MonoBehaviour {
     float previousCurrency;
     [HideInInspector]
     public float songCountMax = 3;
-    public float AlbumsCreated;
+    public int AlbumsCreated;
+    public int SongsCreated;
 
     MusicPlayer mp;
     AlbumChange albumChange;
@@ -116,6 +118,21 @@ public class SongProgress : MonoBehaviour {
             songXP = 0;
             UsedNames.Add(currentSong);
 
+            SongsCreated += 1;
+            switch (SongsCreated)
+            {
+                case 1:
+                    achievements.AchievementDone(8);
+
+                    break;
+
+                case 10:
+                    achievements.AchievementDone(11);
+
+                    break;
+            }
+
+
             if (UsedNames.Count > 50)
             {
                 UsedNames.RemoveAt(1);
@@ -128,7 +145,7 @@ public class SongProgress : MonoBehaviour {
             activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value   
 
             songCount = 1;      //Because this gets set to 1, the loop doesn't go through again. Everything should happen only once, but should still wait for the stuff at the bottom
-            AlbumsCreated += 1; 
+            
             UsedNames.Add(currentAlbum);    
 
             NewItemGenerator.instance.NewItem(1);   
@@ -542,6 +559,23 @@ public class SongProgress : MonoBehaviour {
         winText2.text = "You also got some extra experience \nfor your " + currentInstrument + "!";
         mp.MenuVolume();
         menu = true;
+
+        AlbumsCreated += 1;
+
+        switch (AlbumsCreated)
+        {
+            case 1:
+                achievements.AchievementDone(14);
+
+                break;
+
+            case 10:
+
+
+                break;
+        }
+
+
     }
 
     public void MenuHandler()

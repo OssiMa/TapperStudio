@@ -20,9 +20,12 @@ public class AchievementSlot : MonoBehaviour
 
     public UIAchievementInventory UIAchievementInventory;
 
+
     private void Start()
     {
-        print(UIAchievementInventory.page);
+        inventory = Inventory.instance;
+        inventory.onAchievementChangedCallback += PageUpdate;
+
         if (UIAchievementInventory.page == 1)
         {
             AddAchievement(achievement);
@@ -35,26 +38,26 @@ public class AchievementSlot : MonoBehaviour
         {
             AddAchievement(achievement3);
         }
-
+        inventory.onAchievementChangedCallback.Invoke();
     }
 
     public void PageUpdate()
     {
-        print(UIAchievementInventory.page);
+
         ClearSlot();
 
-        //if (UIAchievementInventory.page == 1)
-        //{
-        //    AddAchievement(achievement);
-        //}
-        //else if (UIAchievementInventory.page == 2)
-        //{
-        //    AddAchievement(achievement2);
-        //}
-        //else if (UIAchievementInventory.page == 3)
-        //{
-        //    AddAchievement(achievement3);
-        //}
+        if (UIAchievementInventory.page == 1)
+        {
+            AddAchievement(achievement);
+        }
+        else if (UIAchievementInventory.page == 2)
+        {
+            AddAchievement(achievement2);
+        }
+        else if (UIAchievementInventory.page == 3)
+        {
+            AddAchievement(achievement3);
+        }
     }
 
     public void AddAchievement(ScriptableAchievement newAchievement)
@@ -63,28 +66,51 @@ public class AchievementSlot : MonoBehaviour
         if (UIAchievementInventory.page == 1)
         {
             newAchievement = achievement;
+            icon.sprite = achievement.AchievementIcon;
+            Text.text = achievement.AchievementText;
+            if (achievement.unlocked == true)
+            {
+                GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                GetComponent<Image>().color = Color.gray;
+            }
         }
         else if (UIAchievementInventory.page == 2)
         {
             newAchievement = achievement2;
+            icon.sprite = achievement2.AchievementIcon;
+            Text.text = achievement2.AchievementText;
+            if (achievement2.unlocked == true)
+            {
+                GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                GetComponent<Image>().color = Color.gray;
+            }
         }
         else if (UIAchievementInventory.page == 3)
         {
             newAchievement = achievement3;
+            icon.sprite = achievement3.AchievementIcon;
+            Text.text = achievement3.AchievementText;
+            if (achievement2.unlocked == true)
+            {
+                GetComponent<Image>().color = Color.green;
+            }
+            else
+            {
+                GetComponent<Image>().color = Color.gray;
+            }
         }
 
-
-        //cb = button.colors;
-        //Color32 newColor = skin.color;
-        //newColor.a = 255;
-        //cb.normalColor = newColor;
-        //button.colors = cb;
-
-        icon.sprite = achievement.AchievementIcon;
         icon.enabled = true;
-        Text.text = achievement.AchievementText;
         Text.enabled = true;
         button.interactable = false;
+
+        //GetComponent<Image>().color = Color.green;
 
     }
 
@@ -105,17 +131,6 @@ public class AchievementSlot : MonoBehaviour
         button.interactable = false;
         //If we want to add an extra sprite here, just add a child with the sprite to all slot objects. 
         //When a slot is locked, set the child (or the child's sprite) to true.
-    }
-
-    public ScriptableAchievement GetAchievement()
-    {
-        return achievement;
-
-    }
-
-    public void Equipped()
-    {
-        Text.enabled = true;
     }
 
 }

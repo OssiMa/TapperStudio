@@ -104,9 +104,9 @@ public class SongProgress : MonoBehaviour {
         cm = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
         nig = GameObject.Find("GameManager").GetComponent<NewItemGenerator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         Progress.value = songXP;
         SongText.text = songCount + "/" + songCountMax;
         AlbumName.text = currentAlbum;
@@ -122,7 +122,7 @@ public class SongProgress : MonoBehaviour {
             UsedNames.Add(currentSong);
 
             SongsCreated += 1;
-            /*switch (SongsCreated)
+            switch (SongsCreated)
             {
                 case 1:
                     achievements.AchievementDone(8);
@@ -133,16 +133,14 @@ public class SongProgress : MonoBehaviour {
                     achievements.AchievementDone(11);
 
                     break;
-<<<<<<< HEAD
-            }*/
-=======
+            
 
                 case 100:
                     achievements.AchievementDone(25);
 
-                    break;
-            }
->>>>>>> Henkka
+            break;
+        }
+    
 
 
             if (UsedNames.Count > 50)

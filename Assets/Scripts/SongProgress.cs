@@ -104,9 +104,9 @@ public class SongProgress : MonoBehaviour {
         cm = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
         nig = GameObject.Find("GameManager").GetComponent<NewItemGenerator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         Progress.value = songXP;
         SongText.text = songCount + "/" + songCountMax;
         AlbumName.text = currentAlbum;
@@ -133,14 +133,24 @@ public class SongProgress : MonoBehaviour {
                     achievements.AchievementDone(11);
 
                     break;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> juusobranch
 
                 case 100:
                     achievements.AchievementDone(25);
 
+<<<<<<< HEAD
                     break;
             }
 
+=======
+            break;
+        }
+    
+>>>>>>> juusobranch
 
 
             if (UsedNames.Count > 50)

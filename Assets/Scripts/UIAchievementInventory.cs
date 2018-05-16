@@ -24,7 +24,7 @@ public class UIAchievementInventory : MonoBehaviour {
 
     void PageUpdate()
     {
-        maxPages = 3;
+        maxPages = 2;
         if (page > maxPages)
         {
             page = maxPages;

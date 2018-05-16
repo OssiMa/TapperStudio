@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e25569aa39f4de6478019810ee7eb6d4, type: 3}
-  m_Name: Guitar Combo
+  m_Name: GuitarCombo20
   m_EditorClassIdentifier: 
-  AchievementText: Get max guitar combo
+  AchievementText: Get 20 guitar combo
   AchievementIcon: {fileID: 21300000, guid: 3906f1d5b3fdc334a846d6e798c42342, type: 3}
   unlocked: 0

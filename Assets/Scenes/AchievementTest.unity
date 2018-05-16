@@ -1363,7 +1363,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -227
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -3729,7 +3729,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -227
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -4514,7 +4514,7 @@ MonoBehaviour:
   icon: {fileID: 1669842875}
   button: {fileID: 352241040}
   Text: {fileID: 708303992}
-  achievement: {fileID: 11400000, guid: d51a477808a340740873ad974bc8696c, type: 2}
+  achievement: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
   achievement2: {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
@@ -4881,7 +4881,7 @@ MonoBehaviour:
   icon: {fileID: 1961777010}
   button: {fileID: 375271128}
   Text: {fileID: 696903673}
-  achievement: {fileID: 11400000, guid: 9595c9fe5c671fc47aca101bcf4971cd, type: 2}
+  achievement: {fileID: 11400000, guid: c7d8e132c8b4a2d45bc9db0a51f2f20e, type: 2}
   achievement2: {fileID: 11400000, guid: 6676412d380e653418c83f6c5963393b, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
@@ -6005,7 +6005,7 @@ MonoBehaviour:
   icon: {fileID: 253334376}
   button: {fileID: 487932613}
   Text: {fileID: 125036902}
-  achievement: {fileID: 11400000, guid: 9d7a9e784e6412248a8d667d03e26078, type: 2}
+  achievement: {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42, type: 2}
   achievement2: {fileID: 11400000, guid: 9f31740e511db634c8968e0f6c8a04a0, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
@@ -8007,7 +8007,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -227
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -9161,8 +9161,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebae18c570189a4daa9fe4cbc7d218e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllAchievements: []
-  DoneAchievements: []
+  CurrencyAchievements:
+  - {fileID: 11400000, guid: c7d8e132c8b4a2d45bc9db0a51f2f20e, type: 2}
+  - {fileID: 11400000, guid: 2f22db9c08802ce47a097515bdf916ec, type: 2}
+  - {fileID: 11400000, guid: 212aeb7863dc15d4c8912ab8bb9bc2c0, type: 2}
+  - {fileID: 11400000, guid: ee64b92275cd2cc4a99dfe0f4b6051e6, type: 2}
+  - {fileID: 11400000, guid: d154d8af33648f34f9d8cd55c9e93818, type: 2}
+  GameTimeAchievements:
+  - {fileID: 11400000, guid: a501524c06315504589b258cc8264798, type: 2}
+  - {fileID: 11400000, guid: 5b2ae52ce3431454ba3201b755d5de7e, type: 2}
+  - {fileID: 11400000, guid: d347d27c2d449cd42be23c0475f78e2e, type: 2}
+  - {fileID: 11400000, guid: b1e31cb146d309e42b3359f0652faf44, type: 2}
+  - {fileID: 11400000, guid: 6c40e02a81e55494a9318a8f5189ab01, type: 2}
+  DrumAchievements:
+  - {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
+  - {fileID: 11400000, guid: 8043dc3958acfc847b7a59419ec4498f, type: 2}
+  - {fileID: 11400000, guid: 3e69353c875855549a05653afc7bc2e2, type: 2}
+  - {fileID: 11400000, guid: 562ab5f3ba93bac4db1790a91515f3ca, type: 2}
+  - {fileID: 11400000, guid: 7e12fbc5a7018cd46a45dd525b4d992d, type: 2}
+  GiutarAchievements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PianoAchievements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  SongAchievements:
+  - {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
+  - {fileID: 11400000, guid: 6676412d380e653418c83f6c5963393b, type: 2}
+  - {fileID: 11400000, guid: 79b66e2ccfafe98489b9aef9939e0063, type: 2}
+  - {fileID: 11400000, guid: 8b95a9814300be247a57390fcadb46b8, type: 2}
+  - {fileID: 11400000, guid: 17b6110f64d1a1c46b57475637ac3ecf, type: 2}
+  AlbumAchievements:
+  - {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42, type: 2}
+  - {fileID: 11400000, guid: 9876d46edc8d86a4496304e084a5ef0e, type: 2}
+  - {fileID: 11400000, guid: 0ec5e3ad4257bee49b6c5d989032ab51, type: 2}
+  - {fileID: 11400000, guid: e48cdd212eb7321498e441d87b097af8, type: 2}
+  - {fileID: 11400000, guid: 71286daf30dcd4242a61bf800ea0b654, type: 2}
   AchievementSlot1: {fileID: 1960202972}
   AchievementSlot2: {fileID: 487932614}
   AchievementSlot3: {fileID: 1718525467}
@@ -18171,7 +18211,7 @@ MonoBehaviour:
   icon: {fileID: 18954358}
   button: {fileID: 1718525466}
   Text: {fileID: 133347887}
-  achievement: {fileID: 11400000, guid: f7f8938fcab4e454993cf66e36b45cce, type: 2}
+  achievement: {fileID: 11400000, guid: a501524c06315504589b258cc8264798, type: 2}
   achievement2: {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
   achievement3: {fileID: 0}
   UIAchievementInventory: {fileID: 1917914457}
@@ -20573,7 +20613,7 @@ MonoBehaviour:
   icon: {fileID: 1130496814}
   button: {fileID: 1960202971}
   Text: {fileID: 10691327}
-  achievement: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
+  achievement: {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1, type: 2}
   achievement2: {fileID: 11400000, guid: 90dbf93da80ee074ebe74b1c267ef101, type: 2}
   achievement3: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd, type: 2}
   UIAchievementInventory: {fileID: 1917914457}
@@ -21551,7 +21591,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -227
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}

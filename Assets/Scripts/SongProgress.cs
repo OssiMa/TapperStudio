@@ -133,7 +133,16 @@ public class SongProgress : MonoBehaviour {
                     achievements.AchievementDone(11);
 
                     break;
+<<<<<<< HEAD
             }*/
+=======
+
+                case 100:
+                    achievements.AchievementDone(25);
+
+                    break;
+            }
+>>>>>>> Henkka
 
 
             if (UsedNames.Count > 50)

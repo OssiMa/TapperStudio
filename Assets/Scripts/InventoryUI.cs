@@ -36,6 +36,7 @@ public class InventoryUI : MonoBehaviour {
     InventorySlot[] slots;
 
     EquipSlot[] equipSlots;
+    Toggle[] toggles;
 
     Item chosenItem;
     Item combineWith;
@@ -53,10 +54,13 @@ public class InventoryUI : MonoBehaviour {
     public int page = 1;
     public int maxPages = 1;
 
+    int[] availableEquipSlots = new int[3] {1,1,1};
+
 	// Use this for initialization
 	void Start () {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += WhatToShow;
+        inventory.onItemChangedCallback += CheckAvailableEquips;
         inventory.onItemChangedCallback += PageUpdate;
         inventory.onItemChangedCallback += ShowEquipped;
         inventory.onItemChangedCallback += UpdateUI;
@@ -64,7 +68,7 @@ public class InventoryUI : MonoBehaviour {
         equipSlots = GetComponentsInChildren<EquipSlot>().OrderBy(slots => slots.name).ToArray();
         slots = GetComponentsInChildren<InventorySlot>();
         itemsToShow = new List<Item>();
-        
+
 
         inventory.onItemChangedCallback.Invoke();
     }
@@ -311,5 +315,57 @@ public class InventoryUI : MonoBehaviour {
 
     }
 
+    public void CheckAvailableEquips()
+    {
+        GameObject tab = GameObject.Find("Tab_Panel");
+        toggles = tab.GetComponentsInChildren<Toggle>().OrderBy(toggless => toggless.name).ToArray();
+        if(availableEquipSlots[instrumentToLook - 1] == 1)
+        {
+            toggles[0].interactable = true;
+            toggles[1].interactable = false;
+            toggles[2].interactable = false;
+            if(slotToLook > 1)
+            {
+                slotToLook = 1;
+            }
+        }
+        else if(availableEquipSlots[instrumentToLook - 1] == 2)
+        {
+            toggles[0].interactable = true;
+            toggles[1].interactable = true;
+            toggles[2].interactable = false;
+            if (slotToLook > 2)
+            {
+                slotToLook = 1;
+            }
+        }
+        else if(availableEquipSlots[instrumentToLook - 1] == 3)
+        {
+            toggles[0].interactable = true;
+            toggles[1].interactable = true;
+            toggles[2].interactable = true;
+        }
+        else
+        {
+            print("ny hajos koko paska gg syytä ittees");
+        }
+
+    }
+
+    public void GainEquipSlot(InstrumentBase x)
+    {
+        if (x.gameObject.name == "Drums")
+        {
+            availableEquipSlots[0] = x.availableSlots;
+        }
+        else if (x.gameObject.name == "Guitar")
+        {
+            availableEquipSlots[1] = x.availableSlots;
+        }
+        else if (x.gameObject.name == "Piano")
+        {
+            availableEquipSlots[2] = x.availableSlots;
+        }
+    }
 
 }

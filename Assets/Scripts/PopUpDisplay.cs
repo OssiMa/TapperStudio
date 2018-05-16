@@ -262,7 +262,7 @@ public class PopUpDisplay : MonoBehaviour {
                 foreach (Text infotext in infoTexts)
                 {
                     infotext.enabled = true;
-                    infotext.alignment = TextAnchor.MiddleLeft;
+                    infotext.alignment = TextAnchor.MiddleCenter;
                 }
             }
         }
@@ -453,6 +453,11 @@ public class PopUpDisplay : MonoBehaviour {
                 button1.GetComponent<Button>().interactable = false;
                 button1.GetComponentInChildren<Text>().text = "Maxed out";
             }
+            else if (popUp.buttonOne == "Upgrade")
+            {
+                button1.GetComponent<Button>().interactable = true;
+                button1.GetComponentInChildren<Text>().text = "Upgrade";
+            }
 
             SetPopupSize();
         }
@@ -485,7 +490,14 @@ public class PopUpDisplay : MonoBehaviour {
 
     void SetInfoStats()
     {
-        infoTexts[0].text = popUp.info[0] + 10;                     //REAL COST
+        if (popUp.name == "pop_sellItem")
+        {
+            infoTexts[0].text = popUp.info[0] + 100;                //SELL PRICE
+        }
+        else if(popUp.name == "pop_upgrade")
+        {
+            infoTexts[0].text = popUp.info[0] + 10;                     //REAL COST
+        }
         infoTexts[1].text = popUp.info[1] + CurrencyManager.instance.currency;
     }
 

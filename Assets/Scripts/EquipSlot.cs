@@ -6,6 +6,7 @@ public class EquipSlot : MonoBehaviour {
     public Image icon;
     public Image background;
     public Text rarity;
+    public GameObject iconStuff;
 
     Item item;
     ScriptableAchievement achievement;
@@ -21,6 +22,7 @@ public class EquipSlot : MonoBehaviour {
             icon.enabled = true;
             rarity.text = "" + item.rarity;
             RarityColor();
+            iconStuff.SetActive(true);
         }
         else CleanSlot();
 
@@ -46,6 +48,7 @@ public class EquipSlot : MonoBehaviour {
         icon.enabled = false;
         rarity.text = "";
         background.color = new Color32(255, 255, 255, 255);
+        iconStuff.SetActive(false);
     }
 
     public void RarityColor()

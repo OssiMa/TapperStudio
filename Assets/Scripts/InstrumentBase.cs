@@ -26,6 +26,7 @@ public class InstrumentBase : MonoBehaviour {
     [HideInInspector]
     public int vintageLevel = 0;
     public int instrumentNbr;
+    public int availableSlots = 1;
 
     public float combo = 1;                 //current combo
     public float comboStep;                 //when at combostemax, combo increases
@@ -92,13 +93,18 @@ public class InstrumentBase : MonoBehaviour {
         }
     }
 
-    void VintageLvlUp()
+    public void VintageLvlUp()
     {
         vintageLevel += 1;
         exp = 0;
         expToNext = 25;
         level = 1;
         nextLevel = 2;
+        if(vintageLevel<3)
+        {
+            availableSlots += 1;
+            InventoryUI.instance.GainEquipSlot(this);
+        }
     }
 
     public void Tap()
@@ -119,7 +125,7 @@ public class InstrumentBase : MonoBehaviour {
     {
         exp += 0.5f * combo + xpBoost;
         progression.GainXP();
-        if (combo < 4 + maxCombo)     //4 + comboBoost
+        if (combo < maxCombo)     //4 + comboBoost
         {
             comboStep += 1;
             if (comboStep >= comboStepMax)

@@ -133,24 +133,17 @@ public class SongProgress : MonoBehaviour {
                     achievements.AchievementDone(11);
 
                     break;
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> juusobranch
 
                 case 100:
                     achievements.AchievementDone(25);
 
-<<<<<<< HEAD
                     break;
-            }
 
-=======
+            default:
             break;
         }
     
->>>>>>> juusobranch
 
 
             if (UsedNames.Count > 50)

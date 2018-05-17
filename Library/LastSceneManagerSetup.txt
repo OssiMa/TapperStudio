@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/NEW UI+game merge.unity
+- path: Assets/Scenes/music_scene.unity
   isLoaded: 1
   isActive: 1

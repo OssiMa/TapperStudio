@@ -100,10 +100,11 @@ public class InstrumentBase : MonoBehaviour {
         expToNext = 25;
         level = 1;
         nextLevel = 2;
-        if(vintageLevel<3)
+        if(availableSlots<3)
         {
             availableSlots += 1;
             InventoryUI.instance.GainEquipSlot(this);
+            Inventory.instance.onItemChangedCallback.Invoke();
         }
     }
 

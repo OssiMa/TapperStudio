@@ -59,8 +59,8 @@ public class InventoryUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         inventory = Inventory.instance;
-        inventory.onItemChangedCallback += WhatToShow;
         inventory.onItemChangedCallback += CheckAvailableEquips;
+        inventory.onItemChangedCallback += WhatToShow;
         inventory.onItemChangedCallback += PageUpdate;
         inventory.onItemChangedCallback += ShowEquipped;
         inventory.onItemChangedCallback += UpdateUI;
@@ -327,6 +327,7 @@ public class InventoryUI : MonoBehaviour {
             if(slotToLook > 1)
             {
                 slotToLook = 1;
+                toggles[0].isOn = true;
             }
         }
         else if(availableEquipSlots[instrumentToLook - 1] == 2)
@@ -337,6 +338,7 @@ public class InventoryUI : MonoBehaviour {
             if (slotToLook > 2)
             {
                 slotToLook = 1;
+                toggles[0].isOn = true;
             }
         }
         else if(availableEquipSlots[instrumentToLook - 1] == 3)

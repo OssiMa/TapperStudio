@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Linq;
 
 public class NewItemGenerator : MonoBehaviour {
 
@@ -35,7 +36,9 @@ public class NewItemGenerator : MonoBehaviour {
     String[] drumNames;
     String[] guitarNames;
     String[] pianoNames;
-    string[] rarityNames;
+    String[] rarityNames;
+
+    InstrumentBase[] bases;
 
     void Start()
     {
@@ -46,21 +49,20 @@ public class NewItemGenerator : MonoBehaviour {
         guitarNames = new string[] {"Guitar1", "Guitar2", "Guitar3" };
         pianoNames = new string[] { "Stool", "Notestand", "Frame"};
         rarityNames = new string[] { "Common", "Uncommon", "Rare", "Epic", "Legendary" };
-
+        bases = FindObjectsOfType<InstrumentBase>().OrderBy(ins => ins.name).ToArray();
     }
 
 
-    public void NewItem(int rarity)
+    public void NewItem(int rarity)     // Random item
     {
         item = new Item();
         item.rarity = rarity;
-        item.slot = Random.Range(1,4);
         item.instrument = Random.Range(1, 4);
+        item.slot = Random.Range(1, bases[item.instrument-1].availableSlots+1);
         ItemInstrumentSlot();
         IconChooser();
         RarityName();
         Inventory.instance.AddItem(item);
-        print(item.name);
     }
 
     public void NewCraftedItem(int rarity, int itemSlot, int instrument)
@@ -112,7 +114,6 @@ public class NewItemGenerator : MonoBehaviour {
             item.icon = piano[item.slot-1];
             item.itemName = pianoNames[item.slot - 1];
         }
-
     }
 
     void RarityName()

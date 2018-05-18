@@ -6,10 +6,14 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectGuid>{0089197C-B261-73CB-29A8-FA6427E0AECA}</ProjectGuid>
 =======
     <ProjectGuid>{BC65DF70-E676-2901-338F-0EEDB96CC386}</ProjectGuid>
 >>>>>>> BranchO
+=======
+    <ProjectGuid>{BC65DF70-E676-2901-338F-0EEDB96CC386}</ProjectGuid>
+>>>>>>> juusobranch
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-Editor-firstpass.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -55,7 +59,11 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
+=======
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+>>>>>>> juusobranch
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEditor.dll</HintPath>
@@ -139,6 +147,7 @@
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/STVPlayer/UnityEditor.SamsungTV.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.WebGL.Extensions">
+<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
 =======
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
@@ -257,6 +266,37 @@
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
 >>>>>>> BranchO
     </Reference>
+=======
+      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Facebook.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Facebook.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+>>>>>>> juusobranch
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
     </Reference>
@@ -289,6 +329,7 @@
     </Reference>
     <Reference Include="winrt">
       <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
+<<<<<<< HEAD
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
@@ -309,6 +350,11 @@
       <Project>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</Project>
       <Name>Tapperstudio.Plugins</Name>
 =======
+=======
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+>>>>>>> juusobranch
     <ProjectReference Include="TapperStudio.Plugins.csproj">
       <Project>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</Project>
       <Name>TapperStudio.Plugins</Name>
@@ -316,7 +362,10 @@
     <ProjectReference Include="TapperStudio.csproj">
       <Project>{AB026D50-50B9-1723-BFCA-1885C0F1209E}</Project>
       <Name>TapperStudio</Name>
+<<<<<<< HEAD
 >>>>>>> BranchO
+=======
+>>>>>>> juusobranch
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

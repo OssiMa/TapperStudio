@@ -6,10 +6,14 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectGuid>{B3E28DCB-D179-AB7F-8C24-85FAF586E9B2}</ProjectGuid>
 =======
     <ProjectGuid>{AB026D50-50B9-1723-BFCA-1885C0F1209E}</ProjectGuid>
 >>>>>>> BranchO
+=======
+    <ProjectGuid>{AB026D50-50B9-1723-BFCA-1885C0F1209E}</ProjectGuid>
+>>>>>>> juusobranch
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -55,6 +59,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
@@ -87,6 +92,8 @@
     <Reference Include="UnityEngine.VR">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
 =======
+=======
+>>>>>>> juusobranch
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
@@ -133,7 +140,10 @@
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
+<<<<<<< HEAD
 >>>>>>> BranchO
+=======
+>>>>>>> juusobranch
     </Reference>
     <Reference Include="ChannelPurchase">
       <HintPath>Assets\Plugins\UnityChannel\ChannelPurchase.dll</HintPath>
@@ -164,6 +174,7 @@
     </Reference>
     <Reference Include="winrt">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
@@ -187,6 +198,8 @@
       <Project>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</Project>
       <Name>Tapperstudio.Plugins</Name>
 =======
+=======
+>>>>>>> juusobranch
       <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -194,7 +207,10 @@
     <ProjectReference Include="TapperStudio.Plugins.csproj">
       <Project>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</Project>
       <Name>TapperStudio.Plugins</Name>
+<<<<<<< HEAD
 >>>>>>> BranchO
+=======
+>>>>>>> juusobranch
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

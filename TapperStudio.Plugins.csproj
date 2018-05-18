@@ -6,10 +6,14 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectGuid>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</ProjectGuid>
 =======
     <ProjectGuid>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</ProjectGuid>
 >>>>>>> BranchO
+=======
+    <ProjectGuid>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</ProjectGuid>
+>>>>>>> juusobranch
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-firstpass.dll</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -55,6 +59,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
@@ -87,6 +92,8 @@
     <Reference Include="UnityEngine.VR">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
 =======
+=======
+>>>>>>> juusobranch
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
@@ -133,7 +140,10 @@
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
+<<<<<<< HEAD
 >>>>>>> BranchO
+=======
+>>>>>>> juusobranch
     </Reference>
     <Reference Include="ChannelPurchase">
       <HintPath>Assets\Plugins\UnityChannel\ChannelPurchase.dll</HintPath>
@@ -164,6 +174,7 @@
     </Reference>
     <Reference Include="winrt">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
@@ -183,6 +194,9 @@
 =======
       <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
 >>>>>>> BranchO
+=======
+      <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
+>>>>>>> juusobranch
     </Reference>
   </ItemGroup>
   <ItemGroup>

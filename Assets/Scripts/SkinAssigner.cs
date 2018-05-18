@@ -11,6 +11,9 @@ public class SkinAssigner : MonoBehaviour {
     Color32 color;
     string colorString;
 
+    Color32 guitarOriginColor;
+    Color32 drumOriginColor;
+
     SkinInventory skinInventory;
 
     Transform pianoBG, pianoEdge;
@@ -91,7 +94,7 @@ public class SkinAssigner : MonoBehaviour {
         pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(8);
         pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
 
-        guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(4);
+        guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(3);
         guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
 
         drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(4);
@@ -123,19 +126,36 @@ public class SkinAssigner : MonoBehaviour {
             drumDeco2.GetComponent<Image>().color = newColor;
             drumDeco3.GetComponent<Image>().color = newColor;
             toggleImageDrums1.color = newColor;
+            //toggleImageDrumsSpecial1.color = newColor;
         }
         else if (instrument == 2)
         {
-            Color32 newColor = slot.skin.color;
-            newColor.a = 255;
-            guitarBoard.GetComponent<Image>().color = newColor;
-            guitarOutline.GetComponent<Image>().color = newColor;
-            toggleImageGuitar1.color = newColor;
-            toggleImageGuitar2.color = newColor;
-            toggleImageGuitar3.color = newColor;
-            toggleImageGuitarSpecial1.color = newColor;
-            toggleImageGuitarSpecial2.color = newColor;
-            toggleImageGuitarSpecial3.color = newColor;
+            if (slot.skin.trinketType != 0)
+            {
+                Color32 newColor = slot.skin.color;
+                newColor.a = 255;
+                guitarBoard.GetComponent<Image>().color = newColor;
+                guitarOutline.GetComponent<Image>().color = newColor;
+                toggleImageGuitar1.color = newColor;
+                toggleImageGuitar2.color = newColor;
+                toggleImageGuitar3.color = newColor;
+                toggleImageGuitarSpecial1.color = newColor;
+                toggleImageGuitarSpecial2.color = newColor;
+                toggleImageGuitarSpecial3.color = newColor;
+            }
+            else
+            {
+                Color32 newColor = new Color(159, 133, 105, 255);
+                //newColor.a = 255;
+                guitarBoard.GetComponent<Image>().color = newColor;
+                guitarOutline.GetComponent<Image>().color = newColor;
+                toggleImageGuitar1.color = newColor;
+                toggleImageGuitar2.color = newColor;
+                toggleImageGuitar3.color = newColor;
+                toggleImageGuitarSpecial1.color = newColor;
+                toggleImageGuitarSpecial2.color = newColor;
+                toggleImageGuitarSpecial3.color = newColor;
+            }
         }
         else if (instrument == 3)
         {
@@ -145,6 +165,8 @@ public class SkinAssigner : MonoBehaviour {
             pianoEdge.GetComponent<Image>().color = newColor;
             toggleImagePiano1.color = newColor;
             toggleImagePiano2.color = newColor;
+            //toggleImagePianoSpecial1.color = newColor;
+            //toggleImagePianoSpecial2.color = newColor;
         }
     }
 
@@ -210,6 +232,8 @@ public class SkinAssigner : MonoBehaviour {
                 drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 drumSpecialImage.enabled = true;
             }
+            //togglesDrums.SetActive(false);
+            //togglesDrumsSpecial.SetActive(true);
         }
         else if (instrument == 2)
         { 
@@ -264,6 +288,7 @@ public class SkinAssigner : MonoBehaviour {
             }
             togglesGuitar.SetActive(false);
             togglesGuitarSpecial.SetActive(true);
+            print(guitarSpecialImage);
         } 
         else if (instrument == 3)
         {
@@ -318,6 +343,7 @@ public class SkinAssigner : MonoBehaviour {
             }
         }
 
-        //bonus: pitäiskö trinkettiskineille olla vähän erilainen ikoni skin inventoryssa?
+        //togglesPiano.SetActive(false);
+        //togglesPianoSpecial.SetActive(true);
     }
 }

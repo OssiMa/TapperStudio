@@ -11,6 +11,15 @@ public class SkinInventory : MonoBehaviour {
     Sprite guitarIcon;
     Sprite pianoIcon;
 
+    Sprite drumsIconSpecial;
+    Sprite guitarIconSpecial1;
+    Sprite guitarIconSpecial2;
+    Sprite guitarIconSpecial3;
+    Sprite guitarIconSpecial4;
+    Sprite guitarIconSpecial5;
+
+    Sprite pianoIconSpecial;
+
     //SkinInventory skinInventory;
     InstrumentBase instrumentBaseDrums;
     InstrumentBase instrumentBaseGuitar;
@@ -27,13 +36,21 @@ public class SkinInventory : MonoBehaviour {
     public delegate void OnSkinsChange();
     public OnSkinsChange onSkinsChangedCallback;
 
-    void Start()
+    void Awake()
     {
         drumsIcon = GameObject.Find("drum_buttonImage").GetComponent<Image>().sprite;
         guitarIcon = GameObject.Find("guitar_buttonImage").GetComponent<Image>().sprite;
         pianoIcon = GameObject.Find("keyboard_buttonImage").GetComponent<Image>().sprite;
 
-        //skinInventory = GetComponent<SkinInventory>();
+        //drumsIconSpecial = GameObject.Find("drum_buttonImageSpecial").GetComponent<Image>().sprite;
+
+        guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
+        guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;
+        guitarIconSpecial3 = GameObject.Find("guitar_buttonImage_neck (1)").GetComponent<Image>().sprite;
+        guitarIconSpecial4 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>().sprite;
+        guitarIconSpecial5 = GameObject.Find("guitar_buttonImage (2)").GetComponent<Image>().sprite;
+
+        //pianoIconSpecial = GameObject.Find("keyboard_buttonImageSpecial").GetComponent<Image>().sprite;
 
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
@@ -55,15 +72,40 @@ public class SkinInventory : MonoBehaviour {
         {
             if (skin.instrument == 1)
             {
-                skin.instrumentIcon = drumsIcon;
+                if (skin.trinketType != 0)
+                {
+                    //skin.specialIcon1 = drumsIcon;
+                }
+                else
+                {
+                    skin.instrumentIcon = drumsIcon;
+                }
             }
             else if (skin.instrument == 2)
             {
-                skin.instrumentIcon = guitarIcon;
+                if (skin.trinketType != 0)
+                {
+                    skin.specialIcon1 = guitarIconSpecial1;
+                    skin.specialIcon2 = guitarIconSpecial2;
+                    skin.specialIcon3 = guitarIconSpecial3;
+                    skin.specialIcon4 = guitarIconSpecial4;
+                    skin.specialIcon5 = guitarIconSpecial5;
+                }
+                else
+                {
+                    skin.instrumentIcon = guitarIcon;
+                }
             }
             if (skin.instrument == 3)
             {
-                skin.instrumentIcon = pianoIcon;
+                if (skin.trinketType != 0)
+                {
+                    //skin.instrumentIcon = pianoIcon;
+                }
+                else
+                {
+                    skin.instrumentIcon = pianoIcon;
+                }
             }
         }
     }

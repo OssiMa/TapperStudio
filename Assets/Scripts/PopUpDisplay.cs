@@ -425,6 +425,9 @@ public class PopUpDisplay : MonoBehaviour {
             RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
             rt.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot.GetComponent<Button>();
+            ColorBlock cb = btn.colors;
+            cb.disabledColor = new Color32(255,255,255,255);
+            btn.colors = cb;
             btn.interactable = false;
 
             SetBg();
@@ -473,6 +476,9 @@ public class PopUpDisplay : MonoBehaviour {
             RectTransform rt2 = NewInvSlot2.GetComponent<RectTransform>();
             rt2.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot2.GetComponent<Button>();
+            ColorBlock cb = btn.colors;
+            cb.disabledColor = new Color32(255, 255, 255, 255);
+            btn.colors = cb;
             btn.interactable = false;
 
             button1.GetComponent<Button>().interactable = true;
@@ -492,11 +498,11 @@ public class PopUpDisplay : MonoBehaviour {
     {
         if (popUp.name == "pop_sellItem")
         {
-            infoTexts[0].text = popUp.info[0] + 100;                //SELL PRICE
+            infoTexts[0].text = popUp.info[0] + (100 * InventoryUI.instance.chosenItem.rarity + (InventoryUI.instance.chosenItem.level * 25));                //BALANCED SELL PRICE
         }
         else if(popUp.name == "pop_upgrade")
         {
-            infoTexts[0].text = popUp.info[0] + 10;                     //REAL COST
+            infoTexts[0].text = popUp.info[0] + (50 * InventoryUI.instance.chosenItem.rarity + (InventoryUI.instance.chosenItem.level * 15));                     //BALANCED COST
         }
         infoTexts[1].text = popUp.info[1] + CurrencyManager.instance.currency;
     }
@@ -515,6 +521,9 @@ public class PopUpDisplay : MonoBehaviour {
         RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(52, 52);
         Button btn = NewInvSlot.GetComponent<Button>();
+        ColorBlock cb = btn.colors;
+        cb.disabledColor = new Color32(255, 255, 255, 255);
+        btn.colors = cb;
         btn.interactable = false;
 
         SetBg();

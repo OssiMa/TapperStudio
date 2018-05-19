@@ -38,7 +38,7 @@ public class InventoryUI : MonoBehaviour {
     EquipSlot[] equipSlots;
     Toggle[] toggles;
 
-    Item chosenItem;
+    public Item chosenItem;
     Item combineWith;
     List<Item> itemsToShow;
     List<Item> equippedItems;
@@ -256,6 +256,7 @@ public class InventoryUI : MonoBehaviour {
             print("Upgrading Beep Boop");
             chosenItem.level += 1;
             inventory.onItemChangedCallback.Invoke();
+            CurrencyManager.instance.LoseCurrency(50*chosenItem.rarity+(chosenItem.level*15));
             chosenItem = null;
             chosenSlot = null;
 
@@ -277,7 +278,7 @@ public class InventoryUI : MonoBehaviour {
                 print("removing");
                 equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
             }
-            CurrencyManager.instance.AddCurrency(100);                                              //MONEY SCALING HERE
+            CurrencyManager.instance.AddCurrency(100*chosenItem.rarity+(chosenItem.level*25));                         //BALANCED MONEY SCALING HERE
             inventory.onItemChangedCallback.Invoke();
             chosenItem = null;
             chosenSlot = null;
@@ -319,12 +320,17 @@ public class InventoryUI : MonoBehaviour {
     {
         GameObject tab = GameObject.Find("Tab_Panel");
         toggles = tab.GetComponentsInChildren<Toggle>().OrderBy(toggless => toggless.name).ToArray();
+        
         if(availableEquipSlots[instrumentToLook - 1] == 1)
         {
             toggles[0].interactable = true;
             toggles[1].interactable = false;
+            GameObject icon = toggles[1].transform.Find("Lock").gameObject;
+            icon.SetActive(true);
             toggles[2].interactable = false;
-            if(slotToLook > 1)
+            GameObject icon2 = toggles[2].transform.Find("Lock").gameObject;
+            icon2.SetActive(true);
+            if (slotToLook > 1)
             {
                 slotToLook = 1;
                 toggles[0].isOn = true;
@@ -334,7 +340,11 @@ public class InventoryUI : MonoBehaviour {
         {
             toggles[0].interactable = true;
             toggles[1].interactable = true;
+            GameObject icon = toggles[1].transform.Find("Lock").gameObject;
+            icon.SetActive(false);
             toggles[2].interactable = false;
+            GameObject icon2 = toggles[2].transform.Find("Lock").gameObject;
+            icon2.SetActive(true);
             if (slotToLook > 2)
             {
                 slotToLook = 1;
@@ -345,7 +355,11 @@ public class InventoryUI : MonoBehaviour {
         {
             toggles[0].interactable = true;
             toggles[1].interactable = true;
+            GameObject icon = toggles[1].transform.Find("Lock").gameObject;
+            icon.SetActive(false);
             toggles[2].interactable = true;
+            GameObject icon2 = toggles[2].transform.Find("Lock").gameObject;
+            icon2.SetActive(false);
         }
         else
         {

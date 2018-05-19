@@ -67,7 +67,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot1.achievement = SongAchievements[SongNumber];
                 }
-
+                AchievementSlot1.PageUpdate();
                 break;
 
             case 2:
@@ -81,7 +81,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot1.achievement2 = GuitarAchievements[GuitarNumber];
                 }
-
+                AchievementSlot1.PageUpdate();
                 break;
 
             case 3:
@@ -100,7 +100,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot2.achievement = AlbumAchievements[AlbumNumber];
                 }
-
+                AchievementSlot2.PageUpdate();
                 break;
 
             case 5:
@@ -114,7 +114,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot2.achievement2 = PianoAchievements[PianoNumber];
                 }
-
+                AchievementSlot2.PageUpdate();
                 break;
 
             case 6:
@@ -133,7 +133,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot3.achievement = GameTimeAchievements[TimeNumber];
                 }
-
+                AchievementSlot3.PageUpdate();
                 break;
 
             case 8:
@@ -147,7 +147,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot3.achievement2 = DrumComboAchievements[DrumComboNumber];
                 }
-
+                AchievementSlot3.PageUpdate();
                 break;
 
             case 9:
@@ -166,7 +166,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot4.achievement = CurrencyAchievements[CurrencyNumber];
                 }
-
+                AchievementSlot4.PageUpdate();
                 break;
 
             case 11:
@@ -180,7 +180,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot4.achievement2 = GuitarComboAchievements[GuitarComboNumber];
                 }
-
+                AchievementSlot4.PageUpdate();
                 break;
 
             case 12:
@@ -199,7 +199,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot5.achievement = DrumAchievements[DrumNumber];
                 }
-
+                AchievementSlot5.PageUpdate();
                 break;
 
             case 14:
@@ -213,7 +213,7 @@ public class Achievements : MonoBehaviour {
                 {
                     AchievementSlot5.achievement2 = PianoComboAchievements[PianoComboNumber];
                 }
-
+                AchievementSlot5.PageUpdate();
                 break;
 
             case 15:

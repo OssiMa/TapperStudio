@@ -148,6 +148,8 @@ public class SongProgress : MonoBehaviour {
                     achievements.AchievementDone(1);
 
                     break;
+                default:
+                    break;
             }
         
 
@@ -601,20 +603,34 @@ public class SongProgress : MonoBehaviour {
 
         AlbumsCreated += 1;
 
-        /*switch (AlbumsCreated)
+        switch (AlbumsCreated)
         {
             case 1:
-                achievements.AchievementDone(14);
+                achievements.AchievementDone(4);
 
                 break;
 
             case 10:
-
+                achievements.AchievementDone(4);
 
                 break;
-        }*/
+            case 50:
+                achievements.AchievementDone(4);
 
+                break;
+            case 100:
+                achievements.AchievementDone(4);
 
+                break;
+            case 1000:
+                achievements.AchievementDone(4);
+
+                break;
+
+            default:
+                    break;
+
+        }
     }
 
     public void MenuHandler()

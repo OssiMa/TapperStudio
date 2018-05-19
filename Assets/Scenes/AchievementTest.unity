@@ -1363,7 +1363,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99998
+      value: -227
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -3729,7 +3729,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99998
+      value: -227
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -8007,7 +8007,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99998
+      value: -227
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -9098,6 +9098,7 @@ GameObject:
   - component: {fileID: 800686921}
   - component: {fileID: 800686920}
   - component: {fileID: 800686923}
+  - component: {fileID: 800686924}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9226,6 +9227,19 @@ MonoBehaviour:
   AchievementSlot3: {fileID: 1718525467}
   AchievementSlot4: {fileID: 375271129}
   AchievementSlot5: {fileID: 352241041}
+--- !u!114 &800686924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 800686919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0efade9536c56644bb8ec6e69d414324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements: {fileID: 800686923}
+  secondsCount: 0
 --- !u!1 &803947124
 GameObject:
   m_ObjectHideFlags: 0
@@ -14840,6 +14854,7 @@ MonoBehaviour:
   level: 1
   vintageLevel: 0
   instrumentNbr: 2
+  availableSlots: 1
   combo: 1
   comboStep: 0
   comboStepMax: 20
@@ -16060,6 +16075,7 @@ MonoBehaviour:
   level: 1
   vintageLevel: 0
   instrumentNbr: 1
+  availableSlots: 1
   combo: 1
   comboStep: 0
   comboStepMax: 20
@@ -21609,7 +21625,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99998
+      value: -227
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}

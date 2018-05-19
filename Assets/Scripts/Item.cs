@@ -10,5 +10,5 @@ public class Item : ScriptableObject{
     public int instrument = 0;
     public int slot = 0;
     public float boostPower = 0;
-    public float level = 0;
+    public int level = 0;
 }

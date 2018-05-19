@@ -62,8 +62,7 @@ public class SkinSlot : MonoBehaviour {
         }
         else
         {
-            //NO NO NO NO NOPE
-            //The instrument object's color needs to be saved somewhere
+            //The "real" colours of the guitar
         }
         cb.normalColor = newColor;
         cb.highlightedColor = newColor;

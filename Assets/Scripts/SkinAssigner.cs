@@ -130,7 +130,7 @@ public class SkinAssigner : MonoBehaviour {
         }
         else if (instrument == 2)
         {
-            if (slot.skin.trinketType != 0)
+            if (slot.skin.baseInstrument == false)
             {
                 Color32 newColor = slot.skin.color;
                 newColor.a = 255;
@@ -145,16 +145,27 @@ public class SkinAssigner : MonoBehaviour {
             }
             else
             {
-                Color32 newColor = new Color(159, 133, 105, 255);
-                //newColor.a = 255;
-                guitarBoard.GetComponent<Image>().color = newColor;
-                guitarOutline.GetComponent<Image>().color = newColor;
-                toggleImageGuitar1.color = newColor;
-                toggleImageGuitar2.color = newColor;
-                toggleImageGuitar3.color = newColor;
-                toggleImageGuitarSpecial1.color = newColor;
-                toggleImageGuitarSpecial2.color = newColor;
-                toggleImageGuitarSpecial3.color = newColor;
+                Color32 newColor1; //= new Color(159, 133, 105, 255);
+                newColor1.r = 159;
+                newColor1.g = 133;
+                newColor1.b = 105;
+                newColor1.a = 255;
+
+                guitarBoard.GetComponent<Image>().color = newColor1;
+                guitarOutline.GetComponent<Image>().color = newColor1;
+
+                Color32 newColor2; //= new Color(159, 133, 105, 255);
+                newColor2.r = 255;
+                newColor2.g = 215;
+                newColor2.b = 146;
+                newColor2.a = 255;
+
+                toggleImageGuitar1.color = newColor2;
+                toggleImageGuitar2.color = newColor2;
+                toggleImageGuitar3.color = newColor2;
+                toggleImageGuitarSpecial1.color = newColor2;
+                toggleImageGuitarSpecial2.color = newColor2;
+                toggleImageGuitarSpecial3.color = newColor2;
             }
         }
         else if (instrument == 3)

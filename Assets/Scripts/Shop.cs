@@ -94,52 +94,67 @@ public class Shop : MonoBehaviour {
 
     public void PurchaseSkin()
     {
-        skinInv = GetComponent<SkinInventory>();
-        cm = GetComponent<CurrencyManager>();
+        if (cm.currency <= skinCost)
+        {
+            skinInv = GetComponent<SkinInventory>();
+            cm = GetComponent<CurrencyManager>();
 
-        skinInv.UnlockSkinNormal();
-        cm.LoseCurrency(skinCost);
+            skinInv.UnlockSkinNormal();
+            cm.LoseCurrency(skinCost);
+        }
     }
 
     public void PurchaseSkinPremium()
     {
-        cm = GetComponent<CurrencyManager>();
-        skinInv = GetComponent<SkinInventory>();
+        if (cm.currency <= premiumSkinCost)
+        {
+            cm = GetComponent<CurrencyManager>();
+            skinInv = GetComponent<SkinInventory>();
 
-        skinInv.UnlockSkinPremium();
-        cm.LoseCurrency(premiumSkinCost);
+            skinInv.UnlockSkinPremium();
+            cm.LoseCurrency(premiumSkinCost);
+        }
     }
 
     public void PurchaseRareItem()
     {
-        cm = GetComponent<CurrencyManager>();
-        nig = GetComponent<NewItemGenerator>();
+        if (cm.currency <= rareItemCost)
+        {
+            cm = GetComponent<CurrencyManager>();
+            nig = GetComponent<NewItemGenerator>();
 
-        purchasedItemRarityRare = 3;
+            purchasedItemRarityRare = 3;
 
-        nig.NewItem(purchasedItemRarityRare);
-        cm.LoseCurrency(rareItemCost);
+            nig.NewItem(purchasedItemRarityRare);
+            cm.LoseCurrency(rareItemCost);
+        }
     }
 
     public void PurchaseMixedItem()
     {
-        cm = GetComponent<CurrencyManager>();
-        nig = GetComponent<NewItemGenerator>();
+        if (cm.currency <= mixedItemCost)
+        {
+            cm = GetComponent<CurrencyManager>();
+            nig = GetComponent<NewItemGenerator>();
 
-        purchasedItemRarityMixed = Random.Range(1,3);
+            purchasedItemRarityMixed = Random.Range(1, 3);
 
-        nig.NewItem(purchasedItemRarityMixed);
-        cm.LoseCurrency(mixedItemCost);
+            nig.NewItem(purchasedItemRarityMixed);
+            cm.LoseCurrency(mixedItemCost);
+        }
     }
 
     public void PurchaseCommonItem()
     {
-        cm = GetComponent<CurrencyManager>();
-        nig = GetComponent<NewItemGenerator>();
+        if (cm.currency <= commonItemCost)
+        {
+            cm = GetComponent<CurrencyManager>();
+            nig = GetComponent<NewItemGenerator>();
 
-        purchasedItemRarityCommon = 1;
+            purchasedItemRarityCommon = 1;
 
-        nig.NewItem(purchasedItemRarityCommon);
-        cm.LoseCurrency(commonItemCost);
+            nig.NewItem(purchasedItemRarityCommon);
+            cm.LoseCurrency(commonItemCost);
+        }
     }
 }

@@ -11,12 +11,22 @@ public class SkinInventory : MonoBehaviour {
     Sprite guitarIcon;
     Sprite pianoIcon;
 
-    Sprite drumsIconSpecial;
+    Sprite drumsIcon1;
+    Sprite drumsIcon2;
+    Sprite drumsIcon3;
+    Sprite drumsIcon4;
+    Sprite drumsIcon5;
+    Sprite drumsIcon6;
+
     Sprite guitarIconSpecial1;
     Sprite guitarIconSpecial2;
     Sprite guitarIconSpecial3;
     Sprite guitarIconSpecial4;
     Sprite guitarIconSpecial5;
+
+    Sprite pianoIcon1;
+    Sprite pianoIcon2;
+    Sprite pianoIcon3;
 
     Sprite pianoIconSpecial;
 
@@ -38,17 +48,26 @@ public class SkinInventory : MonoBehaviour {
 
     void Awake()
     {
-        drumsIcon = GameObject.Find("drum_buttonImage").GetComponent<Image>().sprite;
+        //drumsIcon = GameObject.Find("drum_buttonImage").GetComponent<Image>().sprite;
         guitarIcon = GameObject.Find("guitar_buttonImage").GetComponent<Image>().sprite;
         pianoIcon = GameObject.Find("keyboard_buttonImage").GetComponent<Image>().sprite;
 
-        //drumsIconSpecial = GameObject.Find("drum_buttonImageSpecial").GetComponent<Image>().sprite;
+        drumsIcon1 = GameObject.Find("drum_buttonImage_body").GetComponent<Image>().sprite;
+        drumsIcon2 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
+        drumsIcon3 = GameObject.Find("drum_buttonImage (2)").GetComponent<Image>().sprite;
+        drumsIcon4 = GameObject.Find("drum_buttonImage (3)").GetComponent<Image>().sprite;
+        drumsIcon5 = GameObject.Find("drum_buttonImage (4)").GetComponent<Image>().sprite;
+        //drumsIcon6 = GameObject.Find("drum_buttonImage (5)").GetComponent<Image>().sprite;
 
         guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
         guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;
         guitarIconSpecial3 = GameObject.Find("guitar_buttonImage_neck (1)").GetComponent<Image>().sprite;
         guitarIconSpecial4 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>().sprite;
         guitarIconSpecial5 = GameObject.Find("guitar_buttonImage (2)").GetComponent<Image>().sprite;
+
+        pianoIcon1 = GameObject.Find("keyboard_buttonImage_head").GetComponent<Image>().sprite;
+        pianoIcon2 = GameObject.Find("keyboard_buttonImage_bottom").GetComponent<Image>().sprite;
+        pianoIcon3 = GameObject.Find("keyboard_buttonImage (2)").GetComponent<Image>().sprite;
 
         //pianoIconSpecial = GameObject.Find("keyboard_buttonImageSpecial").GetComponent<Image>().sprite;
 
@@ -70,11 +89,15 @@ public class SkinInventory : MonoBehaviour {
     {
         foreach (Skin skin in skins)
         {
-            if (skin.instrument == 1)
+            if (skin.instrument == 1 || skin.instrument == 0)
             {
                 if (skin.trinketType != 0)
                 {
-                    //skin.specialIcon1 = drumsIcon;
+                    skin.specialIcon1 = drumsIcon1;
+                    skin.specialIcon2 = drumsIcon2;
+                    skin.specialIcon3 = drumsIcon3;
+                    skin.specialIcon4 = drumsIcon4;
+                    skin.specialIcon5 = drumsIcon5;
                 }
                 else
                 {
@@ -100,7 +123,9 @@ public class SkinInventory : MonoBehaviour {
             {
                 if (skin.trinketType != 0)
                 {
-                    //skin.instrumentIcon = pianoIcon;
+                    skin.specialIcon1 = pianoIcon1;
+                    skin.specialIcon2 = pianoIcon2;
+                    skin.specialIcon3 = pianoIcon3;
                 }
                 else
                 {
@@ -118,7 +143,7 @@ public class SkinInventory : MonoBehaviour {
 
         foreach (Skin skin in skins)
         {
-            if (skin.instrument == 1)
+            if (skin.instrument == 1 || skin.instrument == 0)
             {
                 if (skin.vintageLock > instrumentBaseDrums.vintageLevel)
                 {

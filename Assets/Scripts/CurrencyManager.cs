@@ -31,12 +31,19 @@ public class CurrencyManager : MonoBehaviour {
     public Text premiumCurrencyText;
 
     [HideInInspector]
-   // public int amountOfCurrency;
+    Achievements achievements;
+
+    bool isAchieved = false;
+    bool isAchieved2 = false;
+    bool isAchieved3 = false;
+    bool isAchieved4 = false;
+    bool isAchieved5 = false;
+    // public int amountOfCurrency;
 
     // Use this for initialization
     void Start ()
     {
-        currency = 20;
+        currency = 0;
 	}
 	
 	// Update is called once per frame
@@ -53,6 +60,32 @@ public class CurrencyManager : MonoBehaviour {
         if (premiumCurrency < 0)
         {
             premiumCurrency = 0;
+        }
+
+        if (currency > 0 && !isAchieved)
+        {
+            isAchieved = true;
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 100 && !isAchieved2)
+        {
+            isAchieved2 = true;
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 1000 && !isAchieved3)
+        {
+            isAchieved3 = true;
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 10000 && !isAchieved4)
+        {
+            isAchieved4 = true;
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 100000 && !isAchieved5)
+        {
+            isAchieved5 = true;
+            achievements.AchievementDone(10);
         }
     }
 

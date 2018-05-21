@@ -103,6 +103,7 @@ public class SkinAssigner : MonoBehaviour {
 
     public void AssignSkin(SkinSlot slot)
     {
+        print("Hyeena" + slot.skin);
         instrument = slot.skin.instrument;
 
         if (slot.skin.trinketType != 0)

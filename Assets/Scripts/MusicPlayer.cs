@@ -65,7 +65,7 @@ public class MusicPlayer : MonoBehaviour {
 
         album1 = GameObject.Find("Album1");
         album2 = GameObject.Find("Album2");
-        //album3 = GameObject.Find("Album3");
+        album3 = GameObject.Find("Album3");
         //album4 = GameObject.Find("Album4");
 
         ChooseAlbum();
@@ -125,10 +125,7 @@ public class MusicPlayer : MonoBehaviour {
 
     public void ChooseAlbum()
     {
-        int rundom = Random.Range(1, 3);    //1, 4
-
-        print(rundom);
-        print(currentAlbum);
+        int rundom = Random.Range(1, 4);
 
         if (rundom == 1)
         {
@@ -153,7 +150,7 @@ public class MusicPlayer : MonoBehaviour {
                 currentAlbum = album2;
                 albumEnd = false;
             }
-        }/*
+        }
         if (rundom == 3)
         {
             if (currentAlbum == album3)
@@ -165,7 +162,7 @@ public class MusicPlayer : MonoBehaviour {
                 currentAlbum = album3;
                 albumEnd = false;
             }
-        }*/
+        }
     }
 
     public void ChooseSong()

@@ -91,13 +91,14 @@ public class SkinSlot : MonoBehaviour {
 
         if (skin.trinketType != 0)
         {
-            print("What?");
             spIcon1.sprite = skin.specialIcon1;
             spIcon2.sprite = skin.specialIcon2;
             spIcon3.sprite = skin.specialIcon3;
             spIcon1.enabled = true;
             spIcon2.enabled = true;
             spIcon3.enabled = true;
+
+            print("Yeah, it's" + skin.specialIcon1);
 
             if (skin.instrument != 3)
             {
@@ -113,6 +114,7 @@ public class SkinSlot : MonoBehaviour {
         {
             if (skin.instrument == 1 || skin.instrument == 0)       //Script not finding skin when starting???
             {
+                print("Well?");
                 icon.sprite = skin.instrumentIcon;
                 icon.enabled = true;
 
@@ -121,6 +123,7 @@ public class SkinSlot : MonoBehaviour {
                 spIcon3.enabled = false;
                 spIcon4.enabled = false;
                 spIcon5.enabled = false;
+                print(spIcon1);
             }
             else if (skin.instrument == 2)
             {

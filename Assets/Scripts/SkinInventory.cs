@@ -85,12 +85,13 @@ public class SkinInventory : MonoBehaviour {
         VintageCheck();
     }
 
-    void IconChooser()
+    void IconChooser()      //This works
     {
         foreach (Skin skin in skins)
         {
-            if (skin.instrument == 1 || skin.instrument == 0)
-            {
+            print("Skin instrument is" + skin.instrument);
+            if (skin.instrument == 1)
+            {   
                 if (skin.trinketType != 0)
                 {
                     skin.specialIcon1 = drumsIcon1;
@@ -135,7 +136,7 @@ public class SkinInventory : MonoBehaviour {
         }
     }
 
-    void VintageCheck()
+    void VintageCheck()     //Works
     {
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
@@ -143,7 +144,7 @@ public class SkinInventory : MonoBehaviour {
 
         foreach (Skin skin in skins)
         {
-            if (skin.instrument == 1 || skin.instrument == 0)
+            if (skin.instrument == 1)
             {
                 if (skin.vintageLock > instrumentBaseDrums.vintageLevel)
                 {

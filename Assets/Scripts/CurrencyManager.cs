@@ -29,6 +29,7 @@ public class CurrencyManager : MonoBehaviour {
 
     public Text currencyText;
     public Text premiumCurrencyText;
+    public GameObject noMoney;
 
     [HideInInspector]
    // public int amountOfCurrency;
@@ -62,10 +63,22 @@ public class CurrencyManager : MonoBehaviour {
         currencyText.text = "" + currency;
     }
 
-    public void LoseCurrency(int amountofCurrency)
+    public bool LoseCurrency(int amountofCurrency)
     {
-        currency -= amountofCurrency;
-        currencyText.text = "" + currency;
+        if (currency - amountofCurrency < 0)
+        {
+            StartCoroutine(NoMoneyWarning());
+            print("Not enough currency, no currency chances were made");
+
+            return false;
+        }
+        else
+        {
+            currency -= amountofCurrency;
+            currencyText.text = "" + currency;
+            return true;
+        }
+
     }
 
     public void AddPremiumCurrency(int amountofCurrency)
@@ -74,9 +87,27 @@ public class CurrencyManager : MonoBehaviour {
         premiumCurrencyText.text = "" + premiumCurrency;
     }
 
-    public void LosePremiumCurrency(int amountofCurrency)
+    public bool LosePremiumCurrency(int amountofCurrency)
     {
-        premiumCurrency -= amountofCurrency;
-        premiumCurrencyText.text = "" + premiumCurrency;
+        if (premiumCurrency - amountofCurrency < 0)
+        {
+            print("Not enough currency, no currency chances were made");
+            return false;
+        }
+        else
+        {
+            premiumCurrency -= amountofCurrency;
+            premiumCurrencyText.text = "" + premiumCurrency;
+            return true;
+        }
+
+    }
+
+    IEnumerator NoMoneyWarning()
+    {
+        print("jaa");
+        noMoney.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        noMoney.SetActive(false);
     }
 }

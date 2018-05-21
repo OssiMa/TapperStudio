@@ -29,14 +29,14 @@ MonoBehaviour:
   buttonTwo: No
   buttonThree: 
   buttonPos1X: -80
-  buttonPos1Y: -1034
+  buttonPos1Y: -955
   buttonPos2X: 80
-  buttonPos2Y: -1034
+  buttonPos2Y: -955
   buttonPos3X: 293
-  buttonPos3Y: -1034
+  buttonPos3Y: -955
   sizeX: 7
   sizeY: 12
   posX: 0
-  posY: -958
+  posY: -430
   pic: {fileID: 0}
   bg: {fileID: 0}

@@ -21,7 +21,7 @@ public class CurrencyManager : MonoBehaviour {
     }
 
     #endregion
-
+    public Achievements achievements;
     [HideInInspector]
     public int currency = 20;
     [HideInInspector]
@@ -32,7 +32,7 @@ public class CurrencyManager : MonoBehaviour {
     public GameObject noMoney;
 
     [HideInInspector]
-    Achievements achievements;
+
 
     bool isAchieved = false;
     bool isAchieved2 = false;
@@ -50,7 +50,7 @@ public class CurrencyManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        currencyText.text = currency + "£";
+        currencyText.text = currency + "";
         if (currency < 0)
         {
             currency = 0;

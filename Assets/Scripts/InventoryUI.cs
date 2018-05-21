@@ -6,29 +6,7 @@ using System.Linq;
 
 public class InventoryUI : MonoBehaviour {
 
-    #region Singleton
 
-    public static InventoryUI instance;
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Debug.LogWarning("Paska koodaaja nyt on 2 inventory UItä");
-            return;
-        }
-
-        instance = this;
-
-        equippedItems = new List<Item>();
-
-        for (int i = 0; i < 9; i++)
-        {
-            equippedItems.Add(null);
-        }
-    }
-
-    #endregion
 
     Inventory inventory;
 
@@ -55,6 +33,34 @@ public class InventoryUI : MonoBehaviour {
     public int maxPages = 1;
 
     int[] availableEquipSlots = new int[3] {1,1,1};
+
+    #region Singleton
+
+    public static InventoryUI instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Paska koodaaja nyt on 2 inventory UItä");
+            return;
+        }
+
+        instance = this;
+
+        equippedItems = new List<Item>();
+
+        for (int i = 0; i < 9; i++)
+        {
+            equippedItems.Add(null);
+        }
+
+        GameObject tab = GameObject.Find("Tab_Panel");
+        toggles = tab.GetComponentsInChildren<Toggle>().OrderBy(toggless => toggless.name).ToArray();
+    }
+
+    #endregion
+
 
 	// Use this for initialization
 	void Start () {
@@ -313,10 +319,9 @@ public class InventoryUI : MonoBehaviour {
 
     public void CheckAvailableEquips()
     {
-        GameObject tab = GameObject.Find("Tab_Panel");
-        toggles = tab.GetComponentsInChildren<Toggle>().OrderBy(toggless => toggless.name).ToArray();
-        
-        if(availableEquipSlots[instrumentToLook - 1] == 1)
+
+
+        if (availableEquipSlots[instrumentToLook - 1] == 1)
         {
             toggles[0].interactable = true;
             toggles[1].interactable = false;

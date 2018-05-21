@@ -15,16 +15,26 @@ MonoBehaviour:
   purpose: 2
   statsVisible: 0
   picVisible: 1
+  infoVisible: 0
+  popUpFrame: {fileID: 0}
+  selectedInvSlot: {fileID: 0}
+  selectedItem: {fileID: 0}
   description: Will you purchase an item of random rarity?
   stats: []
+  info: []
   buttonAmount: 2
   buttonOne: Yes
   buttonTwo: No
+  buttonThree: 
   buttonPos1X: -60
-  buttonPos1Y: -160
+  buttonPos1Y: -860
   buttonPos2X: 60
-  buttonPos2Y: -160
+  buttonPos2Y: -860
+  buttonPos3X: 293
+  buttonPos3Y: -1034
   sizeX: 5
   sizeY: 6.5
+  posX: 0
+  posY: -412
   pic: {fileID: 21300000, guid: 7d485e41060db46419d1a0f1f9806cec, type: 3}
   bg: {fileID: 21300000, guid: 39ec7ad0085447c4bab78b9ac9e15bb4, type: 3}

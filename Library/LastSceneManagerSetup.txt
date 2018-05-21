@@ -1,16 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/music_scene.unity
-=======
-- path: Assets/Scenes/AchievementTest.unity
->>>>>>> Henkka
-=======
-- path: Assets/Scenes/NEW UI+game merge.unity
->>>>>>> BranchO
-=======
 - path: Assets/Scenes/VisualRefinementScene.unity
->>>>>>> ui
   isLoaded: 1
   isActive: 1

@@ -7,25 +7,6 @@ using System.Linq;
 
 public class NewItemGenerator : MonoBehaviour {
 
-
-    #region Singleton
-
-    public static NewItemGenerator instance;
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Debug.LogWarning("Paska koodaaja nyt on 2 inventoryy");
-            return;
-        }
-
-        instance = this;
-    }
-
-    #endregion
-
-
     [HideInInspector]
     public Item item;
 
@@ -40,17 +21,30 @@ public class NewItemGenerator : MonoBehaviour {
 
     InstrumentBase[] bases;
 
-    void Start()
+    #region Singleton
+
+    public static NewItemGenerator instance;
+
+    private void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("Paska koodaaja nyt on 2 inventoryy");
+            return;
+        }
         drums = Resources.LoadAll<Sprite>("DrumIcon");
         guitar = Resources.LoadAll<Sprite>("GuitarIcon");
         piano = Resources.LoadAll<Sprite>("PianoIcon");
-        drumNames = new string[] { "Pedal", "Metronome", "Sticks"};
-        guitarNames = new string[] {"Guitar1", "Guitar2", "Guitar3" };
-        pianoNames = new string[] { "Stool", "Notestand", "Frame"};
+        drumNames = new string[] { "Pedal", "Metronome", "Sticks" };
+        guitarNames = new string[] { "Guitar1", "Guitar2", "Guitar3" };
+        pianoNames = new string[] { "Stool", "Notestand", "Frame" };
         rarityNames = new string[] { "Common", "Uncommon", "Rare", "Epic", "Legendary" };
         bases = FindObjectsOfType<InstrumentBase>().OrderBy(ins => ins.name).ToArray();
+
+        instance = this;
     }
+
+    #endregion
 
 
     public void NewItem(int rarity)     // Random item

@@ -21,6 +21,7 @@ public class UISkinInventory : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        print("Starttt");
         skinInventory = GameObject.Find("GameManager").GetComponent<SkinInventory>();
 
         skinInventory.onSkinsChangedCallback += WhatIsShown;
@@ -34,6 +35,7 @@ public class UISkinInventory : MonoBehaviour {
     public void SetInstrument(int x)
     {
         instrumentToLook = x;
+        print(skinInventory);
         skinInventory.onSkinsChangedCallback.Invoke();
     }
 

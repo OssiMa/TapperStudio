@@ -15,6 +15,7 @@ MonoBehaviour:
   purpose: 0
   statsVisible: 1
   picVisible: 0
+  infoVisible: 0
   popUpFrame: {fileID: 0}
   selectedInvSlot: {fileID: 0}
   selectedItem: {fileID: 0}
@@ -24,19 +25,20 @@ MonoBehaviour:
   - 
   - 
   - 
+  info: []
   buttonAmount: 3
   buttonOne: Equip
   buttonTwo: No
   buttonThree: Crafting
   buttonPos1X: -80
-  buttonPos1Y: -1230
+  buttonPos1Y: -1015
   buttonPos2X: 80
-  buttonPos2Y: -1230
+  buttonPos2Y: -1015
   buttonPos3X: 0
-  buttonPos3Y: -1230
+  buttonPos3Y: -1015
   sizeX: 7
   sizeY: 3
   posX: 0
-  posY: -1190
+  posY: -650
   pic: {fileID: 21300000, guid: 195b422a391cc02499fc813cde0dcd60, type: 3}
   bg: {fileID: 21300000, guid: 16cf0cabb0acbf740b7d1ba9d8f4f858, type: 3}

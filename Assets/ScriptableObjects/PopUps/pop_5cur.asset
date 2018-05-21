@@ -15,16 +15,26 @@ MonoBehaviour:
   purpose: 6
   statsVisible: 0
   picVisible: 1
+  infoVisible: 0
+  popUpFrame: {fileID: 0}
+  selectedInvSlot: {fileID: 0}
+  selectedItem: {fileID: 0}
   description: Will you purchase 5 currency?
   stats: []
+  info: []
   buttonAmount: 2
   buttonOne: Yes
   buttonTwo: No
+  buttonThree: 
   buttonPos1X: -60
-  buttonPos1Y: -160
+  buttonPos1Y: -860
   buttonPos2X: 60
-  buttonPos2Y: -160
+  buttonPos2Y: -860
+  buttonPos3X: 293
+  buttonPos3Y: -1034
   sizeX: 5
   sizeY: 6.5
+  posX: 0
+  posY: -412
   pic: {fileID: 21300000, guid: 8ab30c5ea24736f429bfc5d99fd4460e, type: 3}
   bg: {fileID: 21300000, guid: 79c7fc3643c0d7348b830081aa3c948c, type: 3}

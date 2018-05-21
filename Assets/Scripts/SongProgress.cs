@@ -111,7 +111,7 @@ public class SongProgress : MonoBehaviour {
         SongText.text = songCount + "/" + songCountMax;
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
-        currencyText.text = cm.currency + "£";
+        currencyText.text = cm.currency + "";
         PassiveGene();
 
         if (songXP >= songXPMax)
@@ -165,9 +165,9 @@ public class SongProgress : MonoBehaviour {
             activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value   
 
             songCount = 1;
-            pianoBase.xpBoost = 0;
+            /*pianoBase.xpBoost = 0;
             guitarBase.xpBoost = 0;
-            drumBase.xpBoost = 0;
+            drumBase.xpBoost = 0;*/
 
             UsedNames.Add(currentAlbum);    
 
@@ -187,6 +187,7 @@ public class SongProgress : MonoBehaviour {
 
         if (songEnder == true)
         {
+            print("Tuu tänne?");
             if (menu == false)      
             {
                 mp.ChooseAlbum();
@@ -564,7 +565,7 @@ public class SongProgress : MonoBehaviour {
 
         System.Random pictureRandomizer = new System.Random();
 
-        int picNumber = pictureRandomizer.Next(0, 91);
+        int picNumber = pictureRandomizer.Next(1, 98);
 
         string picName;
 

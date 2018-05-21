@@ -1,26 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tapperstudio.Plugins", "Tapperstudio.Plugins.csproj", "{D4496EBB-E95C-725D-9339-BAE1C2CD7015}"
-=======
-=======
->>>>>>> UI
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
->>>>>>> juusobranch
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
->>>>>>> BranchO
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
->>>>>>> juusobranch
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
->>>>>>> BranchO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio", "TapperStudio.csproj", "{AB026D50-50B9-1723-BFCA-1885C0F1209E}"
 EndProject

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 5.6.2f1:3.1.0.0
@@ -30,6 +31,9 @@ C:/Users/User/Documents/Unity 5.6.2/Unity/Editor/Data/PlaybackEngines/windowssta
 =======
 >>>>>>> 336058943c2b61979535a42826d8af2015399d75
 5.6.2f1:3.3.0.0
+=======
+5.6.2f1:3.3.0.2
+>>>>>>> BranchO
 StandaloneWindows
 C:/Program Files/Unity5.6/Editor/Data/Managed/UnityEngine.dll
 C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
@@ -67,7 +71,10 @@ C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/windowsstandalonesupport/U
 C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3f7ccbf71b7175660003218a2f9f20965b0dde94
 >>>>>>> 336058943c2b61979535a42826d8af2015399d75
+=======
+>>>>>>> BranchO
 C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll

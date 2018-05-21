@@ -196,13 +196,11 @@ public class InventoryUI : MonoBehaviour {
         if (craftInProgress == true)
         {
             combineWith = chosen.GetItem();
-            print("you chose item to combine with");
         }
         else
         {
             chosenSlot = chosen;
             chosenItem = chosen.GetItem();
-            print("you selected an item");
         }
     }
 
@@ -211,7 +209,6 @@ public class InventoryUI : MonoBehaviour {
         if (chosenItem != null)
         {
             craftInProgress = true;
-            print("starting crafting sequence");
             inventory.onItemChangedCallback.Invoke();
             chosenSlot.CraftingFilter();
         }
@@ -226,13 +223,11 @@ public class InventoryUI : MonoBehaviour {
     {
         if (combineWith != null)
         {
-            print("craft in progress");
             Inventory.instance.RemoveItem(chosenItem);
             Inventory.instance.RemoveItem(combineWith);
             NewItemGenerator.instance.NewCraftedItem(combineWith.rarity + 1, combineWith.slot, combineWith.instrument);
             if (equippedItems.Contains(chosenItem)||equippedItems.Contains(combineWith))
             {
-                print("removing");
                 equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
             }
             craftInProgress = false;
@@ -240,7 +235,6 @@ public class InventoryUI : MonoBehaviour {
             combineWith = null;
             chosenItem = null;
             chosenSlot = null;
-            print("craft succesful");
         }
         else
         {
@@ -253,13 +247,17 @@ public class InventoryUI : MonoBehaviour {
     {
         if (chosenItem != null && chosenItem.level < 3)
         {
-            print("Upgrading Beep Boop");
-            chosenItem.level += 1;
-            inventory.onItemChangedCallback.Invoke();
-            CurrencyManager.instance.LoseCurrency(50*chosenItem.rarity+(chosenItem.level*15));
-            chosenItem = null;
-            chosenSlot = null;
-
+            if (CurrencyManager.instance.LoseCurrency(50 * chosenItem.rarity + (chosenItem.level * 15)) == true)
+            {
+                chosenItem.level += 1;
+                inventory.onItemChangedCallback.Invoke();
+                chosenItem = null;
+                chosenSlot = null;
+            }
+            else
+            {
+                print("Not enough currency for upgrade");
+            }
         }
         else
         {
@@ -271,11 +269,9 @@ public class InventoryUI : MonoBehaviour {
     {
         if (chosenItem != null)
         {
-            print("Me wheel n deel item");
             Inventory.instance.RemoveItem(chosenItem);
             if (equippedItems.Contains(chosenItem))
             {
-                print("removing");
                 equippedItems[(instrumentToLook - 1) * 3 + slotToLook - 1] = null;
             }
             CurrencyManager.instance.AddCurrency(100*chosenItem.rarity+(chosenItem.level*25));                         //BALANCED MONEY SCALING HERE
@@ -293,7 +289,6 @@ public class InventoryUI : MonoBehaviour {
     {
         if (craftInProgress == true)
         {
-            print("cancelling crafting");
             combineWith = null;
             chosenItem = null;
             craftInProgress = false;

@@ -6,10 +6,14 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ProjectGuid>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</ProjectGuid>
 =======
     <ProjectGuid>{D4496EBB-E95C-725D-9339-BAE1C2CD7015}</ProjectGuid>
 >>>>>>> Henkka
+=======
+    <ProjectGuid>{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}</ProjectGuid>
+>>>>>>> BranchO
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -54,6 +58,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
+<<<<<<< HEAD
 <<<<<<< HEAD
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
@@ -103,6 +108,9 @@
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+=======
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+>>>>>>> BranchO
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
@@ -126,8 +134,30 @@
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
+<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
 >>>>>>> Henkka
+=======
+      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
+>>>>>>> BranchO
     </Reference>
     <Reference Include="ChannelPurchase">
       <HintPath>Assets/Plugins/UnityChannel/ChannelPurchase.dll</HintPath>
@@ -158,6 +188,7 @@
     </Reference>
     <Reference Include="winrt">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
 =======
       <HintPath>Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
@@ -177,6 +208,9 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
 >>>>>>> Henkka
+=======
+      <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
+>>>>>>> BranchO
     </Reference>
   </ItemGroup>
   <ItemGroup>

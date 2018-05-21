@@ -8,38 +8,38 @@ public class Gametime : MonoBehaviour {
     public float secondsCount;
 
     // Use this for initialization
-    bool isAchieced = false;
-    bool isAchieced2 = false;
-    bool isAchieced3 = false;
-    bool isAchieced4 = false;
-    bool isAchieced5 = false;
+    bool isAchieved = false;
+    bool isAchieved2 = false;
+    bool isAchieved3 = false;
+    bool isAchieved4 = false;
+    bool isAchieved5 = false;
 
     private void Update()
     {
         secondsCount += Time.deltaTime;
-        if(secondsCount > 600 && !isAchieced)
+        if(secondsCount > 600 && !isAchieved)
         {
-            isAchieced = true;
+            isAchieved = true;
             achievements.AchievementDone(7);
         }
-        else if (secondsCount > 3600 && !isAchieced2)
+        else if (secondsCount > 3600 && !isAchieved2)
         {
-            isAchieced2 = true;
+            isAchieved2 = true;
             achievements.AchievementDone(7);
         }
-        else if (secondsCount > 36000 && !isAchieced3)
+        else if (secondsCount > 36000 && !isAchieved3)
         {
-            isAchieced3 = true;
+            isAchieved3 = true;
             achievements.AchievementDone(7);
         }
-        else if (secondsCount > 360000 && !isAchieced4)
+        else if (secondsCount > 360000 && !isAchieved4)
         {
-            isAchieced4 = true;
+            isAchieved4 = true;
             achievements.AchievementDone(7);
         }
-        else if (secondsCount > 3600000 && !isAchieced5)
+        else if (secondsCount > 3600000 && !isAchieved5)
         {
-            isAchieced5 = true;
+            isAchieved5 = true;
             achievements.AchievementDone(7);
         }
     }

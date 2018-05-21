@@ -197,6 +197,22 @@ public class SongProgress : MonoBehaviour {
                 songEnder = false;
             }
         }
+
+        if (menu == true)
+        {
+            GameObject[] notes = GameObject.FindGameObjectsWithTag("Note");
+            GameObject[] longNotes = GameObject.FindGameObjectsWithTag("LongNote");
+
+            foreach (GameObject note in notes)
+            {
+                Destroy(note);
+            }
+
+            foreach (GameObject longNote in longNotes)
+            {
+                Destroy(longNote);
+            }
+        }
     }
 
     //Grants XP to songs

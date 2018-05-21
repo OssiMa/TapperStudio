@@ -21,23 +21,6 @@ public class SkinSlot : MonoBehaviour {
     [HideInInspector]
     public Skin skin;
 
-    /*void Start()
-    {
-        button = GetComponent<Button>();
-        cbOrigin = button.colors;
-        Color32 newColor;
-
-        newColor.a = 255;
-        newColor.g = 255;
-        newColor.b = 255;
-        newColor.r = 255;
-
-        cbOrigin.normalColor = newColor;
-        cbOrigin.highlightedColor = newColor;
-        cbOrigin.pressedColor = new Color(0, 0, 0, 255);
-        button.colors = cbOrigin;
-    }*/
-
     public void AddSkin(Skin newSkin)
     {
         icon = GetComponent<Image>();
@@ -62,44 +45,105 @@ public class SkinSlot : MonoBehaviour {
         }
         else
         {
-            //NO NO NO NO NOPE
-            //The instrument object's color needs to be saved somewhere
+            if (skin.instrument == 1 || skin.instrument == 0)
+            {
+                newColor.r = 19;
+                newColor.g = 177;
+                newColor.b = 255;
+                newColor.a = 255;
+            }
+            else if (skin.instrument == 2)
+            {
+                newColor.r = 255;
+                newColor.g = 215;
+                newColor.b = 146;
+                newColor.a = 255;
+            }
+            else if (skin.instrument == 3)
+            {
+                newColor.r = 255;
+                newColor.g = 255;
+                newColor.b = 255;
+                newColor.a = 255;
+            }
         }
         cb.normalColor = newColor;
         cb.highlightedColor = newColor;
         cb.pressedColor = new Color(0, 0, 0, 255);
         button.colors = cb;
 
-        spIcon2.color = newColor;
-        spIcon3.color = newColor;
-        spIcon4.color = newColor;
+        if (skin.instrument == 1 || skin.instrument == 0)
+        {
+            spIcon1.color = newColor;
+        }
+        else if (skin.instrument == 2)
+        {
+            spIcon2.color = newColor;
+            spIcon3.color = newColor;
+            spIcon4.color = newColor;
+        }
+        else if (skin.instrument == 3)
+        {
+            spIcon1.color = newColor;
+            spIcon2.color = newColor;
+        }
+
 
         if (skin.trinketType != 0)
         {
+            print("What?");
             spIcon1.sprite = skin.specialIcon1;
             spIcon2.sprite = skin.specialIcon2;
             spIcon3.sprite = skin.specialIcon3;
-            spIcon4.sprite = skin.specialIcon4;
-            spIcon5.sprite = skin.specialIcon5;
-
             spIcon1.enabled = true;
             spIcon2.enabled = true;
             spIcon3.enabled = true;
-            spIcon4.enabled = true;
-            spIcon5.enabled = true;
+
+            if (skin.instrument != 3)
+            {
+                spIcon4.sprite = skin.specialIcon4;
+                spIcon5.sprite = skin.specialIcon5;
+                spIcon4.enabled = true;
+                spIcon5.enabled = true;
+            }
 
             icon.enabled = false;
         }
         else
         {
-            icon.sprite = skin.instrumentIcon;
-            icon.enabled = true;
+            if (skin.instrument == 1 || skin.instrument == 0)       //Script not finding skin when starting???
+            {
+                icon.sprite = skin.instrumentIcon;
+                icon.enabled = true;
 
-            spIcon1.enabled = false;
-            spIcon2.enabled = false;
-            spIcon3.enabled = false;
-            spIcon4.enabled = false;
-            spIcon5.enabled = false;
+                spIcon1.enabled = false;
+                spIcon2.enabled = false;
+                spIcon3.enabled = false;
+                spIcon4.enabled = false;
+                spIcon5.enabled = false;
+            }
+            else if (skin.instrument == 2)
+            {
+                icon.sprite = skin.instrumentIcon;
+                icon.enabled = true;
+
+                spIcon1.enabled = false;
+                spIcon2.enabled = false;
+                spIcon3.enabled = false;
+                spIcon4.enabled = false;
+                spIcon5.enabled = false;
+            }
+            else if (skin.instrument == 3)
+            {
+                icon.sprite = skin.instrumentIcon;
+                icon.enabled = true;
+
+                spIcon1.enabled = false;
+                spIcon2.enabled = false;
+                spIcon3.enabled = false;
+                spIcon4.enabled = false;
+                spIcon5.enabled = false;
+            }
         }
 
         if (skin.instrument == 2)

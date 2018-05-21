@@ -14,6 +14,7 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 0
     y: 42
     width: 1920
@@ -37,6 +38,16 @@ MonoBehaviour:
   m_RootView: {fileID: 6}
   m_MinSize: {x: 950, y: 300}
 >>>>>>> juusobranch
+=======
+    x: 0
+    y: 43
+    width: 1536
+    height: 781
+  m_ShowMode: 4
+  m_Title: 
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 950, y: 392}
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -156,6 +167,7 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
     height: 948
   m_MinSize: {x: 885, y: 492}
@@ -173,10 +185,14 @@ MonoBehaviour:
 =======
     width: 1600
     height: 808
+=======
+    width: 1536
+    height: 731
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
-  controlID: 113
+  controlID: 83
 --- !u!114 &3
 >>>>>>> juusobranch
 MonoBehaviour:
@@ -192,8 +208,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1275
+    x: 1224
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 389
     height: 948
@@ -204,6 +221,10 @@ MonoBehaviour:
 =======
     width: 325
     height: 808
+=======
+    width: 312
+    height: 731
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
@@ -243,6 +264,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 379
     height: 573
   m_MinSize: {x: 200, y: 200}
@@ -252,6 +274,10 @@ MonoBehaviour:
 =======
     width: 315
     height: 487
+=======
+    width: 302
+    height: 440
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -289,6 +315,7 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 573
     width: 1531
     height: 375
@@ -318,6 +345,11 @@ MonoBehaviour:
     y: 487
     width: 1275
     height: 321
+=======
+    y: 440
+    width: 1224
+    height: 291
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
@@ -359,6 +391,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
     height: 998
   m_MinSize: {x: 950, y: 300}
@@ -371,6 +404,10 @@ MonoBehaviour:
 =======
     width: 1600
     height: 858
+=======
+    width: 1536
+    height: 781
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
@@ -390,7 +427,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1600
+    width: 1536
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -419,6 +456,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 978
     width: 1920
     height: 20
@@ -432,6 +470,10 @@ MonoBehaviour:
 =======
     y: 838
     width: 1600
+=======
+    y: 761
+    width: 1536
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -465,6 +507,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1531
     height: 948
 <<<<<<< HEAD
@@ -483,10 +526,14 @@ MonoBehaviour:
 =======
     width: 1275
     height: 808
+=======
+    width: 1224
+    height: 731
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 45
+  controlID: 84
 --- !u!114 &10
 >>>>>>> juusobranch
 MonoBehaviour:
@@ -519,6 +566,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1531
     height: 573
 <<<<<<< HEAD
@@ -537,10 +585,14 @@ MonoBehaviour:
 =======
     width: 1275
     height: 487
+=======
+    width: 1224
+    height: 440
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 46
+  controlID: 85
 --- !u!114 &11
 >>>>>>> juusobranch
 MonoBehaviour:
@@ -556,8 +608,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 315
+    x: 302
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 795
@@ -585,6 +638,10 @@ MonoBehaviour:
 =======
     width: 960
     height: 487
+=======
+    width: 922
+    height: 440
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -611,7 +668,7 @@ MonoBehaviour:
   m_MaxSize: {x: 2048, y: 2048}
   m_TitleContent:
     m_Text: Asset Store
-    m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 357073275683767465, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 0
@@ -645,12 +702,13 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -7501376956915960154, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 0
     y: 664
@@ -666,6 +724,12 @@ MonoBehaviour:
     width: 1273
     height: 300
 >>>>>>> juusobranch
+=======
+    x: 0
+    y: 532
+    width: 1222
+    height: 270
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -677,6 +741,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     - Assets/ScriptableObjects/Achievements/Instrument achievements/PianoLevelAchievements
@@ -708,19 +773,29 @@ MonoBehaviour:
 >>>>>>> BranchO
 =======
     - Assets/Graphics/Instruments
+=======
+    - Assets/ScriptableObjects/Skins/Piano
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Graphics/Instruments
+  - Assets/ScriptableObjects/Skins/Piano
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\JuusoMyl1\Desktop\TapperStudio
+  m_LastProjectPath: C:\Users\User\Desktop\TapperStudio
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 94}
     m_SelectedIDs: 88270000
     m_LastClickedID: 10120
     m_ExpandedIDs: 00000000362700005c2700006a2700006c2700001c280000a0280000ba290000f22a0000f42a0000b62b0000de2b0000cc2c00004a2d000000ca9a3bffffff7f
 >>>>>>> juusobranch
+=======
+    scrollPos: {x: 0, y: 163}
+    m_SelectedIDs: d8260000
+    m_LastClickedID: 9944
+    m_ExpandedIDs: 00000000a8250000ce250000dc250000de250000be2600004827000072280000b2290000862a0000be2a0000c02b0000602c000000ca9a3bffffff7f
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -750,6 +825,7 @@ MonoBehaviour:
     m_LastClickedID: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000942d0000ba2d0000c82d0000ca2d0000782e0000fc2e0000143000004a3100004c310000063200002e3200001c3300009a330000
 =======
     m_ExpandedIDs: 000000009e250000c4250000d2250000d4250000862600000e2700003a2800007a2900007c290000522a00007a2a00007c2b0000fe2b0000
@@ -757,6 +833,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000362700005c2700006a2700006c2700001c280000a0280000ba290000f22a0000f42a0000b62b0000de2b0000cc2c00004a2d0000
 >>>>>>> juusobranch
+=======
+    m_ExpandedIDs: 00000000a8250000ce250000dc250000be2600004827000072280000b2290000862a0000be2a0000c02b0000
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -781,6 +860,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: b8330000
     m_LastClickedInstanceID: 13240
     m_HadKeyboardFocusLastEvent: 1
@@ -793,6 +873,12 @@ MonoBehaviour:
 =======
     m_ExpandedInstanceIDs: c62300005c270000162d0000
 >>>>>>> juusobranch
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300005c270000162d000000000000
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -808,7 +894,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 6}
+=======
+      m_ClientGUIView: {fileID: 5}
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -845,12 +935,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 1533
     y: 91
@@ -862,6 +953,12 @@ MonoBehaviour:
     width: 323
     height: 787
 >>>>>>> juusobranch
+=======
+    x: 1226
+    y: 92
+    width: 310
+    height: 710
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
@@ -893,12 +990,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -590624980919486359, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 0
     y: 91
@@ -924,16 +1022,27 @@ MonoBehaviour:
     y: 271
     width: 313
     height: 466
+=======
+    x: 0
+    y: 92
+    width: 300
+    height: 419
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_TreeViewState:
-    scrollPos: {x: 0, y: 581}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 78eeffff5af5ffff92f5ffff40faffff00000000f02e0000902f00002a30000038300000da3000007a3300008c340000
+    scrollPos: {x: 0, y: 526}
+    m_SelectedIDs: 66f5ffff
+    m_LastClickedID: -2714
+    m_ExpandedIDs: c2f3ffffdefbffff00000000e22d0000142e0000f02e00006a2f0000a22f0000c02f000074310000ec310000483200005c3200005c33000066330000bc33000008340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
+<<<<<<< HEAD
       m_Name: Lane1
       m_OriginalName: Lane1
 >>>>>>> juusobranch
+=======
+      m_Name: 
+      m_OriginalName: 
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -941,13 +1050,17 @@ MonoBehaviour:
         width: 0
         height: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
       m_UserData: -257452
 =======
       m_UserData: -5024
 >>>>>>> juusobranch
+=======
+      m_UserData: 0
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -991,12 +1104,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 2318424515335265636, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
     x: 381
     y: 91
@@ -1016,6 +1130,12 @@ MonoBehaviour:
     y: 271
     width: 956
     height: 466
+=======
+    x: 304
+    y: 92
+    width: 918
+    height: 419
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_SceneLighting: 1
   lastFramingTime: 9481.220107137779
 >>>>>>> juusobranch
@@ -1023,6 +1143,7 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     m_Target: {x: -0.36533728, y: 0.12216065, z: 0}
@@ -1038,6 +1159,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.017776381, y: -2.3882546, z: 98.67969}
 >>>>>>> juusobranch
+=======
+    m_Target: {x: 1.3830528, y: -0.16827, z: 98.67969}
+    speed: 2
+    m_Value: {x: 1.3830528, y: -0.16827, z: 98.67969}
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -1066,6 +1192,7 @@ MonoBehaviour:
   m_Size:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 9.23808
     speed: 2
     m_Value: 9.23808
@@ -1079,6 +1206,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 14.830321
 >>>>>>> juusobranch
+=======
+    m_Target: 12.4307
+    speed: 2
+    m_Value: 12.4307
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1113,12 +1245,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: -2087823869225018852, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     x: 1176
@@ -1136,14 +1269,21 @@ MonoBehaviour:
     width: 956
     height: 466
 >>>>>>> juusobranch
+=======
+    x: 304
+    y: 92
+    width: 918
+    height: 419
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000010000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 0900000000000000000000000f000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_HBaseRangeMin: -150.46875
     m_HBaseRangeMax: 150.46875
@@ -1155,6 +1295,12 @@ MonoBehaviour:
     m_VBaseRangeMin: -224.5
     m_VBaseRangeMax: 224.5
 >>>>>>> juusobranch
+=======
+    m_HBaseRangeMin: -113.0625
+    m_HBaseRangeMax: 113.0625
+    m_VBaseRangeMin: -201
+    m_VBaseRangeMax: 201
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1173,6 +1319,7 @@ MonoBehaviour:
       y: 17
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       width: 353
       height: 535
     m_Scale: {x: 1, y: 1}
@@ -1189,12 +1336,19 @@ MonoBehaviour:
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 478, y: 224.5}
 >>>>>>> juusobranch
+=======
+      width: 918
+      height: 402
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 459, y: 201}
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       x: -176.5
@@ -1212,10 +1366,17 @@ MonoBehaviour:
       width: 956
       height: 449
 >>>>>>> juusobranch
+=======
+      x: -459
+      y: -201
+      width: 918
+      height: 402
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_LastWindowPixelSize: {x: 353, y: 552}
@@ -1232,6 +1393,9 @@ MonoBehaviour:
 >>>>>>> BranchO
 =======
   m_LastWindowPixelSize: {x: 956, y: 466}
+=======
+  m_LastWindowPixelSize: {x: 918, y: 419}
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -1252,12 +1416,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000,
+    m_Image: {fileID: 111653112392082826, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     x: 0
@@ -1275,3 +1440,9 @@ MonoBehaviour:
     width: 1273
     height: 300
 >>>>>>> juusobranch
+=======
+    x: 0
+    y: 532
+    width: 1222
+    height: 270
+>>>>>>> 18e5c164cd302d5d5dde60cc8446e2d36dfb7a3c

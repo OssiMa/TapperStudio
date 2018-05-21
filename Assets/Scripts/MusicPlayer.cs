@@ -48,6 +48,7 @@ public class MusicPlayer : MonoBehaviour {
     bool guitarMuted = true;
     bool keyboardMuted = true;
     bool drumsMuted = true;
+    public bool allMute;
 
     public string currentSong;      //Change this to private once debugging is done
 
@@ -81,7 +82,6 @@ public class MusicPlayer : MonoBehaviour {
         if (started == false)
         {
             started = true;
-            print("srtaed " + started);
             GameObject thisObject = gameObject;
             List<GameObject> children = new List<GameObject>();
 
@@ -90,12 +90,13 @@ public class MusicPlayer : MonoBehaviour {
                 children.Add(transform.GetChild(i).gameObject);
             }
 
-            foreach (GameObject child in children)
+            if (allMute == false)
             {
-                child.GetComponent<AudioSource>().mute = false;
+                foreach (GameObject child in children)
+                {
+                    child.GetComponent<AudioSource>().mute = false;
+                }
             }
-
-            //drums.mute = false;
 
             maxVolume = 1;
 
@@ -276,20 +277,16 @@ public class MusicPlayer : MonoBehaviour {
 
     void Update()
     {
-        //if (songEnd == false)
-        //{
-        print(guitar);
-        print(keyboard);
-        print(drums);
-
+        if (allMute == false)
+        {
             if (guitarStarted == true)
             {
                 if (menu == false)
                 {
                     //guitar.mute = false;        
                 }
-                
-                if (instrumentBaseGuitar.combo == 1)        
+
+                if (instrumentBaseGuitar.combo == 1)
                 {
                     guitar.volume = (instrumentBaseGuitar.combo / instrumentBaseGuitar.maxCombo) - .1f;
                 }
@@ -305,7 +302,7 @@ public class MusicPlayer : MonoBehaviour {
                 {
                     //drums.mute = false;
                 }
-                
+
                 if (instrumentBaseDrums.combo == 1)
                 {
                     drums.volume = (instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo) - .1f;
@@ -332,12 +329,19 @@ public class MusicPlayer : MonoBehaviour {
                 }
             }
 
-        if (songEnd == true)
-        {
-            if (sp.menu == false)
+            if (songEnd == true)
             {
-                SongEnd();
+                if (sp.menu == false)
+                {
+                    SongEnd();
+                }
             }
+        }
+        else if (allMute == true)        //Test that this works smoothly
+        {
+            guitar.mute = true;
+            keyboard.mute = true;
+            drums.mute = true;
         }
     }
     
@@ -563,6 +567,18 @@ public class MusicPlayer : MonoBehaviour {
             {
                 child.GetComponent<AudioSource>().mute = true;
             }
+        }
+    }
+
+    public void MuteControl()
+    {
+        if (allMute == false)
+        {
+            allMute = true;
+        }
+        else if (allMute == true)
+        {
+            allMute = false;
         }
     }
 }

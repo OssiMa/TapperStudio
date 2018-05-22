@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Achievements.unity
+=======
+- path: Assets/Scenes/juuso_refinements.unity
+>>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

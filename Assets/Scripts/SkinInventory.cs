@@ -89,7 +89,6 @@ public class SkinInventory : MonoBehaviour {
     {
         foreach (Skin skin in skins)
         {
-            print("Skin instrument is" + skin.instrument);
             if (skin.instrument == 1)
             {   
                 if (skin.trinketType != 0)
@@ -103,7 +102,13 @@ public class SkinInventory : MonoBehaviour {
                 }
                 else
                 {
-                    skin.instrumentIcon = drumsIcon;
+                    //skin.instrumentIcon = drumsIcon;
+                    skin.specialIcon1 = drumsIcon1;
+                    skin.specialIcon2 = drumsIcon2;
+                    skin.specialIcon3 = drumsIcon3;
+                    skin.specialIcon4 = drumsIcon4;
+                    skin.specialIcon5 = drumsIcon5;
+                    skin.specialIcon6 = drumsIcon6;
                 }
             }
             else if (skin.instrument == 2)

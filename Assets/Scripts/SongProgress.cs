@@ -317,6 +317,17 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Story");
         AlbumFirstNamesOf.Add("Entropy");
         AlbumFirstNamesOf.Add("Hunter");
+        AlbumFirstNamesOf.Add("Peace");
+        AlbumFirstNamesOf.Add("Let Go");
+        AlbumFirstNamesOf.Add("Lowest");
+        AlbumFirstNamesOf.Add("Nationwide Rebirth");
+        AlbumFirstNamesOf.Add("Descent");
+        AlbumFirstNamesOf.Add("The Terrible Screams");
+        AlbumFirstNamesOf.Add("Silence");
+        AlbumFirstNamesOf.Add("Flat Circle");
+        AlbumFirstNamesOf.Add("Song");
+        AlbumFirstNamesOf.Add("The Coming");
+        AlbumFirstNamesOf.Add("Fart");
 
 
         AlbumLastNamesOf.Add("Love");
@@ -335,6 +346,17 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("War");
         AlbumLastNamesOf.Add("Tradition");
         AlbumLastNamesOf.Add("Time");
+        AlbumLastNamesOf.Add("the Apocalypse");
+        AlbumLastNamesOf.Add("Hatred");
+        AlbumLastNamesOf.Add("Wave");
+        AlbumLastNamesOf.Add("the Girl");
+        AlbumLastNamesOf.Add("Baguette");
+        AlbumLastNamesOf.Add("The Losers");
+        AlbumLastNamesOf.Add("The Cowards");
+        AlbumLastNamesOf.Add("Machines");
+        AlbumLastNamesOf.Add("Peace");
+        AlbumLastNamesOf.Add("the Boy");
+        AlbumLastNamesOf.Add("Equality");
 
 
         AlbumFirstNamesDual.Add("Winter ");
@@ -357,6 +379,17 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Artificial ");
         AlbumFirstNamesDual.Add("First ");
         AlbumFirstNamesDual.Add("Burning ");
+        AlbumFirstNamesDual.Add("Beastly ");
+        AlbumFirstNamesDual.Add("Hungry ");
+        AlbumFirstNamesDual.Add("Je suis ");
+        AlbumFirstNamesDual.Add("Insidious ");
+        AlbumFirstNamesDual.Add("Flabbergasting ");
+        AlbumFirstNamesDual.Add("Cold ");
+        AlbumFirstNamesDual.Add("Popular ");
+        AlbumFirstNamesDual.Add("Someone's ");
+        AlbumFirstNamesDual.Add("The Second ");
+        AlbumFirstNamesDual.Add("The Third ");
+        AlbumFirstNamesDual.Add("The Umpteenth ");
 
 
         AlbumLastNamesDual.Add("Days");
@@ -382,6 +415,14 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Angel");
         AlbumLastNamesDual.Add("Blues");
         AlbumLastNamesDual.Add("Perseverance");
+        AlbumLastNamesDual.Add("Rock");
+        AlbumLastNamesDual.Add("Jingle");
+        AlbumLastNamesDual.Add("Hours");
+        AlbumLastNamesDual.Add("Devolution");
+        AlbumLastNamesDual.Add("Marriage");
+        AlbumLastNamesDual.Add("Captivity");
+        AlbumLastNamesDual.Add("Defeatism");
+        AlbumLastNamesDual.Add("Delusion");
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -391,6 +432,13 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesTo.Add("Back");
         AlbumFirstNamesTo.Add("Right");
         AlbumFirstNamesTo.Add("Ashes");
+        AlbumFirstNamesTo.Add("Screaming");
+        AlbumFirstNamesTo.Add("Making Out");
+        AlbumFirstNamesTo.Add("Running");
+        AlbumFirstNamesTo.Add("From Dusk");
+        AlbumFirstNamesTo.Add("From Dreams");
+        AlbumFirstNamesTo.Add("Everyone's Gone");
+        AlbumFirstNamesTo.Add("Slowly but Surely");
 
 
         AlbumLastNamesTo.Add("Joy");
@@ -399,6 +447,13 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("You");
         AlbumLastNamesTo.Add("Rome");
         AlbumLastNamesTo.Add("Ashes");
+        AlbumLastNamesTo.Add("Victory");
+        AlbumLastNamesTo.Add("Pasteurization");
+        AlbumLastNamesTo.Add("Loss");
+        AlbumLastNamesTo.Add("Neverending Trauma");
+        AlbumLastNamesTo.Add("Dreams");
+        AlbumLastNamesTo.Add("the Hills");
+        AlbumLastNamesTo.Add("Me");
 
 
         AlbumWholeNames.Add("Afterlife");
@@ -420,6 +475,18 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Fanatic");
         AlbumWholeNames.Add("Letting go");
         AlbumWholeNames.Add("Cyberbeats");
+        AlbumWholeNames.Add("Macaroni");
+        AlbumWholeNames.Add("Lasagna");
+        AlbumWholeNames.Add("Bolognese");
+        AlbumWholeNames.Add("Fusilli");
+        AlbumWholeNames.Add("Ravioli");
+        AlbumWholeNames.Add("Tagliatelli");
+        AlbumWholeNames.Add("Tortellini");
+        AlbumWholeNames.Add("Art");
+        AlbumWholeNames.Add("Trust me");
+        AlbumWholeNames.Add("I Used To Trust You");
+        AlbumWholeNames.Add("Days");
+        AlbumLastNamesDual.Add("Antimatter");
 
 
         currentAlbum = "SpaghettiSolution";

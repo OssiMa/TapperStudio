@@ -6,7 +6,10 @@ using System.Linq;
 
 public class InstrumentInfos : MonoBehaviour {
 
+    Sprite[] icons;
+
     public Text textBox;
+    public Image icon;
     public GameObject vintageButton;
     public int shownBase;
 
@@ -16,25 +19,35 @@ public class InstrumentInfos : MonoBehaviour {
 	void Start ()
     {
 		bases = GameObject.FindGameObjectsWithTag("Instrument").OrderBy(instruments => instruments.name).ToArray();
+        icons = Resources.LoadAll<Sprite>("InstrumentIcons");
     }
 
     public void ShowStatsFor(int x)
     {
         shownBase = x;
         SetTexts();
+        SetIcon();
         VintageButton();
     }
 
     void SetTexts()
     {
         textBox.enabled = true;
-        textBox.text = "Instrument level: " + bases[shownBase-1].GetComponent<InstrumentBase>().level + "\nInstrument experience: " +
-            bases[shownBase - 1].GetComponent<InstrumentBase>().exp + "\nNext level at " + bases[shownBase - 1].GetComponent<InstrumentBase>().expToNext + 
-            "\nBoosts from equipment: ";
+        InstrumentBase ins = bases[shownBase - 1].GetComponent<InstrumentBase>();
+        textBox.text = "Instrument level: " + ins.level + "\nInstrument experience: " + ins.exp + "\nNext level at " + ins.expToNext +
+            "\nBoosts from equipment:\nGeneration Boost: " + ins.GetBoosts(1) + "\nAdditional Combo: " + ins.GetBoosts(2) + "\nBonus experience: "
+            + ins.GetBoosts(3); ;
+    }
+
+    void SetIcon()
+    {
+        icon.enabled = true;
+        icon.sprite = icons[shownBase-1];
     }
 
     public void HideTexts()
     {
+        icon.enabled = false;
         textBox.enabled = false;
         textBox.text = "";
         vintageButton.SetActive(false);

@@ -14,7 +14,7 @@ MonoBehaviour:
   popUpName: 
   purpose: 0
   statsVisible: 0
-  picVisible: 0
+  picVisible: 1
   infoVisible: 0
   popUpFrame: {fileID: 0}
   selectedInvSlot: {fileID: 0}
@@ -36,5 +36,5 @@ MonoBehaviour:
   sizeY: 12
   posX: 0
   posY: -900
-  pic: {fileID: 0}
+  pic: {fileID: 21300000, guid: 3217d99e2a02ccb43b15a27ce851eee9, type: 3}
   bg: {fileID: 21300000, guid: 79c7fc3643c0d7348b830081aa3c948c, type: 3}

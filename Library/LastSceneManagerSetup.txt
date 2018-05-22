@@ -1,16 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/Achievements.unity
-=======
-- path: Assets/Scenes/MasterScene.unity
->>>>>>> juusobranch
-=======
 - path: Assets/Scenes/BetaFixes.unity
->>>>>>> BranchO
-=======
-- path: Assets/Scenes/Achievements.unity
->>>>>>> Henkka
   isLoaded: 1
   isActive: 1

@@ -11,6 +11,7 @@ public class SkinSlot : MonoBehaviour {
     Image spIcon3;
     Image spIcon4;
     Image spIcon5;
+    Image spIcon6;
 
     Button button;
     ColorBlock cb;
@@ -29,6 +30,7 @@ public class SkinSlot : MonoBehaviour {
         spIcon3 = transform.GetChild(2).GetComponent<Image>();
         spIcon4 = transform.GetChild(3).GetComponent<Image>();
         spIcon5 = transform.GetChild(4).GetComponent<Image>();
+        spIcon6 = transform.GetChild(5).GetComponent<Image>();
 
         skin = newSkin;
 
@@ -45,7 +47,7 @@ public class SkinSlot : MonoBehaviour {
         }
         else
         {
-            if (skin.instrument == 1 || skin.instrument == 0)
+            if (skin.instrument == 1)   //|| skin.instrument == 0
             {
                 newColor.r = 19;
                 newColor.g = 177;
@@ -72,7 +74,7 @@ public class SkinSlot : MonoBehaviour {
         cb.pressedColor = new Color(0, 0, 0, 255);
         button.colors = cb;
 
-        if (skin.instrument == 1 || skin.instrument == 0)
+        if (skin.instrument == 1)   //|| skin.instrument == 0
         {
             spIcon1.color = newColor;
         }
@@ -97,24 +99,33 @@ public class SkinSlot : MonoBehaviour {
             spIcon1.enabled = true;
             spIcon2.enabled = true;
             spIcon3.enabled = true;
+            spIcon4.enabled = false;
+            spIcon5.enabled = false;
+            spIcon6.enabled = false;
 
-            print("Yeah, it's" + skin.specialIcon1);
-
-            if (skin.instrument != 3)
+            if (skin.instrument == 2)
             {
                 spIcon4.sprite = skin.specialIcon4;
                 spIcon5.sprite = skin.specialIcon5;
                 spIcon4.enabled = true;
                 spIcon5.enabled = true;
             }
+            if (skin.instrument == 1)
+            {
+                spIcon4.sprite = skin.specialIcon4;
+                spIcon5.sprite = skin.specialIcon5;
+                spIcon6.sprite = skin.specialIcon6;
+                spIcon4.enabled = true;
+                spIcon5.enabled = true;
+                spIcon6.enabled = true;
+            }
 
             icon.enabled = false;
         }
         else
         {
-            if (skin.instrument == 1 || skin.instrument == 0)       //Script not finding skin when starting???
+            if (skin.instrument == 1)       // || skin.instrument == 0
             {
-                print("Well?");
                 icon.sprite = skin.instrumentIcon;
                 icon.enabled = true;
 
@@ -123,6 +134,7 @@ public class SkinSlot : MonoBehaviour {
                 spIcon3.enabled = false;
                 spIcon4.enabled = false;
                 spIcon5.enabled = false;
+                spIcon6.enabled = false;
                 print(spIcon1);
             }
             else if (skin.instrument == 2)
@@ -152,6 +164,10 @@ public class SkinSlot : MonoBehaviour {
         if (skin.instrument == 2)
         {
             transform.localScale = new Vector2(.8f, 1);
+        }
+        else if (skin.instrument == 1)
+        {
+            transform.localScale = new Vector2(1.08f, 1);
         }
         else
         {

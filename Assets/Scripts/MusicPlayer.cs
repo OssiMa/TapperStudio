@@ -504,9 +504,6 @@ public class MusicPlayer : MonoBehaviour {
 
     public void NewAlbumPlay()
     {
-        print("guitar mute " + guitar.mute);
-        print(guitar);
-
         guitar.volume = 0;
         keyboard.volume = 0;
         drums.volume = 0;

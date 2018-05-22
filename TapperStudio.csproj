@@ -167,6 +167,7 @@
     <Compile Include="Assets\Scripts\Guitar.cs" />
     <Compile Include="Assets\Scripts\GuitarSlider.cs" />
     <Compile Include="Assets\Scripts\InstrumentBase.cs" />
+    <Compile Include="Assets\Scripts\InstrumentInfos.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\InventorySlot.cs" />
     <Compile Include="Assets\Scripts\InventoryUI.cs" />

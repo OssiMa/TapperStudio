@@ -516,6 +516,11 @@ public class PopUpDisplay : MonoBehaviour {
         {
             Destroy(NewInvSlot);
         }
+        if (InvSlot2.transform.childCount > 0)
+        {
+            Destroy(NewInvSlot2);
+        }
+
 
         NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
         RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
@@ -722,13 +727,13 @@ public class PopUpDisplay : MonoBehaviour {
         //Destroy inventory popup slot
         InvSlot = GameObject.Find("Empty InventorySlot");
         InvSlot2 = GameObject.Find("Empty InventorySlot2");
-        if (InvSlot.transform.childCount > 0)
+        foreach (Transform child in InvSlot.transform)
         {
-            Destroy(NewInvSlot);
+            Destroy(child.gameObject);
         }
-        if (InvSlot2.transform.childCount > 0)
+        foreach (Transform child in InvSlot2.transform)
         {
-            Destroy(NewInvSlot2);
+            Destroy(child.gameObject);
         }
 
         //Hide the popup frame

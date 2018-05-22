@@ -20,7 +20,7 @@ public class InstrumentBase : MonoBehaviour {
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
     float startXp;
-    float expToNext = 25;
+    public float expToNext = 25;
     public float level = 1;
     float nextLevel = 2;
     [HideInInspector]
@@ -89,7 +89,7 @@ public class InstrumentBase : MonoBehaviour {
         }
         else if (level == 19 && exp >= expToNext)
         {
-            print("vintagee");
+            level = 20;
         }
     }
 

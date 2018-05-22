@@ -22,7 +22,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4284374622
   instrument: 2
-  vintageLock: 0
+  vintageLock: 2
   trinketType: 2
-  unlocked: 1
+  unlocked: 0
   baseInstrument: 0

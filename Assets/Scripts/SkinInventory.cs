@@ -48,16 +48,16 @@ public class SkinInventory : MonoBehaviour {
 
     void Awake()
     {
-        drumsIcon = GameObject.Find("drum_buttonImage").GetComponent<Image>().sprite;
-        guitarIcon = GameObject.Find("guitar_buttonImage").GetComponent<Image>().sprite;
-        pianoIcon = GameObject.Find("keyboard_buttonImage").GetComponent<Image>().sprite;
-
         drumsIcon1 = GameObject.Find("drum_buttonImage_body").GetComponent<Image>().sprite;
         drumsIcon2 = GameObject.Find("drum_buttonImage (2)").GetComponent<Image>().sprite;
         drumsIcon3 = GameObject.Find("drum_buttonImage (4)").GetComponent<Image>().sprite;
         drumsIcon4 = GameObject.Find("drum_buttonImage (5)").GetComponent<Image>().sprite;
         drumsIcon5 = GameObject.Find("drum_buttonImage (3)").GetComponent<Image>().sprite;
         drumsIcon6 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
+
+        //Special drum icons
+
+        //Standard guitar icons
 
         guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
         guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;
@@ -69,13 +69,12 @@ public class SkinInventory : MonoBehaviour {
         pianoIcon2 = GameObject.Find("keyboard_buttonImage_bottom").GetComponent<Image>().sprite;
         pianoIcon3 = GameObject.Find("keyboard_buttonImage (2)").GetComponent<Image>().sprite;
 
-        //pianoIconSpecial = GameObject.Find("keyboard_buttonImageSpecial").GetComponent<Image>().sprite;
+        //Special piano icons
 
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
         instrumentBasePiano = GameObject.Find("Piano").GetComponent<InstrumentBase>();
 
-        //FindAssets();
         NewSkin();
     }
 
@@ -91,53 +90,35 @@ public class SkinInventory : MonoBehaviour {
         {
             if (skin.instrument == 1)
             {   
-                if (skin.trinketType != 0)
-                {
-                    skin.specialIcon1 = drumsIcon1;
-                    skin.specialIcon2 = drumsIcon2;
-                    skin.specialIcon3 = drumsIcon3;
-                    skin.specialIcon4 = drumsIcon4;
-                    skin.specialIcon5 = drumsIcon5;
-                    skin.specialIcon6 = drumsIcon6;
-                }
-                else
-                {
-                    //skin.instrumentIcon = drumsIcon;
-                    skin.specialIcon1 = drumsIcon1;
-                    skin.specialIcon2 = drumsIcon2;
-                    skin.specialIcon3 = drumsIcon3;
-                    skin.specialIcon4 = drumsIcon4;
-                    skin.specialIcon5 = drumsIcon5;
-                    skin.specialIcon6 = drumsIcon6;
-                }
+                //if trinket is 0
+                skin.specialIcon1 = drumsIcon1;
+                skin.specialIcon2 = drumsIcon2;
+                skin.specialIcon3 = drumsIcon3;
+                skin.specialIcon4 = drumsIcon4;
+                skin.specialIcon5 = drumsIcon5;
+                skin.specialIcon6 = drumsIcon6;
+
+                //if trinket is not 0
             }
             else if (skin.instrument == 2)
             {
-                if (skin.trinketType != 0)
-                {
-                    skin.specialIcon1 = guitarIconSpecial1;
-                    skin.specialIcon2 = guitarIconSpecial2;
-                    skin.specialIcon3 = guitarIconSpecial3;
-                    skin.specialIcon4 = guitarIconSpecial4;
-                    skin.specialIcon5 = guitarIconSpecial5;
-                }
-                else
-                {
-                    skin.instrumentIcon = guitarIcon;
-                }
+                //if trinket is 0
+                skin.specialIcon1 = guitarIconSpecial1;
+                skin.specialIcon2 = guitarIconSpecial2;
+                skin.specialIcon3 = guitarIconSpecial3;
+                skin.specialIcon4 = guitarIconSpecial4;
+                skin.specialIcon5 = guitarIconSpecial5;
+
+                //if trinket is not 0
             }
             if (skin.instrument == 3)
             {
-                if (skin.trinketType != 0)
-                {
-                    skin.specialIcon1 = pianoIcon1;
-                    skin.specialIcon2 = pianoIcon2;
-                    skin.specialIcon3 = pianoIcon3;
-                }
-                else
-                {
-                    skin.instrumentIcon = pianoIcon;
-                }
+                //if trinket is 0
+                skin.specialIcon1 = pianoIcon1;
+                skin.specialIcon2 = pianoIcon2;
+                skin.specialIcon3 = pianoIcon3;
+
+                //if trinket is not 0
             }
         }
     }
@@ -207,39 +188,6 @@ public class SkinInventory : MonoBehaviour {
         {
             onSkinsChangedCallback.Invoke();
         }
-    }
-
-    void FindAssets()
-    {
-        //All this can be figured out if there's time
-
-
-        //Some way to get all the skins to the list automatique without manual input?
-        //First gather the existing skin scriptables to a list, THEN declare that they are part of the skins list
-        //dataPath = "Assets/ScriptableObjects/Skins/";
-        //AssetDatabase.CreateAsset(Skin, dataPath);
-
-        /*for (int i = 0; i < 10; i++)
-        {
-            skins.Add(AssetDatabase.FindAssets("Skin" + i));
-            //skins[i] = 
-        }*/
-
-        /*foreach (Skin singleSkin in skins)
-         {
-             for (int i = 0; i < 10; i++)
-             {
-                 singleSkin = AssetDatabase.FindAssets("Skin" + i);
-                 skins.Add(singleSkin);
-                 //singleSkin[i] = (ScriptableObject)AssetDatabase.LoadAssetAtPath();
-             }
-         }*/
-
-        /*for (int i = 0; i < 10; i++)      //THIS ONE IS THE BEST RN
-        {
-            oneSkin = AssetDatabase.FindAssets("Skin" + i);
-            skins.Add(oneSkin);
-        }*/
     }
 
     public void UnlockSkinNormal()

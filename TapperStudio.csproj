@@ -75,8 +75,11 @@
     </Reference>
     <Reference Include="UnityEngine.VR">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <HintPath>C:/Program Files/Unity5.6/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
 =======
+=======
+>>>>>>> BranchO
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
@@ -96,7 +99,10 @@
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
+<<<<<<< HEAD
 >>>>>>> juusobranch
+=======
+>>>>>>> BranchO
     </Reference>
     <Reference Include="ChannelPurchase">
       <HintPath>Assets\Plugins\UnityChannel\ChannelPurchase.dll</HintPath>

@@ -48,16 +48,16 @@ public class SkinInventory : MonoBehaviour {
 
     void Awake()
     {
-        //drumsIcon = GameObject.Find("drum_buttonImage").GetComponent<Image>().sprite;
+        drumsIcon = GameObject.Find("drum_buttonImage").GetComponent<Image>().sprite;
         guitarIcon = GameObject.Find("guitar_buttonImage").GetComponent<Image>().sprite;
         pianoIcon = GameObject.Find("keyboard_buttonImage").GetComponent<Image>().sprite;
 
         drumsIcon1 = GameObject.Find("drum_buttonImage_body").GetComponent<Image>().sprite;
-        drumsIcon2 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
-        drumsIcon3 = GameObject.Find("drum_buttonImage (2)").GetComponent<Image>().sprite;
-        drumsIcon4 = GameObject.Find("drum_buttonImage (3)").GetComponent<Image>().sprite;
-        drumsIcon5 = GameObject.Find("drum_buttonImage (4)").GetComponent<Image>().sprite;
-        //drumsIcon6 = GameObject.Find("drum_buttonImage (5)").GetComponent<Image>().sprite;
+        drumsIcon2 = GameObject.Find("drum_buttonImage (2)").GetComponent<Image>().sprite;
+        drumsIcon3 = GameObject.Find("drum_buttonImage (4)").GetComponent<Image>().sprite;
+        drumsIcon4 = GameObject.Find("drum_buttonImage (5)").GetComponent<Image>().sprite;
+        drumsIcon5 = GameObject.Find("drum_buttonImage (3)").GetComponent<Image>().sprite;
+        drumsIcon6 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
 
         guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
         guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;
@@ -85,7 +85,7 @@ public class SkinInventory : MonoBehaviour {
         VintageCheck();
     }
 
-    void IconChooser()      //This works
+    void IconChooser()
     {
         foreach (Skin skin in skins)
         {
@@ -99,6 +99,7 @@ public class SkinInventory : MonoBehaviour {
                     skin.specialIcon3 = drumsIcon3;
                     skin.specialIcon4 = drumsIcon4;
                     skin.specialIcon5 = drumsIcon5;
+                    skin.specialIcon6 = drumsIcon6;
                 }
                 else
                 {

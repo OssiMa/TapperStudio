@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 42
     width: 1920
@@ -21,6 +22,16 @@ MonoBehaviour:
   m_Title: 
   m_RootView: {fileID: 7}
   m_MinSize: {x: 950, y: 392}
+=======
+    x: -1592
+    y: 230
+    width: 1584
+    height: 842
+  m_ShowMode: 4
+  m_Title: 
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> juusobranch
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -65,6 +76,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1920
     height: 948
   m_MinSize: {x: 887, y: 342}
@@ -72,6 +84,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 103
 --- !u!114 &4
+=======
+    width: 1584
+    height: 792
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 81
+--- !u!114 &3
+>>>>>>> juusobranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -85,10 +106,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1530
     y: 0
     width: 390
     height: 948
+=======
+    x: 1165
+    y: 0
+    width: 419
+    height: 792
+>>>>>>> juusobranch
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -112,11 +140,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 379
     height: 573
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
+=======
+    width: 292
+    height: 479
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 15}
+>>>>>>> juusobranch
   m_Panes:
   - {fileID: 16}
   m_Selected: 0
@@ -136,12 +172,21 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 573
     width: 1530
     height: 375
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 19}
+=======
+    y: 479
+    width: 1165
+    height: 313
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 13}
+>>>>>>> juusobranch
   m_Panes:
   - {fileID: 14}
   - {fileID: 19}
@@ -166,9 +211,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1920
     height: 998
   m_MinSize: {x: 950, y: 392}
+=======
+    width: 1584
+    height: 842
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> juusobranch
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &8
 MonoBehaviour:
@@ -186,7 +237,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1920
+=======
+    width: 1584
+>>>>>>> juusobranch
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -206,8 +261,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 978
     width: 1920
+=======
+    y: 822
+    width: 1584
+>>>>>>> juusobranch
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -229,6 +289,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1530
     height: 948
   m_MinSize: {x: 610, y: 342}
@@ -236,6 +297,15 @@ MonoBehaviour:
   vertical: 1
   controlID: 104
 --- !u!114 &11
+=======
+    width: 1165
+    height: 792
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
+  vertical: 1
+  controlID: 82
+--- !u!114 &10
+>>>>>>> juusobranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -254,6 +324,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1530
     height: 573
   m_MinSize: {x: 610, y: 221}
@@ -261,6 +332,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 105
 --- !u!114 &12
+=======
+    width: 1165
+    height: 479
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 83
+--- !u!114 &11
+>>>>>>> juusobranch
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -274,10 +354,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 379
     y: 0
     width: 767
     height: 573
+=======
+    x: 292
+    y: 0
+    width: 873
+    height: 479
+>>>>>>> juusobranch
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
@@ -334,10 +421,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 664
     width: 1528
     height: 354
+=======
+    x: -1592
+    y: 758
+    width: 1163
+    height: 292
+>>>>>>> juusobranch
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
@@ -349,6 +443,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/ScriptableObjects/Achievements/Instrument achievements/DrumLevelAchievements
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -362,6 +457,21 @@ MonoBehaviour:
     m_SelectedIDs: 1a300000
     m_LastClickedID: 12314
     m_ExpandedIDs: 00000000982b0000bc2b0000d22b0000a02c0000c82c00008e2d00006e2e0000ca2e0000f62f0000c4300000fe300000c4320000a233000000ca9a3bffffff7f
+=======
+    - Assets/Scenes
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scenes
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\JuusoMyl1\Desktop\TapperStudio
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 129}
+    m_SelectedIDs: 6a2d0000
+    m_LastClickedID: 11626
+    m_ExpandedIDs: 00000000aa2b0000ce2b0000e42b0000ee2b0000da2c0000a02d0000802e0000dc2e000008300000d630000010310000d632000000ca9a3bffffff7f
+>>>>>>> juusobranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +499,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000982b0000bc2b0000d22b0000c82c00008e2d00006e2e0000ca2e0000f62f0000c4300000fe300000
+=======
+    m_ExpandedIDs: 00000000aa2b0000ce2b0000e42b0000da2c0000a02d0000802e0000dc2e000008300000d630000010310000
+>>>>>>> juusobranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -466,10 +580,17 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1532
     y: 91
     width: 388
     height: 927
+=======
+    x: -425
+    y: 279
+    width: 417
+    height: 771
+>>>>>>> juusobranch
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
@@ -499,15 +620,26 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 91
     width: 377
     height: 552
+=======
+    x: -1592
+    y: 279
+    width: 290
+    height: 458
+>>>>>>> juusobranch
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 24d4ffffaefaffff00000000
+=======
+    m_ExpandedIDs: a0e7f7ffd2bcf9ffe6bcf9ff1cbdf9ff24c8f9ff08ddffff0eddffff1ce1ffffaafaffff00000000a04c0000b64c0000804d00001a520000fa410200c64202007844020032450200e045020020460200
+>>>>>>> juusobranch
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -526,7 +658,11 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
+<<<<<<< HEAD
   - Achievements
+=======
+  - MasterScene
+>>>>>>> juusobranch
   m_CurrenRootInstanceID: 0
   m_Locked: 1
   m_CurrentSortingName: TransformSorting
@@ -552,19 +688,26 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 381
     y: 91
     width: 763
     height: 552
+=======
+    x: -1298
+    y: 279
+    width: 869
+    height: 458
+>>>>>>> juusobranch
   m_SceneLighting: 1
   lastFramingTime: 6839.767426473687
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.4417408, y: 3.2561395, z: 0}
+    m_Target: {x: -1.5014164, y: 1.8386244, z: 0}
     speed: 2
-    m_Value: {x: 0.4417408, y: 3.2561395, z: 0}
+    m_Value: {x: -1.5014164, y: 1.8386244, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -591,9 +734,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 8.7181425
     speed: 2
     m_Value: 8.7181425
+=======
+    m_Target: 33.700775
+    speed: 2
+    m_Value: 33.700775
+>>>>>>> juusobranch
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -626,10 +775,17 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1148
     y: 91
     width: 380
     height: 552
+=======
+    x: -1298
+    y: 279
+    width: 869
+    height: 458
+>>>>>>> juusobranch
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -638,10 +794,17 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -150.46875
     m_HBaseRangeMax: 150.46875
     m_VBaseRangeMin: -267.5
     m_VBaseRangeMax: 267.5
+=======
+    m_HBaseRangeMin: -124.03125
+    m_HBaseRangeMax: 124.03125
+    m_VBaseRangeMin: -220.5
+    m_VBaseRangeMax: 220.5
+>>>>>>> juusobranch
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -658,25 +821,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 380
       height: 535
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 190, y: 267.5}
+=======
+      width: 869
+      height: 441
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 434.5, y: 220.5}
+>>>>>>> juusobranch
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -190
       y: -267.5
       width: 380
       height: 535
+=======
+      x: -434.5
+      y: -220.5
+      width: 869
+      height: 441
+>>>>>>> juusobranch
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 380, y: 552}
+=======
+  m_LastWindowPixelSize: {x: 869, y: 458}
+>>>>>>> juusobranch
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -702,7 +883,14 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 0
     y: 664
     width: 1528
     height: 354
+=======
+    x: -1592
+    y: 758
+    width: 1163
+    height: 292
+>>>>>>> juusobranch

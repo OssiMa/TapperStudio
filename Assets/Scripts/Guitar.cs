@@ -14,6 +14,8 @@ public class Guitar : MonoBehaviour {
 
     SongProgress sp;
 
+    bool endOfSong;
+
     private void OnEnable()
     {
         if (points != null)
@@ -41,6 +43,12 @@ public class Guitar : MonoBehaviour {
             StartCoroutine(BigReveal());
             pointsOnScreen = true;
         }
+
+        if (sp.songEnder == true && sp.menu == true)
+        {
+            Hide();
+        }
+        //CheckForPoints() at the start of a new album is done in SongProgress
 	}
 
     //Hides all the clickable objects

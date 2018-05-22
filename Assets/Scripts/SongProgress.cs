@@ -16,6 +16,8 @@ public class SongProgress : MonoBehaviour {
     public Achievements achievements;
     InstrumentBase activeBase;
 
+    Guitar guitar;
+
     string currentInstrument;
 
     GameObject activeInstrument;
@@ -75,8 +77,10 @@ public class SongProgress : MonoBehaviour {
     CurrencyManager cm;
     NewItemGenerator nig;
 
+    [HideInInspector]
     public bool menu;
-    bool songEnder;
+    [HideInInspector]
+    public bool songEnder;
 
     List<Sprite> usedAlbums = new List<Sprite>();
 
@@ -89,6 +93,7 @@ public class SongProgress : MonoBehaviour {
         guitarBase = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
         drumBase = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         pianoBase = GameObject.Find("Piano").GetComponent<InstrumentBase>();
+        guitar = GameObject.Find("Guitar").GetComponent<Guitar>();
         PossibleAlbums();
         //AlbumPicGeneration();
         Progress.maxValue = songXPMax;
@@ -187,13 +192,12 @@ public class SongProgress : MonoBehaviour {
 
         if (songEnder == true)
         {
-            print("Tuu tänne?");
             if (menu == false)      
             {
                 mp.ChooseAlbum();
                 mp.ChooseSong();
                 mp.NewAlbumPlay();
-                //mp.MenuVolume();
+                guitar.CheckForPoints();
                 NewAlbum();
                 songEnder = false;
             }
@@ -328,6 +332,10 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Song");
         AlbumFirstNamesOf.Add("The Coming");
         AlbumFirstNamesOf.Add("Fart");
+        AlbumFirstNamesOf.Add("The Tragedy");
+        AlbumFirstNamesOf.Add("The Lies");
+
+
 
 
         AlbumLastNamesOf.Add("Love");
@@ -390,6 +398,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("The Second ");
         AlbumFirstNamesDual.Add("The Third ");
         AlbumFirstNamesDual.Add("The Umpteenth ");
+        AlbumFirstNamesDual.Add("Nineteenth ");
 
 
         AlbumLastNamesDual.Add("Days");
@@ -423,6 +432,7 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Captivity");
         AlbumLastNamesDual.Add("Defeatism");
         AlbumLastNamesDual.Add("Delusion");
+        AlbumLastNamesDual.Add("Zebra");
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -448,11 +458,11 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("Rome");
         AlbumLastNamesTo.Add("Ashes");
         AlbumLastNamesTo.Add("Victory");
-        AlbumLastNamesTo.Add("Pasteurization");
+        AlbumLastNamesTo.Add("\nPasteurization");
         AlbumLastNamesTo.Add("Loss");
-        AlbumLastNamesTo.Add("Neverending Trauma");
+        AlbumLastNamesTo.Add("\nNeverending Trauma");
         AlbumLastNamesTo.Add("Dreams");
-        AlbumLastNamesTo.Add("the Hills");
+        AlbumLastNamesTo.Add("the \nHills");
         AlbumLastNamesTo.Add("Me");
 
 

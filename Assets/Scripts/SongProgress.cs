@@ -60,6 +60,8 @@ public class SongProgress : MonoBehaviour {
     string currentSongFirstTo;
     string currentSongLastTo;
 
+
+
     public float songXP;
     [HideInInspector]
     public float songXPMax = 20;
@@ -164,6 +166,7 @@ public class SongProgress : MonoBehaviour {
             }
             currency += 10;
             NewSong();
+
         }
         if (songCount > songCountMax)
         {
@@ -218,6 +221,7 @@ public class SongProgress : MonoBehaviour {
                 Destroy(longNote);
             }
         }
+
     }
 
     //Grants XP to songs

@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scenes/Achievements.unity
-=======
-- path: Assets/Scenes/MasterScene.unity
->>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

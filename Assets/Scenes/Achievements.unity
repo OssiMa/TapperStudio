@@ -3963,7 +3963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.10197008, y: 459.6506}
+  m_AnchoredPosition: {x: -0.10197008, y: 459.65057}
   m_SizeDelta: {x: -0.2000122, y: -459.7}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &287418656
@@ -4460,56 +4460,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: SongAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: AlbumAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GameTimeAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: CurrencyAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumComboAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoComboAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarComboAchievements.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4443582192966314, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 647.49603
@@ -4542,10 +4492,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 1442746161125628, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d, type: 2}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
     - target: {fileID: 114030491865793142, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
         type: 2}
       propertyPath: currencyText
@@ -4556,306 +4502,11 @@ Prefab:
       propertyPath: premiumCurrencyText
       value: 
       objectReference: {fileID: 59788492}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
+    - target: {fileID: 114030491865793142, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
         type: 2}
-      propertyPath: AlbumAchievements.Array.data[0]
+      propertyPath: noMoney
       value: 
-      objectReference: {fileID: 11400000, guid: 8b1e52877b148a144ba5ced92b24ea42,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: AlbumAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9876d46edc8d86a4496304e084a5ef0e,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: AlbumAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0ec5e3ad4257bee49b6c5d989032ab51,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: AlbumAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: e48cdd212eb7321498e441d87b097af8,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: AlbumAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 71286daf30dcd4242a61bf800ea0b654,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: CurrencyAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: c7d8e132c8b4a2d45bc9db0a51f2f20e,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: CurrencyAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2f22db9c08802ce47a097515bdf916ec,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: CurrencyAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 212aeb7863dc15d4c8912ab8bb9bc2c0,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: CurrencyAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: ee64b92275cd2cc4a99dfe0f4b6051e6,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: CurrencyAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: d154d8af33648f34f9d8cd55c9e93818,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GameTimeAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: a501524c06315504589b258cc8264798,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GameTimeAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5b2ae52ce3431454ba3201b755d5de7e,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GameTimeAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: d347d27c2d449cd42be23c0475f78e2e,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GameTimeAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: b1e31cb146d309e42b3359f0652faf44,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GameTimeAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6c40e02a81e55494a9318a8f5189ab01,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 96393d7af90d0794589e7b2b4a1bbfcd,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 562ab5f3ba93bac4db1790a91515f3ca,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8043dc3958acfc847b7a59419ec4498f,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e12fbc5a7018cd46a45dd525b4d992d,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3e69353c875855549a05653afc7bc2e2,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 90dbf93da80ee074ebe74b1c267ef101,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7381e19859d1e3140bfb2204aea54ad8,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b773f81783ef424cb8ecc08cd0535a3,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 95ce521a01e6f104ca845d5be9c051ac,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: bea3e75a5ab5b62409e3b2073641f037,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: f7f8938fcab4e454993cf66e36b45cce,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2e7f224d596116c4283367a7d436e854,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: d6a796883dcfa344780ff1399332aebe,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 71aae40042b031a45b8b0f6d99baa4f1,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: ae2f25417e0a871418fa405e64734704,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarComboAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 90dbf93da80ee074ebe74b1c267ef101,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumComboAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: d51a477808a340740873ad974bc8696c,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumComboAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 17b6d12f3610cc24da285ae6ea356c65,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumComboAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 22e19bd0d84020e4db4b15b77cbbd333,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumComboAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8d039242b22d19f46aa02fec6d950c9c,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: DrumComboAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 59e7fc2282dc9ae44b200dd1763c5ac7,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarComboAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 7381e19859d1e3140bfb2204aea54ad8,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarComboAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b773f81783ef424cb8ecc08cd0535a3,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarComboAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 95ce521a01e6f104ca845d5be9c051ac,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: GuitarComboAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: bea3e75a5ab5b62409e3b2073641f037,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoComboAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9f31740e511db634c8968e0f6c8a04a0,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoComboAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: e70d12e16884017448a3715d52ff9d06,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoComboAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: ebf182f30507356449f47d89df0512bd,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoComboAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 88c2f635cbf3ab6489274ed4dd72e3ed,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: PianoComboAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: f879f25ab92f088469ec1c35e48994a7,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: SongAchievements.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 658984a01e9c09b48a0dc1a6e90dfec1,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: SongAchievements.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6676412d380e653418c83f6c5963393b,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: SongAchievements.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 79b66e2ccfafe98489b9aef9939e0063,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: SongAchievements.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b95a9814300be247a57390fcadb46b8,
-        type: 2}
-    - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: SongAchievements.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 17b6110f64d1a1c46b57475637ac3ecf,
-        type: 2}
+      objectReference: {fileID: 1184204256}
     - target: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
         type: 2}
       propertyPath: AchievementSlot1
@@ -4881,16 +4532,6 @@ Prefab:
       propertyPath: AchievementSlot5
       value: 
       objectReference: {fileID: 1384028579}
-    - target: {fileID: 114030491865793142, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: noMoney
-      value: 
-      objectReference: {fileID: 1184204256}
-    - target: {fileID: 114030491865793142, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-        type: 2}
-      propertyPath: achievements
-      value: 
-      objectReference: {fileID: 1126392349}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d, type: 2}
   m_IsPrefabParent: 0
@@ -4997,7 +4638,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.96800005, y: 1}
-  m_AnchoredPosition: {x: 4.6397324, y: 15.001169}
+  m_AnchoredPosition: {x: 4.63974, y: 15.001169}
   m_SizeDelta: {x: 9.486826, y: 50.0023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &403329669
@@ -9728,6 +9369,7 @@ MonoBehaviour:
   AlbumsCreated: 0
   SongsCreated: 0
   menu: 0
+  songEnder: 0
 --- !u!212 &845815404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15015,30 +14657,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1122737846}
---- !u!1 &1126392348 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1442746161125628, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
-    type: 2}
-  m_PrefabInternal: {fileID: 350343781}
 --- !u!114 &1126392349 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114276349569074902, guid: 3ca5816fbe46e0d4cbde4cf5b1e5495d,
     type: 2}
   m_PrefabInternal: {fileID: 350343781}
   m_Script: {fileID: 11500000, guid: 7ebae18c570189a4daa9fe4cbc7d218e, type: 3}
---- !u!114 &1126392355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1126392348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efade9536c56644bb8ec6e69d414324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  achievements: {fileID: 1126392349}
-  secondsCount: 0
 --- !u!1 &1141744425
 GameObject:
   m_ObjectHideFlags: 0

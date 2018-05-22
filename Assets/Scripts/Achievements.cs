@@ -34,120 +34,12 @@ public class Achievements : MonoBehaviour {
     int GuitarComboNumber = 0;
     int PianoComboNumber = 0;
 
-    bool isAchievedD = false;
-    bool isAchievedD2 = false;
-    bool isAchievedD3 = false;
-    bool isAchievedD4 = false;
-    bool isAchievedD5 = false;
-
-    bool isAchievedG = false;
-    bool isAchievedG2 = false;
-    bool isAchievedG3 = false;
-    bool isAchievedG4 = false;
-    bool isAchievedG5 = false;
-
-    bool isAchievedP = false;
-    bool isAchievedP2 = false;
-    bool isAchievedP3 = false;
-    bool isAchievedP4 = false;
-    bool isAchievedP5 = false;
-
-
-    [HideInInspector]
-    public InstrumentBase drumBase;
-    public InstrumentBase guitarBase;
-    public InstrumentBase pianoBase;
-
     // Use this for initialization
     void Start ()
     {
-        guitarBase = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
-        drumBase = GameObject.Find("Drums").GetComponent<InstrumentBase>();
-        pianoBase = GameObject.Find("Piano").GetComponent<InstrumentBase>();
 
     }
 
-    private void Update()
-    {
-        if (drumBase.level == 3 && !isAchievedD)
-        {
-            isAchievedD = true;
-            AchievementDone(13);
-        }
-        else if (drumBase.level == 6 && !isAchievedD2)
-        {
-            isAchievedD2 = true;
-            AchievementDone(13);
-        }
-        else if (drumBase.level == 10 && !isAchievedD3)
-        {
-            isAchievedD3 = true;
-            AchievementDone(13);
-        }
-        else if (drumBase.level == 15 && !isAchievedD4)
-        {
-            isAchievedD4 = true;
-            AchievementDone(13);
-        }
-        else if (drumBase.level == 20 && !isAchievedD5)
-        {
-            isAchievedD5 = true;
-            AchievementDone(13);
-        }
-
-        if (guitarBase.level == 3 && !isAchievedG)
-        {
-            isAchievedG = true;
-            AchievementDone(2);
-        }
-        else if (guitarBase.level == 6 && !isAchievedG2)
-        {
-            isAchievedG2 = true;
-            AchievementDone(2);
-        }
-        else if (guitarBase.level == 10 && !isAchievedG3)
-        {
-            isAchievedG3 = true;
-            AchievementDone(2);
-        }
-        else if (guitarBase.level == 15 && !isAchievedG4)
-        {
-            isAchievedG4 = true;
-            AchievementDone(2);
-        }
-        else if (guitarBase.level == 20 && !isAchievedG5)
-        {
-            isAchievedG5 = true;
-            AchievementDone(2);
-        }
-
-
-        if (pianoBase.level == 3 && !isAchievedP)
-        {
-            isAchievedP = true;
-            AchievementDone(5);
-        }
-        else if (pianoBase.level == 6 && !isAchievedP2)
-        {
-            isAchievedP2 = true;
-            AchievementDone(5);
-        }
-        else if (pianoBase.level == 10 && !isAchievedP3)
-        {
-            isAchievedP3 = true;
-            AchievementDone(5);
-        }
-        else if (pianoBase.level == 15 && !isAchievedP4)
-        {
-            isAchievedP4 = true;
-            AchievementDone(5);
-        }
-        else if (pianoBase.level == 20 && !isAchievedP5)
-        {
-            isAchievedP5 = true;
-            AchievementDone(5);
-        }
-    }
 
     public void AchievementDone(int caseSwitch)
     {

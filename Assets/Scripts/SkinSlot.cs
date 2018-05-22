@@ -173,6 +173,9 @@ public class SkinSlot : MonoBehaviour {
                 spIcon4.enabled = false;
                 spIcon5.enabled = false;
                 spIcon6.enabled = false;
+
+
+                //As many enabled as the final version has them
             }
 
             if (skin.instrument == 2)
@@ -203,13 +206,15 @@ public class SkinSlot : MonoBehaviour {
                 spIcon4.enabled = true;
                 spIcon5.enabled = true;
                 spIcon6.enabled = true;
+
+                //As many enabled as the final version has them
             }
 
             //icon.enabled = false;
         }
         else
         {
-            if (skin.instrument == 1)       // || skin.instrument == 0
+            if (skin.instrument == 1)
             {
                 spIcon1.sprite = skin.specialIcon1;
                 spIcon2.sprite = skin.specialIcon2;
@@ -298,12 +303,6 @@ public class SkinSlot : MonoBehaviour {
 
         button = GetComponent<Button>();
 
-        //cb = button.colors;
-        //cb.normalColor = skin.color;
-        //button.colors = cb;
-
-        //icon.sprite = Resources.Load<Sprite>("tab_menubackground");
-        //print(icon.sprite);
         button.interactable = false;
     }
 
@@ -311,8 +310,6 @@ public class SkinSlot : MonoBehaviour {
     {
         button = GetComponent<Button>();
         button.interactable = false;
-        //If we want to add an extra sprite here, just add a child with the sprite to all slot objects. 
-        //When a slot is locked, set the child (or the child's sprite) to true.
     }
 
     public Skin GetSkin()

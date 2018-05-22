@@ -36,7 +36,7 @@ public class Guitar : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (pointsOnScreen == false && sp.menu == false)
+        if (pointsOnScreen == false && (sp.menu == false || sp.endMenu == false))
                                                                 //If no clickables left, spawn more
         {
             activeSlider = 5;
@@ -44,7 +44,7 @@ public class Guitar : MonoBehaviour {
             pointsOnScreen = true;
         }
 
-        if (sp.songEnder == true && sp.menu == true)
+        if (sp.songEnder == true && (sp.menu == true || sp.endMenu == false))
         {
             Hide();
         }

@@ -82,6 +82,8 @@ public class SongProgress : MonoBehaviour {
     [HideInInspector]
     public bool menu;
     [HideInInspector]
+    public bool endMenu;
+    [HideInInspector]
     public bool songEnder;
 
     List<Sprite> usedAlbums = new List<Sprite>();
@@ -118,7 +120,7 @@ public class SongProgress : MonoBehaviour {
         SongText.text = songCount + "/" + songCountMax;
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
-        currencyText.text = cm.currency + "";
+        currencyText.text = cm.curInGameplay + "";
         PassiveGene();
 
         if (songXP >= songXPMax)
@@ -186,8 +188,9 @@ public class SongProgress : MonoBehaviour {
             {
                 UsedNames.RemoveAt(1);   
             }
-            cm.currency += 40;
-            currencyInAlbum = cm.currency - previousCurrency;
+            mp.albumEnd = true;
+            cm.curInGameplay += 40;
+            currencyInAlbum = cm.curInGameplay - previousCurrency;
             EndStats();
             albumChange.MoveBarEndsong();
             songEnder = true;
@@ -195,7 +198,7 @@ public class SongProgress : MonoBehaviour {
 
         if (songEnder == true)
         {
-            if (menu == false)      
+            if (endMenu == false)      
             {
                 mp.ChooseAlbum();
                 mp.ChooseSong();
@@ -206,7 +209,7 @@ public class SongProgress : MonoBehaviour {
             }
         }
 
-        if (menu == true)
+        if (endMenu == true || menu == true)
         {
             GameObject[] notes = GameObject.FindGameObjectsWithTag("Note");
             GameObject[] longNotes = GameObject.FindGameObjectsWithTag("LongNote");
@@ -680,7 +683,7 @@ public class SongProgress : MonoBehaviour {
         winText1.text = "You earned " + currencyInAlbum + " £" + "\nYou earned " + lastItem.name;
         winText2.text = "You also got some extra experience \nfor your " + currentInstrument + "!";
         //mp.MenuVolume();
-        menu = true;
+        endMenu = true;
         mp.AlbumEnd();
 
         AlbumsCreated += 1;
@@ -717,7 +720,7 @@ public class SongProgress : MonoBehaviour {
 
     public void MenuHandler()
     {
-        menu = false;
+        endMenu = false;
         //mp.MenuVolume();
     }
 }

@@ -7,41 +7,19 @@ public class SkinInventory : MonoBehaviour {
 
     public List<Skin> skins = new List<Skin>();
 
-    Sprite drumsIcon;
+    Sprite drumsIcon1, drumsIcon2, drumsIcon3, drumsIcon4, drumsIcon5, drumsIcon6;
+    Sprite drumsIconSpecial1, drumsIconSpecial2, drumsIconSpecial3, drumsIconSpecial4, drumsIconSpecial5, drumsIconSpecial6;
+
     Sprite guitarIcon;
-    Sprite pianoIcon;
+    Sprite guitarIconSpecial1, guitarIconSpecial2, guitarIconSpecial3, guitarIconSpecial4, guitarIconSpecial5;
 
-    Sprite drumsIcon1;
-    Sprite drumsIcon2;
-    Sprite drumsIcon3;
-    Sprite drumsIcon4;
-    Sprite drumsIcon5;
-    Sprite drumsIcon6;
+    Sprite pianoIcon1, pianoIcon2, pianoIcon3;
 
-    Sprite guitarIconSpecial1;
-    Sprite guitarIconSpecial2;
-    Sprite guitarIconSpecial3;
-    Sprite guitarIconSpecial4;
-    Sprite guitarIconSpecial5;
+    Sprite pianoIconSpecial1, pianoIconSpecial2, pianoIconSpecial3;
 
-    Sprite pianoIcon1;
-    Sprite pianoIcon2;
-    Sprite pianoIcon3;
-
-    Sprite pianoIconSpecial;
-
-    //SkinInventory skinInventory;
     InstrumentBase instrumentBaseDrums;
     InstrumentBase instrumentBaseGuitar;
     InstrumentBase instrumentBasePiano;
-
-    //Skin oneSkin = new Skin();
-
-    //SkinGenerator skinGenerator;
-
-    //QUESTION IS, should Skin Generator be used to to some stuff over here??
-
-    //string dataPath;
 
     public delegate void OnSkinsChange();
     public OnSkinsChange onSkinsChangedCallback;
@@ -56,8 +34,23 @@ public class SkinInventory : MonoBehaviour {
         drumsIcon6 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
 
         //Special drum icons
+        /*
+        drumsIconSpecial1 = GameObject.Find("drum_buttonImage_body_special").GetComponent<Image>().sprite;
+        drumsIconSpecial2 = GameObject.Find("drum_buttonImage (2)_special").GetComponent<Image>().sprite;
+        drumsIconSpecial3 = GameObject.Find("drum_buttonImage (4)_special").GetComponent<Image>().sprite;
+        drumsIconSpecial4 = GameObject.Find("drum_buttonImage (5)_special").GetComponent<Image>().sprite;
+        drumsIconSpecial5 = GameObject.Find("drum_buttonImage (3)_special").GetComponent<Image>().sprite;
+        drumsIconSpecial6 = GameObject.Find("drum_buttonImage (1)_special").GetComponent<Image>().sprite;
+        */
 
         //Standard guitar icons
+        /*
+        guitarIcon1 = GameObject.Find("guitar_buttonImage_kakka_normal").GetComponent<Image>().sprite;
+        guitarIcon2 = GameObject.Find("guitar_buttonImage_body (1)_normal").GetComponent<Image>().sprite;
+        guitarIcon3 = GameObject.Find("guitar_buttonImage_neck (1)_normal").GetComponent<Image>().sprite;
+        guitarIcon4 = GameObject.Find("guitar_buttonImage_head (1)_normal").GetComponent<Image>().sprite;
+        guitarIcon5 = GameObject.Find("guitar_buttonImage (2)_normal").GetComponent<Image>().sprite; 
+        */
 
         guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
         guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;
@@ -70,6 +63,11 @@ public class SkinInventory : MonoBehaviour {
         pianoIcon3 = GameObject.Find("keyboard_buttonImage (2)").GetComponent<Image>().sprite;
 
         //Special piano icons
+        /*
+        pianoIconSpecial1 = GameObject.Find("keyboard_buttonImage_head_special").GetComponent<Image>().sprite;
+        pianoIconSpecial2 = GameObject.Find("keyboard_buttonImage_bottom_special").GetComponent<Image>().sprite;
+        pianoIconSpecial3 = GameObject.Find("keyboard_buttonImage (2)_special").GetComponent<Image>().sprite; 
+        */
 
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
@@ -89,36 +87,55 @@ public class SkinInventory : MonoBehaviour {
         foreach (Skin skin in skins)
         {
             if (skin.instrument == 1)
-            {   
-                //if trinket is 0
-                skin.specialIcon1 = drumsIcon1;
-                skin.specialIcon2 = drumsIcon2;
-                skin.specialIcon3 = drumsIcon3;
-                skin.specialIcon4 = drumsIcon4;
-                skin.specialIcon5 = drumsIcon5;
-                skin.specialIcon6 = drumsIcon6;
-
-                //if trinket is not 0
+            {
+                if (skin.trinketType == 0)
+                {
+                    skin.specialIcon1 = drumsIcon1;
+                    skin.specialIcon2 = drumsIcon2;
+                    skin.specialIcon3 = drumsIcon3;
+                    skin.specialIcon4 = drumsIcon4;
+                    skin.specialIcon5 = drumsIcon5;
+                    skin.specialIcon6 = drumsIcon6;
+                }
+                else
+                {
+                    skin.specialIcon1 = drumsIconSpecial1;
+                    skin.specialIcon2 = drumsIconSpecial2;
+                    skin.specialIcon3 = drumsIconSpecial3;
+                    skin.specialIcon4 = drumsIconSpecial4;
+                    skin.specialIcon5 = drumsIconSpecial5;
+                    skin.specialIcon6 = drumsIconSpecial6;
+                }
             }
             else if (skin.instrument == 2)
             {
-                //if trinket is 0
-                skin.specialIcon1 = guitarIconSpecial1;
-                skin.specialIcon2 = guitarIconSpecial2;
-                skin.specialIcon3 = guitarIconSpecial3;
-                skin.specialIcon4 = guitarIconSpecial4;
-                skin.specialIcon5 = guitarIconSpecial5;
-
-                //if trinket is not 0
+                if (skin.trinketType == 0)
+                {
+                    skin.specialIcon1 = guitarIconSpecial1;
+                    skin.specialIcon2 = guitarIconSpecial2;
+                    skin.specialIcon3 = guitarIconSpecial3;
+                    skin.specialIcon4 = guitarIconSpecial4;
+                    skin.specialIcon5 = guitarIconSpecial5;
+                }
+                else
+                {
+                    skin.specialIcon1 = guitarIcon;
+                }
             }
             if (skin.instrument == 3)
             {
-                //if trinket is 0
-                skin.specialIcon1 = pianoIcon1;
-                skin.specialIcon2 = pianoIcon2;
-                skin.specialIcon3 = pianoIcon3;
-
-                //if trinket is not 0
+                if (skin.trinketType == 0)
+                {
+                    skin.specialIcon1 = pianoIcon1;
+                    skin.specialIcon2 = pianoIcon2;
+                    skin.specialIcon3 = pianoIcon3;
+                }
+                else
+                {
+                    skin.specialIcon1 = pianoIconSpecial1;
+                    skin.specialIcon2 = pianoIconSpecial2;
+                    skin.specialIcon3 = pianoIconSpecial3;
+                }
             }
         }
     }

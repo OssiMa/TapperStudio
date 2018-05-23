@@ -123,6 +123,15 @@ public class PopUpDisplay : MonoBehaviour {
             SetInfoStats();
         }
 
+        if (popUp.closeVisible == true)
+        {
+            popUp.closeButton = GameObject.Find("CloseWindow");
+            popUp.closeButton.GetComponent<Image>().enabled = true;
+            popUp.closeButton.GetComponent<Button>().enabled = true;
+
+            popUp.closeButton.transform.GetChild(0).GetComponent<Text>().enabled = true;
+        }
+
         SetPopupSize();
 
         buttonAmount = popUp.buttonAmount;
@@ -448,6 +457,15 @@ public class PopUpDisplay : MonoBehaviour {
 
             SetPopupSize();
 
+            if (popUp.closeVisible == true)
+            {
+                popUp.closeButton = GameObject.Find("CloseWindow");
+                popUp.closeButton.GetComponent<Image>().enabled = true;
+                popUp.closeButton.GetComponent<Button>().enabled = true;
+
+                popUp.closeButton.transform.GetChild(0).GetComponent<Text>().enabled = true;
+            }
+
             buttonAmount = popUp.buttonAmount;
             SetButtons();
 
@@ -491,7 +509,7 @@ public class PopUpDisplay : MonoBehaviour {
         statTexts[0].text = popUp.selectedItem.itemName;
         statTexts[1].text = "Rarity: " + popUp.selectedItem.rarityName;
         statTexts[2].text = "Effect: " + popUp.selectedItem.boosts;
-        statTexts[3].text = "Item Level: " + (popUp.selectedItem.level);
+        statTexts[3].text = "Item Level: " + (popUp.selectedItem.level+1);
     }
 
     void SetInfoStats()
@@ -542,6 +560,15 @@ public class PopUpDisplay : MonoBehaviour {
             SetPicture();
         }
 
+        if (popUp.closeVisible == true)
+        {
+            popUp.closeButton = GameObject.Find("CloseWindow");
+            popUp.closeButton.GetComponent<Image>().enabled = true;
+            popUp.closeButton.GetComponent<Button>().enabled = true;
+
+            popUp.closeButton.transform.GetChild(0).GetComponent<Text>().enabled = true;
+        }
+
         SetCraftingButton();
 
         SetPopupSize();
@@ -550,30 +577,30 @@ public class PopUpDisplay : MonoBehaviour {
     void SetCraftingButton()
     {
         button1 = GameObject.Find(craftWindow.buttonOne);
-        button2 = GameObject.Find(craftWindow.buttonTwo);
+        //button2 = GameObject.Find(craftWindow.buttonTwo);
 
         button1.GetComponent<Image>().enabled = true;
-        button2.GetComponent<Image>().enabled = true;
+      //  button2.GetComponent<Image>().enabled = true;
 
         button1.GetComponent<Button>().enabled = true;
-        button2.GetComponent<Button>().enabled = true;
+    //    button2.GetComponent<Button>().enabled = true;
 
         button1.GetComponent<Button>().interactable = false;
 
         buttonPos1X = craftWindow.buttonPos1X;
-        buttonPos1Y = craftWindow.buttonPos1Y;
+  //      buttonPos1Y = craftWindow.buttonPos1Y;
 
         buttonPos2X = craftWindow.buttonPos2X;
-        buttonPos2Y = craftWindow.buttonPos2Y;
+//        buttonPos2Y = craftWindow.buttonPos2Y;
 
         button1.transform.GetChild(0).GetComponent<Text>().enabled = true;
-        button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
+      //  button2.transform.GetChild(0).GetComponent<Text>().enabled = true;
 
         RectTransform buttonPos1 = button1.GetComponent<RectTransform>();
         buttonPos1.anchoredPosition = new Vector2(buttonPos1X, buttonPos1Y);
 
-        RectTransform buttonPos2 = button2.GetComponent<RectTransform>();
-        buttonPos2.anchoredPosition = new Vector2(buttonPos2X, buttonPos2Y);
+       // RectTransform buttonPos2 = button2.GetComponent<RectTransform>();
+     //   buttonPos2.anchoredPosition = new Vector2(buttonPos2X, buttonPos2Y);
     }
 
     public void Crafting()
@@ -713,6 +740,15 @@ public class PopUpDisplay : MonoBehaviour {
             {
                 text.enabled = false;
             }
+        }
+        //Hide Close Button
+        if (popUp.closeVisible == true)
+        {
+            popUp.closeButton = GameObject.Find("CloseWindow");
+            popUp.closeButton.GetComponent<Image>().enabled = false;
+            popUp.closeButton.GetComponent<Button>().enabled = false;
+
+            popUp.closeButton.transform.GetChild(0).GetComponent<Text>().enabled = false;
         }
 
         HideButtons();

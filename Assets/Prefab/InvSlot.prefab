@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 222031592478917148}
   - component: {fileID: 114480621559791032}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Equipped
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 222532631461647162}
   - component: {fileID: 114618224025928500}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 114305705954969492}
   background: {fileID: 114868091063018940}
-  rarity: {fileID: 114618224025928500}
+  level: {fileID: 114618224025928500}
   equipped: {fileID: 114480621559791032}
   iconStuff: {fileID: 1615167315174938}
 --- !u!114 &114618224025928500
@@ -470,7 +470,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777993896900044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00012981892}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0002002, y: 1.0002002, z: 1.0002}
   m_Children:
   - {fileID: 224245000318332270}

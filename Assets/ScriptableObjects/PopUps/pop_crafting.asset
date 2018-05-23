@@ -16,8 +16,10 @@ MonoBehaviour:
   statsVisible: 1
   picVisible: 0
   infoVisible: 0
+  closeVisible: 1
   popUpFrame: {fileID: 0}
   selectedInvSlot: {fileID: 0}
+  closeButton: {fileID: 0}
   selectedItem: {fileID: 0}
   description: 
   stats:

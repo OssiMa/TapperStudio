@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum Purposes
 { 
@@ -22,9 +21,11 @@ public class PopUp : ScriptableObject {
     public bool statsVisible;
     public bool picVisible;
     public bool infoVisible;
+    public bool closeVisible;
 
     public GameObject popUpFrame;
     public GameObject selectedInvSlot;
+    public GameObject closeButton;
     public Item selectedItem;
 
     public string description;

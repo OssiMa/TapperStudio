@@ -5,7 +5,7 @@ public class InventorySlot : MonoBehaviour {
 
     public Image icon;
     public Image background;
-    public Text rarity;
+    public Text level;
     public Text equipped;
     public GameObject iconStuff;
 
@@ -22,7 +22,7 @@ public class InventorySlot : MonoBehaviour {
         icon.sprite = item.icon;
         icon.enabled = true;
         button.interactable = true;
-        rarity.text = "" + item.rarity;
+        level.text = "" + (item.level+1);
         RarityColor();
         equipped.enabled = false;
         iconStuff.SetActive(true);
@@ -36,7 +36,7 @@ public class InventorySlot : MonoBehaviour {
         icon.sprite = null;
         icon.enabled = false;
         button.interactable = false;
-        rarity.text = "";
+        level.text = "";
         background.color = new Color32(255,255,255,255);
         equipped.enabled = false;
         iconStuff.SetActive(false);

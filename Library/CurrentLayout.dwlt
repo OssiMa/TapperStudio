@@ -79,6 +79,7 @@ MonoBehaviour:
   m_MinSize: {x: 950, y: 300}
 =======
   m_RootView: {fileID: 9}
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 542}
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
 =======
@@ -87,6 +88,9 @@ MonoBehaviour:
   m_RootView: {fileID: 7}
   m_MinSize: {x: 950, y: 392}
 >>>>>>> Henkka
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> BranchO
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -182,7 +186,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 262
+  controlID: 71
 --- !u!114 &4
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
 =======
@@ -231,8 +235,8 @@ MonoBehaviour:
 =======
     width: 318
     height: 571
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -340,10 +344,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 948
-  m_MinSize: {x: 885, y: 492}
+  m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 9
+  controlID: 43
 --- !u!114 &6
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
 =======
@@ -425,6 +429,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
     height: 998
 =======
@@ -436,9 +441,12 @@ MonoBehaviour:
 --- !u!114 &11
 =======
     width: 379
+=======
+    width: 377
+>>>>>>> BranchO
     height: 571
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -653,7 +661,7 @@ MonoBehaviour:
 =======
     width: 1531
     height: 948
-  m_MinSize: {x: 608, y: 492}
+  m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
 =======
     width: 1276
@@ -662,7 +670,7 @@ MonoBehaviour:
   m_MaxSize: {x: 10002, y: 14042}
 >>>>>>> juusobranch
   vertical: 1
-  controlID: 10
+  controlID: 44
 --- !u!114 &13
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
 =======
@@ -720,6 +728,7 @@ MonoBehaviour:
 >>>>>>> Henkka
     width: 1531
     height: 571
+<<<<<<< HEAD
   m_MinSize: {x: 608, y: 221}
   m_MaxSize: {x: 12008, y: 4021}
 <<<<<<< HEAD
@@ -729,8 +738,12 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
 >>>>>>> juusobranch
+=======
+  m_MinSize: {x: 610, y: 221}
+  m_MaxSize: {x: 12010, y: 4021}
+>>>>>>> BranchO
   vertical: 0
-  controlID: 11
+  controlID: 45
 --- !u!114 &14
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
 =======
@@ -762,6 +775,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1491
     y: 351
     width: 962
@@ -771,11 +785,14 @@ MonoBehaviour:
 --- !u!114 &18
 =======
     x: 379
+=======
+    x: 377
+>>>>>>> BranchO
     y: 0
-    width: 834
+    width: 836
     height: 571
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 19}
 =======
     x: 347
@@ -977,12 +994,20 @@ MonoBehaviour:
 =======
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/ScriptableObjects/PopUps
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/ScriptableObjects/PopUps
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
+=======
+    - Assets/UI
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/UI
+>>>>>>> BranchO
   m_LastFoldersGridSize: -1
 <<<<<<< HEAD
   m_LastProjectPath: C:\Users\ossiman1\Desktop\TapperStudio
@@ -995,6 +1020,7 @@ MonoBehaviour:
     m_ExpandedIDs: 0000000048010000aa250000d0250000e62500007a260000b8270000a6280000102900003e2a0000442a0000202b00005a2b0000c02b0000362d0000
 =======
     scrollPos: {x: 0, y: 81}
+<<<<<<< HEAD
     m_SelectedIDs: 902d0000
     m_LastClickedID: 11664
     m_ExpandedIDs: 000000008c2b0000b42b0000cc2b0000ca2c0000902d0000742e0000d42e0000fe2f000004300000d43000000e310000de32000000ca9a3bffffff7f
@@ -1023,6 +1049,11 @@ MonoBehaviour:
     m_LastClickedID: 11856
     m_ExpandedIDs: 000000008c2b0000b42b0000cc2b0000a22c0000ca2c0000902d0000742e0000d42e0000fe2f000004300000d43000000e310000de320000bc33000000ca9a3bffffff7f
 >>>>>>> Henkka
+=======
+    m_SelectedIDs: 60280000
+    m_LastClickedID: 10336
+    m_ExpandedIDs: 0000000086270000b0270000c8270000d0280000a22900007a2a0000e22a0000082c00000e2c0000ea2c0000202d0000f82e000000ca9a3bffffff7f
+>>>>>>> BranchO
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1053,6 +1084,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000048010000aa250000d0250000e6250000282600007a2600008026000008270000b82700004e280000a628000010290000082a0000142a00003e2a0000442a0000202b0000322b00005a2b0000c02b0000362d00004a2d0000
 =======
     m_ExpandedIDs: 000000008c2b0000b42b0000cc2b0000ca2c0000902d0000742e0000d42e0000fe2f000004300000d43000000e310000
@@ -1063,6 +1095,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 000000008c2b0000b42b0000cc2b0000ca2c0000902d0000742e0000d42e0000fe2f000004300000d43000000e310000
 >>>>>>> Henkka
+=======
+    m_ExpandedIDs: 0000000086270000b0270000c8270000d0280000a22900007a2a0000e22a0000082c00000e2c0000ea2c0000202d0000f82e0000
+>>>>>>> BranchO
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1096,6 +1131,7 @@ MonoBehaviour:
 =======
     m_HadKeyboardFocusLastEvent: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     m_SelectedInstanceIDs: 1c2d0000
     m_LastClickedInstanceID: 11548
@@ -1106,6 +1142,9 @@ MonoBehaviour:
 =======
     m_ExpandedInstanceIDs: c6230000ceb80500
 >>>>>>> juusobranch
+=======
+    m_ExpandedInstanceIDs: c62300006e270000
+>>>>>>> BranchO
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1281,10 +1320,11 @@ MonoBehaviour:
 =======
     x: 0
     y: 91
-    width: 377
+    width: 375
     height: 550
 <<<<<<< HEAD
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 422.1871}
     m_SelectedIDs: 0ad4ffff
     m_LastClickedID: -11254
@@ -1307,20 +1347,26 @@ MonoBehaviour:
     m_LastClickedID: -12312
     m_ExpandedIDs: 40d0ffff3adaffff62daffff00fbffff0000000042500000585000001c51000028540000b8550000
 >>>>>>> Henkka
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 1434fbff
+    m_LastClickedID: -314348
+    m_ExpandedIDs: caedffff44f1ffff48f1ffff4ef1ffff52f1ffff60f1ffff6af1ffff8af1ffff6cf8ffff70f8ffffaafbffff0000000070310000443200005a320000203300009433000056340000c83400007e3500002c3600003a370000c2370000
+>>>>>>> BranchO
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Toggle_Drum
+      m_OriginalName: Toggle_Drum
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -4204
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
 <<<<<<< HEAD
       m_ClientGUIView: {fileID: 7}
@@ -1369,6 +1415,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 0
     y: 91
 <<<<<<< HEAD
@@ -1394,10 +1441,19 @@ MonoBehaviour:
   m_SceneLighting: 1
   lastFramingTime: 2447.697546906856
 >>>>>>> f3b8388384508775338b474b9b440da5b5736a6d
+=======
+    x: 379
+    y: 91
+    width: 832
+    height: 550
+  m_SceneLighting: 1
+  lastFramingTime: 11038.972278163357
+>>>>>>> BranchO
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1419,6 +1475,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.50607306, y: 5.028418, z: 98.67969}
 >>>>>>> Henkka
+=======
+    m_Target: {x: 0.7891995, y: -1.4617108, z: 98.67969}
+    speed: 2
+    m_Value: {x: 0.7891995, y: -1.4617108, z: 98.67969}
+>>>>>>> BranchO
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -1448,6 +1509,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 13.912398
     speed: 2
     m_Value: 13.912398
@@ -1466,6 +1528,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 6.414846
 >>>>>>> Henkka
+=======
+    m_Target: 6.6527658
+    speed: 2
+    m_Value: 6.6527658
+>>>>>>> BranchO
   m_Ortho:
     m_Target: 1
     speed: 2

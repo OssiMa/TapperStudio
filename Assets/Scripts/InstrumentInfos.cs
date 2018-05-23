@@ -9,6 +9,9 @@ public class InstrumentInfos : MonoBehaviour {
     Sprite[] icons;
 
     public Text textBox;
+    public Text LevelInfo;
+    public Text xPNow;
+    public Text xPToGo;
     public Image icon;
     public Button vintageButton;
     public Slider xP;
@@ -36,9 +39,14 @@ public class InstrumentInfos : MonoBehaviour {
     {
         textBox.enabled = true;
         InstrumentBase ins = bases[shownBase - 1].GetComponent<InstrumentBase>();
-        textBox.text = "Level: " + ins.level + "\nExperience: " + ins.exp + "\nNext level at " + ins.expToNext +
-            "\nBoosts from equipment:\nGeneration Boost: " + ins.GetBoosts(1) + "\nAdditional Combo: " + ins.GetBoosts(2) + "\nBonus experience: "
-            + ins.GetBoosts(3); ;
+        textBox.text = "Vintage: " + ins.vintageLevel + "\n\nBoosts from equipment:\nGeneration Boost: " + ins.GetBoosts(1) + "\nAdditional Combo: " 
+        + ins.GetBoosts(2) + "\nBonus experience: " + ins.GetBoosts(3); ;
+        LevelInfo.enabled = true;
+        LevelInfo.text = "Level: " + ins.level;
+        xPNow.enabled = true;
+        xPNow.text = "Experience: " + ins.exp;
+        xPToGo.enabled = true;
+        xPToGo.text = "Next level at: " + ins.expToNext;
     }
 
     void SetIcon()
@@ -60,6 +68,12 @@ public class InstrumentInfos : MonoBehaviour {
         icon.enabled = false;
         textBox.enabled = false;
         textBox.text = "";
+        LevelInfo.enabled = false;
+        LevelInfo.text = "";
+        xPNow.enabled = false;
+        xPNow.text = "";
+        xPToGo.enabled = false;
+        xPToGo.text = "";
         xP.gameObject.SetActive(false);
         vintageButton.interactable = false;
     }

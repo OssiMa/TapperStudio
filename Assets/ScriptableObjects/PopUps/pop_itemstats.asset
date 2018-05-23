@@ -16,8 +16,10 @@ MonoBehaviour:
   statsVisible: 1
   picVisible: 0
   infoVisible: 0
+  closeVisible: 1
   popUpFrame: {fileID: 0}
   selectedInvSlot: {fileID: 0}
+  closeButton: {fileID: 0}
   selectedItem: {fileID: 0}
   description: 
   stats:
@@ -26,13 +28,13 @@ MonoBehaviour:
   - 
   - 
   info: []
-  buttonAmount: 3
+  buttonAmount: 2
   buttonOne: Equip
-  buttonTwo: No
-  buttonThree: Crafting
-  buttonPos1X: -80
+  buttonTwo: Crafting
+  buttonThree: 
+  buttonPos1X: -40
   buttonPos1Y: -1015
-  buttonPos2X: 80
+  buttonPos2X: 40
   buttonPos2Y: -1015
   buttonPos3X: 0
   buttonPos3Y: -1015

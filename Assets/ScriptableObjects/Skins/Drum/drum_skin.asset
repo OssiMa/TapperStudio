@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Name: drum_skin
   m_EditorClassIdentifier: 
   instrumentIcon: {fileID: 21300000, guid: 3217d99e2a02ccb43b15a27ce851eee9, type: 3}
-  specialIcon1: {fileID: 21300010, guid: a96c17c86f1fbaa4b85e6d62480dc51b, type: 3}
-  specialIcon2: {fileID: 21300002, guid: a96c17c86f1fbaa4b85e6d62480dc51b, type: 3}
-  specialIcon3: {fileID: 21300006, guid: a96c17c86f1fbaa4b85e6d62480dc51b, type: 3}
-  specialIcon4: {fileID: 21300008, guid: a96c17c86f1fbaa4b85e6d62480dc51b, type: 3}
-  specialIcon5: {fileID: 21300004, guid: a96c17c86f1fbaa4b85e6d62480dc51b, type: 3}
-  specialIcon6: {fileID: 21300000, guid: a96c17c86f1fbaa4b85e6d62480dc51b, type: 3}
+  specialIcon1: {fileID: 21300008, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
+  specialIcon2: {fileID: 21300010, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
+  specialIcon3: {fileID: 21300012, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
+  specialIcon4: {fileID: 21300006, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
+  specialIcon5: {fileID: 21300004, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
+  specialIcon6: {fileID: 21300002, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
+  specialIcon7: {fileID: 21300000, guid: 535f58a2d73693a4fb90bd651c9f005d, type: 3}
   color:
     serializedVersion: 2
     rgba: 255
   instrument: 1
-  vintageLock: 1000
+  vintageLock: 0
   trinketType: 1
-  unlocked: 0
+  unlocked: 1
   baseInstrument: 0

@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/BetaFixes.unity
+=======
+- path: Assets/Scenes/MasterScene.unity
+>>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

@@ -17,19 +17,38 @@ public class PianoActivatorCheck : MonoBehaviour
 
     GameObject note;
     GameObject longNote;
+    Animator animOne;
+    Animator animLong;
+
+    GameObject[] animationObjects;
+
     // Use this for initialization
     void Start()
     {
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
+       
+        for (int i = 0; i < 5; i++)
+        {
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(sliderOn == true)
+        if (sliderOn == true)
         {
             instrumentBase.exp += 0.01f * instrumentBase.combo;
             progression.songXP += 0.01f * instrumentBase.combo;
+            //Animation 2?
+            if (!animLong.GetBool("atStart"))
+            {
+                animLong.SetBool("atStart", true);     //I wonder if we'll have to make an extra thing for this?
+            }
+        }
+        else if (sliderOn == false)
+        {
+            animLong.SetBool("atStart", false);     //Something like this??
         }
     }
     public void OnTriggerEnter2D(Collider2D col)
@@ -76,6 +95,12 @@ public class PianoActivatorCheck : MonoBehaviour
             mp.KeyboardStarted();
             mp.StartTheMusic();
             active = false;
+
+            //Animation 1
+            if (!animOne.GetBool("atStart"))
+            {
+                animOne.SetBool("atStart", true);
+            }
         }
     }
     public void sliderPressed()

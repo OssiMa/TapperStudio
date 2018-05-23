@@ -351,7 +351,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("The Coming");
         AlbumFirstNamesOf.Add("Fart");
         AlbumFirstNamesOf.Add("The Tragedy");
-        AlbumFirstNamesOf.Add("The Lies");
+        AlbumFirstNamesOf.Add("The Lies");      //35
 
 
 
@@ -383,6 +383,12 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("Peace");
         AlbumLastNamesOf.Add("the Boy");
         AlbumLastNamesOf.Add("Equality");
+        AlbumLastNamesOf.Add("Freedom");
+        AlbumLastNamesOf.Add("Fire");
+        AlbumLastNamesOf.Add("Light");
+        AlbumLastNamesOf.Add("Mine");
+        AlbumLastNamesOf.Add("Interplanetary \nCraft");
+        AlbumLastNamesOf.Add("the Earth");      //32
 
 
         AlbumFirstNamesDual.Add("Winter ");
@@ -423,6 +429,8 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Gregg & the ");
         AlbumFirstNamesDual.Add("Sidney ");
         AlbumFirstNamesDual.Add("Ninja ");
+        AlbumFirstNamesDual.Add("Digital ");
+        AlbumFirstNamesDual.Add("Sponge ");     //37
 
 
         AlbumLastNamesDual.Add("Days");
@@ -464,6 +472,8 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Party");
         AlbumLastNamesDual.Add("Heart");
         AlbumLastNamesDual.Add("K.E.");
+        AlbumLastNamesDual.Add("Witness");
+        AlbumLastNamesDual.Add("State");        //40
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -480,6 +490,22 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesTo.Add("From Dreams");
         AlbumFirstNamesTo.Add("Everyone's Gone");
         AlbumFirstNamesTo.Add("Slowly but Surely");
+        AlbumFirstNamesTo.Add("Calling Out");
+        AlbumFirstNamesTo.Add("I Look Up");
+        AlbumFirstNamesTo.Add("Doorway");
+        AlbumFirstNamesTo.Add("From the Frying \nPan");
+        AlbumFirstNamesTo.Add("Said the Kettle");
+        AlbumFirstNamesTo.Add("Coming");
+        AlbumFirstNamesTo.Add("Money");
+        AlbumFirstNamesTo.Add("Little Jack Goes");
+        AlbumFirstNamesTo.Add("Fly Me");
+        AlbumFirstNamesTo.Add("Power");
+        AlbumFirstNamesTo.Add("Lost");
+        AlbumFirstNamesTo.Add("Come Here,");
+        AlbumFirstNamesTo.Add("Going");
+        AlbumFirstNamesTo.Add("Sentenced");
+        AlbumFirstNamesTo.Add("To Love or");
+        AlbumFirstNamesTo.Add("Sentenced");     //29
 
 
         AlbumLastNamesTo.Add("Joy");
@@ -495,6 +521,28 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("Dreams");
         AlbumLastNamesTo.Add("the \nHills");
         AlbumLastNamesTo.Add("Me");
+        AlbumLastNamesTo.Add("the Bone");
+        AlbumLastNamesTo.Add("the Moon");
+        AlbumLastNamesTo.Add("Killing");
+        AlbumLastNamesTo.Add("Sadness");
+        AlbumLastNamesTo.Add("Hate");
+        AlbumLastNamesTo.Add("Darkness");
+        AlbumLastNamesTo.Add("Someone");
+        AlbumLastNamesTo.Add("Kajaani");
+        AlbumLastNamesTo.Add("Flames");
+        AlbumLastNamesTo.Add("the Wind");
+        AlbumLastNamesTo.Add("the Fire");
+        AlbumLastNamesTo.Add("the Pot");
+        AlbumLastNamesTo.Add("My Senses");
+        AlbumLastNamesTo.Add("the Stars");
+        AlbumLastNamesTo.Add("the Moon");
+        AlbumLastNamesTo.Add("America");
+        AlbumLastNamesTo.Add("Fame");
+        AlbumLastNamesTo.Add("Where the Lambs Fly");
+        AlbumLastNamesTo.Add("the Peeps");
+        AlbumLastNamesTo.Add("Salvation");
+        AlbumLastNamesTo.Add("This Day");
+        AlbumLastNamesTo.Add("the Future");     //35
 
 
         AlbumWholeNames.Add("Afterlife");
@@ -527,7 +575,7 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Trust me");
         AlbumWholeNames.Add("I Used To Trust You");
         AlbumWholeNames.Add("Days");
-        AlbumWholeNames.Add("Antimatter");
+        AlbumWholeNames.Add("Antimatter");  //30
 
 
         currentAlbum = "SpaghettiSolution";

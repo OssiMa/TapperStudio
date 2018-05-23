@@ -20,6 +20,8 @@ public class Skin : ScriptableObject {
     public Sprite specialIcon5;
     [HideInInspector]
     public Sprite specialIcon6;
+    [HideInInspector]
+    public Sprite specialIcon7;
 
     public Color32 color;
 

@@ -36,8 +36,8 @@ public class MusicPlayer : MonoBehaviour {
     float preFadePiano;
     float preFadeDrums;
 
-    bool started = false;
-    //[HideInInspector]
+    [HideInInspector]
+    public bool started = false;
     public bool songEnd = false;    //Hide this from the inspector once debugging is done
     bool timing = false;
     public bool albumEnd;
@@ -76,9 +76,8 @@ public class MusicPlayer : MonoBehaviour {
         keyboard.mute = true;
     }
 
-    public void StartTheMusic()     //Piano should work now too, haven't been able to test it yet though
+    public void StartTheMusic()
     {
-        //A more reliable way to do this than a button event? (?)
         if (started == false)
         {
             started = true;
@@ -107,21 +106,8 @@ public class MusicPlayer : MonoBehaviour {
             guitar.volume = 0f;
             drums.volume = 0f;
             keyboard.volume = 0f;
-
-            //SetMusic();
         }
     }
-
-    /*void SetMusic()   
-    {
-        guitar.Play();
-        drums.Play();
-        keyboard.Play();
-
-        guitar.volume = 0f;
-        drums.volume = 0f;
-        keyboard.volume = 0f;
-    }*/
 
     public void ChooseAlbum()
     {

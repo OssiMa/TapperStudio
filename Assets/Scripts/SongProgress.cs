@@ -85,6 +85,7 @@ public class SongProgress : MonoBehaviour {
     public bool endMenu;
     [HideInInspector]
     public bool songEnder;
+    bool started;
 
     List<Sprite> usedAlbums = new List<Sprite>();
 
@@ -115,116 +116,125 @@ public class SongProgress : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update() {
-        Progress.value = songXP;
-        SongText.text = songCount + "/" + songCountMax;
-        AlbumName.text = currentAlbum;
-        SongName.text = currentSong;
-        currencyText.text = cm.curInGameplay + "";
-        PassiveGene();
-
-        if (songXP >= songXPMax)
+    void Update()
+    {
+        if (mp.started == true)
         {
-            mp.songEnd = true;
-            songCount += 1;
-            songXP = 0;
-            UsedNames.Add(currentSong);
+            Progress.value = songXP;
+            SongText.text = songCount + "/" + songCountMax;
+            AlbumName.text = currentAlbum;
+            SongName.text = currentSong;
+            currencyText.text = cm.curInGameplay + "";
 
-            SongsCreated += 1;
-            switch (SongsCreated)
+            if (menu == false && endMenu == false)
             {
-                case 1:
-                    achievements.AchievementDone(1);
-
-                    break;
-
-                case 10:
-                    achievements.AchievementDone(1);
-
-                    break;
-
-                case 100:
-                    achievements.AchievementDone(1);
-
-                    break;
-
-                case 1000:
-                    achievements.AchievementDone(1);
-
-                    break;
-
-                case 10000:
-                    achievements.AchievementDone(1);
-
-                    break;
-                default:
-                    break;
+                PassiveGene();
             }
-        
 
-            if (UsedNames.Count > 50)
+            if (songXP >= songXPMax)
             {
-                UsedNames.RemoveAt(1);
+                mp.songEnd = true;
+                songCount += 1;
+                songXP = 0;
+                UsedNames.Add(currentSong);
+
+                SongsCreated += 1;
+                switch (SongsCreated)
+                {
+                    case 1:
+                        achievements.AchievementDone(1);
+
+                        break;
+
+                    case 10:
+                        achievements.AchievementDone(1);
+
+                        break;
+
+                    case 100:
+                        achievements.AchievementDone(1);
+
+                        break;
+
+                    case 1000:
+                        achievements.AchievementDone(1);
+
+                        break;
+
+                    case 10000:
+                        achievements.AchievementDone(1);
+
+                        break;
+                    default:
+                        break;
+                }
+
+
+                if (UsedNames.Count > 50)
+                {
+                    UsedNames.RemoveAt(1);
+                }
+                currency += 10;
+                NewSong();
+
             }
-            currency += 10;
-            NewSong();
+            if (songCount > songCountMax)
+            {
+                activeBase.exp += activeBase.level * 10;                  //XP given to the instrument, needs scaling value   
+
+                songCount = 1;
+                /*pianoBase.xpBoost = 0;
+                guitarBase.xpBoost = 0;
+                drumBase.xpBoost = 0;*/
+
+                UsedNames.Add(currentAlbum);
+
+                NewItemGenerator.instance.NewItem(1);
+                lastItem = nig.item;
+
+                if (UsedNames.Count > 20)
+                {
+                    UsedNames.RemoveAt(1);
+                }
+                mp.albumEnd = true;
+                cm.curInGameplay += 40;
+                cm.AddCurrency(cm.curInGameplay);
+                currencyInAlbum = cm.curInGameplay - previousCurrency;
+                EndStats();
+                albumChange.MoveBarEndsong();
+                songEnder = true;
+            }
+
+            if (songEnder == true)
+            {
+                if (endMenu == false)
+                {
+                    mp.ChooseAlbum();
+                    mp.ChooseSong();
+                    mp.NewAlbumPlay();
+                    guitar.CheckForPoints();
+                    NewAlbum();
+                    songEnder = false;
+                }
+            }
+
+            if (endMenu == true || menu == true)
+            {
+                GameObject[] notes = GameObject.FindGameObjectsWithTag("Note");
+                GameObject[] longNotes = GameObject.FindGameObjectsWithTag("LongNote");
+
+                foreach (GameObject note in notes)
+                {
+                    Destroy(note);
+                }
+
+                foreach (GameObject longNote in longNotes)
+                {
+                    Destroy(longNote);
+                }
+            }
 
         }
-        if (songCount > songCountMax)
-        {
-            activeBase.exp += activeBase.level*10;                  //XP given to the instrument, needs scaling value   
-
-            songCount = 1;
-            /*pianoBase.xpBoost = 0;
-            guitarBase.xpBoost = 0;
-            drumBase.xpBoost = 0;*/
-
-            UsedNames.Add(currentAlbum);    
-
-            NewItemGenerator.instance.NewItem(1);   
-            lastItem = nig.item;       
-
-            if (UsedNames.Count > 20)
-            {
-                UsedNames.RemoveAt(1);   
-            }
-            mp.albumEnd = true;
-            cm.curInGameplay += 40;
-            currencyInAlbum = cm.curInGameplay - previousCurrency;
-            EndStats();
-            albumChange.MoveBarEndsong();
-            songEnder = true;
-        }
-
-        if (songEnder == true)
-        {
-            if (endMenu == false)      
-            {
-                mp.ChooseAlbum();
-                mp.ChooseSong();
-                mp.NewAlbumPlay();
-                guitar.CheckForPoints();
-                NewAlbum();
-                songEnder = false;
-            }
-        }
-
-        if (endMenu == true || menu == true)
-        {
-            GameObject[] notes = GameObject.FindGameObjectsWithTag("Note");
-            GameObject[] longNotes = GameObject.FindGameObjectsWithTag("LongNote");
-
-            foreach (GameObject note in notes)
-            {
-                Destroy(note);
-            }
-
-            foreach (GameObject longNote in longNotes)
-            {
-                Destroy(longNote);
-            }
-        }
-
     }
 
     //Grants XP to songs
@@ -346,10 +356,10 @@ public class SongProgress : MonoBehaviour {
 
 
         AlbumLastNamesOf.Add("Love");
-        AlbumLastNamesOf.Add("The Mighty");
+        AlbumLastNamesOf.Add("the Mighty");
         AlbumLastNamesOf.Add("Life");
         AlbumLastNamesOf.Add("Death");
-        AlbumLastNamesOf.Add("The Brave");
+        AlbumLastNamesOf.Add("the Brave");
         AlbumLastNamesOf.Add("Summer");
         AlbumLastNamesOf.Add("Nature");
         AlbumLastNamesOf.Add("Music");
@@ -366,8 +376,8 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("Wave");
         AlbumLastNamesOf.Add("the Girl");
         AlbumLastNamesOf.Add("Baguette");
-        AlbumLastNamesOf.Add("The Losers");
-        AlbumLastNamesOf.Add("The Cowards");
+        AlbumLastNamesOf.Add("the Losers");
+        AlbumLastNamesOf.Add("the Cowards");
         AlbumLastNamesOf.Add("Machines");
         AlbumLastNamesOf.Add("Peace");
         AlbumLastNamesOf.Add("the Boy");
@@ -406,6 +416,12 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("The Third ");
         AlbumFirstNamesDual.Add("The Umpteenth ");
         AlbumFirstNamesDual.Add("Nineteenth ");
+        AlbumFirstNamesDual.Add("Slot ");
+        AlbumFirstNamesDual.Add("Saint ");
+        AlbumFirstNamesDual.Add("L.A. ");
+        AlbumFirstNamesDual.Add("Gregg & the ");
+        AlbumFirstNamesDual.Add("Sidney ");
+        AlbumFirstNamesDual.Add("Ninja ");
 
 
         AlbumLastNamesDual.Add("Days");
@@ -440,6 +456,13 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Defeatism");
         AlbumLastNamesDual.Add("Delusion");
         AlbumLastNamesDual.Add("Zebra");
+        AlbumLastNamesDual.Add("Face");
+        AlbumLastNamesDual.Add("Vincent");
+        AlbumLastNamesDual.Add("Hawk");
+        AlbumLastNamesDual.Add("Matters");
+        AlbumLastNamesDual.Add("Party");
+        AlbumLastNamesDual.Add("Heart");
+        AlbumLastNamesDual.Add("K.E.");
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -490,7 +513,7 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Eager");
         AlbumWholeNames.Add("Spaghetti");
         AlbumWholeNames.Add("Fanatic");
-        AlbumWholeNames.Add("Letting go");
+        AlbumWholeNames.Add("Letting Go");
         AlbumWholeNames.Add("Cyberbeats");
         AlbumWholeNames.Add("Macaroni");
         AlbumWholeNames.Add("Lasagna");
@@ -503,7 +526,7 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Trust me");
         AlbumWholeNames.Add("I Used To Trust You");
         AlbumWholeNames.Add("Days");
-        AlbumLastNamesDual.Add("Antimatter");
+        AlbumWholeNames.Add("Antimatter");
 
 
         currentAlbum = "SpaghettiSolution";

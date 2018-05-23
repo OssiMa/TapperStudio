@@ -8,7 +8,7 @@ public class SkinInventory : MonoBehaviour {
     public List<Skin> skins = new List<Skin>();
 
     Sprite drumsIcon1, drumsIcon2, drumsIcon3, drumsIcon4, drumsIcon5, drumsIcon6;
-    Sprite drumsIconSpecial1, drumsIconSpecial2, drumsIconSpecial3, drumsIconSpecial4, drumsIconSpecial5, drumsIconSpecial6;
+    Sprite drumsIconSpecial1, drumsIconSpecial2, drumsIconSpecial3, drumsIconSpecial4, drumsIconSpecial5, drumsIconSpecial6, drumsIconSpecial7;
 
     Sprite guitarIcon;
     Sprite guitarIconSpecial1, guitarIconSpecial2, guitarIconSpecial3, guitarIconSpecial4, guitarIconSpecial5;
@@ -34,14 +34,15 @@ public class SkinInventory : MonoBehaviour {
         drumsIcon6 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
 
         //Special drum icons
-        /*
-        drumsIconSpecial1 = GameObject.Find("drum_buttonImage_body_special").GetComponent<Image>().sprite;
+        
+        drumsIconSpecial1 = GameObject.Find("drum_buttonImage (4)_special").GetComponent<Image>().sprite;
         drumsIconSpecial2 = GameObject.Find("drum_buttonImage (2)_special").GetComponent<Image>().sprite;
-        drumsIconSpecial3 = GameObject.Find("drum_buttonImage (4)_special").GetComponent<Image>().sprite;
+        drumsIconSpecial3 = GameObject.Find("drum_buttonImage_body_special").GetComponent<Image>().sprite;
         drumsIconSpecial4 = GameObject.Find("drum_buttonImage (5)_special").GetComponent<Image>().sprite;
         drumsIconSpecial5 = GameObject.Find("drum_buttonImage (3)_special").GetComponent<Image>().sprite;
         drumsIconSpecial6 = GameObject.Find("drum_buttonImage (1)_special").GetComponent<Image>().sprite;
-        */
+        drumsIconSpecial7 = GameObject.Find("drum_buttonImage (6)_special").GetComponent<Image>().sprite;
+        print(drumsIconSpecial7);
 
         //Standard guitar icons
         /*
@@ -96,6 +97,7 @@ public class SkinInventory : MonoBehaviour {
                     skin.specialIcon4 = drumsIcon4;
                     skin.specialIcon5 = drumsIcon5;
                     skin.specialIcon6 = drumsIcon6;
+                    skin.specialIcon7 = drumsIconSpecial7;
                 }
                 else
                 {
@@ -105,6 +107,7 @@ public class SkinInventory : MonoBehaviour {
                     skin.specialIcon4 = drumsIconSpecial4;
                     skin.specialIcon5 = drumsIconSpecial5;
                     skin.specialIcon6 = drumsIconSpecial6;
+                    skin.specialIcon7 = drumsIconSpecial7;
                 }
             }
             else if (skin.instrument == 2)

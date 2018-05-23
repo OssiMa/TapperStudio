@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/juuso_refinements.unity
+- path: Assets/Scenes/Achievements.unity
   isLoaded: 1
   isActive: 1

@@ -45,25 +45,6 @@ public class InstrumentBase : MonoBehaviour {
 
     public Achievements achievements;
 
-    public bool isAchievedD = false;
-    public bool isAchievedD2 = false;
-    public bool isAchievedD3 = false;
-    public bool isAchievedD4 = false;
-    public bool isAchievedD5 = false;
-
-    public bool isAchievedG = false;
-    public bool isAchievedG2 = false;
-    public bool isAchievedG3 = false;
-    public bool isAchievedG4 = false;
-    public bool isAchievedG5 = false;
-
-    public bool isAchievedP = false;
-    public bool isAchievedP2 = false;
-    public bool isAchievedP3 = false;
-    public bool isAchievedP4 = false;
-    public bool isAchievedP5 = false;
-
-
     // Use this for initialization
     void Start ()
     {
@@ -95,6 +76,7 @@ public class InstrumentBase : MonoBehaviour {
             BoostUpdate();
             maxCombo = ogMaxCombo + comboBoost;
         }
+
     }
 
     void LvlUp()
@@ -113,82 +95,68 @@ public class InstrumentBase : MonoBehaviour {
         {
             level = 20;
         }
-        if (level == 3 && !isAchievedD && instrumentNbr == 1)
+
+        if (level == 3 && achievements.DrumNumber == 0 && instrumentNbr == 1)
         {
-            isAchievedD = true;
             achievements.AchievementDone(13);
         }
-        else if (level == 6 && !isAchievedD2 && instrumentNbr == 1)
+        else if (level == 6 && achievements.DrumNumber == 1 && instrumentNbr == 1)
         {
-            isAchievedD2 = true;
             achievements.AchievementDone(13);
         }
-        else if (level == 10 && !isAchievedD3 && instrumentNbr == 1)
+        else if (level == 10 && achievements.DrumNumber == 2 && instrumentNbr == 1)
         {
-            isAchievedD3 = true;
             achievements.AchievementDone(13);
         }
-        else if (level == 15 && !isAchievedD4 && instrumentNbr == 1)
+        else if (level == 15 && achievements.DrumNumber == 3 && instrumentNbr == 1)
         {
-            isAchievedD4 = true;
             achievements.AchievementDone(13);
         }
-        else if (level == 20 && !isAchievedD5 && instrumentNbr == 1)
+        else if (level == 20 && achievements.DrumNumber == 4 && instrumentNbr == 1)
         {
-            isAchievedD5 = true;
             achievements.AchievementDone(13);
         }
 
-        if (level == 3 && !isAchievedG && instrumentNbr == 2)
+        if (level == 3 && achievements.GuitarNumber == 0 && instrumentNbr == 2)
         {
-            isAchievedG = true;
             achievements.AchievementDone(2);
         }
-        else if (level == 6 && !isAchievedG2 && instrumentNbr == 2)
+        else if (level == 6 && achievements.GuitarNumber == 1 && instrumentNbr == 2)
         {
-            isAchievedG2 = true;
             achievements.AchievementDone(2);
         }
-        else if (level == 10 && !isAchievedG3 && instrumentNbr == 2)
+        else if (level == 10 && achievements.GuitarNumber == 2 && instrumentNbr == 2)
         {
-            isAchievedG3 = true;
             achievements.AchievementDone(2);
         }
-        else if (level == 15 && !isAchievedG4 && instrumentNbr == 2)
+        else if (level == 15 && achievements.GuitarNumber == 3 && instrumentNbr == 2)
         {
-            isAchievedG4 = true;
             achievements.AchievementDone(2);
         }
-        else if (level == 20 && !isAchievedG5 && instrumentNbr == 2)
+        else if (level == 20 && achievements.GuitarNumber == 4 && instrumentNbr == 2)
         {
-            isAchievedG5 = true;
             achievements.AchievementDone(2);
         }
 
 
-        if (level == 3 && !isAchievedP && instrumentNbr == 3)
+        if (level == 3 && achievements.PianoNumber == 0 && instrumentNbr == 3)
         {
-            isAchievedP = true;
             achievements.AchievementDone(5);
         }
-        else if (level == 6 && !isAchievedP2 && instrumentNbr == 3)
+        else if (level == 6 && achievements.PianoNumber == 1 && instrumentNbr == 3)
         {
-            isAchievedP2 = true;
             achievements.AchievementDone(5);
         }
-        else if (level == 10 && !isAchievedP3 && instrumentNbr == 3)
+        else if (level == 10 && achievements.PianoNumber == 2 && instrumentNbr == 3)
         {
-            isAchievedP3 = true;
             achievements.AchievementDone(5);
         }
-        else if (level == 15 && !isAchievedP4 && instrumentNbr == 3)
+        else if (level == 15 && achievements.PianoNumber == 3 && instrumentNbr == 3)
         {
-            isAchievedP4 = true;
             achievements.AchievementDone(5);
         }
-        else if (level == 20 && !isAchievedP5 && instrumentNbr == 3)
+        else if (level == 20 && achievements.PianoNumber == 4 && instrumentNbr == 3)
         {
-            isAchievedP5 = true;
             achievements.AchievementDone(5);
         }
     }
@@ -233,13 +201,17 @@ public class InstrumentBase : MonoBehaviour {
             {
                 combo += 1;
                 comboStep = 0;
+                comboAchievement();
             }
+
         }
         if (comboUpkeep <11)
         {
             comboUpkeep += 3;
         }
+
         ComboFadeUp();
+
     }
 
     public void ComboFading()
@@ -267,8 +239,13 @@ public class InstrumentBase : MonoBehaviour {
         progression.GainXP();
         if(combo < maxCombo)        // 4 + comboBoost
         {
-            combo += 1;
-            comboStep = 0;
+            comboStep += 5;
+            if (comboStep >= comboStepMax)
+            {
+                combo += 1;
+                comboStep = 0;
+                comboAchievement();
+            }
         }
         ComboFadeUp();
     }
@@ -374,6 +351,72 @@ public class InstrumentBase : MonoBehaviour {
         else
         {
             Debug.Log("No game saved!");
+        }
+    }
+    void comboAchievement()
+    {
+        if (combo == 3 && achievements.DrumComboNumber == 0 && instrumentNbr == 1)
+        {
+            achievements.AchievementDone(8);
+        }
+        else if (combo == 6 && achievements.DrumComboNumber == 1 && instrumentNbr == 1)
+        {
+            achievements.AchievementDone(8);
+        }
+        else if (combo == 10 && achievements.DrumComboNumber == 2 && instrumentNbr == 1)
+        {
+            achievements.AchievementDone(8);
+        }
+        else if (combo == 15 && achievements.DrumComboNumber == 3 && instrumentNbr == 1)
+        {
+            achievements.AchievementDone(8);
+        }
+        else if (combo == 20 && achievements.DrumComboNumber == 4 && instrumentNbr == 1)
+        {
+            achievements.AchievementDone(8);
+        }
+
+        if (combo == 3 && achievements.GuitarComboNumber == 0 && instrumentNbr == 2)
+        {
+            achievements.AchievementDone(11);
+        }
+        else if (combo == 6 && achievements.GuitarComboNumber == 1 && instrumentNbr == 2)
+        {
+            achievements.AchievementDone(11);
+        }
+        else if (combo == 10 && achievements.GuitarComboNumber == 2 && instrumentNbr == 2)
+        {
+            achievements.AchievementDone(11);
+        }
+        else if (combo == 15 && achievements.GuitarComboNumber == 3 && instrumentNbr == 2)
+        {
+            achievements.AchievementDone(11);
+        }
+        else if (combo == 20 && achievements.GuitarComboNumber == 4 && instrumentNbr == 2)
+        {
+            achievements.AchievementDone(11);
+        }
+
+
+        if (combo == 3 && achievements.PianoComboNumber == 0 && instrumentNbr == 3)
+        {
+            achievements.AchievementDone(14);
+        }
+        else if (combo == 6 && achievements.PianoComboNumber == 1 && instrumentNbr == 3)
+        {
+            achievements.AchievementDone(14);
+        }
+        else if (combo == 10 && achievements.PianoComboNumber == 2 && instrumentNbr == 3)
+        {
+            achievements.AchievementDone(14);
+        }
+        else if (combo == 15 && achievements.PianoComboNumber == 3 && instrumentNbr == 3)
+        {
+            achievements.AchievementDone(14);
+        }
+        else if (combo == 20 && achievements.PianoComboNumber == 4 && instrumentNbr == 3)
+        {
+            achievements.AchievementDone(14);
         }
     }
 }

@@ -23,16 +23,17 @@ public class Achievements : MonoBehaviour {
     public AchievementSlot AchievementSlot4;
     public AchievementSlot AchievementSlot5;
 
-    int SongNumber = 0;
-    int AlbumNumber = 0;
-    int TimeNumber = 0;
-    int CurrencyNumber = 0;
-    int DrumNumber = 0;
-    int GuitarNumber = 0;
-    int PianoNumber = 0;
-    int DrumComboNumber = 0;
-    int GuitarComboNumber = 0;
-    int PianoComboNumber = 0;
+    [HideInInspector]
+    public int SongNumber = 0;
+    public int AlbumNumber = 0;
+    public int TimeNumber = 0;
+    public int CurrencyNumber = 0;
+    public int DrumNumber = 0;
+    public int GuitarNumber = 0;
+    public int PianoNumber = 0;
+    public int DrumComboNumber = 0;
+    public int GuitarComboNumber = 0;
+    public int PianoComboNumber = 0;
 
     // Use this for initialization
     void Start ()

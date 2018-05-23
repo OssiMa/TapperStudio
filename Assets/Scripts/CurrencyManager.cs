@@ -36,12 +36,6 @@ public class CurrencyManager : MonoBehaviour {
 
     [HideInInspector]
 
-
-    bool isAchieved = false;
-    bool isAchieved2 = false;
-    bool isAchieved3 = false;
-    bool isAchieved4 = false;
-    bool isAchieved5 = false;
     // public int amountOfCurrency;
 
     // Use this for initialization
@@ -53,7 +47,6 @@ public class CurrencyManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        currency = currency + curInGameplay;
 
         currencyText.text = currency + "";
         if (currency < 0)
@@ -68,37 +61,33 @@ public class CurrencyManager : MonoBehaviour {
             premiumCurrency = 0;
         }
 
-        if (currency > 0 && !isAchieved)
-        {
-            isAchieved = true;
-            achievements.AchievementDone(10);
-        }
-        else if (currency > 100 && !isAchieved2)
-        {
-            isAchieved2 = true;
-            achievements.AchievementDone(10);
-        }
-        else if (currency > 1000 && !isAchieved3)
-        {
-            isAchieved3 = true;
-            achievements.AchievementDone(10);
-        }
-        else if (currency > 10000 && !isAchieved4)
-        {
-            isAchieved4 = true;
-            achievements.AchievementDone(10);
-        }
-        else if (currency > 100000 && !isAchieved5)
-        {
-            isAchieved5 = true;
-            achievements.AchievementDone(10);
-        }
     }
 
     public void AddCurrency(int amountofCurrency)
     {
         currency += amountofCurrency;
         currencyText.text = "" + currency;
+
+        if (currency > 0 && achievements.CurrencyNumber == 0)
+        {
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 99 && achievements.CurrencyNumber == 1)
+        {
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 999 && achievements.CurrencyNumber == 2)
+        {
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 9999 && achievements.CurrencyNumber == 3)
+        {
+            achievements.AchievementDone(10);
+        }
+        else if (currency > 99999 && achievements.CurrencyNumber == 4)
+        {
+            achievements.AchievementDone(10);
+        }
     }
 
     public bool LoseCurrency(int amountofCurrency)

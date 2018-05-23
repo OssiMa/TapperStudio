@@ -431,7 +431,9 @@ public class PopUpDisplay : MonoBehaviour {
             }
 
             NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
+            NewInvSlot.transform.position = InvSlot.transform.position;
             RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
+            rt.anchoredPosition = new Vector3(0, 0, 0);
             rt.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot.GetComponent<Button>();
             ColorBlock cb = btn.colors;
@@ -490,8 +492,9 @@ public class PopUpDisplay : MonoBehaviour {
                 Destroy(NewInvSlot2);
             }
             NewInvSlot2 = Instantiate(popUp.selectedInvSlot, InvSlot2.transform);
-
+            NewInvSlot2.transform.position = InvSlot2.transform.position;
             RectTransform rt2 = NewInvSlot2.GetComponent<RectTransform>();
+            rt2.anchoredPosition = new Vector3(0, 0, 0);
             rt2.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot2.GetComponent<Button>();
             ColorBlock cb = btn.colors;
@@ -541,8 +544,10 @@ public class PopUpDisplay : MonoBehaviour {
 
 
         NewInvSlot = Instantiate(popUp.selectedInvSlot, InvSlot.transform);
+        NewInvSlot.transform.position = InvSlot.transform.position;
         RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(52, 52);
+        rt.anchoredPosition = new Vector3(0,0,0);
         Button btn = NewInvSlot.GetComponent<Button>();
         ColorBlock cb = btn.colors;
         cb.disabledColor = new Color32(255, 255, 255, 255);

@@ -20,7 +20,7 @@ public class InstrumentInfos : MonoBehaviour {
     GameObject[] bases;
 
 	// Use this for initialization
-	void Start ()
+	void Awake()
     {
 		bases = GameObject.FindGameObjectsWithTag("Instrument").OrderBy(instruments => instruments.name).ToArray();
         icons = Resources.LoadAll<Sprite>("InstrumentIcons");

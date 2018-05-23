@@ -10,8 +10,9 @@ public class InstrumentInfos : MonoBehaviour {
 
     public Text textBox;
     public Image icon;
-    public GameObject vintageButton;
-    public int shownBase;
+    public Button vintageButton;
+    public Slider xP;
+    int shownBase;
 
     GameObject[] bases;
 
@@ -27,6 +28,7 @@ public class InstrumentInfos : MonoBehaviour {
         shownBase = x;
         SetTexts();
         SetIcon();
+        setBar();
         VintageButton();
     }
 
@@ -34,7 +36,7 @@ public class InstrumentInfos : MonoBehaviour {
     {
         textBox.enabled = true;
         InstrumentBase ins = bases[shownBase - 1].GetComponent<InstrumentBase>();
-        textBox.text = "Instrument level: " + ins.level + "\nInstrument experience: " + ins.exp + "\nNext level at " + ins.expToNext +
+        textBox.text = "Level: " + ins.level + "\nExperience: " + ins.exp + "\nNext level at " + ins.expToNext +
             "\nBoosts from equipment:\nGeneration Boost: " + ins.GetBoosts(1) + "\nAdditional Combo: " + ins.GetBoosts(2) + "\nBonus experience: "
             + ins.GetBoosts(3); ;
     }
@@ -45,25 +47,34 @@ public class InstrumentInfos : MonoBehaviour {
         icon.sprite = icons[shownBase-1];
     }
 
+    void setBar()
+    {
+        xP.gameObject.SetActive(true);
+        xP.maxValue = bases[shownBase - 1].GetComponent<InstrumentBase>().xpBar.maxValue;
+        xP.minValue = bases[shownBase - 1].GetComponent<InstrumentBase>().xpBar.minValue;
+        xP.value = bases[shownBase - 1].GetComponent<InstrumentBase>().xpBar.value;
+    }
+
     public void HideTexts()
     {
         icon.enabled = false;
         textBox.enabled = false;
         textBox.text = "";
-        vintageButton.SetActive(false);
+        xP.gameObject.SetActive(false);
+        vintageButton.interactable = false;
     }
 
     public void VintageButton()
     {
         if (bases[shownBase - 1].GetComponent<InstrumentBase>().level == 20)
         {
-            vintageButton.SetActive(true);
+            vintageButton.interactable = true;
         }
     }
 	
     public void VintageUp()
     {
         bases[shownBase - 1].GetComponent<InstrumentBase>().VintageLvlUp();
-        vintageButton.SetActive(false);
+        vintageButton.interactable = false;
     }
 }

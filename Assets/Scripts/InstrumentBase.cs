@@ -283,6 +283,7 @@ public class InstrumentBase : MonoBehaviour {
     
     public float GetBoosts(int i)
     {
+        invUI = InventoryUI.instance;
         if (invUI.EquipBoosts(instrumentNbr, i) != null)
         {
             Item booster = invUI.EquipBoosts(instrumentNbr, i);

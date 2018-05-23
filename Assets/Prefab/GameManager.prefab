@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114485797418997078}
   - component: {fileID: 114276349569074902}
   - component: {fileID: 114302546103037294}
+  - component: {fileID: 114270612988336636}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -62,6 +63,7 @@ MonoBehaviour:
   achievements: {fileID: 114276349569074902}
   currency: 0
   premiumCurrency: 20
+  curInGameplay: 0
   currencyText: {fileID: 0}
   premiumCurrencyText: {fileID: 0}
   noMoney: {fileID: 0}
@@ -78,6 +80,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   Achievements: []
+--- !u!114 &114270612988336636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442746161125628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4593e787c2cccdb439e0d180f60c0287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progression: {fileID: 0}
+  drumBase: {fileID: 0}
+  guitarBase: {fileID: 0}
+  pianoBase: {fileID: 0}
+  currencyManager: {fileID: 0}
+  achievements: {fileID: 0}
 --- !u!114 &114276349569074902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +173,16 @@ MonoBehaviour:
   AchievementSlot3: {fileID: 0}
   AchievementSlot4: {fileID: 0}
   AchievementSlot5: {fileID: 0}
+  SongNumber: 0
+  AlbumNumber: 0
+  TimeNumber: 0
+  CurrencyNumber: 0
+  DrumNumber: 0
+  GuitarNumber: 0
+  PianoNumber: 0
+  DrumComboNumber: 0
+  GuitarComboNumber: 0
+  PianoComboNumber: 0
 --- !u!114 &114302546103037294
 MonoBehaviour:
   m_ObjectHideFlags: 1

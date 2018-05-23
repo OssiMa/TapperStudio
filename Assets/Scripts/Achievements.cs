@@ -15,8 +15,6 @@ public class Achievements : MonoBehaviour {
     public List<ScriptableAchievement> SongAchievements;
     public List<ScriptableAchievement> AlbumAchievements;
 
-
-    
     public AchievementSlot AchievementSlot1;
     public AchievementSlot AchievementSlot2;
     public AchievementSlot AchievementSlot3;

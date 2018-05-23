@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+
 
 public class InstrumentBase : MonoBehaviour {
 
@@ -20,7 +19,7 @@ public class InstrumentBase : MonoBehaviour {
     public Text comboText;
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
-    float startXp;
+    public float startXp;
     public float expToNext = 25;
     public float level = 1;
     float nextLevel = 2;
@@ -72,7 +71,6 @@ public class InstrumentBase : MonoBehaviour {
             nxtLvl.text = "" + nextLevel;
             currLvl.text = "" + level;
             LvlUp();
-            SaveGame();
             BoostUpdate();
             maxCombo = ogMaxCombo + comboBoost;
         }
@@ -281,79 +279,7 @@ public class InstrumentBase : MonoBehaviour {
         xpBoost = GetBoosts(3);
     }
 
-    public void SaveGame()
-    {
-        // 1
-        Save save = CreateSaveGameObject();
-
-        // 2
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
-        bf.Serialize(file, save);
-        file.Close();
-
-    }
-
-    private Save CreateSaveGameObject()
-    {
-        Save save = new Save();
-
-        save.drumLevel = level;
-        save.drumXp = exp;
-        save.nextDrumLevel = expToNext;
-        save.startXp = startXp;
-
-        save.songProgress = progression.songXP;
-        save.songsCompleted = progression.songCount;
-        save.currentAlbum = progression.currentAlbum;
-        save.currentSong = progression.currentSong;
-        save.albumsCreated = progression.AlbumsCreated;
-        save.usedAlbums = progression.UsedNames;
-        save.combo = combo;
-
-        save.currency = progression.currency;
-
-        return save;
-    }
-
-    public void LoadGame()
-    {
-        // 1
-        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
-        {
-
-
-            // 2
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
-            Save save = (Save)bf.Deserialize(file);
-            file.Close();
-
-
-
-            // 4
-            level = save.drumLevel;
-            exp = save.drumXp;
-            expToNext = save.nextDrumLevel;
-            startXp = save.startXp;
-            combo = save.combo;
-
-            progression.songXP = save.songProgress;
-            progression.songCount = save.songsCompleted;
-            progression.currentAlbum = save.currentAlbum;
-            progression.currentSong = save.currentSong;
-            progression.AlbumsCreated = save.albumsCreated;
-            progression.UsedNames = save.usedAlbums;
-            progression.currency = save.currency;
-
-            Debug.Log("Game Loaded");
-
-        }
-        else
-        {
-            Debug.Log("No game saved!");
-        }
-    }
+   
     void comboAchievement()
     {
         if (combo == 3 && achievements.DrumComboNumber == 0 && instrumentNbr == 1)

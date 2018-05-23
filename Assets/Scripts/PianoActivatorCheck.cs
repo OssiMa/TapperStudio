@@ -18,18 +18,26 @@ public class PianoActivatorCheck : MonoBehaviour
     GameObject note;
     GameObject longNote;
     Animator animOne;
-    Animator animLong;
 
-    GameObject[] animationObjects;
+    List<GameObject> animationObjects = new List<GameObject>();
+    List<GameObject> activatorChildren = new List<GameObject>();
 
     // Use this for initialization
     void Start()
     {
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
+        GameObject keyborat = GameObject.Find("Keyborat");
+        GameObject activators = GameObject.Find("Activators");
        
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 4; i++)
         {
+            animationObjects.Add(keyborat.transform.GetChild(i).gameObject);
+            activatorChildren.Add(activators.transform.GetChild(i).gameObject);
 
+            if (gameObject == activatorChildren[i])
+            {
+                animOne = animationObjects[i].GetComponent<Animator>();
+            }
         }
     }
 
@@ -41,14 +49,14 @@ public class PianoActivatorCheck : MonoBehaviour
             instrumentBase.exp += 0.01f * instrumentBase.combo;
             progression.songXP += 0.01f * instrumentBase.combo;
             //Animation 2?
-            if (!animLong.GetBool("atStart"))
+            /*if (!animLong.GetBool("atStart"))
             {
                 animLong.SetBool("atStart", true);     //I wonder if we'll have to make an extra thing for this?
-            }
+            }*/
         }
         else if (sliderOn == false)
         {
-            animLong.SetBool("atStart", false);     //Something like this??
+            //animLong.SetBool("atStart", false);     //Something like this??
         }
     }
     public void OnTriggerEnter2D(Collider2D col)
@@ -99,7 +107,7 @@ public class PianoActivatorCheck : MonoBehaviour
             //Animation 1
             if (!animOne.GetBool("atStart"))
             {
-                animOne.SetBool("atStart", true);
+                //animOne.SetBool("true");
             }
         }
     }

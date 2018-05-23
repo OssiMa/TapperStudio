@@ -9729,6 +9729,8 @@ MonoBehaviour:
   AlbumsCreated: 0
   SongsCreated: 0
   menu: 0
+  endMenu: 0
+  songEnder: 0
 --- !u!212 &845815404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10600,6 +10602,7 @@ MonoBehaviour:
   nxtLvl: {fileID: 334150206}
   comboText: {fileID: 2048759959}
   exp: 0
+  expToNext: 25
   level: 1
   vintageLevel: 0
   instrumentNbr: 3
@@ -10611,6 +10614,7 @@ MonoBehaviour:
   comboFade: 1000
   maxCombo: 0
   xpBoost: 0
+  achievements: {fileID: 0}
 --- !u!224 &909431058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25145,6 +25149,7 @@ MonoBehaviour:
   nxtLvl: {fileID: 1793494684}
   comboText: {fileID: 1436361434}
   exp: 0
+  expToNext: 25
   level: 1
   vintageLevel: 0
   instrumentNbr: 1
@@ -25156,6 +25161,7 @@ MonoBehaviour:
   comboFade: 1000
   maxCombo: 0
   xpBoost: 0
+  achievements: {fileID: 0}
 --- !u!114 &2076640184
 MonoBehaviour:
   m_ObjectHideFlags: 0

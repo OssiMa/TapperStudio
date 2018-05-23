@@ -27,6 +27,9 @@ public class CurrencyManager : MonoBehaviour {
     [HideInInspector]
     public int premiumCurrency = 20;
 
+    [HideInInspector]
+    public int curInGameplay;
+
     public Text currencyText;
     public Text premiumCurrencyText;
     public GameObject noMoney;
@@ -50,6 +53,8 @@ public class CurrencyManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        currency = currency + curInGameplay;
+
         currencyText.text = currency + "";
         if (currency < 0)
         {

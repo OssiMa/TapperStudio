@@ -40,7 +40,7 @@ public class MusicPlayer : MonoBehaviour {
     //[HideInInspector]
     public bool songEnd = false;    //Hide this from the inspector once debugging is done
     bool timing = false;
-    bool albumEnd;
+    public bool albumEnd;
     bool guitarStarted;
     bool keyboardStarted;
     bool drumsStarted;
@@ -328,7 +328,7 @@ public class MusicPlayer : MonoBehaviour {
 
             if (songEnd == true)
             {
-                if (sp.menu == false)
+                if (sp.endMenu == false)
                 {
                     SongEnd();
                 }
@@ -428,25 +428,28 @@ public class MusicPlayer : MonoBehaviour {
         keyboard.mute = false;
     }
 
-    public void MenuVolume()
+    public void MenuVolume()        //I might want to do something here
     {
-        if (menu == false)
+        if (albumEnd == false)
         {
-            preFadeDrums = drums.volume;
-            preFadeGuitar = guitar.volume;
-            preFadePiano = keyboard.volume;
+            if (menu == false)
+            {
+                preFadeDrums = drums.volume;
+                preFadeGuitar = guitar.volume;
+                preFadePiano = keyboard.volume;
 
-            fader = FadeOut(guitar, keyboard, drums, 4);
-            StartCoroutine(fader);
-            menu = true;
+                fader = FadeOut(guitar, keyboard, drums, 4);
+                StartCoroutine(fader);
+                menu = true;
 
-            print(guitar.mute);
-        }
-        else if (menu == true)
-        {
-            fader = FadeIn(guitar, keyboard, drums, 4, preFadeGuitar, preFadePiano, preFadeDrums);
-            StartCoroutine(fader);
-            menu = false;
+                print(guitar.mute);
+            }
+            else if (menu == true)
+            {
+                fader = FadeIn(guitar, keyboard, drums, 4, preFadeGuitar, preFadePiano, preFadeDrums);
+                StartCoroutine(fader);
+                menu = false;
+            }
         }
     }
 
@@ -504,9 +507,6 @@ public class MusicPlayer : MonoBehaviour {
 
     public void NewAlbumPlay()
     {
-        print("guitar mute " + guitar.mute);
-        print(guitar);
-
         guitar.volume = 0;
         keyboard.volume = 0;
         drums.volume = 0;

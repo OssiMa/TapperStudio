@@ -49,6 +49,10 @@ public class SkinAssigner : MonoBehaviour {
     //Image toggleImagePianoSpecial2;
     //GameObject togglesPianoSpecial;
 
+    InstrumentBase instrumentBaseDrums;
+    InstrumentBase instrumentBaseGuitar;
+    InstrumentBase instrumentBasePiano;
+
     // Use this for initialization
     void Awake ()
     {
@@ -61,6 +65,11 @@ public class SkinAssigner : MonoBehaviour {
 
         guitarBoard = GameObject.Find("Panel_Guitar").transform.GetChild(0);
         guitarOutline = GameObject.Find("Panel_Guitar").transform.GetChild(1);
+
+        instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
+        instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
+        instrumentBasePiano = GameObject.Find("Piano").GetComponent<InstrumentBase>();
+
 
         GetTrinkets();
         GetToggles();
@@ -103,97 +112,111 @@ public class SkinAssigner : MonoBehaviour {
 
     public void AssignSkin(SkinSlot slot)
     {
-        print("Hyeena" + slot.skin);
         instrument = slot.skin.instrument;
-
-        if (slot.skin.trinketType != 0)
-        {
-            AssignTrinket(slot);
-        }
-        else if (slot.skin.trinketType == 0)
-        {
-            if (instrument == 2)
-            {
-                togglesGuitar.SetActive(true);
-                togglesGuitarSpecial.SetActive(false);
-            }
-        }
 
         if (instrument == 1)
         {
-            if (slot.skin.baseInstrument == false)
+            if (slot.skin.vintageLock > instrumentBaseDrums.vintageLevel)
             {
-                Color32 newColor = slot.skin.color;
-                newColor.a = 255;
-                drumDeco1.GetComponent<Image>().color = newColor;
-                drumDeco2.GetComponent<Image>().color = newColor;
-                drumDeco3.GetComponent<Image>().color = newColor;
-                toggleImageDrums1.color = newColor;
-            }
-            else
-            {
-                Color32 newColor;
-                newColor.r = 19;
-                newColor.g = 177;
-                newColor.b = 255;
-                newColor.a = 255;
+                if (slot.skin.trinketType != 0)
+                {
+                    AssignTrinket(slot);
+                }
 
-                drumDeco1.GetComponent<Image>().color = newColor;
-                drumDeco2.GetComponent<Image>().color = newColor;
-                drumDeco3.GetComponent<Image>().color = newColor;
-                toggleImageDrums1.color = newColor;
+                if (slot.skin.baseInstrument == false)
+                {
+                    Color32 newColor = slot.skin.color;
+                    newColor.a = 255;
+                    drumDeco1.GetComponent<Image>().color = newColor;
+                    drumDeco2.GetComponent<Image>().color = newColor;
+                    drumDeco3.GetComponent<Image>().color = newColor;
+                    toggleImageDrums1.color = newColor;
+                }
+                else
+                {
+                    Color32 newColor;
+                    newColor.r = 19;
+                    newColor.g = 177;
+                    newColor.b = 255;
+                    newColor.a = 255;
+
+                    drumDeco1.GetComponent<Image>().color = newColor;
+                    drumDeco2.GetComponent<Image>().color = newColor;
+                    drumDeco3.GetComponent<Image>().color = newColor;
+                    toggleImageDrums1.color = newColor;
+                }
             }
         }
         else if (instrument == 2)
         {
-            if (slot.skin.baseInstrument == false)
+            if (slot.skin.vintageLock > instrumentBaseGuitar.vintageLevel)
             {
-                Color32 newColor = slot.skin.color;
-                newColor.a = 255;
-                guitarBoard.GetComponent<Image>().color = newColor;
-                guitarOutline.GetComponent<Image>().color = newColor;
-                toggleImageGuitar1.color = newColor;
-                toggleImageGuitar2.color = newColor;
-                toggleImageGuitar3.color = newColor;
-                toggleImageGuitarSpecial1.color = newColor;
-                toggleImageGuitarSpecial2.color = newColor;
-                toggleImageGuitarSpecial3.color = newColor;
-            }
-            else
-            {
-                Color32 newColor1;
-                newColor1.r = 159;
-                newColor1.g = 133;
-                newColor1.b = 105;
-                newColor1.a = 255;
+                if (slot.skin.trinketType != 0)
+                {
+                    AssignTrinket(slot);
+                }
+                else if (slot.skin.trinketType == 0)
+                {
+                    togglesGuitar.SetActive(true);
+                    togglesGuitarSpecial.SetActive(false);
+                }
+                if (slot.skin.baseInstrument == false)
+                {
+                    Color32 newColor = slot.skin.color;
+                    newColor.a = 255;
+                    guitarBoard.GetComponent<Image>().color = newColor;
+                    guitarOutline.GetComponent<Image>().color = newColor;
+                    toggleImageGuitar1.color = newColor;
+                    toggleImageGuitar2.color = newColor;
+                    toggleImageGuitar3.color = newColor;
+                    toggleImageGuitarSpecial1.color = newColor;
+                    toggleImageGuitarSpecial2.color = newColor;
+                    toggleImageGuitarSpecial3.color = newColor;
+                }
+                else
+                {
+                    Color32 newColor1;
+                    newColor1.r = 159;
+                    newColor1.g = 133;
+                    newColor1.b = 105;
+                    newColor1.a = 255;
 
-                guitarBoard.GetComponent<Image>().color = newColor1;
-                guitarOutline.GetComponent<Image>().color = newColor1;
+                    guitarBoard.GetComponent<Image>().color = newColor1;
+                    guitarOutline.GetComponent<Image>().color = newColor1;
 
-                Color32 newColor2; //= new Color(159, 133, 105, 255);
-                newColor2.r = 255;
-                newColor2.g = 215;
-                newColor2.b = 146;
-                newColor2.a = 255;
+                    Color32 newColor2; //= new Color(159, 133, 105, 255);
+                    newColor2.r = 255;
+                    newColor2.g = 215;
+                    newColor2.b = 146;
+                    newColor2.a = 255;
 
-                toggleImageGuitar1.color = newColor2;
-                toggleImageGuitar2.color = newColor2;
-                toggleImageGuitar3.color = newColor2;
-                toggleImageGuitarSpecial1.color = newColor2;
-                toggleImageGuitarSpecial2.color = newColor2;
-                toggleImageGuitarSpecial3.color = newColor2;
+                    toggleImageGuitar1.color = newColor2;
+                    toggleImageGuitar2.color = newColor2;
+                    toggleImageGuitar3.color = newColor2;
+                    toggleImageGuitarSpecial1.color = newColor2;
+                    toggleImageGuitarSpecial2.color = newColor2;
+                    toggleImageGuitarSpecial3.color = newColor2;
+                }
             }
         }
         else if (instrument == 3)
         {
-            Color32 newColor = slot.skin.color;
-            newColor.a = 255;
-            pianoBG.GetComponent<Image>().color = newColor;
-            pianoEdge.GetComponent<Image>().color = newColor;
-            toggleImagePiano1.color = newColor;
-            toggleImagePiano2.color = newColor;
-            //toggleImagePianoSpecial1.color = newColor;
-            //toggleImagePianoSpecial2.color = newColor;
+            if (slot.skin.vintageLock > instrumentBaseDrums.vintageLevel)
+            {
+                if (slot.skin.trinketType != 0)
+                {
+                    AssignTrinket(slot);
+                }
+
+                Color32 newColor = slot.skin.color;
+                newColor.a = 255;
+                pianoBG.GetComponent<Image>().color = newColor;
+                pianoEdge.GetComponent<Image>().color = newColor;
+                toggleImagePiano1.color = newColor;
+                toggleImagePiano2.color = newColor;
+                //toggleImagePianoSpecial1.color = newColor;
+                //toggleImagePianoSpecial2.color = newColor;
+            }
         }
     }
 

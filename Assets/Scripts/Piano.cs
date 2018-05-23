@@ -23,8 +23,8 @@ public class Piano : MonoBehaviour {
     public bool spawnPoint5 = true;
     bool longSpawned = false;
 
-    float maxTime = 0.5f;
-    float minTime = 0.2f;
+    float maxTime = 1.0f;
+    float minTime = 0.5f;
 
     private float time;
     private float spawnTime;
@@ -65,7 +65,7 @@ public class Piano : MonoBehaviour {
 
     void spawnNote()
     {
-        if (sp.menu == false)
+        if (sp.menu == false || sp.endMenu == false)
         {
             time = 0;
             int whichNote = shortOrLong.Next(1, 5);

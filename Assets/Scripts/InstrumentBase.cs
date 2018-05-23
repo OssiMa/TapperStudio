@@ -9,6 +9,7 @@ public class InstrumentBase : MonoBehaviour {
 
     InventoryUI invUI;
 
+
     public SongProgress progression;
 
 
@@ -20,7 +21,7 @@ public class InstrumentBase : MonoBehaviour {
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
     float startXp;
-    float expToNext = 25;
+    public float expToNext = 25;
     public float level = 1;
     float nextLevel = 2;
     [HideInInspector]
@@ -42,9 +43,29 @@ public class InstrumentBase : MonoBehaviour {
     float comboBoost;
     public float xpBoost;
 
+    public Achievements achievements;
 
-	// Use this for initialization
-	void Start ()
+    public bool isAchievedD = false;
+    public bool isAchievedD2 = false;
+    public bool isAchievedD3 = false;
+    public bool isAchievedD4 = false;
+    public bool isAchievedD5 = false;
+
+    public bool isAchievedG = false;
+    public bool isAchievedG2 = false;
+    public bool isAchievedG3 = false;
+    public bool isAchievedG4 = false;
+    public bool isAchievedG5 = false;
+
+    public bool isAchievedP = false;
+    public bool isAchievedP2 = false;
+    public bool isAchievedP3 = false;
+    public bool isAchievedP4 = false;
+    public bool isAchievedP5 = false;
+
+
+    // Use this for initialization
+    void Start ()
     {
         invUI = InventoryUI.instance;
         //LoadGame();
@@ -56,6 +77,7 @@ public class InstrumentBase : MonoBehaviour {
         nextLevel = level + 1.0f;
         BoostUpdate();
         ogMaxCombo = 4;
+        achievements = GameObject.Find("GameManager").GetComponent<Achievements>();
     }
 
     // Update is called once per frame
@@ -89,7 +111,85 @@ public class InstrumentBase : MonoBehaviour {
         }
         else if (level == 19 && exp >= expToNext)
         {
-            print("vintagee");
+            level = 20;
+        }
+        if (level == 3 && !isAchievedD && instrumentNbr == 1)
+        {
+            isAchievedD = true;
+            achievements.AchievementDone(13);
+        }
+        else if (level == 6 && !isAchievedD2 && instrumentNbr == 1)
+        {
+            isAchievedD2 = true;
+            achievements.AchievementDone(13);
+        }
+        else if (level == 10 && !isAchievedD3 && instrumentNbr == 1)
+        {
+            isAchievedD3 = true;
+            achievements.AchievementDone(13);
+        }
+        else if (level == 15 && !isAchievedD4 && instrumentNbr == 1)
+        {
+            isAchievedD4 = true;
+            achievements.AchievementDone(13);
+        }
+        else if (level == 20 && !isAchievedD5 && instrumentNbr == 1)
+        {
+            isAchievedD5 = true;
+            achievements.AchievementDone(13);
+        }
+
+        if (level == 3 && !isAchievedG && instrumentNbr == 2)
+        {
+            isAchievedG = true;
+            achievements.AchievementDone(2);
+        }
+        else if (level == 6 && !isAchievedG2 && instrumentNbr == 2)
+        {
+            isAchievedG2 = true;
+            achievements.AchievementDone(2);
+        }
+        else if (level == 10 && !isAchievedG3 && instrumentNbr == 2)
+        {
+            isAchievedG3 = true;
+            achievements.AchievementDone(2);
+        }
+        else if (level == 15 && !isAchievedG4 && instrumentNbr == 2)
+        {
+            isAchievedG4 = true;
+            achievements.AchievementDone(2);
+        }
+        else if (level == 20 && !isAchievedG5 && instrumentNbr == 2)
+        {
+            isAchievedG5 = true;
+            achievements.AchievementDone(2);
+        }
+
+
+        if (level == 3 && !isAchievedP && instrumentNbr == 3)
+        {
+            isAchievedP = true;
+            achievements.AchievementDone(5);
+        }
+        else if (level == 6 && !isAchievedP2 && instrumentNbr == 3)
+        {
+            isAchievedP2 = true;
+            achievements.AchievementDone(5);
+        }
+        else if (level == 10 && !isAchievedP3 && instrumentNbr == 3)
+        {
+            isAchievedP3 = true;
+            achievements.AchievementDone(5);
+        }
+        else if (level == 15 && !isAchievedP4 && instrumentNbr == 3)
+        {
+            isAchievedP4 = true;
+            achievements.AchievementDone(5);
+        }
+        else if (level == 20 && !isAchievedP5 && instrumentNbr == 3)
+        {
+            isAchievedP5 = true;
+            achievements.AchievementDone(5);
         }
     }
 
@@ -183,6 +283,7 @@ public class InstrumentBase : MonoBehaviour {
     
     public float GetBoosts(int i)
     {
+        invUI = InventoryUI.instance;
         if (invUI.EquipBoosts(instrumentNbr, i) != null)
         {
             Item booster = invUI.EquipBoosts(instrumentNbr, i);

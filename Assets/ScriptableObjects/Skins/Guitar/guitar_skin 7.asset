@@ -11,9 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845287f810dc3a749a478e193344d569, type: 3}
   m_Name: guitar_skin 7
   m_EditorClassIdentifier: 
-  instrumentIcon: {fileID: 21300000, guid: 3906f1d5b3fdc334a846d6e798c42342, type: 3}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  instrumentIcon: {fileID: 0}
+  specialIcon1: {fileID: 21300008, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
+  specialIcon2: {fileID: 21300006, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
+  specialIcon3: {fileID: 21300004, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
+  specialIcon4: {fileID: 21300002, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
+  specialIcon5: {fileID: 21300000, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
+  specialIcon6: {fileID: 0}
+  color:
+    serializedVersion: 2
+    rgba: 0
   instrument: 2
   vintageLock: 2
-  trinket: 0
+  trinketType: 0
   unlocked: 0
+  baseInstrument: 0

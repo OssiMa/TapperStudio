@@ -34,22 +34,12 @@ public class Achievements : MonoBehaviour {
     int GuitarComboNumber = 0;
     int PianoComboNumber = 0;
 
-
     // Use this for initialization
     void Start ()
     {
-        //AchievementDone(1);
-        //AchievementDone(4);
-        //AchievementDone(7);
-        //AchievementDone(10);
-        //AchievementDone(13);
-        //AchievementDone(2);
-        //AchievementDone(5);
-        //AchievementDone(8);
-        //AchievementDone(11);
-        //AchievementDone(14);
 
     }
+
 
     public void AchievementDone(int caseSwitch)
     {

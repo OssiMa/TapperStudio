@@ -38,7 +38,6 @@ public class PianoActivatorCheck : MonoBehaviour
             animationObjects.Add(keyborat.transform.GetChild(i).gameObject);
             activatorChildren.Add(activators.transform.GetChild(i).gameObject);
             animationLongObjects.Add(keyboratLong.transform.GetChild(i).gameObject);
-            print(animationLongObjects[i]);
 
             if (gameObject == activatorChildren[i])
             {

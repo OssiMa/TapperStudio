@@ -63,7 +63,7 @@ public class InstrumentBase : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (progression.menu == false)
+        if (progression.menu == false && progression.endMenu == false)
         { 
             fadeSlider.value = comboFade;
             comboText.text = "Combo: " + combo;

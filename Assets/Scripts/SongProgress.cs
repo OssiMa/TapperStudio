@@ -352,6 +352,11 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Fart");
         AlbumFirstNamesOf.Add("The Tragedy");
         AlbumFirstNamesOf.Add("The Lies");      //35
+        AlbumFirstNamesOf.Add("The Rise");
+        AlbumFirstNamesOf.Add("The Fall");
+        AlbumFirstNamesOf.Add("The Weight");
+        AlbumFirstNamesOf.Add("The Name");
+        AlbumFirstNamesOf.Add("Parting");
 
 
 
@@ -389,6 +394,15 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("Mine");
         AlbumLastNamesOf.Add("Interplanetary \nCraft");
         AlbumLastNamesOf.Add("the Earth");      //32
+        AlbumLastNamesOf.Add("Man");
+        AlbumLastNamesOf.Add("Womanhood");
+        AlbumLastNamesOf.Add("Silence");
+        AlbumLastNamesOf.Add("Two Lovers");
+        AlbumLastNamesOf.Add("My Brothers");
+        AlbumLastNamesOf.Add("the Sorrowful \nSister");
+        AlbumLastNamesOf.Add("the Moon");
+        AlbumLastNamesOf.Add("the Stars");
+
 
 
         AlbumFirstNamesDual.Add("Winter ");
@@ -431,6 +445,9 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Ninja ");
         AlbumFirstNamesDual.Add("Digital ");
         AlbumFirstNamesDual.Add("Sponge ");     //37
+        AlbumFirstNamesDual.Add("Sugary ");
+        AlbumFirstNamesDual.Add("Sensual ");
+        AlbumFirstNamesDual.Add("Quiet ");
 
 
         AlbumLastNamesDual.Add("Days");
@@ -506,6 +523,18 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesTo.Add("Sentenced");
         AlbumFirstNamesTo.Add("To Love or");
         AlbumFirstNamesTo.Add("Sentenced");     //29
+        AlbumFirstNamesTo.Add("Beholden");
+        AlbumFirstNamesTo.Add("Walking");
+        AlbumFirstNamesTo.Add("Opening My Eyes");
+        AlbumFirstNamesTo.Add("And now,");
+        AlbumFirstNamesTo.Add("Onward");
+        AlbumFirstNamesTo.Add("O Glorious Day! Onwards,");
+        AlbumFirstNamesTo.Add("The Journey");
+        AlbumFirstNamesTo.Add("From Here");
+        AlbumFirstNamesTo.Add("I'm Used");
+        AlbumFirstNamesTo.Add("Only One Way");
+        AlbumFirstNamesTo.Add("Never");
+        AlbumFirstNamesTo.Add("So, It Has Come");
 
 
         AlbumLastNamesTo.Add("Joy");
@@ -523,7 +552,7 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("Me");
         AlbumLastNamesTo.Add("the Bone");
         AlbumLastNamesTo.Add("the Moon");
-        AlbumLastNamesTo.Add("Killing");
+        AlbumLastNamesTo.Add("the Killing");
         AlbumLastNamesTo.Add("Sadness");
         AlbumLastNamesTo.Add("Hate");
         AlbumLastNamesTo.Add("Darkness");
@@ -543,6 +572,11 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("Salvation");
         AlbumLastNamesTo.Add("This Day");
         AlbumLastNamesTo.Add("the Future");     //35
+        AlbumLastNamesTo.Add("Know");
+        AlbumLastNamesTo.Add("Turn into Nothing");
+        AlbumLastNamesTo.Add("Become One");
+        AlbumLastNamesTo.Add("Separate");
+        AlbumLastNamesTo.Add("Know Myself");
 
 
         AlbumWholeNames.Add("Afterlife");
@@ -576,6 +610,16 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("I Used To Trust You");
         AlbumWholeNames.Add("Days");
         AlbumWholeNames.Add("Antimatter");  //30
+        AlbumWholeNames.Add("Out for Vengeance");
+        AlbumWholeNames.Add("I Got You");
+        AlbumWholeNames.Add("Birth in Reverse");
+        AlbumWholeNames.Add("Heaven");
+        AlbumWholeNames.Add("HERO");
+        AlbumWholeNames.Add("I'm a Person");
+        AlbumWholeNames.Add("Lightning");
+        AlbumWholeNames.Add("Love Like You");
+        AlbumWholeNames.Add("Oats We Sow");
+        AlbumWholeNames.Add("Rattlesnake");
 
 
         currentAlbum = "SpaghettiSolution";

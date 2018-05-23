@@ -27,7 +27,7 @@ public class Drums : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (sp.menu == false)
+        if (sp.menu == false && sp.endMenu == false)
         { 
             rotationTimer -= Time.deltaTime;
             if (rotationTimer <= 0)

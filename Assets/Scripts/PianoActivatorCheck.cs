@@ -18,27 +18,37 @@ public class PianoActivatorCheck : MonoBehaviour
     GameObject note;
     GameObject longNote;
     Animator animOne;
+    GameObject myAnimOne;
+    GameObject myAnimLong;
 
     List<GameObject> animationObjects = new List<GameObject>();
+    List<GameObject> animationLongObjects = new List<GameObject>();
     List<GameObject> activatorChildren = new List<GameObject>();
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
         GameObject keyborat = GameObject.Find("Keyborat");
+        GameObject keyboratLong = GameObject.Find("KeyboratLong");
         GameObject activators = GameObject.Find("Activators");
        
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             animationObjects.Add(keyborat.transform.GetChild(i).gameObject);
             activatorChildren.Add(activators.transform.GetChild(i).gameObject);
+            animationLongObjects.Add(keyboratLong.transform.GetChild(i).gameObject);
+            print(animationLongObjects[i]);
 
             if (gameObject == activatorChildren[i])
             {
                 animOne = animationObjects[i].GetComponent<Animator>();
+                myAnimOne = animationObjects[i];
+                myAnimLong = animationLongObjects[i];
             }
         }
+
+        myAnimLong.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,17 +56,18 @@ public class PianoActivatorCheck : MonoBehaviour
     {
         if (sliderOn == true)
         {
+            myAnimLong.SetActive(true);
             instrumentBase.exp += 0.01f * instrumentBase.combo;
             progression.songXP += 0.01f * instrumentBase.combo;
-            //Animation 2?
-            /*if (!animLong.GetBool("atStart"))
-            {
-                animLong.SetBool("atStart", true);     //I wonder if we'll have to make an extra thing for this?
-            }*/
+            //animLong.Play("");
         }
         else if (sliderOn == false)
         {
-            //animLong.SetBool("atStart", false);     //Something like this??
+            for (int i = 0; i < 5; i++)
+            {
+                myAnimLong.SetActive(false);
+            }
+            //animLong.Rebind();      //Uh we'll see what this does
         }
     }
     public void OnTriggerEnter2D(Collider2D col)
@@ -104,11 +115,7 @@ public class PianoActivatorCheck : MonoBehaviour
             mp.StartTheMusic();
             active = false;
 
-            //Animation 1
-            if (!animOne.GetBool("atStart"))
-            {
-                //animOne.SetBool("true");
-            }
+            animOne.Play("");
         }
     }
     public void sliderPressed()

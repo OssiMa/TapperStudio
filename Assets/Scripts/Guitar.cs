@@ -36,20 +36,19 @@ public class Guitar : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (pointsOnScreen == false && (sp.menu == false || sp.endMenu == false))
-                                                                //If no clickables left, spawn more
+        if (sp.songEnder == true && (sp.menu == true || sp.endMenu == true))
+        {
+            Hide();
+        }
+        //CheckForPoints() at the start of a new album is done in SongProgress
+        else if (pointsOnScreen == false && (sp.menu == false || sp.endMenu == false))
+        //If no clickables left, spawn more
         {
             activeSlider = 5;
             StartCoroutine(BigReveal());
             pointsOnScreen = true;
         }
-
-        if (sp.songEnder == true && (sp.menu == true || sp.endMenu == false))
-        {
-            Hide();
-        }
-        //CheckForPoints() at the start of a new album is done in SongProgress
-	}
+    }
 
     //Hides all the clickable objects
     void Hide()

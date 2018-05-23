@@ -209,6 +209,7 @@ public class SongProgress : MonoBehaviour {
             {
                 if (endMenu == false)
                 {
+                    mp.ForceAlbumEnd();
                     mp.ChooseAlbum();
                     mp.ChooseSong();
                     mp.NewAlbumPlay();

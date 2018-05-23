@@ -252,10 +252,6 @@ public class MusicPlayer : MonoBehaviour {
                 drums = album3.GetComponent<AudioSource>();
             }
         }
-
-        /*clipGuitar = guitar.clip;
-        clipPiano = keyboard.clip;
-        clipDrums = drums.clip;*/
     }
 
     void Update()
@@ -319,8 +315,13 @@ public class MusicPlayer : MonoBehaviour {
                     SongEnd();
                 }
             }
+
+            if (albumEnd == true)
+            {
+                //lower all volumes with Time.deltaTime / 5 or something
+            }
         }
-        else if (allMute == true)        //Test that this works smoothly
+        else if (allMute == true)
         {
             guitar.mute = true;
             keyboard.mute = true;
@@ -331,7 +332,7 @@ public class MusicPlayer : MonoBehaviour {
     public void SongEnd()
     {
         coroutine = SoundOut(guitar, keyboard, drums);
-        StartCoroutine(coroutine);          
+        StartCoroutine(coroutine);
         if (!guitar.isPlaying && !keyboard.isPlaying)
         {
             prevVolumeGuitar = guitar.volume;
@@ -351,7 +352,7 @@ public class MusicPlayer : MonoBehaviour {
             keyboard.mute = keyboardMuted;
 
             coroutine = SoundIn(guitar, keyboard, drums);
-            StartCoroutine(coroutine);      //Songs now loop again
+            StartCoroutine(coroutine);
 
             if (guitar.loop == true && keyboard.loop == true)
             {
@@ -365,7 +366,10 @@ public class MusicPlayer : MonoBehaviour {
         drums.loop = false;
         guitar.loop = false;
         keyboard.loop = false;
+    }
 
+    public void ForceAlbumEnd()
+    {
         drums.mute = true;
         guitar.mute = true;
         keyboard.mute = true;
@@ -414,7 +418,7 @@ public class MusicPlayer : MonoBehaviour {
         keyboard.mute = false;
     }
 
-    public void MenuVolume()        //I might want to do something here
+    public void MenuVolume()
     {
         if (albumEnd == false)
         {
@@ -424,7 +428,7 @@ public class MusicPlayer : MonoBehaviour {
                 preFadeGuitar = guitar.volume;
                 preFadePiano = keyboard.volume;
 
-                fader = FadeOut(guitar, keyboard, drums, 4);
+                fader = FadeOut(guitar, keyboard, drums, 100);
                 StartCoroutine(fader);
                 menu = true;
 
@@ -522,7 +526,6 @@ public class MusicPlayer : MonoBehaviour {
 
     public void OtherSongCheck()
     {
-        //Save the old song to a variable and make it stop
         if (currentAlbum == album1)
         {
             List<GameObject> children = new List<GameObject>();

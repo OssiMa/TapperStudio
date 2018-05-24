@@ -191,7 +191,7 @@ public class InstrumentBase : MonoBehaviour {
     public void ComboTap()
     {
         exp += 0.5f * combo + xpBoost;
-        progression.GainXP();
+        progression.GainXP(this);
         if (combo < maxCombo)     //4 + comboBoost
         {
             comboStep += 1;
@@ -232,9 +232,9 @@ public class InstrumentBase : MonoBehaviour {
     public void BigExpReward()
     {
         exp += 2 * combo + xpBoost * 4;
-        progression.GainXP();
-        progression.GainXP();
-        progression.GainXP();
+        progression.GainXP(this);
+        progression.GainXP(this);
+        progression.GainXP(this);
         if(combo < maxCombo)        // 4 + comboBoost
         {
             comboStep += 5;

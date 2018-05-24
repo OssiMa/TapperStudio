@@ -63,8 +63,8 @@ public class SongProgress : MonoBehaviour {
 
 
     public float songXP;
-    [HideInInspector]
-    public float songXPMax = 20;
+   // [HideInInspector]
+    public float songXPMax = 1000;
     public float songCount = 1;
     public float currency = 0;
     float currencyInAlbum;
@@ -239,9 +239,24 @@ public class SongProgress : MonoBehaviour {
     }
 
     //Grants XP to songs
-    public void GainXP()
+    public void GainXP(InstrumentBase beis)
     {
-        songXP += 0.1f;
+        if (beis.instrumentNbr == 1)
+        {
+            songXP += 2;
+        }
+        else if (beis.instrumentNbr == 2)
+        {
+            songXP += 10;
+        }
+        else if (beis.instrumentNbr == 3)
+        {
+            songXP += 5;
+        }
+        else
+        {
+            Debug.LogWarning("Gratz!! new Ins Base Found)");
+        }
     }
 
     void PassiveGene()
@@ -268,7 +283,10 @@ public class SongProgress : MonoBehaviour {
                     ins.GetComponent<InstrumentBase>().fadeSlider.value = 500;
                 }
             }
-            songXP += 0.01f + (geneLvl * geneCombo + geneBoost) * 0.0005f;              //WIP, feel free to play with and test for optimal values
+            print(geneLvl +"lvl");
+            print(geneCombo + "comb");
+            print(geneBoost + "boost");
+            songXP += (geneLvl/4 + geneCombo + geneBoost/2)/30;              //WIP, feel free to play with and test for optimal values
         }
     }
 

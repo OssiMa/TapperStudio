@@ -9922,7 +9922,7 @@ MonoBehaviour:
   currentAlbum: 
   currentSong: 
   songXP: 0
-  songXPMax: 20
+  songXPMax: 1000
   songCount: 1
   currency: 0
   songCountMax: 3

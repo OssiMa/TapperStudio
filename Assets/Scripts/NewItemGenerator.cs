@@ -118,7 +118,7 @@ public class NewItemGenerator : MonoBehaviour {
         }
         else
         {
-            item.rarityName = "Legendary +" + (item.rarity-5);
+            item.rarityName = "Legendary+" + (item.rarity-5);
         }
     }
 }

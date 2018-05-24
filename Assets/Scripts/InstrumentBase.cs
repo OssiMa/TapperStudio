@@ -14,9 +14,11 @@ public class InstrumentBase : MonoBehaviour {
 
     public Slider xpBar;
     public Slider fadeSlider;
+    public Image fadeCounter;
     public Text currLvl;
     public Text nxtLvl;
     public Text comboText;
+    public Text comboNumber;
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
     public float startXp;
@@ -32,7 +34,8 @@ public class InstrumentBase : MonoBehaviour {
     public float comboStep;                 //when at combostemax, combo increases
     public float comboStepMax = 20;         //combo up when reached
     public float comboUpkeep = 5;           //mistakes player can make before losing combo
-    public float comboFade = 1000;          //how long the instrument needs to be inactive to lose combo
+    public float comboFade = 2000;          //how long the instrument needs to be inactive to lose combo
+    public float comboFadeMax = 2000;       //maximum wait for combo lose
 
     float ogMaxCombo;
     [HideInInspector]
@@ -44,6 +47,11 @@ public class InstrumentBase : MonoBehaviour {
 
     public Achievements achievements;
 
+    private void Awake()
+    {
+        comboNumber.text = combo + "";
+    }
+
     // Use this for initialization
     void Start ()
     {
@@ -51,7 +59,7 @@ public class InstrumentBase : MonoBehaviour {
         //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
-        fadeSlider.maxValue = comboFade;
+        fadeSlider.maxValue = comboFadeMax;
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
@@ -73,6 +81,7 @@ public class InstrumentBase : MonoBehaviour {
             LvlUp();
             BoostUpdate();
             maxCombo = ogMaxCombo + comboBoost;
+            fadeCounter.fillAmount = (comboFade / comboFadeMax);
         }
 
     }
@@ -166,7 +175,9 @@ public class InstrumentBase : MonoBehaviour {
         expToNext = 25;
         level = 1;
         nextLevel = 2;
-        if(availableSlots<3)
+        xpBar.minValue = 0;
+        xpBar.maxValue = expToNext;
+        if (availableSlots<3)
         {
             availableSlots += 1;
             InventoryUI.instance.GainEquipSlot(this);
@@ -183,6 +194,7 @@ public class InstrumentBase : MonoBehaviour {
         else if (comboUpkeep <= 0 && combo >1)
         {
             combo -= 1;
+            comboNumber.text = combo + "";
             comboStep = 0;
             comboUpkeep = 4;
         }
@@ -198,6 +210,7 @@ public class InstrumentBase : MonoBehaviour {
             if (comboStep >= comboStepMax)
             {
                 combo += 1;
+                comboNumber.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
             }
@@ -217,15 +230,18 @@ public class InstrumentBase : MonoBehaviour {
         if (combo > 1)
         {
             combo -= 1;
-            comboFade = 500;
+            comboFade = comboFadeMax;
+            fadeSlider.value = comboFadeMax;
+            fadeCounter.fillAmount = 1;
+            comboNumber.text = combo + "";
         }
     }
 
     void ComboFadeUp()
     {
-        if (comboFade < 1000)
+        if (comboFade < comboFadeMax)
         {
-            comboFade += 50;
+            comboFade += 75;
         }
     }
 
@@ -241,6 +257,7 @@ public class InstrumentBase : MonoBehaviour {
             if (comboStep >= comboStepMax)
             {
                 combo += 1;
+                comboNumber.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
             }

@@ -531,7 +531,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesTo.Add("O Glorious Day! Onwards,");
         AlbumFirstNamesTo.Add("The Journey");
         AlbumFirstNamesTo.Add("From Here");
-        AlbumFirstNamesTo.Add("I'm Used");
+        AlbumFirstNamesTo.Add("");
         AlbumFirstNamesTo.Add("Only One Way");
         AlbumFirstNamesTo.Add("Never");
         AlbumFirstNamesTo.Add("So, It Has Come");
@@ -573,10 +573,10 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("This Day");
         AlbumLastNamesTo.Add("the Future");     //35
         AlbumLastNamesTo.Add("Know");
-        AlbumLastNamesTo.Add("Turn into Nothing");
+        AlbumLastNamesTo.Add("");
         AlbumLastNamesTo.Add("Become One");
         AlbumLastNamesTo.Add("Separate");
-        AlbumLastNamesTo.Add("Know Myself");
+        AlbumLastNamesTo.Add("Knowing Myself");
 
 
         AlbumWholeNames.Add("Afterlife");

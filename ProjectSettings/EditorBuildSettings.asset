@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NEW UI+game merge.unity
     guid: db94f0c5c1a97734e84e9be21ebc8d13
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VisualRefinementScene.unity
     guid: 7d7600e2a0a522347a566174b9427a4b
+  - enabled: 1
+    path: Assets/Scenes/MasterScene.unity
+    guid: acd73e0b6b734ae498f5efc7fd87ec32

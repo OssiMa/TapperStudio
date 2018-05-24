@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Advertisements;     //This might be solved by changing the build setting to Android
+using UnityEngine.Advertisements;     //This might be solved by changing the build setting to Android
 
 public class Shop : MonoBehaviour {
                   
@@ -37,7 +37,7 @@ public class Shop : MonoBehaviour {
         PurchaseManager.purchaseManager.BuyCurrencyBig();
     }
 
-    /*public void WatchAd()
+    public void WatchAd()
     {
         print("Here we are again...");
         if (Advertisement.IsReady())
@@ -75,7 +75,7 @@ public class Shop : MonoBehaviour {
                 print("Uhh the ad FAILED 0_0");
                 break;
         }
-    }*/
+    }
 
     /*void PurchaseNoAdds()
     {

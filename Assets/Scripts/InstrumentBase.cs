@@ -17,7 +17,6 @@ public class InstrumentBase : MonoBehaviour {
     public Image fadeCounter;
     public Text currLvl;
     public Text nxtLvl;
-    public Text comboText;
     public Text comboNumber;
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
@@ -74,7 +73,6 @@ public class InstrumentBase : MonoBehaviour {
         if (progression.menu == false && progression.endMenu == false)
         { 
             fadeSlider.value = comboFade;
-            comboText.text = "Combo: " + combo;
             xpBar.value = exp;
             nxtLvl.text = "" + nextLevel;
             currLvl.text = "" + level;
@@ -243,6 +241,12 @@ public class InstrumentBase : MonoBehaviour {
         {
             comboFade += 75;
         }
+    }
+
+    public void UpdateComboCounter()
+    {
+        fadeCounter.fillAmount = (comboFade / comboFadeMax);
+        comboNumber.text = combo + "";
     }
 
     public void BigExpReward()

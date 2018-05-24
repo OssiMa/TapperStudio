@@ -521,6 +521,14 @@ public class MusicPlayer : MonoBehaviour {
         instrumentBaseGuitar.combo = 1;
         instrumentBasePiano.combo = 1;
 
+        instrumentBaseDrums.comboFade = instrumentBaseDrums.comboFadeMax;
+        instrumentBaseGuitar.comboFade = instrumentBaseGuitar.comboFadeMax;
+        instrumentBasePiano.comboFade = instrumentBasePiano.comboFadeMax;
+
+        instrumentBaseDrums.UpdateComboCounter();
+        instrumentBaseGuitar.UpdateComboCounter();
+        instrumentBasePiano.UpdateComboCounter();
+
         OtherSongCheck();
     }
 

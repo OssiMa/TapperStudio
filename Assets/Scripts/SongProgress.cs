@@ -283,7 +283,7 @@ public class SongProgress : MonoBehaviour {
                 if (ins.GetComponent<InstrumentBase>().comboFade > 0 && ins.GetComponent<InstrumentBase>().combo > 1)
                 {
                     ins.GetComponent<InstrumentBase>().comboFade -= 1;
-                    ins.GetComponent<InstrumentBase>().fadeSlider.value -= 1;
+                    ins.GetComponent<InstrumentBase>().UpdateComboCounter();
                 }
                 else if (ins.GetComponent<InstrumentBase>().comboFade <= 0)
                 {
@@ -382,6 +382,10 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("The Weight");
         AlbumFirstNamesOf.Add("The Name");
         AlbumFirstNamesOf.Add("Parting");
+        AlbumFirstNamesOf.Add("The Archwizard");
+        AlbumFirstNamesOf.Add("Master");
+        AlbumFirstNamesOf.Add("Lord");
+        AlbumFirstNamesOf.Add("The Heist");
 
 
 
@@ -427,6 +431,10 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("the Sorrowful \nSister");
         AlbumLastNamesOf.Add("the Moon");
         AlbumLastNamesOf.Add("the Stars");
+        AlbumLastNamesOf.Add("the Dwarves");
+        AlbumLastNamesOf.Add("the Jungle");
+        AlbumLastNamesOf.Add("Zombies");
+        AlbumLastNamesOf.Add("The century");
 
 
 
@@ -474,6 +482,8 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Sensual ");
         AlbumFirstNamesDual.Add("Quiet ");
         AlbumFirstNamesDual.Add("Twisted ");
+        AlbumFirstNamesDual.Add("Outrageous ");
+
 
 
         AlbumLastNamesDual.Add("Days");
@@ -516,9 +526,11 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Heart");
         AlbumLastNamesDual.Add("K.E.");
         AlbumLastNamesDual.Add("Witness");
-        AlbumLastNamesDual.Add("State");
+        AlbumLastNamesDual.Add("State");        //40
         AlbumLastNamesDual.Add("Unicorn");
-        //40
+        AlbumLastNamesDual.Add("Forge");
+        AlbumLastNamesDual.Add("Blacksmith");
+        AlbumLastNamesDual.Add("Gems");
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -559,7 +571,6 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesTo.Add("O Glorious Day! Onwards,");
         AlbumFirstNamesTo.Add("The Journey");
         AlbumFirstNamesTo.Add("From Here");
-        AlbumFirstNamesTo.Add("");
         AlbumFirstNamesTo.Add("Only One Way");
         AlbumFirstNamesTo.Add("Never");
         AlbumFirstNamesTo.Add("So, It Has Come");
@@ -601,7 +612,6 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("This Day");
         AlbumLastNamesTo.Add("the Future");     //35
         AlbumLastNamesTo.Add("Know");
-        AlbumLastNamesTo.Add("");
         AlbumLastNamesTo.Add("Become One");
         AlbumLastNamesTo.Add("Separate");
         AlbumLastNamesTo.Add("Knowing Myself");
@@ -648,6 +658,7 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Love Like You");
         AlbumWholeNames.Add("Oats We Sow");
         AlbumWholeNames.Add("Rattlesnake");
+        AlbumWholeNames.Add("Fossil fuel");
 
         currentAlbum = "SpaghettiSolution";
         UsedNames.Add(currentAlbum);

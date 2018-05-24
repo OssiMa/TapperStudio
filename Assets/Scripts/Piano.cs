@@ -65,7 +65,7 @@ public class Piano : MonoBehaviour {
 
     void spawnNote()
     {
-        if (sp.menu == false || sp.endMenu == false)
+        if (sp.menu == false && sp.endMenu == false)
         {
             time = 0;
             int whichNote = shortOrLong.Next(1, 5);

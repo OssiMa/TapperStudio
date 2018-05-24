@@ -10,12 +10,11 @@ public class SkinInventory : MonoBehaviour {
     Sprite drumsIcon1, drumsIcon2, drumsIcon3, drumsIcon4, drumsIcon5, drumsIcon6;
     Sprite drumsIconSpecial1, drumsIconSpecial2, drumsIconSpecial3, drumsIconSpecial4, drumsIconSpecial5, drumsIconSpecial6, drumsIconSpecial7;
 
-    Sprite guitarIcon;
+    Sprite guitarIcon1, guitarIcon2, guitarIcon3, guitarIcon4;
     Sprite guitarIconSpecial1, guitarIconSpecial2, guitarIconSpecial3, guitarIconSpecial4, guitarIconSpecial5;
 
     Sprite pianoIcon1, pianoIcon2, pianoIcon3;
-
-    Sprite pianoIconSpecial1, pianoIconSpecial2, pianoIconSpecial3;
+    Sprite pianoIconSpecial1, pianoIconSpecial2, pianoIconSpecial3, pianoIconSpecial4, pianoIconSpecial5, pianoIconSpecial6;
 
     InstrumentBase instrumentBaseDrums;
     InstrumentBase instrumentBaseGuitar;
@@ -26,6 +25,7 @@ public class SkinInventory : MonoBehaviour {
 
     void Awake()
     {
+        //Standard drum icons
         drumsIcon1 = GameObject.Find("drum_buttonImage_body").GetComponent<Image>().sprite;
         drumsIcon2 = GameObject.Find("drum_buttonImage (2)").GetComponent<Image>().sprite;
         drumsIcon3 = GameObject.Find("drum_buttonImage (4)").GetComponent<Image>().sprite;
@@ -34,7 +34,6 @@ public class SkinInventory : MonoBehaviour {
         drumsIcon6 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>().sprite;
 
         //Special drum icons
-        
         drumsIconSpecial1 = GameObject.Find("drum_buttonImage (4)_special").GetComponent<Image>().sprite;
         drumsIconSpecial2 = GameObject.Find("drum_buttonImage (2)_special").GetComponent<Image>().sprite;
         drumsIconSpecial3 = GameObject.Find("drum_buttonImage_body_special").GetComponent<Image>().sprite;
@@ -45,31 +44,32 @@ public class SkinInventory : MonoBehaviour {
         print(drumsIconSpecial7);
 
         //Standard guitar icons
-        /*
-        guitarIcon1 = GameObject.Find("guitar_buttonImage_kakka_normal").GetComponent<Image>().sprite;
-        guitarIcon2 = GameObject.Find("guitar_buttonImage_body (1)_normal").GetComponent<Image>().sprite;
-        guitarIcon3 = GameObject.Find("guitar_buttonImage_neck (1)_normal").GetComponent<Image>().sprite;
-        guitarIcon4 = GameObject.Find("guitar_buttonImage_head (1)_normal").GetComponent<Image>().sprite;
-        guitarIcon5 = GameObject.Find("guitar_buttonImage (2)_normal").GetComponent<Image>().sprite; 
-        */
-
+        guitarIcon1 = GameObject.Find("guitar_buttonImage_head").GetComponent<Image>().sprite;
+        guitarIcon2 = GameObject.Find("guitar_buttonImage_body").GetComponent<Image>().sprite;
+        guitarIcon3 = GameObject.Find("guitar_buttonImage_neck").GetComponent<Image>().sprite;
+        guitarIcon4 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>().sprite; 
+        
+        //Special guitar icons
         guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
         guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;
         guitarIconSpecial3 = GameObject.Find("guitar_buttonImage_neck (1)").GetComponent<Image>().sprite;
         guitarIconSpecial4 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>().sprite;
         guitarIconSpecial5 = GameObject.Find("guitar_buttonImage (2)").GetComponent<Image>().sprite;
 
+        //Standard piano icons
         pianoIcon1 = GameObject.Find("keyboard_buttonImage_head").GetComponent<Image>().sprite;
         pianoIcon2 = GameObject.Find("keyboard_buttonImage_bottom").GetComponent<Image>().sprite;
         pianoIcon3 = GameObject.Find("keyboard_buttonImage (2)").GetComponent<Image>().sprite;
 
         //Special piano icons
-        /*
-        pianoIconSpecial1 = GameObject.Find("keyboard_buttonImage_head_special").GetComponent<Image>().sprite;
-        pianoIconSpecial2 = GameObject.Find("keyboard_buttonImage_bottom_special").GetComponent<Image>().sprite;
-        pianoIconSpecial3 = GameObject.Find("keyboard_buttonImage (2)_special").GetComponent<Image>().sprite; 
-        */
+        pianoIconSpecial1 = GameObject.Find("keyboard_buttonImage_bottom_special").GetComponent<Image>().sprite;
+        pianoIconSpecial2 = GameObject.Find("keyboard_buttonImage_head_special").GetComponent<Image>().sprite;
+        pianoIconSpecial3 = GameObject.Find("keyboard_buttonImage (2)_special").GetComponent<Image>().sprite;
+        pianoIconSpecial4 = GameObject.Find("keyboard_buttonImage (3)_special").GetComponent<Image>().sprite;
+        pianoIconSpecial5 = GameObject.Find("keyboard_buttonImage (4)_special").GetComponent<Image>().sprite;
+        pianoIconSpecial6 = GameObject.Find("keyboard_buttonImage (5)_special").GetComponent<Image>().sprite;
 
+        //Instrument Bases
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
         instrumentBasePiano = GameObject.Find("Piano").GetComponent<InstrumentBase>();
@@ -97,7 +97,7 @@ public class SkinInventory : MonoBehaviour {
                     skin.specialIcon4 = drumsIcon4;
                     skin.specialIcon5 = drumsIcon5;
                     skin.specialIcon6 = drumsIcon6;
-                    skin.specialIcon7 = drumsIconSpecial7;
+                    //skin.specialIcon7 = drumsIconSpecial7;
                 }
                 else
                 {
@@ -114,15 +114,18 @@ public class SkinInventory : MonoBehaviour {
             {
                 if (skin.trinketType == 0)
                 {
+                    skin.specialIcon1 = guitarIcon1;
+                    skin.specialIcon2 = guitarIcon2;
+                    skin.specialIcon3 = guitarIcon3;
+                    skin.specialIcon4 = guitarIcon4;
+                }
+                else
+                {
                     skin.specialIcon1 = guitarIconSpecial1;
                     skin.specialIcon2 = guitarIconSpecial2;
                     skin.specialIcon3 = guitarIconSpecial3;
                     skin.specialIcon4 = guitarIconSpecial4;
                     skin.specialIcon5 = guitarIconSpecial5;
-                }
-                else
-                {
-                    skin.specialIcon1 = guitarIcon;
                 }
             }
             if (skin.instrument == 3)
@@ -138,12 +141,15 @@ public class SkinInventory : MonoBehaviour {
                     skin.specialIcon1 = pianoIconSpecial1;
                     skin.specialIcon2 = pianoIconSpecial2;
                     skin.specialIcon3 = pianoIconSpecial3;
+                    skin.specialIcon4 = pianoIconSpecial4;
+                    skin.specialIcon5 = pianoIconSpecial5;
+                    skin.specialIcon6 = pianoIconSpecial6;
                 }
             }
         }
     }
 
-    void VintageCheck()     //Works
+    void VintageCheck()
     {
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();

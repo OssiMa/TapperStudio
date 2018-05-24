@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Save {
 
-    public float currency;
-    public float premiumCurrency;
+    public int currency;
+    public int premiumCurrency;
+    public int curInGamePlay;
 
     public int albumsCreated = 0;
     public float songsCompleted = 0;
@@ -16,6 +17,8 @@ public class Save {
     public string currentAlbum;
     public string currentSong;
     public List<string> usedNames;
+    public List<Sprite> usedAlbums;
+
 
     public float drumLevel = 1;
     public float nextDrumLevel = 0;

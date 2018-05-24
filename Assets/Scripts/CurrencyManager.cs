@@ -23,9 +23,9 @@ public class CurrencyManager : MonoBehaviour {
     #endregion
     public Achievements achievements;
     [HideInInspector]
-    public int currency = 20;
+    public int currency;
     [HideInInspector]
-    public int premiumCurrency = 20;
+    public int premiumCurrency;
 
     [HideInInspector]
     public int curInGameplay;
@@ -41,7 +41,7 @@ public class CurrencyManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        currency = 0;
+
 	}
 	
 	// Update is called once per frame

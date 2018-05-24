@@ -9,46 +9,47 @@ public class Save {
     public int premiumCurrency;
     public int curInGamePlay;
 
-    public int albumsCreated = 0;
-    public float songsCompleted = 0;
-    public float songXp = 0;
-    public float songXpMax = 0;
+    public int albumsCreated;
+    public float songsCompleted;
+    public float songXp;
+    public float songXpMax;
+    public float songCount;
+    public float songCountMax;
 
     public string currentAlbum;
     public string currentSong;
     public List<string> usedNames;
-    public List<Sprite> usedAlbums;
 
 
-    public float drumLevel = 1;
-    public float nextDrumLevel = 0;
-    public float drumCombo = 1;
+    public float drumLevel;
+    public float nextDrumLevel;
+    public float drumCombo;
 
-    public float guitarLevel = 1;
-    public float nextGuitarLevel = 0;
-    public float guitarCombo = 1;
+    public float guitarLevel;
+    public float nextGuitarLevel;
+    public float guitarCombo;
 
-    public float pianoLevel = 1;
-    public float nextPianoLevel = 0;
-    public float pianoCombo = 1;
+    public float pianoLevel;
+    public float nextPianoLevel;
+    public float pianoCombo;
 
-    public float drumXp = 0;
-    public float guitarXp = 0;
-    public float pianoXp = 0;
+    public float drumXp;
+    public float guitarXp;
+    public float pianoXp;
 
-    public float drumStartXp = 0;
-    public float guitarStartXp = 0;
-    public float pianoStartXp = 0;
+    public float drumStartXp;
+    public float guitarStartXp;
+    public float pianoStartXp;
 
-    public int SongNumber = 0;
-    public int AlbumNumber = 0;
-    public int TimeNumber = 0;
-    public int CurrencyNumber = 0;
-    public int DrumNumber = 0;
-    public int GuitarNumber = 0;
-    public int PianoNumber = 0;
-    public int DrumComboNumber = 0;
-    public int GuitarComboNumber = 0;
-    public int PianoComboNumber = 0;
+    public int SongNumber;
+    public int AlbumNumber;
+    public int TimeNumber;
+    public int CurrencyNumber;
+    public int DrumNumber;
+    public int GuitarNumber;
+    public int PianoNumber;
+    public int DrumComboNumber;
+    public int GuitarComboNumber;
+    public int PianoComboNumber;
 
 }

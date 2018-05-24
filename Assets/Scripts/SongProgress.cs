@@ -14,6 +14,7 @@ public class SongProgress : MonoBehaviour {
     public InstrumentBase guitarBase;
     public InstrumentBase pianoBase;
     public Achievements achievements;
+
     InstrumentBase activeBase;
 
     Guitar guitar;
@@ -66,7 +67,7 @@ public class SongProgress : MonoBehaviour {
    // [HideInInspector]
     public float songXPMax = 1000;
     public float songCount = 1;
-    public float currency = 0;
+
     float currencyInAlbum;
     float previousCurrency;
     [HideInInspector]
@@ -113,7 +114,14 @@ public class SongProgress : MonoBehaviour {
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
         cm = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
         nig = GameObject.Find("GameManager").GetComponent<NewItemGenerator>();
-	}
+
+        Progress.value = songXP;
+        SongText.text = songCount + "/" + songCountMax;
+        AlbumName.text = currentAlbum;
+        SongName.text = currentSong;
+        currencyText.text = cm.currency + "";
+        print(cm.currency);
+    }
 
     // Update is called once per frame
     void Update()
@@ -124,7 +132,7 @@ public class SongProgress : MonoBehaviour {
             SongText.text = songCount + "/" + songCountMax;
             AlbumName.text = currentAlbum;
             SongName.text = currentSong;
-            currencyText.text = cm.curInGameplay + "";
+            currencyText.text = cm.currency + "";
 
             if (menu == false && endMenu == false)
             {
@@ -174,7 +182,7 @@ public class SongProgress : MonoBehaviour {
                 {
                     UsedNames.RemoveAt(1);
                 }
-                currency += 10;
+                cm.currency += 10;
                 NewSong();
 
             }
@@ -280,7 +288,6 @@ public class SongProgress : MonoBehaviour {
                 else if (ins.GetComponent<InstrumentBase>().comboFade <= 0)
                 {
                     ins.GetComponent<InstrumentBase>().ComboFading();
-                    ins.GetComponent<InstrumentBase>().fadeSlider.value = 500;
                 }
             }
             print(geneLvl +"lvl");
@@ -466,6 +473,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Sugary ");
         AlbumFirstNamesDual.Add("Sensual ");
         AlbumFirstNamesDual.Add("Quiet ");
+        AlbumFirstNamesDual.Add("Twisted ");
 
 
         AlbumLastNamesDual.Add("Days");
@@ -508,7 +516,9 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Heart");
         AlbumLastNamesDual.Add("K.E.");
         AlbumLastNamesDual.Add("Witness");
-        AlbumLastNamesDual.Add("State");        //40
+        AlbumLastNamesDual.Add("State");
+        AlbumLastNamesDual.Add("Unicorn");
+        //40
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -639,7 +649,6 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Oats We Sow");
         AlbumWholeNames.Add("Rattlesnake");
 
-
         currentAlbum = "SpaghettiSolution";
         UsedNames.Add(currentAlbum);
         currentSong = "OdeToSpaghetti";
@@ -647,7 +656,6 @@ public class SongProgress : MonoBehaviour {
 
         NewAlbum();
         NewSong();
-
 
     }
 
@@ -777,7 +785,7 @@ public class SongProgress : MonoBehaviour {
         }
     }
 
-    void AlbumPicGeneration()
+    public void AlbumPicGeneration()
     {
         Image albumImage = GameObject.Find("AlbumImage").GetComponent<Image>();
 

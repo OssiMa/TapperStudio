@@ -22,6 +22,17 @@ public class SaveLoadManager : MonoBehaviour {
     [HideInInspector]
     public Achievements achievements;
 
+    int SongNumber = 0;
+    int AlbumNumber = 0;
+    int TimeNumber = 0;
+    int CurrencyNumber = 0;
+    int DrumNumber = 0;
+    int GuitarNumber = 0;
+    int PianoNumber = 0;
+    int DrumComboNumber = 0;
+    int GuitarComboNumber = 0;
+    int PianoComboNumber = 0;
+
     // Use this for initialization
     void Start () {
         guitarBase = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
@@ -90,6 +101,8 @@ public class SaveLoadManager : MonoBehaviour {
         save.currentSong = progression.currentSong;
         save.albumsCreated = progression.AlbumsCreated;
         save.usedNames = progression.UsedNames;
+        save.songCount = progression.songCount;
+        save.songCountMax = progression.songCountMax;
 
 
         //Currencymanager
@@ -152,36 +165,39 @@ public class SaveLoadManager : MonoBehaviour {
             progression.currentSong = save.currentSong;
             progression.AlbumsCreated = save.albumsCreated;
             progression.UsedNames = save.usedNames;
+            progression.songCount = save.songCount;
+            progression.songCountMax = save.songCountMax;
 
 
             //Currencymanager
             currencyManager.currency = save.currency;
+
             currencyManager.premiumCurrency = save.premiumCurrency;
             currencyManager.curInGameplay = save.curInGamePlay;
 
             //Achievements
-            achievements.SongNumber = save.SongNumber;
-            achievements.AlbumNumber = save.AlbumNumber;
-            achievements.TimeNumber = save.TimeNumber;
-            achievements.CurrencyNumber = save.CurrencyNumber;
-            achievements.DrumNumber = save.DrumNumber;
-            achievements.GuitarNumber = save.GuitarNumber;
-            achievements.PianoNumber = save.PianoNumber;
-            achievements.DrumComboNumber = save.DrumComboNumber;
-            achievements.GuitarComboNumber = save.GuitarComboNumber;
-            achievements.PianoComboNumber = save.PianoComboNumber;
+            //achievements.SongNumber = save.SongNumber;
+            AlbumNumber = save.AlbumNumber;
+            TimeNumber = save.TimeNumber;
+            CurrencyNumber = save.CurrencyNumber;
+            DrumNumber = save.DrumNumber;
+            GuitarNumber = save.GuitarNumber;
+            PianoNumber = save.PianoNumber;
+            DrumComboNumber = save.DrumComboNumber;
+            GuitarComboNumber = save.GuitarComboNumber;
+            PianoComboNumber = save.PianoComboNumber;
 
+            for (int i = 0; i == SongNumber -1; i++)
+            {
+                achievements.AchievementDone(1);
+                SongNumber--;
+            }
 
-            progression.Progress.value = progression.songXP;
-            progression.SongText.text = progression.songCount + "/" + progression.songCountMax;
-            progression.AlbumName.text = progression.currentAlbum;
-            progression.SongName.text = progression.currentSong;
-            progression.currencyText.text = currencyManager.curInGameplay + "";
 
         }
         else
         {
-            Debug.Log("No game saved!");
+
         }
     }
 }

@@ -1685,6 +1685,11 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114655961236927412, guid: c8e450aa001d89a4e8773a091575d291,
+        type: 2}
+      propertyPath: fadeCounter
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8e450aa001d89a4e8773a091575d291, type: 2}
   m_IsPrefabParent: 0
@@ -3963,7 +3968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.10197008, y: 459.6506}
+  m_AnchoredPosition: {x: -0.10197008, y: 459.65057}
   m_SizeDelta: {x: -0.2000122, y: -459.7}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &287418656
@@ -9369,7 +9374,6 @@ MonoBehaviour:
   songXP: 0
   songXPMax: 20
   songCount: 1
-  currency: 0
   songCountMax: 3
   AlbumsCreated: 0
   SongsCreated: 0
@@ -10243,9 +10247,11 @@ MonoBehaviour:
   progression: {fileID: 845815403}
   xpBar: {fileID: 1237159919}
   fadeSlider: {fileID: 1690919254}
+  fadeCounter: {fileID: 0}
   currLvl: {fileID: 747044304}
   nxtLvl: {fileID: 334150206}
   comboText: {fileID: 2048759959}
+  comboNumber: {fileID: 0}
   exp: 0
   startXp: 0
   expToNext: 25
@@ -10258,6 +10264,7 @@ MonoBehaviour:
   comboStepMax: 20
   comboUpkeep: 5
   comboFade: 1000
+  comboFadeMax: 2000
   maxCombo: 0
   xpBoost: 0
   achievements: {fileID: 0}
@@ -24676,9 +24683,11 @@ MonoBehaviour:
   progression: {fileID: 845815403}
   xpBar: {fileID: 935289559}
   fadeSlider: {fileID: 1537018947}
+  fadeCounter: {fileID: 0}
   currLvl: {fileID: 1888579186}
   nxtLvl: {fileID: 1793494684}
   comboText: {fileID: 1436361434}
+  comboNumber: {fileID: 0}
   exp: 0
   startXp: 0
   expToNext: 25
@@ -24691,6 +24700,7 @@ MonoBehaviour:
   comboStepMax: 20
   comboUpkeep: 5
   comboFade: 1000
+  comboFadeMax: 2000
   maxCombo: 0
   xpBoost: 0
   achievements: {fileID: 0}

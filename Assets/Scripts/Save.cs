@@ -10,7 +10,7 @@ public class Save {
     public int curInGamePlay;
 
     public int albumsCreated;
-    public float songsCompleted;
+    public int songsCompleted;
     public float songXp;
     public float songXpMax;
     public float songCount;

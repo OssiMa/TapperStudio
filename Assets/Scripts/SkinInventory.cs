@@ -47,8 +47,9 @@ public class SkinInventory : MonoBehaviour {
         guitarIcon1 = GameObject.Find("guitar_buttonImage_head").GetComponent<Image>().sprite;
         guitarIcon2 = GameObject.Find("guitar_buttonImage_body").GetComponent<Image>().sprite;
         guitarIcon3 = GameObject.Find("guitar_buttonImage_neck").GetComponent<Image>().sprite;
-        guitarIcon4 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>().sprite; 
-        
+        guitarIcon4 = GameObject.Find("guitar_buttonImage (1)").GetComponent<Image>().sprite;
+        //guitarIcon5 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>().sprite;
+
         //Special guitar icons
         guitarIconSpecial1 = GameObject.Find("guitar_buttonImage_kakka").GetComponent<Image>().sprite;
         guitarIconSpecial2 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>().sprite;

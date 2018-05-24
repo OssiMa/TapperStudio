@@ -80,7 +80,7 @@ public class PianoActivatorCheck : MonoBehaviour
             {
                 Destroy(normalNote);
             }
-            foreach (GameObject longerNote in notesInScene)
+            foreach (GameObject longerNote in notesInScene)     //Highly unreliable for LongNotes! Needs a fix 
             {
                 Destroy(longerNote);
             }

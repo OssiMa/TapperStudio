@@ -101,8 +101,15 @@ public class SkinSlot : MonoBehaviour {
             }
             else
             {
+                if (skin.trinketType == 0)
+                {
+                    spIcon1.color = newColor;
+                }
+                else
+                {
+                    spIcon6.color = newColor;
+                }
                 newColor.a = 255;
-                spIcon1.color = newColor;
                 //What color are the other parts?
             }
         }
@@ -158,6 +165,13 @@ public class SkinSlot : MonoBehaviour {
                     newColor.a = 255;
                     spIcon1.color = newColor;
                     spIcon2.color = newColor;
+
+                    Color32 white;
+                    white.a = 255;
+                    white.r = 255;
+                    white.g = 255;
+                    white.b = 255;
+                    spIcon3.color = white;
                     //What color are the other parts?
                 }
                 else
@@ -181,12 +195,13 @@ public class SkinSlot : MonoBehaviour {
                 spIcon4.sprite = skin.specialIcon4;
                 spIcon5.sprite = skin.specialIcon5;
                 spIcon6.sprite = skin.specialIcon6;
+                //spIcon7.sprite = skin.specialIcon7;
                 spIcon1.enabled = true;
                 spIcon2.enabled = true;
                 spIcon3.enabled = true;
                 spIcon4.enabled = true;
                 spIcon5.enabled = true;
-                spIcon6.enabled = false;
+                spIcon6.enabled = true;
                 spIcon7.enabled = false;
             }
 
@@ -221,6 +236,8 @@ public class SkinSlot : MonoBehaviour {
                 spIcon5.enabled = true;
                 spIcon6.enabled = true;
                 spIcon7.enabled = true;
+                print("Oh, what a " + skin.specialIcon1);
+                print("Must go well with a " + spIcon1.sprite);
             }
         }
         //The standard instruments' sprites:

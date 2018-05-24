@@ -28,7 +28,7 @@ public class SaveLoadManager : MonoBehaviour {
         drumBase = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         pianoBase = GameObject.Find("Piano").GetComponent<InstrumentBase>();
         currencyManager = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
-        progression = GameObject.Find("GameManager").GetComponent<SongProgress>();
+        progression = GameObject.Find("SongProgression").GetComponent<SongProgress>();
         achievements = GameObject.Find("GameManager").GetComponent<Achievements>();
         //LoadGame();
         saveTime = 5;
@@ -93,7 +93,21 @@ public class SaveLoadManager : MonoBehaviour {
 
 
         //Currencymanager
-        save.currency = progression.currency;
+        save.currency = currencyManager.currency;
+        save.premiumCurrency = currencyManager.premiumCurrency;
+        save.curInGamePlay = currencyManager.curInGameplay;
+
+        //Achievements
+        save.SongNumber = achievements.SongNumber;
+        save.AlbumNumber = achievements.AlbumNumber;
+        save.TimeNumber = achievements.TimeNumber;
+        save.CurrencyNumber = achievements.CurrencyNumber;
+        save.DrumNumber = achievements.DrumNumber;
+        save.GuitarNumber = achievements.GuitarNumber;
+        save.PianoNumber = achievements.PianoNumber;
+        save.DrumComboNumber = achievements.DrumComboNumber;
+        save.GuitarComboNumber = achievements.GuitarComboNumber;
+        save.PianoComboNumber = achievements.PianoComboNumber;
 
         return save;
     }
@@ -112,22 +126,57 @@ public class SaveLoadManager : MonoBehaviour {
             file.Close();
 
 
-
-            // 4
+            //Drum
             drumBase.level = save.drumLevel;
             drumBase.exp = save.drumXp;
             drumBase.expToNext = save.nextDrumLevel;
             drumBase.startXp = save.drumStartXp;
+            drumBase.combo = save.drumCombo;
 
+            //Guitar
+            guitarBase.level = save.guitarLevel;
+            guitarBase.exp = save.guitarXp;
+            guitarBase.expToNext = save.nextGuitarLevel;
+            guitarBase.startXp = save.guitarStartXp;
+
+            //Piano
+            pianoBase.level = save.pianoLevel;
+            pianoBase.exp = save.pianoXp;
+            pianoBase.expToNext = save.nextPianoLevel;
+            pianoBase.startXp = save.pianoStartXp;
+
+            //Songprogress
             progression.songXP = save.songXp;
             progression.songCount = save.songsCompleted;
             progression.currentAlbum = save.currentAlbum;
             progression.currentSong = save.currentSong;
             progression.AlbumsCreated = save.albumsCreated;
             progression.UsedNames = save.usedNames;
-            progression.currency = save.currency;
 
-            Debug.Log("Game Loaded");
+
+            //Currencymanager
+            currencyManager.currency = save.currency;
+            currencyManager.premiumCurrency = save.premiumCurrency;
+            currencyManager.curInGameplay = save.curInGamePlay;
+
+            //Achievements
+            achievements.SongNumber = save.SongNumber;
+            achievements.AlbumNumber = save.AlbumNumber;
+            achievements.TimeNumber = save.TimeNumber;
+            achievements.CurrencyNumber = save.CurrencyNumber;
+            achievements.DrumNumber = save.DrumNumber;
+            achievements.GuitarNumber = save.GuitarNumber;
+            achievements.PianoNumber = save.PianoNumber;
+            achievements.DrumComboNumber = save.DrumComboNumber;
+            achievements.GuitarComboNumber = save.GuitarComboNumber;
+            achievements.PianoComboNumber = save.PianoComboNumber;
+
+
+            progression.Progress.value = progression.songXP;
+            progression.SongText.text = progression.songCount + "/" + progression.songCountMax;
+            progression.AlbumName.text = progression.currentAlbum;
+            progression.SongName.text = progression.currentSong;
+            progression.currencyText.text = currencyManager.curInGameplay + "";
 
         }
         else

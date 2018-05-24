@@ -29,26 +29,16 @@ public class SkinAssigner : MonoBehaviour {
     Transform drumSpecialsObj, drumSpecialsObj1, drumSpecialsObj2, drumSpecialsObj3, drumSpecialsObj4, drumSpecialsObj5, drumSpecialsObj6,drumSpecialsObj7;
     Image drumSpecialImage;
 
-    Image toggleImageGuitar1;
-    Image toggleImageGuitar2;
-    Image toggleImageGuitar3;
     GameObject togglesGuitar;
-    Image toggleImageGuitarSpecial1;
-    Image toggleImageGuitarSpecial2;
-    Image toggleImageGuitarSpecial3;
+
     GameObject togglesGuitarSpecial;
 
     GameObject togglesDrums;
-    Image toggleImageDrums1, toggleImageDrums2, toggleImageDrums3, toggleImageDrums4, toggleImageDrums5, toggleImageDrums6;
     GameObject togglesDrumsSpecial;
-    Image toggleImageDrumsSpecial1, toggleImageDrumsSpecial2, toggleImageDrumsSpecial3, toggleImageDrumsSpecial4, toggleImageDrumsSpecial5, toggleImageDrumsSpecial6, toggleImageDrumsSpecial7;
-    //I guess the special toggle images could just be gameobjects that are put on accordingly
 
-    Image toggleImagePiano1;
-    Image toggleImagePiano2;
     GameObject togglesPiano;
 
-    Image togglePianoSpecial1, togglePianoSpecial2, togglePianoSpecial3, togglePianoSpecial4, togglePianoSpecial5, togglePianoSpecial6, togglePianoSpecial7;
+    Image togglePianoSpecial1, togglePianoSpecial2, togglePianoSpecial3, togglePianoSpecial4, togglePianoSpecial5, togglePianoSpecial6;
     GameObject togglesPianoSpecial;
 
     InstrumentBase instrumentBaseDrums;
@@ -65,8 +55,8 @@ public class SkinAssigner : MonoBehaviour {
         drumDeco2 = GameObject.Find("2_decoration1").transform.GetChild(1);
         drumDeco3 = GameObject.Find("2_decoration2").transform.GetChild(1);
 
-        guitarBoard = GameObject.Find("Panel_Guitar").transform.GetChild(0);
-        guitarOutline = GameObject.Find("Panel_Guitar").transform.GetChild(1);
+        guitarBoard = GameObject.Find("Panel_Guitar").transform.GetChild(7);
+        guitarOutline = GameObject.Find("Panel_Guitar").transform.GetChild(8);
 
         instrumentBaseDrums = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
@@ -80,44 +70,13 @@ public class SkinAssigner : MonoBehaviour {
     void GetToggles()
     {
         togglesGuitar = GameObject.Find("TogglesGuitar");
-        toggleImageGuitar1 = GameObject.Find("guitar_buttonImage_body").GetComponent<Image>();
-        toggleImageGuitar2 = GameObject.Find("guitar_buttonImage_head").GetComponent<Image>();
-        toggleImageGuitar3 = GameObject.Find("guitar_buttonImage_neck").GetComponent<Image>();
         togglesGuitarSpecial = GameObject.Find("TogglesGuitarSpecial");
-        toggleImageGuitarSpecial1 = GameObject.Find("guitar_buttonImage_body (1)").GetComponent<Image>();
-        toggleImageGuitarSpecial2 = GameObject.Find("guitar_buttonImage_head (1)").GetComponent<Image>();
-        toggleImageGuitarSpecial3 = GameObject.Find("guitar_buttonImage_neck (1)").GetComponent<Image>();
-        //togglesGuitarSpecial.SetActive(false);
 
         togglesDrums = GameObject.Find("TogglesDrums");
-        toggleImageDrums1 = GameObject.Find("drum_buttonImage_body").GetComponent<Image>();
-        /*toggleImageDrums2 = GameObject.Find("drum_buttonImage (2)").GetComponent<Image>();
-        toggleImageDrums3 = GameObject.Find("drum_buttonImage (4)").GetComponent<Image>();
-        toggleImageDrums4 = GameObject.Find("drum_buttonImage (5)").GetComponent<Image>();
-        toggleImageDrums5 = GameObject.Find("drum_buttonImage (3)").GetComponent<Image>();
-        toggleImageDrums6 = GameObject.Find("drum_buttonImage (1)").GetComponent<Image>();*/
-
-        //Drum specials
         togglesDrumsSpecial = GameObject.Find("ToggleDrumsSpecial");
-        toggleImageDrumsSpecial1 = GameObject.Find("drum_buttonImage (4)_special").GetComponent<Image>();
-        /*toggleImageDrumsSpecial2 = GameObject.Find("drum_buttonImage (2)_special").GetComponent<Image>();
-        toggleImageDrumsSpecial3 = GameObject.Find("drum_buttonImage_body_special").GetComponent<Image>();
-        toggleImageDrumsSpecial4 = GameObject.Find("drum_buttonImage (5)_special").GetComponent<Image>();
-        toggleImageDrumsSpecial5 = GameObject.Find("drum_buttonImage (3)_special").GetComponent<Image>();
-        toggleImageDrumsSpecial6 = GameObject.Find("drum_buttonImage (1)_special").GetComponent<Image>();
-        toggleImageDrumsSpecial7 = GameObject.Find("drum_buttonImage (6)_special").GetComponent<Image>();*/
 
-        toggleImagePiano1 = GameObject.Find("keyboard_buttonImage_head").GetComponent<Image>();
-        toggleImagePiano2 = GameObject.Find("keyboard_buttonImage_bottom").GetComponent<Image>();
         togglesPiano = GameObject.Find("TogglesPiano");
         togglesPianoSpecial = GameObject.Find("TogglesPianoSpecial");
-        togglePianoSpecial1 = GameObject.Find("keyboard_buttonImage_bottom_special").GetComponent<Image>();
-        togglePianoSpecial2 = GameObject.Find("keyboard_buttonImage_head_special").GetComponent<Image>();
-        togglePianoSpecial3 = GameObject.Find("keyboard_buttonImage (3)_special").GetComponent<Image>();
-        togglePianoSpecial4 = GameObject.Find("keyboard_buttonImage (4)_special").GetComponent<Image>();
-        togglePianoSpecial5 = GameObject.Find("keyboard_buttonImage (5)_special").GetComponent<Image>();
-        togglePianoSpecial6 = GameObject.Find("keyboard_buttonImage (6)_special").GetComponent<Image>();
-        togglePianoSpecial7 = GameObject.Find("keyboard_buttonImage (10)_special").GetComponent<Image>();
 
         togglesPianoSpecial.SetActive(false);
         togglesGuitarSpecial.SetActive(false);
@@ -126,10 +85,11 @@ public class SkinAssigner : MonoBehaviour {
 
     void GetTrinkets()
     {
+        //The gameobjects that have their sprites changed
         pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(8);
         pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
 
-        guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(3);
+        guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(10);
         guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
 
         drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(4);
@@ -142,51 +102,42 @@ public class SkinAssigner : MonoBehaviour {
 
         if (instrument == 1)
         {
-            if (slot.skin.vintageLock > instrumentBaseDrums.vintageLevel)
+            Color32 newColor;
+
+            if (slot.skin.trinketType != 0)     //If the skin has a trinket
             {
-                if (slot.skin.trinketType != 0)
-                {
-                    AssignTrinket(slot);
-                    togglesDrums.SetActive(false);
-                    togglesDrumsSpecial.SetActive(true);
-                }
-                else if (slot.skin.trinketType == 0)
-                {
-                    togglesDrums.SetActive(true);
-                    togglesDrumsSpecial.SetActive(false);
-                }
-
-                if (slot.skin.baseInstrument == false)
-                {
-                    Color32 newColor = slot.skin.color;
-                    newColor.a = 255;
-                    drumDeco1.GetComponent<Image>().color = newColor;
-                    drumDeco2.GetComponent<Image>().color = newColor;
-                    drumDeco3.GetComponent<Image>().color = newColor;
-                    toggleImageDrums1.color = newColor;
-                    toggleImageDrumsSpecial1.color = newColor;
-                }
-                else
-                {
-                    Color32 newColor;
-                    newColor.r = 19;
-                    newColor.g = 177;
-                    newColor.b = 255;
-                    newColor.a = 255;
-
-                    drumDeco1.GetComponent<Image>().color = newColor;
-                    drumDeco2.GetComponent<Image>().color = newColor;
-                    drumDeco3.GetComponent<Image>().color = newColor;
-                    toggleImageDrumsSpecial1.color = newColor;
-                    toggleImageDrums1.color = newColor;
-                }
+                AssignTrinket(slot);
+                togglesDrums.SetActive(false);
+                togglesDrumsSpecial.SetActive(true);
             }
+            else if (slot.skin.trinketType == 0)
+            {
+                togglesDrums.SetActive(true);
+                togglesDrumsSpecial.SetActive(false);
+            }
+
+            if (slot.skin.baseInstrument == false)
+            {
+                newColor = slot.skin.color;
+                newColor.a = 255;
+            }
+            else
+            {
+                newColor.r = 19;                        //If base instrument is equipped
+                newColor.g = 177;
+                newColor.b = 255;
+                newColor.a = 255;
+            }
+
+            drumDeco1.GetComponent<Image>().color = newColor;
+            drumDeco2.GetComponent<Image>().color = newColor;
+            drumDeco3.GetComponent<Image>().color = newColor;
+            togglesDrums.transform.GetChild(1).GetComponent<Image>().color = newColor;
+            togglesDrumsSpecial.transform.GetChild(1).GetComponent<Image>().color = newColor;
         }
         else if (instrument == 2)
         {
-            if (slot.skin.vintageLock > instrumentBaseGuitar.vintageLevel)
-            {
-                if (slot.skin.trinketType != 0)
+                if (slot.skin.trinketType != 0)          //If the skin has a trinket
                 {
                     AssignTrinket(slot);
                     togglesGuitar.SetActive(false);
@@ -197,18 +148,19 @@ public class SkinAssigner : MonoBehaviour {
                     togglesGuitar.SetActive(true);
                     togglesGuitarSpecial.SetActive(false);
                 }
+
                 if (slot.skin.baseInstrument == false)
                 {
                     Color32 newColor = slot.skin.color;
                     newColor.a = 255;
                     guitarBoard.GetComponent<Image>().color = newColor;
                     guitarOutline.GetComponent<Image>().color = newColor;
-                    toggleImageGuitar1.color = newColor;
-                    toggleImageGuitar2.color = newColor;
-                    toggleImageGuitar3.color = newColor;
-                    toggleImageGuitarSpecial1.color = newColor;
-                    toggleImageGuitarSpecial2.color = newColor;
-                    toggleImageGuitarSpecial3.color = newColor;
+                    togglesGuitar.transform.GetChild(0).GetComponent<Image>().color = newColor;
+                    togglesGuitar.transform.GetChild(1).GetComponent<Image>().color = newColor;
+                    togglesGuitar.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                    togglesGuitarSpecial.transform.GetChild(1).GetComponent<Image>().color = newColor;
+                    togglesGuitarSpecial.transform.GetChild(2).GetComponent<Image>().color = newColor;
+                    togglesGuitarSpecial.transform.GetChild(3).GetComponent<Image>().color = newColor;
                 }
                 else
                 {
@@ -218,56 +170,59 @@ public class SkinAssigner : MonoBehaviour {
                     newColor1.b = 105;
                     newColor1.a = 255;
 
-                    guitarBoard.GetComponent<Image>().color = newColor1;
-                    guitarOutline.GetComponent<Image>().color = newColor1;
-
-                    Color32 newColor2; //= new Color(159, 133, 105, 255);
+                    Color32 newColor2;
                     newColor2.r = 255;
                     newColor2.g = 215;
                     newColor2.b = 146;
                     newColor2.a = 255;
 
-                    toggleImageGuitar1.color = newColor2;
-                    toggleImageGuitar2.color = newColor2;
-                    toggleImageGuitar3.color = newColor2;
-                    toggleImageGuitarSpecial1.color = newColor2;
-                    toggleImageGuitarSpecial2.color = newColor2;
-                    toggleImageGuitarSpecial3.color = newColor2;
-                }
+                    guitarBoard.GetComponent<Image>().color = newColor1;
+                    guitarOutline.GetComponent<Image>().color = newColor1;
+                    togglesGuitar.transform.GetChild(0).GetComponent<Image>().color = newColor2;
+                    togglesGuitar.transform.GetChild(1).GetComponent<Image>().color = newColor2;
+                    togglesGuitar.transform.GetChild(2).GetComponent<Image>().color = newColor2;
+                    togglesGuitarSpecial.transform.GetChild(1).GetComponent<Image>().color = newColor2;
+                    togglesGuitarSpecial.transform.GetChild(2).GetComponent<Image>().color = newColor2;
+                    togglesGuitarSpecial.transform.GetChild(3).GetComponent<Image>().color = newColor2;
             }
         }
         else if (instrument == 3)
         {
-            if (slot.skin.vintageLock > instrumentBaseDrums.vintageLevel)
-            {
-                if (slot.skin.trinketType != 0)
-                {
-                    AssignTrinket(slot);
-                    togglesPiano.SetActive(true);
-                    togglesPianoSpecial.SetActive(false);
-                }
-                else if (slot.skin.trinketType == 0)
-                {
-                    togglesPiano.SetActive(false);
-                    togglesPianoSpecial.SetActive(true);
-                }
+            Color32 newColor;
 
-                Color32 newColor = slot.skin.color;
+            if (slot.skin.trinketType != 0)          //If the skin has a trinket
+            {
+                AssignTrinket(slot);
+                togglesPiano.SetActive(true);
+                togglesPianoSpecial.SetActive(false);
+            }
+            else if (slot.skin.trinketType == 0)    //If the skin doesn't have a trinket
+            {
+                togglesPiano.SetActive(false);
+                togglesPianoSpecial.SetActive(true);
+            }
+
+            if (slot.skin.baseInstrument == false)
+            {
+                newColor = slot.skin.color;
                 newColor.a = 255;
                 pianoBG.GetComponent<Image>().color = newColor;
                 pianoEdge.GetComponent<Image>().color = newColor;
-
-                toggleImagePiano1.color = newColor;
-                toggleImagePiano2.color = newColor;
-
-                togglePianoSpecial1.color = newColor;
-                togglePianoSpecial2.color = newColor;
-                togglePianoSpecial3.color = newColor;
-                togglePianoSpecial4.color = newColor;
-                togglePianoSpecial5.color = newColor;
-                togglePianoSpecial6.color = newColor;
-                togglePianoSpecial7.color = newColor;
             }
+            else
+            {
+                newColor.r = 255;
+                newColor.g = 255;
+                newColor.b = 255;
+                newColor.a = 255;
+            }
+
+            togglesPiano.transform.GetChild(0).GetComponent<Image>().color = newColor;
+            togglesPiano.transform.GetChild(1).GetComponent<Image>().color = newColor;
+            togglesPianoSpecial.transform.GetChild(0).GetComponent<Image>().color = newColor;
+            togglesPianoSpecial.transform.GetChild(2).GetComponent<Image>().color = newColor;
+            togglesPianoSpecial.transform.GetChild(3).GetComponent<Image>().color = newColor;
+            togglesPianoSpecial.transform.GetChild(4).GetComponent<Image>().color = newColor;
         }
     }
 
@@ -279,57 +234,57 @@ public class SkinAssigner : MonoBehaviour {
         {
             if (slot.skin.trinketType == 1)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(4);
-                drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(3);
                 drumSpecialImage.enabled = true;
+                drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
             }
             else if (slot.skin.trinketType == 2)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(5);
-                drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(4);
                 drumSpecialImage.enabled = true;
+                drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
             }
             else if (slot.skin.trinketType == 3)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(6);
-                drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(5);
                 drumSpecialImage.enabled = true;
+                drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
             }
             else if (slot.skin.trinketType == 4)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(7);
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(6);
                 drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 drumSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 5)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(8);
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(7);
                 drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 drumSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 6)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(9);
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(8);
                 drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 drumSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 7)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(10);
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(9);
                 drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 drumSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 8)
             {
-                drumSpecialImage.enabled = false;
-                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(11);
+                //drumSpecialImage.enabled = false;
+                drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(10);
                 drumSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 drumSpecialImage.enabled = true;
             }
@@ -341,55 +296,54 @@ public class SkinAssigner : MonoBehaviour {
             if (slot.skin.trinketType == 1)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(6);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(0);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 2)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(7);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(1);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 3)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(8);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(2);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 4)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(9);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(3);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 5)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(10);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(4);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 6)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(11);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(5);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
             else if (slot.skin.trinketType == 7)
             {
                 guitarSpecialImage.enabled = false;
-                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(12);
+                guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(6);
                 guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
                 guitarSpecialImage.enabled = true;
             }
-            togglesGuitar.SetActive(false);
-            togglesGuitarSpecial.SetActive(true);
-            print(guitarSpecialImage);
+            //togglesGuitar.SetActive(false);
+            //togglesGuitarSpecial.SetActive(true);
         } 
         else if (instrument == 3)
         {

@@ -18,11 +18,12 @@ MonoBehaviour:
   specialIcon4: {fileID: 21300002, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
   specialIcon5: {fileID: 21300000, guid: 366aca4516b85844d8622d0f0b6a5eb7, type: 3}
   specialIcon6: {fileID: 0}
+  specialIcon7: {fileID: 0}
   color:
     serializedVersion: 2
-    rgba: 4284374622
+    rgba: 4278190335
   instrument: 2
-  vintageLock: 2
+  vintageLock: 0
   trinketType: 1
   unlocked: 0
   baseInstrument: 0

@@ -24,6 +24,8 @@ public class PianoActivatorCheck : MonoBehaviour
     List<GameObject> animationObjects = new List<GameObject>();
     List<GameObject> animationLongObjects = new List<GameObject>();
     List<GameObject> activatorChildren = new List<GameObject>();
+    GameObject[] notesInScene;
+    GameObject[] longNotesInScene;
 
     // Use this for initialization
     void Awake()
@@ -67,6 +69,21 @@ public class PianoActivatorCheck : MonoBehaviour
                 myAnimLong.SetActive(false);
             }
             //animLong.Rebind();      //Uh we'll see what this does
+        }
+
+        if (progression.menu == true || progression.endMenu == true)
+        {
+            notesInScene = GameObject.FindGameObjectsWithTag("Note");
+            longNotesInScene = GameObject.FindGameObjectsWithTag("LongNote");
+
+            foreach (GameObject normalNote in notesInScene)
+            {
+                Destroy(normalNote);
+            }
+            foreach (GameObject longerNote in notesInScene)
+            {
+                Destroy(longerNote);
+            }
         }
     }
     public void OnTriggerEnter2D(Collider2D col)

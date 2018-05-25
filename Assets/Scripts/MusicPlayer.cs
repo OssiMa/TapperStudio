@@ -195,20 +195,19 @@ public class MusicPlayer : MonoBehaviour {
             {
                 guitar = album1.transform.GetChild(0).GetComponent<AudioSource>();
                 keyboard = album1.transform.GetChild(1).GetComponent<AudioSource>();
-                drums = album1.GetComponent<AudioSource>();
             }
             else if (currentSong == "song2")
             {
                 guitar = album1.transform.GetChild(2).GetComponent<AudioSource>();
                 keyboard = album1.transform.GetChild(3).GetComponent<AudioSource>();
-                drums = album1.GetComponent<AudioSource>();
             }
             else if (currentSong == "song3")
             {
                 guitar = album1.transform.GetChild(4).GetComponent<AudioSource>();
                 keyboard = album1.transform.GetChild(5).GetComponent<AudioSource>();
-                drums = album1.GetComponent<AudioSource>();
             }
+            drums = album1.GetComponent<AudioSource>();
+            drums.loop = true;
         }
         else if (currentAlbum == album2)
         {
@@ -216,20 +215,19 @@ public class MusicPlayer : MonoBehaviour {
             {
                 guitar = album2.transform.GetChild(0).GetComponent<AudioSource>();
                 keyboard = album2.transform.GetChild(1).GetComponent<AudioSource>();
-                drums = album2.GetComponent<AudioSource>();
             }
             else if (currentSong == "song2")
             {
                 guitar = album2.transform.GetChild(2).GetComponent<AudioSource>();
                 keyboard = album2.transform.GetChild(3).GetComponent<AudioSource>();
-                drums = album2.GetComponent<AudioSource>();
             }
             else if (currentSong == "song3")
             {
                 guitar = album2.transform.GetChild(4).GetComponent<AudioSource>();
                 keyboard = album2.transform.GetChild(5).GetComponent<AudioSource>();
-                drums = album2.GetComponent<AudioSource>();
             }
+            drums = album2.GetComponent<AudioSource>();
+            drums.loop = true;
         }
         else if (currentAlbum == album3)
         {
@@ -237,21 +235,21 @@ public class MusicPlayer : MonoBehaviour {
             {
                 guitar = album3.transform.GetChild(0).GetComponent<AudioSource>();
                 keyboard = album3.transform.GetChild(1).GetComponent<AudioSource>();
-                drums = album3.GetComponent<AudioSource>();
             }
             else if (currentSong == "song2")
             {
                 guitar = album3.transform.GetChild(2).GetComponent<AudioSource>();
                 keyboard = album3.transform.GetChild(3).GetComponent<AudioSource>();
-                drums = album3.GetComponent<AudioSource>();
             }
             else if (currentSong == "song3")
             {
                 guitar = album3.transform.GetChild(4).GetComponent<AudioSource>();
                 keyboard = album3.transform.GetChild(5).GetComponent<AudioSource>();
-                drums = album3.GetComponent<AudioSource>();
             }
+            drums = album3.GetComponent<AudioSource>();
+            drums.loop = true;
         }
+        print("HOI!!! " + drums.loop + ", VITUN IDIOOTTI!!");
     }
 
     void Update()
@@ -260,11 +258,6 @@ public class MusicPlayer : MonoBehaviour {
         {
             if (guitarStarted == true)
             {
-                if (menu == false)
-                {
-                    //guitar.mute = false;        
-                }
-
                 if (instrumentBaseGuitar.combo == 1)
                 {
                     guitar.volume = (instrumentBaseGuitar.combo / instrumentBaseGuitar.maxCombo) - .1f;
@@ -277,11 +270,6 @@ public class MusicPlayer : MonoBehaviour {
 
             if (drumsStarted == true)
             {
-                if (menu == false)
-                {
-                    //drums.mute = false;
-                }
-
                 if (instrumentBaseDrums.combo == 1)
                 {
                     drums.volume = (instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo) - .1f;
@@ -290,14 +278,18 @@ public class MusicPlayer : MonoBehaviour {
                 {
                     drums.volume = instrumentBaseDrums.combo / instrumentBaseDrums.maxCombo;
                 }
+                if (sp.endMenu == false)
+                {
+                    drums.loop = true;
+                }
+                else
+                {
+                    drums.loop = false;
+                }
             }
 
             if (keyboardStarted == true)
             {
-                if (menu == false)
-                {
-                    //keyboard.mute = false;
-                }
                 if (instrumentBasePiano.combo == 1)
                 {
                     keyboard.volume = (instrumentBasePiano.combo / instrumentBasePiano.maxCombo);
@@ -357,6 +349,7 @@ public class MusicPlayer : MonoBehaviour {
             if (guitar.loop == true && keyboard.loop == true)
             {
                 songEnd = false;
+                //drums.loop = true;
             }
         }
     }

@@ -2,10 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Visual Studio 2015
 =======
 # Visual Studio 2017
 >>>>>>> BranchO
+=======
+# Visual Studio 2017
+>>>>>>> juusobranch
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TapperStudio.Plugins", "TapperStudio.Plugins.csproj", "{07AC9B28-0B1E-45CB-4546-D76CFC33E9DA}"
 =======
 # Visual Studio 2017

@@ -240,175 +240,133 @@ public class SkinAssigner : MonoBehaviour {
         {
             if (instrument == 1)
             {
+                drumSpecialImage.enabled = false;
                 if (slot.skin.trinketType == 1)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(4);
-                    drumSpecialImage.enabled = true;
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
                 }
                 else if (slot.skin.trinketType == 2)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(5);
-                    drumSpecialImage.enabled = true;
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
                 }
                 else if (slot.skin.trinketType == 3)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(6);
-                    drumSpecialImage.enabled = true;
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
                 }
                 else if (slot.skin.trinketType == 4)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(7);
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
-                    drumSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 5)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(8);
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
-                    drumSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 6)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(9);
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
-                    drumSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 7)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(10);
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
-                    drumSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 8)
                 {
-                    drumSpecialImage.enabled = false;
                     drumSpecialsObj = GameObject.Find("2_decoration").transform.GetChild(11);
                     drumSpecialImage = drumSpecialsObj.GetComponent<Image>();
-                    drumSpecialImage.enabled = true;
                 }
-                //togglesDrums.SetActive(false);
-                //togglesDrumsSpecial.SetActive(true);
+                drumSpecialImage.enabled = true;
             }
             else if (instrument == 2)
             {
+                guitarSpecialImage.enabled = false;
+
                 if (slot.skin.trinketType == 1)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(1);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
-                    print("Here is brave young" + guitarSpecialsObj);
                 }
                 else if (slot.skin.trinketType == 2)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(2);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 3)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(3);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 4)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(4);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 5)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(5);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 6)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(6);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 7)
                 {
-                    guitarSpecialImage.enabled = false;
                     guitarSpecialsObj = GameObject.Find("Panel_Guitar").transform.GetChild(7);
                     guitarSpecialImage = guitarSpecialsObj.GetComponent<Image>();
-                    guitarSpecialImage.enabled = true;
                 }
+                guitarSpecialImage.enabled = true;
                 //togglesGuitar.SetActive(false);
                 //togglesGuitarSpecial.SetActive(true);
             }
             else if (instrument == 3)
             {
+                pianoSpecialImage.enabled = false;
+
                 if (slot.skin.trinketType == 1)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(9);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 2)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(10);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 3)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(11);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 4)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(12);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 5)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(13);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 6)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(14);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
                 else if (slot.skin.trinketType == 7)
                 {
-                    pianoSpecialImage.enabled = false;
                     pianoSpecialsObj = GameObject.Find("Panel_Keyboard").transform.GetChild(15);
                     pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
-                    pianoSpecialImage.enabled = true;
                 }
             }
-
-            //togglesPiano.SetActive(false);
-            //togglesPianoSpecial.SetActive(true);
+            pianoSpecialImage.enabled = true;
         }
         else
         {

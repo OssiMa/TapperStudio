@@ -11,8 +11,10 @@ public class PianoActivatorCheck : MonoBehaviour
     public SongProgress progression;
     MusicPlayer mp;
 
-    bool active = false;
-    bool sliderActive = false;
+    [HideInInspector]
+    public bool active = false;
+    [HideInInspector]
+    public bool sliderActive = false;
     bool sliderOn = false;
 
     GameObject note;
@@ -68,16 +70,6 @@ public class PianoActivatorCheck : MonoBehaviour
             {
                 myAnimLong.SetActive(false);
             }
-        }
-
-        if (progression.menu == true || progression.endMenu == true)
-        {
-            active = true;
-
-            sliderActive = true;
-
-            piano.ActivateLane(note);
-            Destroy(note);      //Miten se longnote edes tuhotaan atm???
         }
     }
     public void OnTriggerEnter2D(Collider2D col)

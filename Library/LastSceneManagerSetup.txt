@@ -3,6 +3,7 @@ sceneSetups:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Scenes/BetaFixes.unity
 =======
 - path: Assets/Scenes/juuso_refinements.unity
@@ -16,5 +17,8 @@ sceneSetups:
 =======
 - path: Assets/Scenes/BetaFixes.unity
 >>>>>>> BranchO
+=======
+- path: Assets/Scenes/MasterScene.unity
+>>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

@@ -30,6 +30,9 @@ public class CurrencyManager : MonoBehaviour {
     [HideInInspector]
     public int curInGameplay;
 
+    [HideInInspector]
+    public int prCurInGameplay;
+
     public Text currencyText;
     public Text premiumCurrencyText;
     public GameObject noMoney;

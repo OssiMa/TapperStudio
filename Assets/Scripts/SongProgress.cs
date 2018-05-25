@@ -70,6 +70,8 @@ public class SongProgress : MonoBehaviour {
 
     float currencyInAlbum;
     float previousCurrency;
+    float prCurInAlbum;
+    float previousPrCur;
     [HideInInspector]
     public float songCountMax = 3;
     public int AlbumsCreated;
@@ -92,9 +94,15 @@ public class SongProgress : MonoBehaviour {
 
     Item lastItem;
 
+    Sprite currencyIcon;
+    Image itemIcon;
+    GameObject itemIconObject;
 
     // Use this To initialization
     void Start () {
+        currencyIcon = GameObject.Find("EarnedCash").GetComponent<Image>().sprite;
+        itemIconObject = GameObject.Find("EarnedItem");
+        itemIcon = itemIconObject.GetComponent<Image>();
         albumChange = GameObject.Find("Panel_AlbumBar").GetComponent<AlbumChange>();
         guitarBase = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
         drumBase = GameObject.Find("Drums").GetComponent<InstrumentBase>();
@@ -120,7 +128,6 @@ public class SongProgress : MonoBehaviour {
         AlbumName.text = currentAlbum;
         SongName.text = currentSong;
         currencyText.text = cm.currency + "";
-        print(cm.currency);
     }
 
     // Update is called once per frame
@@ -208,6 +215,7 @@ public class SongProgress : MonoBehaviour {
                 cm.curInGameplay += 40;
                 cm.AddCurrency(cm.curInGameplay);
                 currencyInAlbum = cm.curInGameplay - previousCurrency;
+                prCurInAlbum = cm.prCurInGameplay - previousPrCur;
                 EndStats();
                 albumChange.MoveBarEndsong();
                 songEnder = true;
@@ -674,7 +682,9 @@ public class SongProgress : MonoBehaviour {
     public void NewAlbum()
     {
         previousCurrency = currencyInAlbum;
+        previousPrCur = prCurInAlbum;
         currencyInAlbum = 0;
+        prCurInAlbum = 0;
 
         while (UsedNames.Contains(currentAlbum))
         {
@@ -833,9 +843,10 @@ public class SongProgress : MonoBehaviour {
         winText1 = GameObject.Find("And now your sins").GetComponent<Text>();
         winText2 = GameObject.Find("And now your sins (1)").GetComponent<Text>();
 
-        winText1.text = "You earned " + currencyInAlbum + " £" + "\nYou earned " + lastItem.name;
-        winText2.text = "You also got some extra experience \nfor your " + currentInstrument + "!";
-        //mp.MenuVolume();
+        winText1.text = "You earned " + currencyInAlbum + "         & a";
+        winText2.text = "You also got extra exp for your " + currentInstrument + "!";
+        itemIcon.sprite = lastItem.icon;
+
         endMenu = true;
         mp.AlbumEnd();
 

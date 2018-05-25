@@ -22,7 +22,7 @@ public class SaveLoadManager : MonoBehaviour {
     [HideInInspector]
     public Achievements achievements;
     [HideInInspector]
-    public Inventory inventory;
+    //public Inventory inventory;
 
     //public delegate void OnItemChange();
     //public OnItemChange onItemChangedCallback;
@@ -35,7 +35,7 @@ public class SaveLoadManager : MonoBehaviour {
         currencyManager = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
         progression = GameObject.Find("SongProgression").GetComponent<SongProgress>();
         achievements = GameObject.Find("GameManager").GetComponent<Achievements>();
-        inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+        //inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
         LoadGame();
         saveTime = 5;
         time = 0;

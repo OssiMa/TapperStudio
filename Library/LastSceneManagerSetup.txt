@@ -1,24 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- path: Assets/Scenes/BetaFixes.unity
-=======
-- path: Assets/Scenes/juuso_refinements.unity
->>>>>>> juusobranch
-=======
-- path: Assets/Scenes/VisualRefinementScene.unity
->>>>>>> UI
-=======
-- path: Assets/Scenes/Achievements.unity
->>>>>>> Henkka
-=======
-- path: Assets/Scenes/BetaFixes.unity
->>>>>>> BranchO
-=======
 - path: Assets/Scenes/MasterScene.unity
->>>>>>> juusobranch
   isLoaded: 1
   isActive: 1

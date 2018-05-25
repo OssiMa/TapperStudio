@@ -28,7 +28,7 @@ public class SaveLoadManager : MonoBehaviour {
     //public OnItemChange onItemChangedCallback;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         guitarBase = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
         drumBase = GameObject.Find("Drums").GetComponent<InstrumentBase>();
         pianoBase = GameObject.Find("Piano").GetComponent<InstrumentBase>();

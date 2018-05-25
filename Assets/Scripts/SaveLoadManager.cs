@@ -21,6 +21,11 @@ public class SaveLoadManager : MonoBehaviour {
     public CurrencyManager currencyManager;
     [HideInInspector]
     public Achievements achievements;
+    [HideInInspector]
+    public Inventory inventory;
+
+    //public delegate void OnItemChange();
+    //public OnItemChange onItemChangedCallback;
 
     // Use this for initialization
     void Start () {
@@ -30,7 +35,8 @@ public class SaveLoadManager : MonoBehaviour {
         currencyManager = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
         progression = GameObject.Find("SongProgression").GetComponent<SongProgress>();
         achievements = GameObject.Find("GameManager").GetComponent<Achievements>();
-        //LoadGame();
+        inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+        LoadGame();
         saveTime = 5;
         time = 0;
     }
@@ -70,18 +76,21 @@ public class SaveLoadManager : MonoBehaviour {
         save.nextDrumLevel = drumBase.expToNext;
         save.drumStartXp = drumBase.startXp;
         save.drumCombo = drumBase.combo;
+        save.nextDrumLevel = drumBase.nextLevel;
 
         //Guitar
         save.guitarLevel = guitarBase.level;
         save.guitarXp = guitarBase.exp;
         save.nextGuitarLevel = guitarBase.expToNext;
         save.guitarStartXp = guitarBase.startXp;
+        save.nextGuitarLevel = guitarBase.nextLevel;
 
         //Piano
         save.pianoLevel = pianoBase.level;
         save.pianoXp = pianoBase.exp;
         save.nextPianoLevel = pianoBase.expToNext;
         save.pianoStartXp = pianoBase.startXp;
+        save.nextPianoLevel = pianoBase.nextLevel;
 
         //Songprogress
         save.songXp = progression.songXP;
@@ -111,6 +120,10 @@ public class SaveLoadManager : MonoBehaviour {
         save.GuitarComboNumber = achievements.GuitarComboNumber;
         save.PianoComboNumber = achievements.PianoComboNumber;
 
+        //items
+        //save.items = inventory.items;
+
+
         return save;
     }
 
@@ -134,18 +147,21 @@ public class SaveLoadManager : MonoBehaviour {
             drumBase.expToNext = save.nextDrumLevel;
             drumBase.startXp = save.drumStartXp;
             drumBase.combo = save.drumCombo;
+            drumBase.nextLevel = save.nextDrumLevel;
 
             //Guitar
             guitarBase.level = save.guitarLevel;
             guitarBase.exp = save.guitarXp;
             guitarBase.expToNext = save.nextGuitarLevel;
             guitarBase.startXp = save.guitarStartXp;
+            guitarBase.nextLevel = save.nextGuitarLevel;
 
             //Piano
             pianoBase.level = save.pianoLevel;
             pianoBase.exp = save.pianoXp;
             pianoBase.expToNext = save.nextPianoLevel;
             pianoBase.startXp = save.pianoStartXp;
+            pianoBase.nextLevel = save.nextPianoLevel;
 
             //Songprogress
             progression.songXP = save.songXp;
@@ -187,6 +203,12 @@ public class SaveLoadManager : MonoBehaviour {
             achievements.AchievementSlot5.achievement = achievements.DrumAchievements[achievements.DrumNumber];
             achievements.AchievementSlot5.achievement2 = achievements.PianoComboAchievements[achievements.PianoComboNumber];
 
+            //items
+            //inventory.items = save.items;
+            //if (onItemChangedCallback != null)
+            //{
+            //    onItemChangedCallback.Invoke();
+            //}
 
         }
         else

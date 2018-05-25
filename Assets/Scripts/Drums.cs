@@ -32,6 +32,7 @@ public class Drums : MonoBehaviour {
             rotationTimer -= Time.deltaTime;
             if (rotationTimer <= 0)
             {
+                print("saatana");
                 DefaultTags();
                 NewRotation();
             }
@@ -46,7 +47,7 @@ public class Drums : MonoBehaviour {
             temp = Random.Range(0, plateCount.Length);
             Transform t = plateCount[temp].transform;
             t.tag = "Active Plate";
-            t.GetComponent<Image>().color = Color.green;
+            t.GetComponentInChildren<SpriteRenderer>().enabled = true;
             t.GetComponent<Button>().onClick.AddListener(GetComponent<InstrumentBase>().ComboTap);
         }
     }
@@ -56,7 +57,7 @@ public class Drums : MonoBehaviour {
     {
         for(int i = 0; i < plateCount.Length; i++)
         {
-            plateCount[i].GetComponent<Image>().color = Color.white;
+            plateCount[i].GetComponentInChildren<SpriteRenderer>().enabled = false;
             plateCount[i].tag = "Drum plate";
             plateCount[i].GetComponent<Button>().onClick.RemoveListener(GetComponent<InstrumentBase>().ComboTap);
         }

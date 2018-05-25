@@ -1,12 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-<<<<<<< HEAD
 - path: Assets/Scenes/BetaFixes.unity
-=======
-- path: Assets/Scenes/juuso_refinements.unity
->>>>>>> juusobranch
-=======
-- path: Assets/Scenes/VisualRefinementScene.unity
->>>>>>> UI
   isLoaded: 1
   isActive: 1

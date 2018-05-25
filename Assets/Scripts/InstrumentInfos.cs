@@ -46,7 +46,21 @@ public class InstrumentInfos : MonoBehaviour {
         xPNow.enabled = true;
         xPNow.text = "Experience: " + ins.exp;
         xPToGo.enabled = true;
-        xPToGo.text = "Next level at: " + ins.expToNext;
+        xPToGo.text = NextLevel(ins);
+    }
+
+    string NextLevel(InstrumentBase ins)
+    {
+        string text;
+        if(ins.level < 20)
+        {
+            text = "Next level at: " + ins.expToNext;
+        }
+        else
+        {
+            text = "Max Level Reached";
+        }
+        return text;
     }
 
     void SetIcon()

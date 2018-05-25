@@ -3360,7 +3360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.500011}
+  m_AnchoredPosition: {x: 0, y: -19.500008}
   m_SizeDelta: {x: -40, y: -31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179868432
@@ -9119,7 +9119,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 239.84962
+      value: 239.8496
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -11508,9 +11508,8 @@ MonoBehaviour:
   currentAlbum: 
   currentSong: 
   songXP: 0
-  songXPMax: 20
+  songXPMax: 200
   songCount: 1
-  currency: 0
   songCountMax: 3
   AlbumsCreated: 0
   SongsCreated: 0
@@ -11976,7 +11975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.500011}
+  m_AnchoredPosition: {x: 0, y: -19.500008}
   m_SizeDelta: {x: -40, y: -31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878568236
@@ -12389,10 +12388,12 @@ MonoBehaviour:
   progression: {fileID: 845815403}
   xpBar: {fileID: 1237159919}
   fadeSlider: {fileID: 1690919254}
+  fadeCounter: {fileID: 0}
   currLvl: {fileID: 747044304}
   nxtLvl: {fileID: 334150206}
-  comboText: {fileID: 2048759959}
+  comboNumber: {fileID: 0}
   exp: 0
+  startXp: 0
   expToNext: 25
   level: 1
   vintageLevel: 0
@@ -12403,6 +12404,7 @@ MonoBehaviour:
   comboStepMax: 20
   comboUpkeep: 5
   comboFade: 1000
+  comboFadeMax: 2000
   maxCombo: 0
   xpBoost: 0
   achievements: {fileID: 0}
@@ -13051,7 +13053,7 @@ Prefab:
     - target: {fileID: 224140319369219232, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99997
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224140319369219232, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
@@ -13081,7 +13083,7 @@ Prefab:
     - target: {fileID: 224560898614129106, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99997
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224560898614129106, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
@@ -13111,7 +13113,7 @@ Prefab:
     - target: {fileID: 224232067843804946, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99997
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224232067843804946, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
@@ -13141,7 +13143,7 @@ Prefab:
     - target: {fileID: 224901782052319262, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -226.99997
+      value: -226.99998
       objectReference: {fileID: 0}
     - target: {fileID: 224901782052319262, guid: 177346770938b3449b589c7fe250436c,
         type: 2}
@@ -13849,7 +13851,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 239.84962
+      value: 239.8496
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -16254,7 +16256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.500011}
+  m_AnchoredPosition: {x: 0, y: -19.500008}
   m_SizeDelta: {x: -40, y: -31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074528005
@@ -16967,7 +16969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -19.500011}
+  m_AnchoredPosition: {x: 0, y: -19.500008}
   m_SizeDelta: {x: -40, y: -31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104568231
@@ -18029,7 +18031,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 239.84962
+      value: 239.8496
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -19061,7 +19063,7 @@ Prefab:
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 239.84962
+      value: 239.8496
       objectReference: {fileID: 0}
     - target: {fileID: 224011146237604668, guid: 67e53589723438e45914d9f208f69970,
         type: 2}
@@ -28714,10 +28716,12 @@ MonoBehaviour:
   progression: {fileID: 845815403}
   xpBar: {fileID: 935289559}
   fadeSlider: {fileID: 1537018947}
+  fadeCounter: {fileID: 0}
   currLvl: {fileID: 1888579186}
   nxtLvl: {fileID: 1793494684}
-  comboText: {fileID: 1436361434}
+  comboNumber: {fileID: 0}
   exp: 0
+  startXp: 0
   expToNext: 25
   level: 1
   vintageLevel: 0
@@ -28728,6 +28732,7 @@ MonoBehaviour:
   comboStepMax: 20
   comboUpkeep: 5
   comboFade: 1000
+  comboFadeMax: 2000
   maxCombo: 0
   xpBoost: 0
   achievements: {fileID: 0}

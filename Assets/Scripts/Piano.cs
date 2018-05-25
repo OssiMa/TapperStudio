@@ -14,8 +14,6 @@ public class Piano : MonoBehaviour {
     public GameObject activator5;
     public GameObject empty;
 
-    
-
     public bool spawnPoint1 = true;
     public bool spawnPoint2 = true;
     public bool spawnPoint3 = true;
@@ -55,6 +53,32 @@ public class Piano : MonoBehaviour {
         {
             spawnNote();
             SetRandomTime();
+        }
+
+        if (sp.menu == true || sp.endMenu == true)
+        {
+            activator1.GetComponent<PianoActivatorCheck>().active = false;
+            activator1.GetComponent<PianoActivatorCheck>().sliderActive = false;
+            spawnPoint1 = true;
+
+            activator2.GetComponent<PianoActivatorCheck>().active = false;
+            activator2.GetComponent<PianoActivatorCheck>().sliderActive = false;
+            spawnPoint2 = true;
+
+            activator3.GetComponent<PianoActivatorCheck>().active = false;
+            activator3.GetComponent<PianoActivatorCheck>().sliderActive = false;
+            spawnPoint3 = true;
+
+            activator4.GetComponent<PianoActivatorCheck>().active = false;
+            activator4.GetComponent<PianoActivatorCheck>().sliderActive = false;
+            spawnPoint4 = true;
+
+            activator5.GetComponent<PianoActivatorCheck>().active = false;
+            activator5.GetComponent<PianoActivatorCheck>().sliderActive = false;
+            spawnPoint5 = true;
+
+            Destroy(note);
+            longSpawned = false;
         }
     }
 

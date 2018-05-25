@@ -620,6 +620,12 @@ public class PopUpDisplay : MonoBehaviour {
         ClosePopUp();
     }
 
+    public void MarkAsEquipped()
+    {
+        print(NewInvSlot);
+        NewInvSlot.GetComponent<InventorySlot>().Equipped();
+    }
+
    /* public void ItemUpgrade()
     {
         if (popUp.selectedItem.level <3)

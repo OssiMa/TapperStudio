@@ -13,7 +13,6 @@ public class InstrumentBase : MonoBehaviour {
 
 
     public Slider xpBar;
-    public Slider fadeSlider;
     public Image fadeCounter;
     public Text currLvl;
     public Text nxtLvl;
@@ -58,7 +57,6 @@ public class InstrumentBase : MonoBehaviour {
         //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
-        fadeSlider.maxValue = comboFadeMax;
         currLvl.text = "" + level;
         nxtLvl.text = "" + nextLevel;
         nextLevel = level + 1.0f;
@@ -72,7 +70,6 @@ public class InstrumentBase : MonoBehaviour {
     {
         if (progression.menu == false && progression.endMenu == false)
         { 
-            fadeSlider.value = comboFade;
             xpBar.value = exp;
             nxtLvl.text = "" + nextLevel;
             currLvl.text = "" + level;
@@ -229,7 +226,6 @@ public class InstrumentBase : MonoBehaviour {
         {
             combo -= 1;
             comboFade = comboFadeMax;
-            fadeSlider.value = comboFadeMax;
             fadeCounter.fillAmount = 1;
             comboNumber.text = combo + "";
         }

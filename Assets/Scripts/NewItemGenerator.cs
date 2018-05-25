@@ -75,17 +75,17 @@ public class NewItemGenerator : MonoBehaviour {
     {
         if (item.slot == 1)
         {
-            item.boosts = "Passive generation";
+            item.boosts = "Generation Boost";
             item.boostPower = item.rarity;                  //<- Balanced values here 
         }
         else if(item.slot == 2)
         {           
-            item.boosts = "Maximum combo +";
+            item.boosts = "Maximum Combo +";
             item.boostPower = item.rarity;                  //<- Balanced values here 
         }
         else if (item.slot == 3)
         {
-            item.boosts = "Bonus experience";
+            item.boosts = "Bonus Experience";
             item.boostPower = item.rarity;                  //<- Balanced values here 
         }
 

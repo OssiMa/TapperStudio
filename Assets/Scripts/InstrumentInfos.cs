@@ -40,7 +40,7 @@ public class InstrumentInfos : MonoBehaviour {
         textBox.enabled = true;
         InstrumentBase ins = bases[shownBase - 1].GetComponent<InstrumentBase>();
         textBox.text = "Vintage: " + ins.vintageLevel + "\n\nBoosts from equipment:\nGeneration Boost: " + ins.GetBoosts(1) + "\nAdditional Combo: " 
-        + ins.GetBoosts(2) + "\nBonus experience: " + ins.GetBoosts(3); ;
+        + ins.GetBoosts(2) + "\nBonus Experience: " + ins.GetBoosts(3); ;
         LevelInfo.enabled = true;
         LevelInfo.text = "Level: " + ins.level;
         xPNow.enabled = true;

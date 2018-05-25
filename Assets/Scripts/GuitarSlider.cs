@@ -16,21 +16,20 @@ public class GuitarSlider : MonoBehaviour {
 
     MusicPlayer mp;
 
-    
+    private void Awake()
+    {
+        s = GetComponent<Slider>();
+        Original = s.transform.localPosition;
+        Srect = s.GetComponent<RectTransform>();
+    }
+
     // Use this for initialization
     void Start () {
         guitar = transform.parent.gameObject.GetComponent<InstrumentBase>();
-        s = GetComponent<Slider>();
         mp = GameObject.Find("MusicPlayer").GetComponent<MusicPlayer>();
-        Srect = s.GetComponent<RectTransform>();
-        Original = s.transform.localPosition;
         Resize();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void Resize()
     {

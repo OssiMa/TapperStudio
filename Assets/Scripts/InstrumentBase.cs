@@ -22,7 +22,7 @@ public class InstrumentBase : MonoBehaviour {
     public float startXp;
     public float expToNext = 25;
     public float level = 1;
-    float nextLevel = 2;
+    public float nextLevel = 2;
     [HideInInspector]
     public int vintageLevel = 0;
     public int instrumentNbr;

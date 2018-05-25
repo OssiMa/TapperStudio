@@ -1,6 +1,7 @@
 sceneSetups:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - path: Assets/Scenes/BetaFixes.unity
 =======
 - path: Assets/Scenes/juuso_refinements.unity
@@ -8,5 +9,8 @@ sceneSetups:
 =======
 - path: Assets/Scenes/VisualRefinementScene.unity
 >>>>>>> UI
+=======
+- path: Assets/Scenes/Achievements.unity
+>>>>>>> Henkka
   isLoaded: 1
   isActive: 1

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class Item : ScriptableObject{
 
     public Sprite icon = null;

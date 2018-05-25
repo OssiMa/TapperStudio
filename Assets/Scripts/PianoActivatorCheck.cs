@@ -68,22 +68,16 @@ public class PianoActivatorCheck : MonoBehaviour
             {
                 myAnimLong.SetActive(false);
             }
-            //animLong.Rebind();      //Uh we'll see what this does
         }
 
         if (progression.menu == true || progression.endMenu == true)
         {
-            notesInScene = GameObject.FindGameObjectsWithTag("Note");
-            longNotesInScene = GameObject.FindGameObjectsWithTag("LongNote");
+            active = true;
 
-            foreach (GameObject normalNote in notesInScene)
-            {
-                Destroy(normalNote);
-            }
-            foreach (GameObject longerNote in notesInScene)     //Highly unreliable for LongNotes! Needs a fix 
-            {
-                Destroy(longerNote);
-            }
+            sliderActive = true;
+
+            piano.ActivateLane(note);
+            Destroy(note);      //Miten se longnote edes tuhotaan atm???
         }
     }
     public void OnTriggerEnter2D(Collider2D col)

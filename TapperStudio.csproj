@@ -154,7 +154,6 @@
     <Compile Include="Assets\Scripts\NewItemGenerator.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
     <Compile Include="Assets\Scripts\Piano.cs" />
-    <Compile Include="Assets\Scripts\PianoActivator.cs" />
     <Compile Include="Assets\Scripts\PianoActivatorCheck.cs" />
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\PopUp.cs" />

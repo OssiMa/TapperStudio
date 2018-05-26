@@ -26,8 +26,6 @@ public class PianoActivatorCheck : MonoBehaviour
     List<GameObject> animationObjects = new List<GameObject>();
     List<GameObject> animationLongObjects = new List<GameObject>();
     List<GameObject> activatorChildren = new List<GameObject>();
-    GameObject[] notesInScene;
-    GameObject[] longNotesInScene;
 
     // Use this for initialization
     void Awake()

@@ -26,7 +26,7 @@ public class SkinAssigner : MonoBehaviour {
     Transform guitarSpecialsObj, guitarSpecialsObj1, guitarSpecialsObj2, guitarSpecialsObj3, guitarSpecialsObj4, guitarSpecialsObj5, guitarSpecialsObj6, guitarSpecialsObj7;
     Image guitarSpecialImage;
 
-    Transform drumSpecialsObj, drumSpecialsObj1, drumSpecialsObj2, drumSpecialsObj3, drumSpecialsObj4, drumSpecialsObj5, drumSpecialsObj6,drumSpecialsObj7;
+    Transform drumSpecialsObj, drumSpecialsObj1, drumSpecialsObj2, drumSpecialsObj3, drumSpecialsObj4, drumSpecialsObj5, drumSpecialsObj6, drumSpecialsObj7;
     Image drumSpecialImage;
 
     GameObject togglesGuitar;
@@ -41,12 +41,16 @@ public class SkinAssigner : MonoBehaviour {
     Image togglePianoSpecial1, togglePianoSpecial2, togglePianoSpecial3, togglePianoSpecial4, togglePianoSpecial5, togglePianoSpecial6;
     GameObject togglesPianoSpecial;
 
+    Image bg1, bg2;
+
     InstrumentBase instrumentBaseDrums;
     InstrumentBase instrumentBaseGuitar;
     InstrumentBase instrumentBasePiano;
 
+    Color32 greyColor;
+
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         pianoBG = GameObject.Find("Panel_Keyboard").transform.GetChild(7);
         pianoEdge = GameObject.Find("Panel_Keyboard").transform.GetChild(0);
@@ -62,6 +66,13 @@ public class SkinAssigner : MonoBehaviour {
         instrumentBaseGuitar = GameObject.Find("Guitar").GetComponent<InstrumentBase>();
         instrumentBasePiano = GameObject.Find("Piano").GetComponent<InstrumentBase>();
 
+        bg1 = GameObject.Find("InstrumentBackground_Outer").GetComponent<Image>();
+        bg2 = GameObject.Find("InstrumentBackground_Outer (1)").GetComponent<Image>();
+
+        greyColor.r = 255;
+        greyColor.g = 255;
+        greyColor.b = 255;
+        greyColor.a = 255;
 
         GetTrinkets();
         GetToggles();
@@ -120,7 +131,10 @@ public class SkinAssigner : MonoBehaviour {
             if (slot.skin.baseInstrument == false)
             {
                 newColor = slot.skin.color;
+                Color32 bgColor = newColor;
+                bgColor.a = 60;
                 newColor.a = 255;
+                bg1.color = bgColor;
             }
             else
             {
@@ -129,6 +143,7 @@ public class SkinAssigner : MonoBehaviour {
                 newColor.g = 177;
                 newColor.b = 255;
                 newColor.a = 255;
+                bg1.color = greyColor;
             }
 
             drumDeco1.GetComponent<Image>().color = newColor;
@@ -155,6 +170,8 @@ public class SkinAssigner : MonoBehaviour {
             if (slot.skin.baseInstrument == false)
             {
                 Color32 newColor = slot.skin.color;
+                Color32 bgColor = newColor;
+                bgColor.a = 60;
                 newColor.a = 255;
                 guitarBoard.GetComponent<Image>().color = newColor;
                 guitarOutline.GetComponent<Image>().color = newColor;
@@ -164,6 +181,7 @@ public class SkinAssigner : MonoBehaviour {
                 togglesGuitarSpecial.transform.GetChild(1).GetComponent<Image>().color = newColor;
                 togglesGuitarSpecial.transform.GetChild(2).GetComponent<Image>().color = newColor;
                 togglesGuitarSpecial.transform.GetChild(3).GetComponent<Image>().color = newColor;
+                bg2.color = bgColor;
             }
             else
             {
@@ -188,6 +206,7 @@ public class SkinAssigner : MonoBehaviour {
                 togglesGuitarSpecial.transform.GetChild(1).GetComponent<Image>().color = newColor2;
                 togglesGuitarSpecial.transform.GetChild(2).GetComponent<Image>().color = newColor2;
                 togglesGuitarSpecial.transform.GetChild(3).GetComponent<Image>().color = newColor2;
+                bg2.color = greyColor;
             }
         }
         else if (instrument == 3)
@@ -388,6 +407,20 @@ public class SkinAssigner : MonoBehaviour {
                 pianoSpecialImage = pianoSpecialsObj.GetComponent<Image>();
                 pianoSpecialImage.enabled = true;
             }
+        }
+    }
+
+    public void AssignBg(int instrument)
+    {
+        if (instrument == 1)
+        {
+            bg2.enabled = false;
+            bg1.enabled = true;
+        }
+        else if (instrument == 2)
+        {
+            bg1.enabled = false;
+            bg2.enabled = true;
         }
     }
 }

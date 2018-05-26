@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SkinSlot : MonoBehaviour {
 
-    Image spIcon1, spIcon2, spIcon3, spIcon4, spIcon5, spIcon6, spIcon7;
+    Image spIcon1, spIcon2, spIcon3, spIcon4, spIcon5, spIcon6, spIcon7, spIcon8;
     GameObject greyImage;
 
     Button button;
@@ -35,6 +35,7 @@ public class SkinSlot : MonoBehaviour {
         spIcon5 = transform.GetChild(4).GetComponent<Image>();
         spIcon6 = transform.GetChild(5).GetComponent<Image>();
         spIcon7 = transform.GetChild(6).GetComponent<Image>();
+        spIcon8 = transform.GetChild(7).GetComponent<Image>();
 
         skin = newSkin;
 
@@ -47,11 +48,13 @@ public class SkinSlot : MonoBehaviour {
         if (skin.baseInstrument == false)
         {
             newColor.a = 255;
-            newColor.g += 75;
-            newColor.b += 75;
+            //newColor.g += 75;
+            //newColor.b += 75;
         }
         else
         {
+        //if (skin.baseInstrument == true)
+        //{
             if (skin.instrument == 1)
             {
                 newColor.r = 19;
@@ -67,13 +70,14 @@ public class SkinSlot : MonoBehaviour {
                 newColor.a = 255;
             }
             else if (skin.instrument == 3)
-        {
+            {
                 newColor.r = 255;
                 newColor.g = 255;
                 newColor.b = 255;
                 newColor.a = 255;
             }
         }
+        //}
         cb.normalColor = newColor;
         cb.highlightedColor = newColor;
         cb.pressedColor = new Color(0, 0, 0, 255);
@@ -98,6 +102,7 @@ public class SkinSlot : MonoBehaviour {
                 spIcon5.color = greyColor;
                 spIcon6.color = greyColor;
                 spIcon7.color = greyColor;
+                spIcon8.enabled = true;
             }
             else
             {
@@ -110,7 +115,7 @@ public class SkinSlot : MonoBehaviour {
                     spIcon6.color = newColor;
                 }
                 newColor.a = 255;
-                //What color are the other parts?
+                spIcon8.enabled = false;
             }
         }
         else if (skin.instrument == 2)
@@ -125,6 +130,7 @@ public class SkinSlot : MonoBehaviour {
                 spIcon4.color = greyColor;
                 spIcon5.color = greyColor;
                 spIcon6.color = greyColor;
+                spIcon8.enabled = true;
             }
             else
             {
@@ -143,6 +149,7 @@ public class SkinSlot : MonoBehaviour {
                     spIcon3.color = newColor;
                     spIcon4.color = newColor;
                 }
+                spIcon8.enabled = false;
             }
         }
         else if (skin.instrument == 3)
@@ -157,6 +164,7 @@ public class SkinSlot : MonoBehaviour {
                 spIcon4.color = greyColor;
                 spIcon5.color = greyColor;
                 spIcon6.color = greyColor;
+                spIcon8.enabled = true;
             }
             else
             {
@@ -181,6 +189,7 @@ public class SkinSlot : MonoBehaviour {
                     spIcon4.color = newColor;
                     spIcon5.color = newColor;
                 }
+                spIcon8.enabled = false;
             }
         }
 
@@ -236,8 +245,6 @@ public class SkinSlot : MonoBehaviour {
                 spIcon5.enabled = true;
                 spIcon6.enabled = true;
                 spIcon7.enabled = true;
-                print("Oh, what a " + skin.specialIcon1);
-                print("Must go well with a " + spIcon1.sprite);
             }
         }
         //The standard instruments' sprites:
@@ -293,15 +300,24 @@ public class SkinSlot : MonoBehaviour {
         //Instrument sizes
         if (skin.instrument == 2)
         {
-            transform.localScale = new Vector2(.8f, 1);
+            for (int i = 0; i < 7; i++)
+            {
+                transform.GetChild(i).localScale = new Vector2(.6f, 1.2f);
+            }
         }
         else if (skin.instrument == 1)
         {
-            transform.localScale = new Vector2(1.4f, 1);
+            for (int i = 0; i < 7; i++)
+            {
+                transform.GetChild(i).localScale = new Vector2(1, 1);
+            }
         }
         else
         {
-            transform.localScale = new Vector2(1, .8f);
+            for (int i = 0; i < 7; i++)
+            {
+                transform.GetChild(i).localScale = new Vector2(1, 1);
+            }
         }
 
         //Button is now interactable! It's made not interactable in LockSlot().

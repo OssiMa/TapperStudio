@@ -33,6 +33,12 @@ public class Piano : MonoBehaviour {
 
     SongProgress sp;
 
+    GameObject[] notesInSceneArray;
+    GameObject[] longNotesInSceneArray;
+
+    public List<GameObject> notesInScene = new List<GameObject>();
+    //public List<GameObject> longNotesInSceneArray = new List<GameObject>();
+
     // Use this for initialization
     void Start()
     {
@@ -47,6 +53,8 @@ public class Piano : MonoBehaviour {
     {
         //Counts up
         time += Time.deltaTime;
+
+        //notesInScene = 
 
         //Check if its the right time to spawn the object
         if (time >= spawnTime)
@@ -77,7 +85,14 @@ public class Piano : MonoBehaviour {
             activator5.GetComponent<PianoActivatorCheck>().sliderActive = false;
             spawnPoint5 = true;
 
-            Destroy(note);
+            if (notesInScene.Count != 0)
+            {
+                for (int i = notesInScene.Count - 1; i >= 0; i--)
+                {
+                    Destroy(notesInScene[i]);
+                    notesInScene.Remove(notesInScene[i]);
+                }
+            }
             longSpawned = false;
         }
     }
@@ -93,7 +108,6 @@ public class Piano : MonoBehaviour {
         {
             time = 0;
             int whichNote = shortOrLong.Next(1, 5);
-            print("Jukkelis " + longSpawned);
             if (whichNote == 1 && longSpawned == false)
             {
                 spawnLongNote();
@@ -132,34 +146,44 @@ public class Piano : MonoBehaviour {
                     Instantiate(note).transform.parent = empty.transform;
                     note.transform.position = new Vector2(activator1.transform.position.x, activator1.transform.position.y + 2.5f);
                 }
-                if (notePosition == 2 && spawnPoint2 == true)
+                else if (notePosition == 2 && spawnPoint2 == true)
                 {
                     Instantiate(note).transform.parent = empty.transform;
                     note.transform.position = new Vector2(activator2.transform.position.x, activator2.transform.position.y + 2.5f);
                 }
-                if (notePosition == 3 && spawnPoint3 == true)
+                else if (notePosition == 3 && spawnPoint3 == true)
                 {
                     Instantiate(note).transform.parent = empty.transform;
                     note.transform.position = new Vector2(activator3.transform.position.x, activator3.transform.position.y + 2.5f);
                 }
-                if (notePosition == 4 && spawnPoint4 == true)
+                else if (notePosition == 4 && spawnPoint4 == true)
                 {
                     Instantiate(note).transform.parent = empty.transform;
                     note.transform.position = new Vector2(activator4.transform.position.x, activator4.transform.position.y + 2.5f);
                 }
-                if (notePosition == 5 && spawnPoint5 == true)
+                else if (notePosition == 5 && spawnPoint5 == true)
                 {
                     Instantiate(note).transform.parent = empty.transform;
                     note.transform.position = new Vector2(activator5.transform.position.x, activator5.transform.position.y + 2.5f);
                 }
-                if (spawnPoint1 == false && spawnPoint2 == false && spawnPoint3 == false && spawnPoint4 == false && spawnPoint5 == false)
+
+                notesInSceneArray = GameObject.FindGameObjectsWithTag("Note");
+
+                foreach (GameObject noteObject in notesInSceneArray)
+                {
+                    if (!notesInScene.Contains(noteObject))
+                    {
+                        notesInScene.Add(noteObject);
+                    }
+                }
+                /*if (spawnPoint1 == false && spawnPoint2 == false && spawnPoint3 == false && spawnPoint4 == false && spawnPoint5 == false)
                 {
 
                 }
                 else
                 {
 
-                }
+                }*/
             }
         }
     }
@@ -210,6 +234,15 @@ public class Piano : MonoBehaviour {
             default:
                 print("suatana");
                 break;
+        }
+        longNotesInSceneArray = GameObject.FindGameObjectsWithTag("LongNote");
+
+        foreach (GameObject longNoteObject in longNotesInSceneArray)
+        {
+            if (!notesInScene.Contains(longNoteObject))
+            {
+                notesInScene.Add(longNoteObject);
+            }
         }
     }
 

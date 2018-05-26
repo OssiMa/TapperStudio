@@ -11,6 +11,7 @@ public class InstrumentBase : MonoBehaviour {
 
     public SongProgress progression;
 
+    public GameObject comboTextObject;
 
     public Slider xpBar;
     public Image fadeCounter;
@@ -208,6 +209,7 @@ public class InstrumentBase : MonoBehaviour {
                 comboNumber.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
+                Instantiate(comboTextObject);
             }
 
         }

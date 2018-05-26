@@ -49,6 +49,9 @@ public class MusicPlayer : MonoBehaviour {
     bool keyboardMuted = true;
     bool drumsMuted = true;
     public bool allMute;
+    bool drumsPreMute;
+    bool guitarPreMute;
+    bool pianoPreMute;
 
     public string currentSong;      //Change this to private once debugging is done
 
@@ -249,7 +252,6 @@ public class MusicPlayer : MonoBehaviour {
             drums = album3.GetComponent<AudioSource>();
             drums.loop = true;
         }
-        print("HOI!!! " + drums.loop + ", VITUN IDIOOTTI!!");
     }
 
     void Update()
@@ -318,6 +320,22 @@ public class MusicPlayer : MonoBehaviour {
             guitar.mute = true;
             keyboard.mute = true;
             drums.mute = true;
+        }
+
+        if (sp.menu == true)
+        {
+            if (guitar.mute != true)
+            {
+                guitar.mute = true;
+            }
+            if (drums.mute != true)
+            {
+                drums.mute = true;
+            }
+            if (keyboard.mute != true)
+            {
+                keyboard.mute = true;
+            }
         }
     }
     
@@ -421,22 +439,26 @@ public class MusicPlayer : MonoBehaviour {
                 preFadeGuitar = guitar.volume;
                 preFadePiano = keyboard.volume;
 
-                fader = FadeOut(guitar, keyboard, drums, 100);
-                StartCoroutine(fader);
-                menu = true;
+                drumsPreMute = drums.mute;
+                guitarPreMute = guitar.mute;
+                pianoPreMute = keyboard.mute;
 
-                print(guitar.mute);
+                //fader = FadeOut(guitar, keyboard, drums, 100);
+                //StartCoroutine(fader);
+                FadeOut(guitar, keyboard, drums);
+                menu = true;
             }
             else if (menu == true)
             {
-                fader = FadeIn(guitar, keyboard, drums, 4, preFadeGuitar, preFadePiano, preFadeDrums);
-                StartCoroutine(fader);
+                //fader = FadeIn(guitar, keyboard, drums, 4, preFadeGuitar, preFadePiano, preFadeDrums);
+                //StartCoroutine(fader);
+                FadeIn(guitar, keyboard, drums, preFadeGuitar, preFadePiano, preFadeDrums);
                 menu = false;
             }
         }
     }
 
-    public static IEnumerator FadeOut(AudioSource guitar, AudioSource piano, AudioSource drums, float fadeTime)
+    /*public static IEnumerator FadeOut(AudioSource guitar, AudioSource piano, AudioSource drums, float fadeTime)
     {
         float startGuitarVolume = guitar.volume;
         float startKeyboardVolume = piano.volume;
@@ -458,9 +480,39 @@ public class MusicPlayer : MonoBehaviour {
         guitar.volume = startGuitarVolume;
         piano.volume = startKeyboardVolume;
         drums.volume = startDrumsVolume;
+    }*/
+
+    public void FadeOut(AudioSource guitar, AudioSource piano, AudioSource drums)
+    {
+        float startGuitarVolume = guitar.volume;
+        float startKeyboardVolume = piano.volume;
+        float startDrumsVolume = drums.volume;
+
+        guitar.mute = true;
+        piano.mute = true;
+        drums.mute = true;
+
+        guitar.volume = startGuitarVolume;
+        piano.volume = startKeyboardVolume;
+        drums.volume = startDrumsVolume;
     }
 
-    public static IEnumerator FadeIn(AudioSource guitar, AudioSource piano, AudioSource drums, float fadeTime, float preFadeGuitar, float preFadePiano, float preFadeDrums)
+    public void FadeIn(AudioSource guitar, AudioSource piano, AudioSource drums, float preFadeGuitar, float preFadePiano, float preFadeDrums)
+    {
+        guitar.volume = 0;
+        piano.volume = 0;
+        drums.volume = 0;
+
+        guitar.mute = guitarPreMute;
+        piano.mute = pianoPreMute;
+        drums.mute = drumsPreMute;
+
+        guitar.volume = preFadeGuitar;
+        piano.volume = preFadePiano;
+        drums.volume = preFadeDrums;
+    }
+
+    /*public static IEnumerator FadeIn(AudioSource guitar, AudioSource piano, AudioSource drums, float fadeTime, float preFadeGuitar, float preFadePiano, float preFadeDrums)
     {
         float startGuitarVolume = .2f;
         float startKeyboardVolume = .2f;
@@ -486,7 +538,7 @@ public class MusicPlayer : MonoBehaviour {
         guitar.volume = preFadeGuitar;
         piano.volume = preFadePiano;
         drums.volume = preFadeDrums;
-    }
+    }*/
 
     public void NewAlbumPlay()
     {

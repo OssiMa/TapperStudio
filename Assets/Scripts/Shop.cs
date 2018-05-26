@@ -21,6 +21,8 @@ public class Shop : MonoBehaviour {
     public int skinCost;
     public int premiumSkinCost;
     public int adBonus;
+    int adCounter = 2;
+
 
     public void PurchaseCurrencySmall()
     {
@@ -39,10 +41,28 @@ public class Shop : MonoBehaviour {
 
     /*public void WatchAd()
     {
-        print("Here we are again...");
-        if (Advertisement.IsReady())
+        if (adCounter > 0)
         {
-            Advertisement.Show(new ShowOptions() { resultCallback = WatchAdResult});    //"" = name of the video
+            print("Here we are again...");
+            if (Advertisement.IsReady())
+            {
+                Advertisement.Show(new ShowOptions() { resultCallback = WatchAdResult});    //"" = name of the video
+                adCounter -= 1;
+
+                InvokeRepeating("AddAdCounter", 0, 86400);
+            }
+        }
+        else
+        {
+            PopUp: "Sorry we're such buttholes, but you can't watch any more! Wait a day or two, bucko!";
+        }
+    }
+
+    void AddAdCounter()
+    {
+        if (adCounter < 2)
+        {
+            adCounter += 1;
         }
     }
 

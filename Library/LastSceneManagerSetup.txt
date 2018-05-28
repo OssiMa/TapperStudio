@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MasterScene.unity
+=======
+- path: Assets/Scenes/SavingTest.unity
+>>>>>>> Henkka
   isLoaded: 1
   isActive: 1

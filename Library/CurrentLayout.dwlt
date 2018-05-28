@@ -15,6 +15,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 43
 <<<<<<< HEAD
     width: 1536
@@ -27,11 +28,18 @@ MonoBehaviour:
 =======
     y: 42
 >>>>>>> BranchO
+=======
+    y: 42
+>>>>>>> Henkka
     width: 1920
     height: 998
   m_ShowMode: 4
   m_Title: 
+<<<<<<< HEAD
   m_RootView: {fileID: 9}
+=======
+  m_RootView: {fileID: 7}
+>>>>>>> Henkka
   m_MinSize: {x: 950, y: 542}
 =======
   m_MinSize: {x: 950, y: 392}
@@ -53,6 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1021
     y: 0
+<<<<<<< HEAD
     width: 510
     height: 375
   m_MinSize: {x: 100, y: 100}
@@ -60,6 +69,15 @@ MonoBehaviour:
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
+=======
+    width: 384
+    height: 573
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 18}
+>>>>>>> Henkka
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &3
@@ -81,6 +99,7 @@ MonoBehaviour:
     x: 0
 <<<<<<< HEAD
     y: 30
+<<<<<<< HEAD
 <<<<<<< HEAD
     width: 1536
     height: 731
@@ -142,13 +161,20 @@ MonoBehaviour:
     x: 0
     y: 30
 >>>>>>> BranchO
+=======
+>>>>>>> Henkka
     width: 1920
     height: 948
   m_MinSize: {x: 885, y: 492}
   m_MaxSize: {x: 18002, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 144
 --- !u!114 &6
+=======
+  controlID: 94
+--- !u!114 &4
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -166,11 +192,19 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 948
+<<<<<<< HEAD
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
+=======
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+>>>>>>> Henkka
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &7
@@ -189,6 +223,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 303
@@ -215,6 +250,15 @@ MonoBehaviour:
 >>>>>>> BranchO
   m_Panes:
   - {fileID: 18}
+=======
+    width: 379
+    height: 573
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 16}
+  m_Panes:
+  - {fileID: 16}
+>>>>>>> Henkka
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &8
@@ -232,6 +276,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     y: 460
@@ -263,6 +308,20 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
+=======
+    y: 573
+    width: 1531
+    height: 375
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 1
+--- !u!114 &7
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -283,6 +342,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1536
     height: 781
 <<<<<<< HEAD
@@ -295,6 +355,11 @@ MonoBehaviour:
 =======
   m_MinSize: {x: 950, y: 300}
 >>>>>>> juusobranch
+=======
+    width: 1920
+    height: 998
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> Henkka
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &10
 MonoBehaviour:
@@ -357,6 +422,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1225
     height: 731
   m_MinSize: {x: 404, y: 342}
@@ -374,6 +440,15 @@ MonoBehaviour:
   vertical: 1
   controlID: 145
 --- !u!114 &13
+=======
+    width: 1531
+    height: 948
+  m_MinSize: {x: 608, y: 492}
+  m_MaxSize: {x: 12008, y: 14042}
+  vertical: 1
+  controlID: 95
+--- !u!114 &11
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -394,6 +469,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1225
     height: 460
   m_MinSize: {x: 404, y: 221}
@@ -411,6 +487,15 @@ MonoBehaviour:
   vertical: 0
   controlID: 146
 --- !u!114 &14
+=======
+    width: 1531
+    height: 573
+  m_MinSize: {x: 608, y: 221}
+  m_MaxSize: {x: 12008, y: 4021}
+  vertical: 0
+  controlID: 234
+--- !u!114 &12
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -428,6 +513,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 922
     height: 460
 <<<<<<< HEAD
@@ -435,10 +521,13 @@ MonoBehaviour:
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
 =======
+=======
+>>>>>>> Henkka
     width: 768
-    height: 676
+    height: 573
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
+<<<<<<< HEAD
   m_ActualView: {fileID: 18}
 >>>>>>> Henkka
 =======
@@ -472,6 +561,15 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &15
+=======
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &13
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -497,7 +595,11 @@ MonoBehaviour:
     y: 181
     width: 973
     height: 501
+<<<<<<< HEAD
 --- !u!114 &16
+=======
+--- !u!114 &14
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -521,7 +623,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 664
+<<<<<<< HEAD
     width: 1019
+=======
+    width: 1529
+>>>>>>> Henkka
     height: 354
   m_SearchFilter:
     m_NameFilter: 
@@ -540,6 +646,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   m_LastProjectPath: C:\Users\User\Desktop\TapperStudio
@@ -573,6 +680,15 @@ MonoBehaviour:
     m_LastClickedID: 10206
     m_ExpandedIDs: 0000000048010000b0250000da250000f2250000442600009e260000a42600004427000020280000dc2800003a290000c2290000f22a0000002b00002a2b0000302b00003c2c00004e2c00007a2c0000ec2c0000da2d0000cc2e000000ca9a3bffffff7f
 >>>>>>> BranchO
+=======
+  m_LastProjectPath: C:\Users\henrysiu\Desktop\Tapperstudio
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 339}
+    m_SelectedIDs: ce2e0000
+    m_LastClickedID: 11982
+    m_ExpandedIDs: 0000000048010000282c0000502c0000682c0000b62c0000102d0000162d00005a2d0000ae2d00007e2e0000362f00008e2f00000e30000034310000423100006a310000703100006e32000080320000ac3200001e330000ce340000e6340000e035000000ca9a3bffffff7f
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,6 +719,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000480100002c260000562600006e260000c02600001a27000020270000c02700009e28000056290000b2290000342a0000602b00006e2b0000982b00009e2b0000a82c0000ba2c0000e62c0000582d0000342f0000
 =======
     m_ExpandedIDs: 000000004a0100007a2e0000a22e0000ba2e0000c42e0000082f0000622f0000682f000000300000d230000088310000e0310000603200008833000096330000be330000c4330000c4340000d63400000235000074350000243700003c370000
@@ -613,6 +730,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 0000000048010000b0250000da250000f2250000442600009e260000a42600004427000020280000dc2800003a290000c2290000f22a0000002b00002a2b0000302b00003c2c00004e2c00007a2c0000ec2c0000da2d0000cc2e0000
 >>>>>>> BranchO
+=======
+    m_ExpandedIDs: 0000000048010000282c0000502c0000682c0000b62c0000102d0000162d0000ae2d00007e2e0000362f00008e2f00000e30000034310000423100006a310000703100006e32000080320000ac3200001e330000e6340000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,7 +760,11 @@ MonoBehaviour:
     m_SelectedInstanceIDs: b4060000
     m_LastClickedInstanceID: 1716
     m_HadKeyboardFocusLastEvent: 1
+<<<<<<< HEAD
     m_ExpandedInstanceIDs: c62300006e2e0000
+=======
+    m_ExpandedInstanceIDs: c6230000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -666,8 +790,13 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 180}
     m_GridSize: 64
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 205
 --- !u!114 &17
+=======
+  m_DirectoriesAreaWidth: 115
+--- !u!114 &15
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -700,7 +829,11 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &18
+=======
+--- !u!114 &16
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -724,6 +857,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 92
 <<<<<<< HEAD
     width: 301
@@ -738,10 +872,14 @@ MonoBehaviour:
 =======
     y: 91
 >>>>>>> BranchO
+=======
+    y: 91
+>>>>>>> Henkka
     width: 377
     height: 552
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 5a5a0000
     m_LastClickedID: 0
 <<<<<<< HEAD
@@ -753,6 +891,11 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 66d3ffff08e0ffffc0fbffff00000000
 >>>>>>> BranchO
+=======
+    m_SelectedIDs: 88cb0100
+    m_LastClickedID: 0
+    m_ExpandedIDs: 28dfffffe6e9fffff2faffff000000009c760000027700002077000010810000
+>>>>>>> Henkka
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -768,14 +911,22 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 7}
+=======
+      m_ClientGUIView: {fileID: 0}
+>>>>>>> Henkka
     m_SearchString: 
   m_ExpandedScenes:
   - MasterScene Backup 28.5
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
+<<<<<<< HEAD
 --- !u!114 &19
+=======
+--- !u!114 &17
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -799,14 +950,22 @@ MonoBehaviour:
     serializedVersion: 2
     x: 381
     y: 91
+<<<<<<< HEAD
     width: 838
     height: 552
   m_SceneLighting: 1
   lastFramingTime: 4116.989332561127
+=======
+    width: 764
+    height: 552
+  m_SceneLighting: 1
+  lastFramingTime: 0
+>>>>>>> Henkka
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -828,6 +987,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.090583235, y: 3.4233239, z: 98.67969}
 >>>>>>> BranchO
+=======
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+>>>>>>> Henkka
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -857,6 +1021,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 15.767874
     speed: 2
     m_Value: 15.767874
@@ -875,6 +1040,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 16.067833
 >>>>>>> BranchO
+=======
+    m_Target: 12.4114
+    speed: 2
+    m_Value: 12.4114
+>>>>>>> Henkka
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -885,7 +1055,11 @@ MonoBehaviour:
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
+<<<<<<< HEAD
 --- !u!114 &20
+=======
+--- !u!114 &18
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -907,14 +1081,24 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1223
     y: 91
     width: 306
+=======
+    x: 1149
+    y: 91
+    width: 380
+>>>>>>> Henkka
     height: 552
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
+<<<<<<< HEAD
   m_SelectedSizes: 08000000000000000000000000000000000000000000000000000000000000000000000000000000
+=======
+  m_SelectedSizes: 07000000000000000000000000000000000000000000000000000000000000000000000000000000
+>>>>>>> Henkka
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -939,29 +1123,50 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 306
       height: 535
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 153, y: 267.5}
+=======
+      width: 380
+      height: 535
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 190, y: 267.5}
+>>>>>>> Henkka
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -153
       y: -267.5
       width: 306
+=======
+      x: -190
+      y: -267.5
+      width: 380
+>>>>>>> Henkka
       height: 535
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 306, y: 552}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
 --- !u!114 &21
+=======
+  m_LastWindowPixelSize: {x: 380, y: 552}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000100000100
+--- !u!114 &19
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -983,7 +1188,13 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1023
     y: 664
     width: 506
+=======
+    x: 0
+    y: 664
+    width: 1529
+>>>>>>> Henkka
     height: 354

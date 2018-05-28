@@ -32,11 +32,11 @@ MonoBehaviour:
   buttonOne: Upgrade
   buttonTwo: Combine
   buttonThree: Sell
-  buttonPos1X: -80
+  buttonPos1X: -100
   buttonPos1Y: -1015
   buttonPos2X: 0
   buttonPos2Y: -1015
-  buttonPos3X: 80
+  buttonPos3X: 100
   buttonPos3Y: -1015
   sizeX: 7
   sizeY: 3

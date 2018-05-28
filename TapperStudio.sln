@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
@@ -31,37 +30,3 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
-=======
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio.Plugins", "tapperstudio.Plugins.csproj", "{06796D63-B7C2-9766-3C49-97DDBBF6445A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio", "tapperstudio.csproj", "{02037F06-9035-354B-BECD-EDCC8CBFA973}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tapperstudio.Editor.Plugins", "tapperstudio.Editor.Plugins.csproj", "{EC568DF2-A508-3B08-EB80-F2B942E887A3}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{06796D63-B7C2-9766-3C49-97DDBBF6445A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06796D63-B7C2-9766-3C49-97DDBBF6445A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06796D63-B7C2-9766-3C49-97DDBBF6445A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06796D63-B7C2-9766-3C49-97DDBBF6445A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02037F06-9035-354B-BECD-EDCC8CBFA973}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC568DF2-A508-3B08-EB80-F2B942E887A3}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
->>>>>>> Henkka

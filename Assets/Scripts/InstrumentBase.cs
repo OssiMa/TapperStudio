@@ -44,7 +44,7 @@ public class InstrumentBase : MonoBehaviour {
     float comboBoost;
     public float xpBoost;
 
-    public Achievements achievements;
+    Achievements achievements;
 
     private void Awake()
     {
@@ -208,12 +208,12 @@ public class InstrumentBase : MonoBehaviour {
                 comboNumber.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
-                GameObject spawnedText;
+                /*GameObject spawnedText;
                 Instantiate(comboTextObject);
                 spawnedText = GameObject.Find("ComboUpText(Clone)");
                 spawnedText.transform.SetParent(gameObject.transform);
                 spawnedText.GetComponent<Text>().enabled = true;
-                spawnedText.GetComponent<ComboText>().MyInstrument(combo);
+                spawnedText.GetComponent<ComboText>().MyInstrument(combo);*/
             }
 
         }

@@ -36,7 +36,7 @@ public class NewItemGenerator : MonoBehaviour {
         guitar = Resources.LoadAll<Sprite>("GuitarIcon");
         piano = Resources.LoadAll<Sprite>("PianoIcon");
         drumNames = new string[] { "Pedal", "Metronome", "Sticks" };
-        guitarNames = new string[] { "Guitar1", "Guitar2", "Guitar3" };
+        guitarNames = new string[] { "Pick", "Strap", "Capo" };
         pianoNames = new string[] { "Stool", "Notestand", "Frame" };
         rarityNames = new string[] { "Common", "Uncommon", "Rare", "Epic", "Legendary" };
         bases = FindObjectsOfType<InstrumentBase>().OrderBy(ins => ins.name).ToArray();

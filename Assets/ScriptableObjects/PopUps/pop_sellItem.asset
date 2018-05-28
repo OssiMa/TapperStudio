@@ -16,8 +16,10 @@ MonoBehaviour:
   statsVisible: 0
   picVisible: 0
   infoVisible: 1
+  closeVisible: 0
   popUpFrame: {fileID: 0}
   selectedInvSlot: {fileID: 0}
+  closeButton: {fileID: 0}
   selectedItem: {fileID: 0}
   description: Are you sure you want to sell this item?
   stats: []
@@ -35,8 +37,8 @@ MonoBehaviour:
   buttonPos3X: 293
   buttonPos3Y: -955
   sizeX: 7
-  sizeY: 12
+  sizeY: 13
   posX: 0
   posY: -430
   pic: {fileID: 0}
-  bg: {fileID: 0}
+  bg: {fileID: 21300000, guid: eb566c7d2cda00644805c241254a3295, type: 3}

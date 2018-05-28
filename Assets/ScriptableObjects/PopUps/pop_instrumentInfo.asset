@@ -39,4 +39,4 @@ MonoBehaviour:
   posX: 0
   posY: -900
   pic: {fileID: 21300000, guid: 3217d99e2a02ccb43b15a27ce851eee9, type: 3}
-  bg: {fileID: 21300000, guid: 39ec7ad0085447c4bab78b9ac9e15bb4, type: 3}
+  bg: {fileID: 21300000, guid: eb566c7d2cda00644805c241254a3295, type: 3}

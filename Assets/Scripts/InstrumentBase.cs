@@ -210,6 +210,7 @@ public class InstrumentBase : MonoBehaviour {
                 comboStep = 0;
                 comboAchievement();
                 Instantiate(comboTextObject);
+                comboTextObject.GetComponent<ComboText>().MyInstrument(instrumentNbr);
             }
 
         }

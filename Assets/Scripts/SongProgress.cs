@@ -394,6 +394,8 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesOf.Add("Master");
         AlbumFirstNamesOf.Add("Lord");
         AlbumFirstNamesOf.Add("The Heist");
+        AlbumFirstNamesOf.Add("The Party");
+        AlbumFirstNamesOf.Add("Changing");
 
 
 
@@ -442,7 +444,8 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("the Dwarves");
         AlbumLastNamesOf.Add("the Jungle");
         AlbumLastNamesOf.Add("Zombies");
-        AlbumLastNamesOf.Add("The century");
+        AlbumLastNamesOf.Add("the Century");
+        AlbumLastNamesOf.Add("the Seasons");
 
 
 
@@ -491,7 +494,15 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Quiet ");
         AlbumFirstNamesDual.Add("Twisted ");
         AlbumFirstNamesDual.Add("Outrageous ");
-
+        AlbumFirstNamesDual.Add("Infinite ");
+        AlbumFirstNamesDual.Add("Chaos ");
+        AlbumFirstNamesDual.Add("Highest ");
+        AlbumFirstNamesDual.Add("Genocide ");
+        AlbumFirstNamesDual.Add("Ascencion ");
+        AlbumFirstNamesDual.Add("Blissful ");
+        AlbumFirstNamesDual.Add("Sorrowful ");
+        AlbumFirstNamesDual.Add("Fully Steel ");
+        AlbumFirstNamesDual.Add("Blue ");
 
 
         AlbumLastNamesDual.Add("Days");
@@ -539,6 +550,10 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesDual.Add("Forge");
         AlbumLastNamesDual.Add("Blacksmith");
         AlbumLastNamesDual.Add("Gems");
+        AlbumLastNamesDual.Add("World");
+        AlbumLastNamesDual.Add("Beach");
+        AlbumLastNamesDual.Add("Leaves");
+        AlbumLastNamesDual.Add("Scientist");
 
 
         AlbumFirstNamesTo.Add("Ode");
@@ -574,7 +589,7 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesTo.Add("Beholden");
         AlbumFirstNamesTo.Add("Walking");
         AlbumFirstNamesTo.Add("Opening My Eyes");
-        AlbumFirstNamesTo.Add("And now,");
+        AlbumFirstNamesTo.Add("And Now,");
         AlbumFirstNamesTo.Add("Onward");
         AlbumFirstNamesTo.Add("O Glorious Day! Onwards,");
         AlbumFirstNamesTo.Add("The Journey");
@@ -591,11 +606,9 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("Rome");
         AlbumLastNamesTo.Add("Ashes");
         AlbumLastNamesTo.Add("Victory");
-        AlbumLastNamesTo.Add("\nPasteurization");
         AlbumLastNamesTo.Add("Loss");
-        AlbumLastNamesTo.Add("\nNeverending Trauma");
         AlbumLastNamesTo.Add("Dreams");
-        AlbumLastNamesTo.Add("the \nHills");
+        AlbumLastNamesTo.Add("the Hills");
         AlbumLastNamesTo.Add("Me");
         AlbumLastNamesTo.Add("the Bone");
         AlbumLastNamesTo.Add("the Moon");
@@ -645,12 +658,8 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Letting Go");
         AlbumWholeNames.Add("Cyberbeats");
         AlbumWholeNames.Add("Macaroni");
-        AlbumWholeNames.Add("Lasagna");
-        AlbumWholeNames.Add("Bolognese");
-        AlbumWholeNames.Add("Fusilli");
         AlbumWholeNames.Add("Ravioli");
         AlbumWholeNames.Add("Tagliatelli");
-        AlbumWholeNames.Add("Tortellini");
         AlbumWholeNames.Add("Art");
         AlbumWholeNames.Add("Trust me");
         AlbumWholeNames.Add("I Used To Trust You");
@@ -666,7 +675,17 @@ public class SongProgress : MonoBehaviour {
         AlbumWholeNames.Add("Love Like You");
         AlbumWholeNames.Add("Oats We Sow");
         AlbumWholeNames.Add("Rattlesnake");
-        AlbumWholeNames.Add("Fossil fuel");
+        AlbumWholeNames.Add("Fossil Fuel");
+        AlbumWholeNames.Add("Futurizer");
+        AlbumWholeNames.Add("Epicnator");
+        AlbumWholeNames.Add("I Want You");
+        AlbumWholeNames.Add("Changes");
+        AlbumWholeNames.Add("Sail Away");
+        AlbumWholeNames.Add("Around the World");
+        AlbumWholeNames.Add("Lulla-byebye");
+        AlbumWholeNames.Add("Perfectly Fine Music");
+        AlbumWholeNames.Add("Human Music");
+        AlbumWholeNames.Add("Well I'm Sorry It's Not Your Taste");
 
         currentAlbum = "SpaghettiSolution";
         UsedNames.Add(currentAlbum);

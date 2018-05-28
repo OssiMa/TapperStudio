@@ -55,7 +55,6 @@ public class InstrumentBase : MonoBehaviour {
     void Start ()
     {
         invUI = InventoryUI.instance;
-        //LoadGame();
         xpBar.minValue = startXp;
         xpBar.maxValue = expToNext;
         currLvl.text = "" + level;

@@ -13,12 +13,12 @@ public class ComboText : MonoBehaviour {
     Color lerpedColor = Color.white;
     Color color;
 
-    int instrument;
+    float combo;
 
     void Start()
     {
         text = GetComponent<Text>();
-        text.text = "COMBO " + instrument;
+        text.text = "COMBO " + combo;
 
         color = new Color(1, 1, 1, 0);
     }
@@ -36,14 +36,14 @@ public class ComboText : MonoBehaviour {
 
         transform.localScale = new Vector2(x,y);
 
-        if (x >= 5)
+        if (x >= 2.8f)
         {
             Destroy(gameObject);
         }
 	}
 
-    public void MyInstrument(int parentInst)
+    public void MyInstrument(float parentCombo)
     {
-        instrument = parentInst;
+        combo = parentCombo;
     }
 }

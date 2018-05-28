@@ -69,7 +69,7 @@ public class MusicPlayer : MonoBehaviour {
         album1 = GameObject.Find("Album1");
         album2 = GameObject.Find("Album2");
         album3 = GameObject.Find("Album3");
-        //album4 = GameObject.Find("Album4");
+        album4 = GameObject.Find("Album4");
 
         ChooseAlbum();
         ChooseSong();
@@ -114,7 +114,7 @@ public class MusicPlayer : MonoBehaviour {
 
     public void ChooseAlbum()
     {
-        int rundom = Random.Range(1, 4);
+        int rundom = Random.Range(1, 5);
 
         if (rundom == 1)
         {
@@ -149,6 +149,18 @@ public class MusicPlayer : MonoBehaviour {
             else
             {
                 currentAlbum = album3;
+                albumEnd = false;
+            }
+        }
+        if (rundom == 4)
+        {
+            if (currentAlbum == album4)
+            {
+                ChooseAlbum();
+            }
+            else
+            {
+                currentAlbum = album4;
                 albumEnd = false;
             }
         }
@@ -250,6 +262,26 @@ public class MusicPlayer : MonoBehaviour {
                 keyboard = album3.transform.GetChild(5).GetComponent<AudioSource>();
             }
             drums = album3.GetComponent<AudioSource>();
+            drums.loop = true;
+        }
+        else if (currentAlbum == album4)
+        {
+            if (currentSong == "song1")
+            {
+                guitar = album4.transform.GetChild(0).GetComponent<AudioSource>();
+                keyboard = album4.transform.GetChild(1).GetComponent<AudioSource>();
+            }
+            else if (currentSong == "song2")
+            {
+                guitar = album4.transform.GetChild(2).GetComponent<AudioSource>();
+                keyboard = album4.transform.GetChild(3).GetComponent<AudioSource>();
+            }
+            else if (currentSong == "song3")
+            {
+                guitar = album4.transform.GetChild(4).GetComponent<AudioSource>();
+                keyboard = album4.transform.GetChild(5).GetComponent<AudioSource>();
+            }
+            drums = album4.GetComponent<AudioSource>();
             drums.loop = true;
         }
     }

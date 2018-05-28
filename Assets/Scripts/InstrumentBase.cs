@@ -208,8 +208,12 @@ public class InstrumentBase : MonoBehaviour {
                 comboNumber.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
+                GameObject spawnedText;
                 Instantiate(comboTextObject);
-                comboTextObject.GetComponent<ComboText>().MyInstrument(instrumentNbr);
+                spawnedText = GameObject.Find("ComboUpText(Clone)");
+                spawnedText.transform.SetParent(gameObject.transform);
+                spawnedText.GetComponent<Text>().enabled = true;
+                spawnedText.GetComponent<ComboText>().MyInstrument(combo);
             }
 
         }

@@ -13,10 +13,12 @@ public class ComboText : MonoBehaviour {
     Color lerpedColor = Color.white;
     Color color;
 
+    int instrument;
+
     void Start()
     {
         text = GetComponent<Text>();
-        text.text = "COMBO UP!";
+        text.text = "COMBO " + instrument;
 
         color = new Color(1, 1, 1, 0);
     }
@@ -39,4 +41,9 @@ public class ComboText : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    public void MyInstrument(int parentInst)
+    {
+        instrument = parentInst;
+    }
 }

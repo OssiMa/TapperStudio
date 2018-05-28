@@ -88,7 +88,7 @@ public class InstrumentBase : MonoBehaviour {
             level += 1;
             nextLevel += 1;
             startXp = expToNext;
-            expToNext = expToNext * 1.1f;
+            expToNext = startXp + 40 + 10*level;
             xpBar.minValue = startXp;
             xpBar.maxValue = expToNext;
 
@@ -197,7 +197,7 @@ public class InstrumentBase : MonoBehaviour {
 
     public void ComboTap()
     {
-        exp += 0.5f * combo + xpBoost;
+        exp += 1 + 0.1f * combo + xpBoost*0.25f;
         progression.GainXP(this);
         if (combo < maxCombo)     //4 + comboBoost
         {

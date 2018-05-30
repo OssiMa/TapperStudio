@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 
-public class SaveObject : MonoBehaviour {
+public class SaveObject{
 
     public Sprite icon = null;
     public int rarity = 0;

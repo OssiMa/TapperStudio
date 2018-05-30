@@ -9,20 +9,16 @@ public class SaveLoadManager : MonoBehaviour {
     private float time;
     private float saveTime;
 
-    [HideInInspector]
-    public SongProgress progression;
-    [HideInInspector]
-    public InstrumentBase drumBase;
-    [HideInInspector]
-    public InstrumentBase guitarBase;
-    [HideInInspector]
-    public InstrumentBase pianoBase;
-    [HideInInspector]
-    public CurrencyManager currencyManager;
-    [HideInInspector]
-    public Achievements achievements;
-    [HideInInspector]
-    //public Inventory inventory;
+    public List<SaveObject> savedItems = new List<SaveObject>();
+
+    SongProgress progression;
+    InstrumentBase drumBase;
+    InstrumentBase guitarBase;
+    InstrumentBase pianoBase;
+    CurrencyManager currencyManager;
+    Achievements achievements;
+    Inventory inventory;
+    NewItemGenerator ItemGenerator;
 
 
     // Use this for initialization
@@ -33,7 +29,8 @@ public class SaveLoadManager : MonoBehaviour {
         currencyManager = GameObject.Find("GameManager").GetComponent<CurrencyManager>();
         progression = GameObject.Find("SongProgression").GetComponent<SongProgress>();
         achievements = GameObject.Find("GameManager").GetComponent<Achievements>();
-        //inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+        inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+        ItemGenerator = GameObject.Find("GameManager").GetComponent<NewItemGenerator>();
         //LoadGame();
         saveTime = 5;
         time = 0;
@@ -116,7 +113,15 @@ public class SaveLoadManager : MonoBehaviour {
         save.PianoComboNumber = achievements.PianoComboNumber;
 
         //items
-        //save.items = inventory.items;
+        //if (inventory.items.Count >= 1)
+        //{
+        //    savedItems.Clear();
+        //    for (int i = 0; i >= inventory.items.Count; i++)
+        //    {
+        //        savedItems.Add(new SaveObject { icon = inventory.items[i].icon, rarity = inventory.items[i].rarity, rarityName = inventory.items[i].rarityName, itemName = inventory.items[i].itemName, boosts = inventory.items[i].boosts, instrument = inventory.items[i].instrument, slot = inventory.items[i].slot, boostPower = inventory.items[i].boostPower, level = inventory.items[i].level });
+        //    }
+        //    save.savedItems = savedItems;
+        //}
 
 
         return save;
@@ -196,10 +201,17 @@ public class SaveLoadManager : MonoBehaviour {
             achievements.AchievementSlot5.achievement2 = achievements.PianoComboAchievements[achievements.PianoComboNumber];
 
             //items
-            //inventory.items = save.items;
+        //    if (save.savedItems.Count >= 1)
+        //    {
+        //        for (int i = 0; i >= save.savedItems.Count; i++)
+        //        {
+        //            ItemGenerator.NewCraftedItem(savedItems[i].rarity, savedItems[i].slot, savedItems[i].instrument);
+
+        //        }
+        //}
 
 
-        }
+    }
         else
         {
 

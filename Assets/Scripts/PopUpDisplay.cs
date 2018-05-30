@@ -434,6 +434,8 @@ public class PopUpDisplay : MonoBehaviour {
             NewInvSlot.transform.position = InvSlot.transform.position;
             RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector3(0, 0, 0);
+            rt.anchorMax = new Vector2(0.5f, 0.5f);
+            rt.anchorMin = new Vector2(0.5f, 0.5f);
             rt.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot.GetComponent<Button>();
             ColorBlock cb = btn.colors;
@@ -495,6 +497,8 @@ public class PopUpDisplay : MonoBehaviour {
             NewInvSlot2.transform.position = InvSlot2.transform.position;
             RectTransform rt2 = NewInvSlot2.GetComponent<RectTransform>();
             rt2.anchoredPosition = new Vector3(0, 0, 0);
+            rt2.anchorMax = new Vector2(0.5f, 0.5f);
+            rt2.anchorMin = new Vector2(0.5f, 0.5f);
             rt2.sizeDelta = new Vector2(52, 52);
             Button btn = NewInvSlot2.GetComponent<Button>();
             ColorBlock cb = btn.colors;
@@ -547,6 +551,8 @@ public class PopUpDisplay : MonoBehaviour {
         NewInvSlot.transform.position = InvSlot.transform.position;
         RectTransform rt = NewInvSlot.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(52, 52);
+        rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.anchorMin = new Vector2(0.5f, 0.5f);
         rt.anchoredPosition = new Vector3(0,0,0);
         Button btn = NewInvSlot.GetComponent<Button>();
         ColorBlock cb = btn.colors;

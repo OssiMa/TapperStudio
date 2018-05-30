@@ -21,24 +21,24 @@ MonoBehaviour:
   selectedInvSlot: {fileID: 0}
   closeButton: {fileID: 0}
   selectedItem: {fileID: 0}
-  description: Upgrade the equipment?
+  description: 
   stats: []
   info:
   - 'This Upgrade costs:'
   - 'You currently have: '
   buttonAmount: 2
   buttonOne: UpgradeYes
-  buttonTwo: No
+  buttonTwo: BigClose
   buttonThree: 
-  buttonPos1X: -80
-  buttonPos1Y: -955
-  buttonPos2X: 80
-  buttonPos2Y: -955
+  buttonPos1X: 0
+  buttonPos1Y: -1020
+  buttonPos2X: 0
+  buttonPos2Y: -666
   buttonPos3X: 293
   buttonPos3Y: -955
   sizeX: 7
-  sizeY: 13
+  sizeY: 3
   posX: 0
-  posY: -430
+  posY: -650
   pic: {fileID: 0}
   bg: {fileID: 21300000, guid: eb566c7d2cda00644805c241254a3295, type: 3}

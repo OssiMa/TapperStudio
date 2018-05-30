@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Advertisements;     //This might be solved by changing the build setting to Android
+using UnityEngine.Advertisements;     //This might be solved by changing the build setting to Android
 
 public class Shop : MonoBehaviour {
                   
@@ -39,7 +39,7 @@ public class Shop : MonoBehaviour {
         PurchaseManager.purchaseManager.BuyCurrencyBig();
     }
 
-    /*public void WatchAd()
+    public void WatchAd()
     {
         if (adCounter > 0)
         {
@@ -52,10 +52,10 @@ public class Shop : MonoBehaviour {
                 InvokeRepeating("AddAdCounter", 0, 86400);
             }
         }
-        else
+        /*else
         {
-            PopUp: "Sorry we're such buttholes, but you can't watch any more! Wait a day or two, bucko!";
-        }
+            //Add a PopUp: "Sorry we're such buttholes, but you can't watch any more! Wait a day or two, bucko!";
+        }*/
     }
 
     void AddAdCounter()

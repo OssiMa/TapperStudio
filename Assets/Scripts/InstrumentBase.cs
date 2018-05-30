@@ -15,9 +15,11 @@ public class InstrumentBase : MonoBehaviour {
 
     public Slider xpBar;
     public Image fadeCounter;
+    public Image fadeCounterBig;
     public Text currLvl;
     public Text nxtLvl;
     public Text comboNumber;
+    public Text comboNumberBig;
 
     public float exp = 0;       //instrument experience, don't confuse with song progress
     public float startXp;
@@ -49,6 +51,7 @@ public class InstrumentBase : MonoBehaviour {
     private void Awake()
     {
         comboNumber.text = combo + "";
+        comboNumberBig.text = combo + "";
     }
 
     // Use this for initialization
@@ -77,6 +80,7 @@ public class InstrumentBase : MonoBehaviour {
             BoostUpdate();
             maxCombo = ogMaxCombo + comboBoost;
             fadeCounter.fillAmount = (comboFade / comboFadeMax);
+            fadeCounterBig.fillAmount = (comboFade / comboFadeMax);
         }
 
     }
@@ -190,6 +194,7 @@ public class InstrumentBase : MonoBehaviour {
         {
             combo -= 1;
             comboNumber.text = combo + "";
+            comboNumberBig.text = combo + "";
             comboStep = 0;
             comboUpkeep = 4;
         }
@@ -199,21 +204,33 @@ public class InstrumentBase : MonoBehaviour {
     {
         exp += 1 + 0.1f * combo + xpBoost*0.25f;
         progression.GainXP(this);
-        if (combo < maxCombo)     //4 + comboBoost
+        if (combo < maxCombo)
         {
-            comboStep += 1;
+            if (instrumentNbr == 1)
+            {
+                comboStep += .25f;
+            }
+            else if (instrumentNbr == 2)
+            {
+                comboStep += .8f;
+            }
+            else if (instrumentNbr == 3)
+            {
+                comboStep += 1.5f;
+            }
+
             if (comboStep >= comboStepMax)
             {
                 combo += 1;
                 comboNumber.text = combo + "";
+                comboNumberBig.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
-                /*GameObject spawnedText;
+                GameObject spawnedText;
                 Instantiate(comboTextObject);
                 spawnedText = GameObject.Find("ComboUpText(Clone)");
                 spawnedText.transform.SetParent(gameObject.transform);
-                spawnedText.GetComponent<Text>().enabled = true;
-                spawnedText.GetComponent<ComboText>().MyInstrument(combo);*/
+                spawnedText.GetComponent<ComboText>().MyInstrument(combo);
             }
 
         }
@@ -233,7 +250,9 @@ public class InstrumentBase : MonoBehaviour {
             combo -= 1;
             comboFade = comboFadeMax;
             fadeCounter.fillAmount = 1;
+            fadeCounterBig.fillAmount = 1;
             comboNumber.text = combo + "";
+            comboNumberBig.text = combo + "";
         }
     }
 
@@ -248,7 +267,9 @@ public class InstrumentBase : MonoBehaviour {
     public void UpdateComboCounter()
     {
         fadeCounter.fillAmount = (comboFade / comboFadeMax);
+        fadeCounterBig.fillAmount = (comboFade / comboFadeMax);
         comboNumber.text = combo + "";
+        comboNumberBig.text = combo + "";
     }
 
     public void BigExpReward()
@@ -259,13 +280,31 @@ public class InstrumentBase : MonoBehaviour {
         progression.GainXP(this);
         if(combo < maxCombo)        // 4 + comboBoost
         {
-            comboStep += 5;
+            if (instrumentNbr == 1)
+            {
+                comboStep += 2;
+            }
+            else if (instrumentNbr == 2)
+            {
+                comboStep += 3;
+            }
+            else if (instrumentNbr == 3)
+            {
+                comboStep += 7;
+            }
+
             if (comboStep >= comboStepMax)
             {
                 combo += 1;
                 comboNumber.text = combo + "";
+                comboNumberBig.text = combo + "";
                 comboStep = 0;
                 comboAchievement();
+                GameObject spawnedText;
+                Instantiate(comboTextObject);
+                spawnedText = GameObject.Find("ComboUpText(Clone)");
+                spawnedText.transform.SetParent(gameObject.transform);
+                spawnedText.GetComponent<ComboText>().MyInstrument(combo);
             }
         }
         ComboFadeUp();

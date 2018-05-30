@@ -10,33 +10,48 @@ public class ComboText : MonoBehaviour {
  
     Text text;
 
-    Color lerpedColor = Color.white;
-    Color color;
+    Color32 color32;
+
+    Color32 green;
+    Color32 invisible;
 
     float combo;
+    float time;
+    float startTime;
+    float elapsedTime;
 
     void Start()
     {
         text = GetComponent<Text>();
         text.text = "COMBO " + combo;
+        green.r = 0;
+        green.g = 255;
+        green.b = 33;
+        green.a = 255;
 
-        color = new Color(1, 1, 1, 0);
+        invisible = green;
+        invisible.a = 0;
+
+        text.color = green;
+        text.enabled = true;
+
+        startTime = Time.time;
     }
 
     // Update is called once per frame
     void Update ()
     {
+        elapsedTime = Time.time - startTime;
+
         x += Time.deltaTime;
         y += Time.deltaTime;
 
-        //lerpedColor = Color.Lerp(color, lerpedColor, Mathf.PingPong(Time.time, 1));
-        //text.color = lerpedColor;
-        lerpedColor = Color.Lerp(Color.green, color, Mathf.PingPong(Time.time, 1.5f));
-        text.color = lerpedColor;
+        color32 = Color.Lerp(green, invisible, (elapsedTime * 0.2f));
+        text.color = color32;
 
         transform.localScale = new Vector2(x,y);
 
-        if (x >= 2.8f)
+        if (x >= 5f)
         {
             Destroy(gameObject);
         }

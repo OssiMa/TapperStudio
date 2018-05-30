@@ -19,8 +19,22 @@ MonoBehaviour:
     height: 998
   m_ShowMode: 4
   m_Title: 
+<<<<<<< HEAD
   m_RootView: {fileID: 9}
   m_MinSize: {x: 950, y: 542}
+=======
+<<<<<<< HEAD
+  m_RootView: {fileID: 6}
+<<<<<<< HEAD
+  m_MinSize: {x: 950, y: 300}
+=======
+  m_RootView: {fileID: 9}
+  m_MinSize: {x: 950, y: 542}
+>>>>>>> BranchO
+=======
+  m_MinSize: {x: 950, y: 392}
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -114,6 +128,27 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 1600
+    height: 808
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 47
+=======
+    width: 1920
+    height: 948
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
+  vertical: 0
+  controlID: 9
+>>>>>>> Henkka
+--- !u!114 &3
+=======
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
     width: 1920
     height: 948
   m_MinSize: {x: 887, y: 492}
@@ -140,7 +175,15 @@ MonoBehaviour:
     height: 948
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
+<<<<<<< HEAD
   m_ActualView: {fileID: 17}
+<<<<<<< HEAD
+=======
+>>>>>>> BranchO
+=======
+  m_ActualView: {fileID: 14}
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   m_Panes:
   - {fileID: 17}
   m_Selected: 0
@@ -187,7 +230,13 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1021
+<<<<<<< HEAD
     height: 374
+=======
+    height: 375
+<<<<<<< HEAD
+>>>>>>> BranchO
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 16}
@@ -196,6 +245,17 @@ MonoBehaviour:
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
+=======
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 18}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &6
+>>>>>>> Henkka
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_PrefabParentObject: {fileID: 0}
@@ -277,6 +337,27 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 1276
+    height: 808
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
+  vertical: 1
+  controlID: 48
+=======
+    width: 1531
+    height: 948
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
+  vertical: 1
+  controlID: 10
+>>>>>>> Henkka
+--- !u!114 &10
+=======
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
     width: 1531
     height: 948
   m_MinSize: {x: 610, y: 492}
@@ -397,7 +478,13 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    - Assets/Prefab
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
@@ -406,10 +493,39 @@ MonoBehaviour:
   m_LastProjectPath: C:\Users\JuusoMyl1\Desktop\TapperStudio
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 244}
     m_SelectedIDs: b62a0000
     m_LastClickedID: 10934
     m_ExpandedIDs: 0000000048010000f02700001a2800003228000084280000de28000092290000782a0000202b00007e2b0000102c0000422d0000502d0000722d0000782d0000942e0000a62e0000ce2e00003e2f0000de30000016310000323100004c32000000ca9a3bffffff7f
+=======
+<<<<<<< HEAD
+    scrollPos: {x: 0, y: 42}
+    m_SelectedIDs: 302e0000
+    m_LastClickedID: 11824
+    m_ExpandedIDs: 000000004a010000c6250000f0250000082600005a260000b4260000662700004c2800000c2900006a290000fa290000302b00003e2b00006e2b00008e2c0000a02c0000cc2c00003e2d00002e2f00004830000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 167}
+    m_SelectedIDs: e82e0000
+    m_LastClickedID: 12008
+    m_ExpandedIDs: 000000004a010000fa2d0000222e00003a2e00008c2e0000e02e00007e2f000056300000123100006a310000f631000028330000363300005e330000643300005c3400006c34000092340000f634000070360000a4360000be360000b237000000ca9a3bffffff7f
+>>>>>>> BranchO
+=======
+    - Assets/Scripts
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scripts
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: C:\Users\henrysiu\Desktop\Tapperstudio
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: a8300000
+    m_LastClickedID: 12456
+    m_ExpandedIDs: 000000004a010000fa2d0000222e00003a2e00008c2e0000e02e00007e2f000056300000123100006a310000f63100002833000036330000643300005c3400006c34000092340000f6340000be360000b237000000ca9a3bffffff7f
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -437,7 +553,19 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000048010000f02700001a2800003228000084280000de28000092290000782a0000202b00007e2b0000102c0000422d0000502d0000722d0000782d0000942e0000a62e0000ce2e00003e2f0000de30000016310000323100004c320000
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 000000004a010000c6250000f0250000082600005a260000b4260000662700004c2800000c2900006a290000fa290000302b00003e2b00006e2b00008e2c0000a02c0000cc2c00003e2d00002e2f000048300000
+=======
+    m_ExpandedIDs: 000000004a010000fa2d0000222e00003a2e00008c2e0000e02e00007e2f000056300000123100006a310000f63100002833000036330000643300005c3400006c34000092340000f6340000be360000b2370000
+>>>>>>> BranchO
+=======
+    m_ExpandedIDs: 000000004a010000fa2d0000222e00003a2e00008c2e0000e02e00007e2f000056300000123100006a310000f63100002833000036330000643300005c3400006c34000092340000f6340000be360000b2370000
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -462,8 +590,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 7e060000
+    m_LastClickedInstanceID: 1662
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a42f0000642a0000
     m_RenameOverlay:
@@ -514,11 +642,26 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    x: -322
+    y: 271
+    width: 322
+    height: 787
+  m_ScrollPosition: {x: 0, y: 298.95508}
+=======
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
     x: 1533
     y: 91
     width: 387
     height: 927
+<<<<<<< HEAD
   m_ScrollPosition: {x: 0, y: 0}
+=======
+  m_ScrollPosition: {x: 0, y: 240}
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
@@ -553,20 +696,60 @@ MonoBehaviour:
     height: 553
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 3237ffff5438ffff4639ffff88dfffff5cfbffff00000000784c0000024f00002e4f0000305100004e510000445200004a530000
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedIDs: 2a290000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 8af8ffffc0fbffff00000000d23100008635000002360000203600009e380000b8380000fc3d00003e3e0000fe42000012430000
+=======
+    m_SelectedIDs: f4d8ffff
+    m_LastClickedID: -9996
+    m_ExpandedIDs: 38d9ffff40e5ffff88f9ffff000000006279000080790000
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
       m_OriginalName: 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    m_SelectedIDs: 7c30fdff
+    m_LastClickedID: -184196
+    m_ExpandedIDs: 7230fdff7430fdff7c30fdffa238fdff9a49fdff7a49ffff94dcffff96dcffff98dcffffa6dcffffcce4ffff88f9ffff00000000c2610000006200007c640000926400007e690000a6c60100a8cf010062d40100a0d4010084d6010090d601001cd7010032d7010050d70100beda01004cdb010032dc0100b6dc0100
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: Drum_Active3
+      m_OriginalName: Drum_Active3
+>>>>>>> BranchO
+=======
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< HEAD
       m_UserData: 0
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      m_UserData: 0
+=======
+      m_UserData: -183906
+>>>>>>> BranchO
+=======
+      m_UserData: 0
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 11
@@ -574,7 +757,15 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 0}
     m_SearchString: 
   m_ExpandedScenes:
+<<<<<<< HEAD
   - MasterScene
+=======
+<<<<<<< HEAD
+  - BetaFixes
+=======
+  - SavingTest
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting

@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/MasterScene.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/BetaFixes.unity
+=======
+- path: Assets/Scenes/SavingTest.unity
+>>>>>>> Henkka
+>>>>>>> 60d055c24a9751b827df17bc2fecfb64f631ab3e
   isLoaded: 1
   isActive: 1

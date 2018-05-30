@@ -52,8 +52,7 @@ public class Save {
     public int GuitarComboNumber;
     public int PianoComboNumber;
 
-    //public List<Item> items;
-
+    public List<SaveObject> savedItems;
 
 
 }

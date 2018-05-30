@@ -438,7 +438,7 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesOf.Add("Silence");
         AlbumLastNamesOf.Add("Two Lovers");
         AlbumLastNamesOf.Add("My Brothers");
-        AlbumLastNamesOf.Add("the Sorrowful \nSister");
+        AlbumLastNamesOf.Add("the Sorrowful Sister");
         AlbumLastNamesOf.Add("the Moon");
         AlbumLastNamesOf.Add("the Stars");
         AlbumLastNamesOf.Add("the Dwarves");
@@ -473,7 +473,6 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Hungry ");
         AlbumFirstNamesDual.Add("Je suis ");
         AlbumFirstNamesDual.Add("Insidious ");
-        AlbumFirstNamesDual.Add("Flabbergasting ");
         AlbumFirstNamesDual.Add("Cold ");
         AlbumFirstNamesDual.Add("Popular ");
         AlbumFirstNamesDual.Add("Someone's ");
@@ -490,7 +489,6 @@ public class SongProgress : MonoBehaviour {
         AlbumFirstNamesDual.Add("Digital ");
         AlbumFirstNamesDual.Add("Sponge ");     //37
         AlbumFirstNamesDual.Add("Sugary ");
-        AlbumFirstNamesDual.Add("Sensual ");
         AlbumFirstNamesDual.Add("Quiet ");
         AlbumFirstNamesDual.Add("Twisted ");
         AlbumFirstNamesDual.Add("Outrageous ");
@@ -632,10 +630,8 @@ public class SongProgress : MonoBehaviour {
         AlbumLastNamesTo.Add("Salvation");
         AlbumLastNamesTo.Add("This Day");
         AlbumLastNamesTo.Add("the Future");     //35
-        AlbumLastNamesTo.Add("Know");
         AlbumLastNamesTo.Add("Become One");
         AlbumLastNamesTo.Add("Separate");
-        AlbumLastNamesTo.Add("Knowing Myself");
 
 
         AlbumWholeNames.Add("Afterlife");
